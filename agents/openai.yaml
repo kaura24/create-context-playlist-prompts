@@ -1,4 +1,4 @@
 interface:
   display_name: "Context Playlist Prompts"
   short_description: "Create cohesive Suno playlist prompts"
-  default_prompt: "Use $create-context-playlist-prompts to plan ten cohesive songs, then create one Suno prompt and synchronized lyric at a time."
+  default_prompt: "Use $create-context-playlist-prompts to plan ten cohesive songs, then create one main prompt, exclusion prompt, and synchronized title/lyrics at a time."

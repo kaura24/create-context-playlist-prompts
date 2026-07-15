@@ -4,7 +4,7 @@
 
 If the user's input has generation-prompt grammar such as `Hard constraints`, `Style`, BPM, time signature, vocal, instrumentation, harmony, mixing, or exclusions, and the user provides it as a reference, record it as a `Prompt reference`. Do not ask for a Primary reference first just because there is no real song title.
 
-Do not treat sentences inside the prompt as the final Suno Prompt, playlist-wide constraints, or approved values for a specific track. Separate facts explicitly stated by the user from musical inferences.
+Do not treat sentences inside the prompt as the final Main Prompt or Exclusion Prompt, playlist-wide constraints, or approved values for a specific track. Separate facts explicitly stated by the user from musical inferences.
 
 ## Decompose Into A Seed Design
 
@@ -22,6 +22,8 @@ Organize the following axes in a table.
 - Hard constraints and possible conflicts
 
 Mark each item as `explicit`, `strong inference`, or `unconfirmed`. Do not invent emotions, situations, or cultural zones that are not present in the prompt. This table is only a seed for the 10-track design; it is not yet an approved full design.
+
+At final generation time, route positive requirements from the source prompt into the Main Prompt and route only explicit absolute prohibitions into the separate Exclusion Prompt. The source label `Hard constraints` does not determine the output field by itself.
 
 ## Recommend Real Related Songs
 
@@ -44,7 +46,7 @@ Do not push all candidates in one direction. Split them across whichever roles a
 - Harmony and cadences
 - Listening scene and emotion
 
-For each candidate, include both `matching elements` and `different elements` to reduce copying risk. Recommended songs are not Primary or Supporting references until the user selects or approves them. Use real artist and song names at the recommendation stage only in analysis tables, never in the generation Prompt.
+For each candidate, include both `matching elements` and `different elements` to reduce copying risk. Recommended songs are not Primary or Supporting references until the user selects or approves them. Use real artist and song names at the recommendation stage only in analysis tables, never in the Main Prompt or Exclusion Prompt.
 
 Allow general-reference overlap. The same song may be assigned to multiple analysis roles such as vocal and arrangement, reused in Primary/Supporting judgment, or reused as research evidence for multiple tracks in the 10-track plan. In the tables and design, state each repeated song's role and scope of application.
 

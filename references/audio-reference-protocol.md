@@ -29,7 +29,7 @@ When there is a Target render, compare it against the existing design on the fol
 - Vocal count, identity, range, phrasing, pronunciation, and power
 - Emotional depth and vocal lowest note
 - Tempo, meter, groove, and drum density
-- Intro and first vocal entry
+- Structure family, section sequence, intro and first vocal entry, peak placement, and ending behavior
 - Instrument roles, layers, and section-level arrangement curve
 - Harmonic color and cadence feel
 - Hook repetition and melodic density
@@ -39,12 +39,12 @@ Mark each item as `match`, `partial match`, `mismatch`, or `cannot judge`. Do no
 
 ## Turn Failed Results Into Revision Input
 
-For a Rejected render, separate good traits from failure traits. If you cannot determine which expression in the existing Prompt caused the failure, mark it as a cause candidate. Do not add many exclusions at once. Revise in this order.
+For a Rejected render, separate good traits from failure traits. If you cannot determine which expression in the existing Main Prompt or Exclusion Prompt caused the failure, mark it as a cause candidate. Do not add many exclusions at once. Revise in this order.
 
 1. Remove incorrect scope expansions.
 2. Remove conflicting positive descriptions.
 3. Rewrite the target sound in positive, measurable terms.
-4. Keep only the core Hard constraints.
-5. Rewrite the whole Prompt and Lyrics, then check again.
+4. Keep only absolute prohibitions in the Exclusion Prompt.
+5. Rewrite the Main Prompt, Exclusion Prompt, and Title And Lyrics, then check again.
 
-If the Target render provides a new answer, prioritize its observations over the previous failed Prompt. However, do not copy the Primary reference's unique melody, hook, riff, exact chord progression, or lyrics.
+If the Target render provides a new answer, prioritize its observations over the previous failed prompts. However, do not copy the Primary reference's unique melody, hook, riff, exact chord progression, or lyrics.
