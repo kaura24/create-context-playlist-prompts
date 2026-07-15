@@ -1,87 +1,114 @@
-# Structure Pattern Reference
+# Form Evidence And Structure Protocol
 
-Use this reference while designing the complete 10-track table. Treat structure families as selection vocabulary, not rigid templates. Preserve genre grammar and the Playlist sound contract before pursuing variety.
+## Contents
 
-## Decision Order
+- Evidence and status
+- Form evidence table
+- Permitted variation envelope
+- Structural Flow Contract
+- Lyrics tag sequence
+- Design order and final gate
 
-1. Start from the approved genre coordinates and Playlist sound contract.
-2. Build a small pool of structure families that are natural for that genre, era, tempo, and narrative mode.
-3. Choose one structure family for each track.
-4. Write the track's development signature.
-5. Draw a hook strategy only from candidates compatible with the chosen structure.
-6. Validate context fit and structural distinctness across all 10 tracks.
+Use this protocol before designing the complete 10-track table. Treat every claim about musical form, structure, or permitted variation as an evidence claim. Never invent, rename, or assume a form to create variety.
 
-Never choose a hook first and force the structure to accommodate it.
+## Keep Five Layers Separate
 
-## Describe Structure At Two Levels
+- `Form`: an established large-scale organizing grammar
+- `Section sequence`: the sections actually observed or approved for a song
+- `Permitted variation envelope`: the changes the form and genre evidence allow
+- `Structural Flow Contract`: the functional and audible trajectory that makes the sections cohere
+- `Development signature`: the selected entry, contrast, peak, repetition change, interlude, and ending behavior inside that envelope
 
-Record both of the following in the full design table.
+Do not present a development difference as a new form. Do not treat different section names as proof of different structures.
 
-- `Structure family`: the broad form grammar
-- `Development signature`: the specific way this track moves through that form
+## Acceptable Evidence
 
-Define the development signature with the smallest useful combination of:
+Build form evidence only from:
 
-- Actual section sequence
-- Intro length and first vocal-entry method
-- Main contrast mechanism
-- Peak or emotional-turn location
-- Repetition and variation behavior
-- Interlude or breakdown placement
-- Ending behavior
+1. A form or structure explicitly supplied and approved by the user
+2. Established music-theory, genre scholarship, or a reputable educational source that names and defines the form
+3. An official or licensed score, songbook, or reliable song-level formal analysis
+4. Direct observation from an accessible recording plus lyrics, score, or timestamps, clearly marked as an observed inference
 
-Do not claim two tracks are structurally different merely because their section labels differ. Conversely, do not claim they are duplicates merely because both use Verse and Chorus labels.
+Use internet research for externally verifiable form claims. Record a direct link or precise source identification. Do not use model memory alone as evidence.
 
-## Candidate Structure Families
+If required sources cannot be accessed, mark the unresolved claim and workflow state as `evidence-needed`. Do not invent a replacement claim or approve the form pool. Resume when evidence becomes available or when the user explicitly supplies and approves a reference-specific form and scope.
 
-| Family | Typical grammar | Useful cues | Main variation levers |
-|---|---|---|---|
-| Verse-chorus narrative | Verses advance the story and choruses return to a central statement | Pop, rock, country, many K-pop and J-pop forms | Pre-chorus use, chorus timing, bridge role, final return |
-| Strophic or verse-led | Repeated verse framework with limited or optional refrain material | Folk, singer-songwriter, restrained ballad, intimate lo-fi song | Verse length, lyrical escalation, accompaniment growth, final-verse change |
-| Refrain-led | A short refrain returns between longer sections | Soul, R&B, indie pop, traditional or conversational writing | Refrain placement, response texture, lyrical mutation, cadence |
-| AABA or contrast-bridge | Related A sections surround a contrasting B section | Jazz-influenced pop, standards, retro pop, some ballads | A-section variation, bridge contrast, return compression, outro tag |
-| Through-composed | New or substantially changed sections keep advancing | Dramatic ballad, art pop, narrative song, cinematic writing | Section length, motif transformation, late reveal, non-returning ending |
-| Loop-evolution | A stable cycle evolves through layering, subtraction, and microvariation | Lo-fi, chill, neo-soul, minimal electronic, groove-centered R&B | Entry timing, texture swaps, drum detail, harmonic color, gradual exit |
-| Build-release | Tension accumulates toward a release, drop, or high-density focal section | Dance pop, electronic vocal music, anthemic pop-rock | Build length, false peak, drop density, recovery, final release |
-| Two-part sectional | Two main sections alternate or transform without a required bridge | Minimal pop, punk, groove songs, compact forms | A/B ratio, transition type, register shift, shortened final cycle |
+## Evidence Status
 
-Use the families as a candidate pool, not as a genre lookup table. A genre may support several families, and a family may appear in several genres with different section language and development behavior.
+- `Established`: a credible source names or defines the form and supports the claimed scope
+- `Observed pattern`: multiple representative songs support a sequence, but no established form name or genre-wide status has been verified
+- `Reference-specific`: a user-approved reference or one verified song supports only that song's sequence
+- `Unconfirmed`: evidence is insufficient; exclude it from the design pool
 
-## Build A Genre-Valid Pool
+If a form name cannot be verified, do not create one. Record only the literal observed sequence and mark it `Observed pattern` or `Reference-specific`. Never claim `canonical`, `common`, `rare`, `traditional`, or `incompatible` unless the cited evidence supports that exact claim.
 
-Use these as starting cues, then defer to the approved references.
+## Build The Form Evidence Table
 
-- Mainstream pop, K-pop, and J-pop may use verse-chorus, refrain-led, build-release, AABA, or through-composed hybrids.
-- Ballad and singer-songwriter material may use verse-chorus, strophic, refrain-led, AABA, or through-composed forms.
-- R&B, neo-soul, and groove-centered songs may use refrain-led, loop-evolution, AABA, two-part, or restrained verse-chorus forms.
-- Lo-fi and chill vocal music may use loop-evolution, strophic, sparse refrain-led, two-part, or low-contrast through-composed forms.
-- Dance and electronic vocal music may use build-release, loop-evolution, refrain-led, or compact verse-chorus forms.
-- Rock and band-centered music may use verse-chorus, two-part, refrain-led, strophic, or through-composed forms according to era and subgenre.
+Before the 10-track design, present this table in Korean:
 
-Do not force a family that contradicts the reference grammar merely to increase the count of unique forms.
+`Status | Verified form name or literal sequence | Definition/source | Representative real songs | Observed section sequence | Genre/era/market scope | Confidence`
 
-## Distribute Structure Across Ten Tracks
+For every representative song, verify artist, title, relevant release context, and the reported or observed sequence. Use the allowed reference-language pool defined by this skill when selecting song evidence.
 
-- Use at least three genre-valid structure families by default. Allow fewer only when the approved genre or reference grammar is genuinely narrow.
-- Do not assign one family to more than four tracks by default.
-- Never duplicate both the same structure family and the same development signature.
-- When reusing a family, change at least two development dimensions, such as entry timing, peak placement, contrast mechanism, repetition behavior, or ending.
-- Prefer context coherence over novelty. A strange form that breaks the use case is not useful diversity.
+A named form needs a credible form-level source. Genre-coordinate applicability needs either a source that ties the form to that scope or multiple representative songs inside that coordinate. Without that support, keep the evidence reference-specific and do not generalize it to the genre.
 
-## Constrain Hook Strategy By Structure
+## Define The Permitted Variation Envelope
 
-- Use `Repeated hook` or `Varied return` only when the form has a credible return point.
-- Use `Final-only callback` only when the structure supports a delayed reveal or final return.
-- Use `Instrumental hook` only when a recurring instrument or rhythmic motif has a defined placement and role.
-- Use `No hook` when through-development, narrative continuity, or gradual loop evolution is the stronger organizing principle.
-- Reroll an incompatible hook strategy. Do not mutate an approved structure merely to preserve a random draw.
+For each approved form or literal sequence, record:
+
+`Invariant grammar | Optional sections | Allowed order changes | Repeat range | Entry range | Contrast/peak range | Ending range | Boundary violations | Evidence`
+
+Treat invariants and boundary violations as hard structural limits. Use optional sections and allowed ranges as the only variation pool. If a proposed change is not supported by the evidence, do not call it a variation of the form. Research it as a separate form or hybrid, or ask the user to approve it as reference-specific.
+
+## Define The Structural Flow Contract
+
+A section list is not enough. For each track, record how the approved form forces a coherent movement through time:
+
+`Section/function | Entry state | Musical job | Harmonic tension/release | Energy/density | Vocal/narrative role | Transition | Exit state`
+
+The exit state of one section must plausibly create the entry state of the next. Preserve the form's recurrence logic, buildup or release path, contrast placement, hook return, emotional arc, and ending function. Do not allow a variation that keeps the labels but breaks this flow.
+
+Keep the core section functions and exact Lyrics tag sequence fixed across A/B/C as the shared lyric scaffold. This does not require identical musical realization. The three Main Prompts may use similar but non-identical form development and flow realizations only when structural development is a declared comparison axis and every change stays inside the Permitted Variation Envelope. Do not let a variant change the form identity or break the song's causal progression.
+
+Get user approval for the genre-level Form Evidence Table and Permitted Variation Envelopes before assigning forms to tracks. Create each track's Structural Flow Contract and Lyrics tag sequence inside the 10-track design table, then approve them together through Full Design Approval.
+
+## Define The Lyrics Tag Sequence
+
+Keep established genre-specific terminology in the form evidence. Separately define the exact bracketed tag sequence that will appear inside Title And Lyrics.
+
+For the final Lyrics field, use bracketed structural tags that Suno can interpret. The official Suno glossary currently documents these structural terms:
+
+`[Intro] [Verse] [Pre-Chorus] [Chorus] [Bridge] [Outro] [Hook] [Refrain] [Break] [Drop] [Coda]`
+
+Add another Lyrics tag only when current official Suno guidance or a user-provided verified instruction supports it. Write the approved sequence directly, for example `[Intro] -> [Verse] -> [Chorus] -> [Verse] -> [Bridge] -> [Chorus] -> [Outro]`.
+
+Choose every tag by the section's actual musical function. Never convert the composition into Verse-Pre-Chorus-Chorus merely because those tags are familiar. If no supported tag is functionally equivalent, do not invent a tag such as `[First Window]`; research a supported representation or ask the user before approving the Lyrics tag sequence.
+
+## Design In Evidence Order
+
+1. Confirm the exact genre coordinate: region, era, market, macro-genre, subgenre, groove, and language.
+2. Research and approve the Form Evidence Table.
+3. Research and approve each form's Permitted Variation Envelope.
+4. Build the allowed form pool only from approved evidence.
+5. Assign a supported form or literal sequence to each track according to genre evidence and the Playlist sound contract.
+6. Write and approve the track's Structural Flow Contract.
+7. Choose the exact sequence and development signature only inside the approved envelope and flow.
+8. Define and approve the exact Lyrics tag sequence.
+9. Choose a hook strategy only from options compatible with the approved structure.
+
+Never choose a form by unconstrained randomization. Do not impose a global minimum number of forms or a maximum reuse count. If the evidence shows that one form dominates the genre coordinate, reuse it and vary only the dimensions permitted by its envelope instead of importing unrelated forms.
 
 ## Final Gate
 
-Before showing the full design, verify:
+Before showing the 10-track design or final Lyrics, verify:
 
-- Every structure belongs to the genre-valid pool or has a reference-backed reason.
-- Every development signature serves the track narrative and shared use case.
-- Tracks sharing a family differ on at least two development dimensions.
-- The hook strategy is compatible with the structure and does not create an unplanned section.
-- The final Lyrics can follow the approved sequence without falling back to a universal pop template.
+- Every form name, genre-scope claim, and variation boundary has recorded evidence.
+- Unnamed patterns remain literal sequences rather than newly coined forms.
+- Every track uses only an approved form and stays inside its permitted envelope.
+- Every section fulfills its approved function and connects coherently to the next section.
+- A/B/C Main Prompts preserve a shared form identity and mutually similar coherent flows while any declared form-development or flow variant stays inside the approved envelope.
+- Development differences are not misrepresented as different forms.
+- Every Lyrics section uses the exact approved bracketed tag sequence.
+- Hook behavior does not create a section unsupported by the approved structure.
+- Form diversity follows the evidence rather than a numerical quota.

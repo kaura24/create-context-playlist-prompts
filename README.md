@@ -20,11 +20,18 @@ create-context-playlist-prompts/
     revision-protocol.md
     structure-patterns.md
     suno-style-guide.md
+    vocal-audio-engineering-protocol.md
+  scripts/
+    validate_track_output.py
+  tests/
+    test_validate_track_output.py
 ```
 
 - `SKILL.md`: 스킬 진입점과 핵심 운영 규칙
 - `agents/openai.yaml`: 스킬 실행에 필요한 agent 힌트
 - `references/`: 세부 프로토콜과 출력 계약
+- `scripts/validate_track_output.py`: 곡별 최종 출력의 필드, 글자 수, 태그, 금지 규칙 검사
+- `tests/`: 출력 검증기 회귀 테스트
 - `README.md`: 저장소 운영 방식과 기록물 관리 규칙
 
 ## Project Record Structure
@@ -55,7 +62,7 @@ playlist-project/
 
 1. 기록은 덮어쓰지 않고 새 버전으로 누적합니다.
 2. `PROJECT_HISTORY.md`에는 현재 승인 상태, 다음 작업, 주요 결정의 인덱스를 남깁니다.
-3. 상세 파일에는 10곡 설계, 사용자 피드백, Main Prompt 버전, Exclusion Prompt 버전, Title And Lyrics 버전, 실패 원인, 검사 결과를 시간순으로 남깁니다.
+3. 상세 파일에는 10곡 설계, 곡별 Main Prompt A/B/C, 공통 Exclusion Prompt, Title And Lyrics, 선택 결과, 보정 규칙, 실패 원인, 검사 결과를 시간순으로 남깁니다.
 4. `초기화`, `전체 초기화`, `완전 초기화`, `프로젝트 초기화`, `플레이리스트 리셋` 요청은 활성 상태만 비우고 기존 기록은 `초기화 전 보관` 상태로 남깁니다.
 5. 현재 곡 재설계는 프로젝트 초기화가 아닙니다. 해당 곡의 새 버전으로 기록합니다.
 6. 공통 수정은 누적 공통 요구사항에 기록하고, 현재 곡과 앞으로 만들 곡에 적용 범위를 명시합니다.
@@ -73,13 +80,15 @@ playlist-project/
 - Supporting references:
 - Approved constraints:
 - Playlist sound contract:
+- Vocal and engineering contract:
+- Calibration lock:
 - Vocal:
 - Active track:
 
 ## Approved 10-Track Design
 
-| # | Working title | Track differentiator | Structure/development | Vocal | Language | Energy | Harmony references | Hook strategy | Status |
-|---|---|---|---|---|---|---|---|---|---|
+| # | Working title | Track differentiator | Verified form/source | Structural flow | Lyrics tag sequence | Vocal | Language | Energy | Harmony references/progression | Hook strategy | Status |
+|---|---|---|---|---|---|---|---|---|---|---|---|
 
 ## Track Versions
 
@@ -87,19 +96,25 @@ playlist-project/
 
 - Request:
 - Classification: new draft | track revision | common revision | reset archive
-- Main Prompt:
-- Exclusion Prompt:
-- Title And Lyrics:
+- Main Prompt A:
+- Main Prompt B:
+- Main Prompt C:
+- Shared Exclusion Prompt:
+- Shared Title And Lyrics:
 - Check result:
-- User feedback:
+- Chosen Main Prompt:
+- User feedback and audible evidence:
+- Calibration lock update:
 
 ### Track 1 / v2
 
 - Change reason:
 - Scope: track-only | common
-- Regenerated Main Prompt:
-- Regenerated Exclusion Prompt:
-- Regenerated Title And Lyrics:
+- Regenerated Main Prompt A/B/C:
+- Shared Exclusion Prompt:
+- Shared Title And Lyrics:
+- Chosen Main Prompt:
+- Calibration lock update:
 - Check result:
 
 ## Reset Archive

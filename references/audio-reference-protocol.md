@@ -29,13 +29,15 @@ When there is a Target render, compare it against the existing design on the fol
 - Vocal count, identity, range, phrasing, pronunciation, and power
 - Emotional depth and vocal lowest note
 - Tempo, meter, groove, and drum density
-- Structure family, section sequence, intro and first vocal entry, peak placement, and ending behavior
+- Verified form, Structural Flow Contract, section sequence, intro and first vocal entry, peak placement, and ending behavior
 - Instrument roles, layers, and section-level arrangement curve
 - Harmonic color and cadence feel
 - Hook repetition and melodic density
 - Space, vocal front/back placement, reverb, and low-end weight
 
 Mark each item as `match`, `partial match`, `mismatch`, or `cannot judge`. Do not fill unknowns with guesses.
+
+When the comparison involves artificial vocal timbre, pronunciation, capture, or mix quality, apply [vocal-audio-engineering-protocol.md](vocal-audio-engineering-protocol.md) and identify the audible layer before rewriting prompts.
 
 ## Turn Failed Results Into Revision Input
 
@@ -45,6 +47,6 @@ For a Rejected render, separate good traits from failure traits. If you cannot d
 2. Remove conflicting positive descriptions.
 3. Rewrite the target sound in positive, measurable terms.
 4. Keep only absolute prohibitions in the Exclusion Prompt.
-5. Rewrite the Main Prompt, Exclusion Prompt, and Title And Lyrics, then check again.
+5. Rewrite all three Main Prompt alternatives and revalidate the shared Exclusion Prompt and Title And Lyrics, then check again.
 
 If the Target render provides a new answer, prioritize its observations over the previous failed prompts. However, do not copy the Primary reference's unique melody, hook, riff, exact chord progression, or lyrics.

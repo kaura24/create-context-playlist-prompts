@@ -17,17 +17,21 @@ Organize the following axes in a table.
 - Common texture and instrument roles
 - Drum pattern and section transitions
 - Harmonic language and cadences
-- Intro, structure, and hook candidates
+- Reported form or section sequence, intro, and hook candidates
 - Vocal/instrument space and mixing
 - Hard constraints and possible conflicts
 
 Mark each item as `explicit`, `strong inference`, or `unconfirmed`. Do not invent emotions, situations, or cultural zones that are not present in the prompt. This table is only a seed for the 10-track design; it is not yet an approved full design.
+
+Treat a form or sequence written in the source prompt as explicit only for that Prompt reference. Do not generalize it into a genre-wide form, rename it, infer its permitted variations, or add it to the 10-track design pool until it passes [structure-patterns.md](structure-patterns.md) and the user approves its scope, flow, and Lyrics tag sequence.
 
 At final generation time, route positive requirements from the source prompt into the Main Prompt and route only explicit absolute prohibitions into the separate Exclusion Prompt. The source label `Hard constraints` does not determine the output field by itself.
 
 ## Recommend Real Related Songs
 
 Research and recommend 5-8 real songs close to the seed design. This recommendation depends on currently existing songs and accessible evidence, so use internet search and verify song title, artist, release timing, and recommendation rationale.
+
+If internet evidence is unavailable, mark the recommendation stage `evidence-needed` and stop before reference approval or the 10-track design. Do not substitute unverified memory for real-song evidence.
 
 Limit the recommendation and selection pool to the following three categories, based on the primary lyric language.
 

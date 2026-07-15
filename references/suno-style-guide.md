@@ -27,16 +27,20 @@ Suno's accessible official guidance does not publish an exact character maximum 
 
 Write the Main Prompt primarily in concise English. Use this order unless the approved design requires another priority.
 
-1. Country or cultural zone, era, central genre, and adjacent genre
-2. BPM or tempo feel, meter when important, and groove
-3. Lead vocal range, timbre, power, pronunciation, and phrasing
-4. Core instruments, track-specific roles, register, and texture
-5. Structure family, intro or first entry, development, peak, and ending
-6. Drum performance, harmonic color, hook behavior, dynamics, space, and mix
+1. `Style:` country or cultural zone, era, market, central genre, and adjacent genre
+2. `Feel:` listening use case, emotion, arousal, brightness/darkness, and motion
+3. `Tempo/Groove:` BPM, meter when important, pocket, and rhythmic feel
+4. `Vocal:` lead range, timbre, power, pronunciation, phrasing, emotional depth, and naturalness target
+5. `Instrumentation:` core instruments, track-specific roles, register, and texture
+6. `Harmony:` newly designed section-level chord progression, cadence, color, and bass motion
+7. `Form/Flow:` approved form and structural trajectory in concise prose, without bracketed Lyrics tags
+8. `Production/Mix:` drum performance, hook behavior, dynamics, mic distance, space, stereo image, tonal balance, and processing
 
-Prefer direct musical terms such as `72 BPM`, `syncopated pocket`, `sparse felt piano`, `close dry vocal`, `loop-evolution form`, or `diminuendo coda`. Use evocative wording only when it adds a usable audible direction. Front-load the identity-defining traits and compress secondary details first.
+Prefer direct musical terms such as `72 BPM`, `syncopated pocket`, `sparse felt piano`, `close dry vocal`, `AABA form`, or `diminuendo coda` only when those terms are supported by the approved evidence. Use evocative wording only when it adds a usable audible direction. Front-load the identity-defining traits and compress secondary details first.
 
-Do not include artist or song names. Do not repeat exclusions, write conflicting descriptors, or use long narrative prose that belongs in the lyrics. Do not use a genre label as a substitute for the listening use case; preserve the approved Playlist sound contract.
+Do not include title, lyric lines, artist or song names, citations, or absolute prohibitions. Do not repeat exclusions, write conflicting descriptors, or use long narrative prose that belongs in the lyrics. Do not use a genre label as a substitute for `Feel`; preserve the approved Playlist sound contract.
+
+Never place `[Verse]`, `[Chorus]`, or any other bracketed section tag in the Main Prompt. Bracketed structural tags belong only in Title And Lyrics.
 
 ## Exclusion Prompt
 
@@ -46,7 +50,9 @@ Keep the Exclusion Prompt at 100 characters or fewer, including spaces and punct
 
 ## Title And Lyrics
 
-Put the title on the first line, then write complete lyrics using the approved single language and exact section sequence. Use recognizable section labels where they match the approved structure. For nonstandard structures, use concise labels that describe the actual function of each section.
+Put the title on the first line, then write complete lyrics using the approved single language and exact bracketed Lyrics tag sequence. The official glossary documents `Intro`, `Verse`, `Pre-Chorus`, `Chorus`, `Bridge`, `Outro`, `Hook`, `Refrain`, `Break`, `Drop`, and `Coda`. Add another tag only when current official guidance or a user-provided verified instruction supports it.
+
+Preserve genre-specific form terms in research and design, but map their section functions to Suno-readable tags for the Lyrics field. Never invent a tag, use a poetic scene name as a tag, or convert the source structure into a universal pop sequence merely because `[Verse]` and `[Chorus]` are familiar. If no supported functional mapping exists, stop before final output and resolve the mapping.
 
 Keep genre and production description in the Main Prompt. Put only section-specific performance or development context in the Lyrics field, such as a delayed entry, instrumental break, restrained delivery, or final shortened line. Do not add a universal Verse-Pre-Chorus-Chorus form that was not approved.
 
@@ -54,7 +60,7 @@ Keep genre and production description in the Main Prompt. Put only section-speci
 
 - Main Prompt is at most 800 characters, including spaces and punctuation.
 - Exclusion Prompt is at most 100 characters, including spaces and punctuation.
-- Title And Lyrics uses the approved title, language, structure, and development signature.
+- Title And Lyrics uses the approved title, language, evidence-backed form, permitted variation, Structural Flow Contract, and exact bracketed Lyrics tag sequence.
 - Main and Exclusion prompts contain no contradiction or duplicated prohibition.
 - Every phrase belongs in the Suno field where it will be entered.
 
