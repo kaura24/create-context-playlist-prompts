@@ -1,50 +1,50 @@
-# 오디오 레퍼런스 프로토콜
+# Audio Reference Protocol
 
-## 오디오의 역할을 먼저 정하라
+## Decide The Audio Role First
 
-사용자가 오디오 파일이나 생성 결과를 제공하면 다음 중 하나로 분류하라.
+When the user provides an audio file or generated result, classify it as one of the following.
 
-- `Primary reference`: 플레이리스트 정체성의 중심
-- `Supporting reference`: 일부 화성·편곡·보컬 특성만 보조
-- `Target render`: “이런 느낌으로 나와야 한다”고 승인한 목표 출력
-- `Rejected render`: 실패 원인을 찾기 위한 반례
+- `Primary reference`: the center of the playlist identity
+- `Supporting reference`: supports only some harmonic, arrangement, or vocal traits
+- `Target render`: an approved target output that "should come out feeling like this"
+- `Rejected render`: a counterexample used to find failure causes
 
-역할이 문장으로 명확하면 다시 묻지 마라. 모호하고 결과가 크게 달라질 때만 확인하라.
+If the role is clear from the user's wording, do not ask again. Clarify only when it is ambiguous and would materially change the result.
 
-## 증거 수준을 구분하라
+## Separate Evidence Levels
 
-실제로 디코딩·청취·분석하지 못한 파일을 들었다고 말하지 마라. 다음 수준을 기록하라.
+Do not claim you heard a file that you have not actually decoded, listened to, or analyzed. Record one of the following levels.
 
-1. `Metadata only`: 파일명·형식·크기·재생시간 등
-2. `Measured`: BPM 추정, RMS/피크, 구간별 에너지, 스펙트럼 등 수치 분석
-3. `Audibly reviewed`: 실제 청취로 보컬·악기·그루브·공간감을 판정
-4. `User-described`: 사용자의 청감 설명
+1. `Metadata only`: filename, format, size, duration, and similar metadata
+2. `Measured`: numerical analysis such as BPM estimate, RMS/peak, section energy, or spectrum
+3. `Audibly reviewed`: vocal, instrument, groove, and space judgments from actual listening
+4. `User-described`: the user's audible description
 
-분석 도구가 없으면 사용자 설명을 임시 근거로 사용하고 기술 분석을 완료한 것처럼 기록하지 마라. 외부 업로드가 필요하면 먼저 허가를 받아라.
+If analysis tools are unavailable, use the user's description as temporary evidence and do not record technical analysis as completed. Ask permission before any external upload is required.
 
-## Target render를 비교하라
+## Compare Target Renders
 
-Target render가 있으면 기존 설계와 다음 축을 비교하라.
+When there is a Target render, compare it against the existing design on the following axes.
 
-- 보컬 인원·정체성·음역·프레이징·발음·성량
-- 감정 깊이와 보컬 최저음
-- 템포·박자·그루브·드럼 밀도
-- 전주와 첫 보컬 진입
-- 악기 역할·레이어·섹션별 편곡 곡선
-- 화성 색채와 종지 감각
-- 훅 반복과 멜로디 밀도
-- 공간감·보컬 전후 위치·잔향·저역 무게
+- Vocal count, identity, range, phrasing, pronunciation, and power
+- Emotional depth and vocal lowest note
+- Tempo, meter, groove, and drum density
+- Intro and first vocal entry
+- Instrument roles, layers, and section-level arrangement curve
+- Harmonic color and cadence feel
+- Hook repetition and melodic density
+- Space, vocal front/back placement, reverb, and low-end weight
 
-`일치`, `부분 일치`, `불일치`, `판단 불가`로 표시하라. 판단 불가를 추측으로 채우지 마라.
+Mark each item as `match`, `partial match`, `mismatch`, or `cannot judge`. Do not fill unknowns with guesses.
 
-## 실패 결과를 수정 입력으로 바꿔라
+## Turn Failed Results Into Revision Input
 
-Rejected render는 좋은 특성과 실패 특성을 분리하라. 기존 Prompt의 어떤 표현이 실패를 유도했는지 확정할 수 없으면 원인 후보로 표시하라. 한 번에 많은 금지어를 추가하지 말고 다음 순서로 고쳐라.
+For a Rejected render, separate good traits from failure traits. If you cannot determine which expression in the existing Prompt caused the failure, mark it as a cause candidate. Do not add many exclusions at once. Revise in this order.
 
-1. 잘못된 범위 확장을 제거하라.
-2. 상충하는 긍정 표현을 제거하라.
-3. 목표 청감을 긍정적이고 측정 가능한 표현으로 다시 써라.
-4. 핵심 Hard constraints만 남겨라.
-5. Prompt와 Lyrics를 전체 재작성하고 다시 검사하라.
+1. Remove incorrect scope expansions.
+2. Remove conflicting positive descriptions.
+3. Rewrite the target sound in positive, measurable terms.
+4. Keep only the core Hard constraints.
+5. Rewrite the whole Prompt and Lyrics, then check again.
 
-Target render가 새로운 정답을 제공하면 이전 실패 Prompt보다 Target render의 관찰값을 우선하라. 단, Primary reference의 고유 멜로디·훅·리프·정확한 코드·가사는 복제하지 마라.
+If the Target render provides a new answer, prioritize its observations over the previous failed Prompt. However, do not copy the Primary reference's unique melody, hook, riff, exact chord progression, or lyrics.

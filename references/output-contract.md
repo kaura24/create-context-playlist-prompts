@@ -1,74 +1,74 @@
-# 출력 계약
+# Output Contract
 
-## 0. 프롬프트형 레퍼런스 접수
+## 0. Prompt-Shaped Reference Intake
 
-사용자가 프롬프트 형태로 레퍼런스를 제공하면 10곡 설계 전에 한국어로 다음 두 표를 출력하라.
+When the user provides a prompt-shaped reference, output the following two tables in Korean before any 10-track design.
 
-`시드 축 | 프롬프트에서 확인된 값 | 명시/추론 | 10곡 설계에서의 역할`
+`Seed axis | Value found in the prompt | Explicit/inferred | Role in the 10-track design`
 
-시드 축에는 Context, 장르 좌표, 템포·그루브, 보컬, 악기 역할, 드럼, 화성, 구조·훅, 믹싱·공간감, Hard constraints를 포함하라.
+Seed axes must include Context, genre coordinates, tempo/groove, vocal, instrument roles, drums, harmony, structure/hook, mix/space, and Hard constraints.
 
-`분류 | 관련 곡 후보 | 추천 역할 | 일치 요소 | 다른 요소 | 근거`
+`Category | Related-song candidate | Recommended role | Matching elements | Different elements | Evidence`
 
-실제 관련 곡을 5~8곡 추천하되 `팝송`, `일본어곡`, `한국어곡` 세 분류를 모두 포함하고 장르·보컬 프레이징·편곡·화성·프로덕션 중 어떤 축의 근거인지 표시하라. 주 가사 언어가 이 세 분류에 속하지 않는 곡과 순수 연주곡은 제외하라. 같은 곡을 여러 역할이나 이후 여러 트랙에 중복 배정할 수 있으며, 중복 사용 시 역할과 적용 범위를 표시하라. 곡별 화성 레퍼런스만은 두 트랙 간 중복률 50% 미만을 유지하라. 후보를 자동 승인하지 말고 표 뒤에서 분위기를 가르는 질문을 한 번에 1~2개만 하라. 분위기와 레퍼런스 역할이 승인되기 전에는 10곡 설계로 이동하지 마라.
+Recommend 5-8 real related songs and include all three categories: `English-language pop songs`, `Japanese-language songs`, and `Korean-language songs`. Indicate which evidence axis each song supports, such as genre, vocal phrasing, arrangement, harmony, or production. Exclude songs whose primary lyric language is outside these three categories, and exclude purely instrumental pieces. The same song may be assigned to multiple roles or reused across later tracks; when reused, state its role and scope of application. Only per-track harmony references must keep overlap below 50% between any two tracks. Do not auto-approve candidates. After the table, ask 1-2 mood-disambiguation questions at a time. Do not proceed to the 10-track design until mood and reference roles are approved.
 
-## 1. 기본 조사 결과와 보컬 승인안
+## 1. Basic Research Result And Vocal Approval Proposal
 
-한국어로 다음을 제공하라.
+Provide the following in Korean.
 
-- 장르 좌표: 국가·지역, 시대·연대, 문화권·시장, 대장르, 하위 장르, 속도·그루브, 언어, 프로덕션 문법
-- 레퍼런스 DNA: 유지할 상위 특성, 새로 설계할 요소, 청취 상황에 따른 조정, 복제를 피할 고유 요소
-- 화성 조사 후보: 세 허용 분류 안에서 코드 진행 판단에 사용할 실제 곡 최소 3개와 각 곡의 역할. 트랙 간 부분 중복은 허용하되 쌍별 중복률 50% 이상은 불허
+- Genre coordinates: country/region, era, cultural zone/market, macro-genre, subgenre, speed/groove, language, production grammar
+- Reference DNA: high-level traits to preserve, elements to newly design, listening-situation adjustments, unique elements to avoid copying
+- Harmony research candidates: at least three real songs from the three allowed categories to use for chord-progression judgment, with each song's role. Partial overlap across tracks is allowed, but pairwise overlap of 50% or more is not allowed
 
-가상 보컬은 `V1`, `V2`, `V3` ID로 표시하고 다음 열을 사용하라.
+For virtual vocals, use the IDs `V1`, `V2`, and `V3`, and use the following columns.
 
-`역할 | 성별·연령 인상 | 음역·최저음 | 음색·발성 | 감정·발음 | 금지 특성 | 예상 곡 수`
+`Role | Gender/age impression | Range/lowest note | Timbre/voicing | Emotion/pronunciation | Forbidden traits | Expected track count`
 
-사용자에게 장르 좌표, 화성 조사 후보, 보컬 일관성과 금지 특성을 검토·승인하도록 요청하라.
+Ask the user to review and approve genre coordinates, harmony research candidates, vocal consistency, and forbidden traits.
 
-## 2. 10곡 전체 설계표
+## 2. 10-Track Full Design Table
 
-한 번에 정확히 10행을 제공하라.
+Provide exactly 10 rows at once.
 
-`# | 작업 제목 | 주제·서사 | 보컬 | 언어 | 에너지 | 장르 배합 | 목표 길이 | 공통핵심+곡별 악기 | 전주 | 드럼 변주 | 화성 근거·특이점 | 훅 | 감정 깊이·보컬 최저음 | Exclude 핵심`
+`# | Working title | Theme/narrative | Vocal | Language | Energy | Genre blend | Target length | Common core + track-specific instruments | Intro | Drum variation | Harmony evidence/feature | Hook | Emotional depth/vocal lowest note | Core exclusions`
 
-표를 작성하기 직전에 각 곡의 훅 전략을 무작위로 배정하고 `훅` 열에 `없음`, `반복`, `변형 후렴`, `마지막 1회`, `연주 훅` 중 추첨 결과와 곡별 구현 방향을 기록하라. 훅을 모든 곡에 강제로 만들지 마라.
+Immediately before writing the table, randomly assign each track's hook strategy. In the `Hook` column, record the draw result and track-specific implementation direction from: `none`, `repetition`, `varied chorus`, `final-only`, and `instrumental hook`. Do not force every track to have a hook.
 
-표 다음에 전주, 중심 악기 조합, 드럼 패턴, 화성 장치, 훅 콘셉트의 중복과 급격한 장르 도약 여부를 검사하라. 실제 프롬프트와 가사는 아직 생성하지 말고 전체 설계표의 승인을 요청하라.
+After the table, check for repetition in intro, central instrument combination, drum pattern, harmonic device, hook concept, and abrupt genre leaps. Do not create actual prompts or lyrics yet; ask for approval of the full design table.
 
-## 3. 한 곡의 실제 결과
+## 3. Actual Result For One Track
 
-설명을 길게 붙이지 말고 다음 형식을 사용하라.
+Use the following format without adding long explanations.
 
-출력 전에 다음 게이트를 모두 통과하라.
+Before output, pass all of the following gates.
 
-- 스타일 세계관이 앞서 승인된 곡과 유사한가?
-- 중심 장르가 같고 장르 변주는 인접 범위 안인가?
-- 시대·국가·언어 좌표가 플레이리스트 규칙과 일치하는가?
-- 속도와 그루브 범위가 앞 곡들과 유사한가?
-- 악기 역할과 조합이 앞 곡들과 충분히 다른가?
-- 멜로디 훅과 윤곽이 앞 곡들과 충분히 다른가?
-- 드럼 패턴, 필인, 악센트가 앞 곡들과 충분히 다른가?
-- 중복 레퍼런스의 역할과 적용 범위가 명시됐으며, 두 트랙의 화성 레퍼런스 중복률이 모두 50% 미만인가?
-- 긍정 스타일 용어가 금지사항과 같은 특성을 동시에 유도하지 않는가?
+- Is the style world similar to the previously approved tracks?
+- Is the central genre the same, and are genre variations within the adjacent range?
+- Do era, country, and language coordinates match the playlist rules?
+- Are speed and groove range similar to previous tracks?
+- Are instrument roles and combinations sufficiently different from previous tracks?
+- Are melodic hook and contour sufficiently different from previous tracks?
+- Are drum pattern, fills, and accents sufficiently different from previous tracks?
+- Are repeated-reference roles and application scope stated, and is harmony-reference overlap below 50% for every track pair?
+- Do positive style terms avoid inducing the same trait as any exclusion?
 
-하나라도 실패하면 결과를 노출하지 말고 다시 설계한 뒤 전 항목을 재검사하라. 의미 충돌은 부정어를 추가하는 방식으로 해결하지 말고 원인이 되는 긍정 표현을 제거하거나 비충돌 대체어로 다시 써라. 모두 통과한 경우에만 아래 결과를 제공하라.
+If any gate fails, do not reveal the result. Redesign and recheck every item. Resolve semantic conflicts by removing or replacing the positive expression that causes the issue, not by adding more negative wording. Only provide the result below when every gate passes.
 
-수정본을 출력할 때도 아래 형식 전체를 다시 제공하라. 기존 코드 블록의 일부 교체, 추가 문장, diff, 축약 패치만 제공하지 마라.
+When outputting a revision, provide the whole format below again. Do not provide only a replacement for part of an existing code block, an add-on sentence, a diff, or a shortened patch.
 
-### 곡 N — 제목
+### Track N - Title
 
 **Suno Prompt**
 
 ```text
-[Hard constraints: 반드시 지킬 핵심 금지사항. | Style: Suno가 가장 잘 이해하는 영어 중심의 원하는 스타일. 필요하면 끝에 낮은 우선순위 배제 조건 보완. 전체 최대 800자]
+[Hard constraints: critical exclusions that must be followed. | Style: desired style, primarily in English, written in terms Suno can understand best. If needed, add compressed low-priority exclusions at the end. Maximum 800 characters total.]
 ```
 
 **Lyrics**
 
 ```text
 [Intro]
-[필요하면 Instrumental, 마디 수, 진입 지침]
+[If needed: Instrumental, bar count, entry instruction]
 
 [Verse 1]
 ...
@@ -92,15 +92,15 @@
 ...
 ```
 
-장르에 필요하지 않은 섹션은 생략하거나 변형하라. 첫 16마디 보컬 금지인 곡은 Intro에 가사를 쓰지 마라. 스타일과 가사를 동시에 판단해 감정, 보컬 음역, 훅, 코드 전환, 구조를 일치시켜라.
+Omit or transform sections that are not needed for the genre. If a track forbids vocals for the first 16 bars, do not put lyrics in the Intro. Judge style and lyrics together so emotion, vocal range, hook, chord turns, and structure are aligned.
 
-## 통합 프롬프트 800자 압축 순서
+## 800-Character Integrated Prompt Compression Order
 
-1. 중복 수식어를 제거하라.
-2. 장르·시대·보컬·그루브·핵심 악기를 보존하라.
-3. 전주·드럼·화성·훅을 짧은 음악 용어로 압축하라.
-4. 구조·다이내믹·믹싱을 보존하라.
-5. 핵심 배제 조건을 첫머리의 `Hard constraints:`로 이동하고 낮은 우선순위 배제만 끝에서 압축하라.
-6. `Hard constraints`와 `Style`을 대조해 모순되는 단어·청감·연주 지시를 제거하고 긍정 대체어로 고쳐라.
+1. Remove duplicated modifiers.
+2. Preserve genre, era, vocal, groove, and core instruments.
+3. Compress intro, drums, harmony, and hook into short musical terms.
+4. Preserve structure, dynamics, and mix.
+5. Move core exclusions to the opening `Hard constraints:` and compress only low-priority exclusions at the end.
+6. Compare `Hard constraints` against `Style`, remove contradictory words/audible traits/performance directions, and replace them with positive alternatives.
 
-공백과 문장부호를 포함해 통합 프롬프트 800자를 넘기지 마라. 원하는 소리와 필수 배제 조건을 모두 보존하면서 700~790자를 목표로 하라. 별도 Exclude Styles 코드 블록을 출력하지 마라. 가사와 전체 설계표에는 800자 제한을 적용하지 마라.
+Do not exceed 800 characters including spaces and punctuation. Aim for 700-790 characters while preserving both the desired sound and mandatory exclusions. Do not output a separate Exclude Styles code block. Do not apply the 800-character limit to lyrics or the full design table.

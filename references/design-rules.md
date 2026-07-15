@@ -1,84 +1,84 @@
-# 음악 설계 규칙
+# Music Design Rules
 
-## 장르 좌표와 우선순위
+## Genre Coordinates And Priority
 
-장르를 `국가·지역 → 연대 → 시장·문화권 → 대장르 → 하위 장르 → 템포·그루브 → 언어 → 프로덕션 문법`으로 정의하라. 상위 장르명이 같아도 국가·연대·리듬·화성·악기·믹싱 문법이 다르면 별도 좌표로 취급하라.
+Define genre as `country/region -> era -> market/cultural zone -> macro-genre -> subgenre -> tempo/groove -> language -> production grammar`. Even when the high-level genre name is the same, treat it as a separate coordinate if country, era, rhythm, harmony, instrumentation, or mix grammar differs.
 
-우선순위는 다음과 같다.
+Use the following priority order.
 
-1. 최신 명시적 사용자 지시와 승인 조건
-2. Primary reference의 음악적 정체성
-3. 사용자가 승인한 Target render의 청감 증거
-4. 중심 장르와 인접 장르의 자연스러운 변주
-5. 청취 상황에 따른 미세 조정
+1. The user's latest explicit instruction and approved constraints
+2. The Primary reference's musical identity
+3. Audible evidence from a Target render approved by the user
+4. Natural variation within the central genre and adjacent genres
+5. Fine adjustment for the listening situation
 
-Target render는 Primary reference를 자동 교체하지 않는다. 사용자가 “이 결과가 목표”라고 지정한 속성에 한해 더 구체적인 증거로 사용하라.
+A Target render does not automatically replace the Primary reference. Use it as more specific evidence only for the traits the user has identified as the target.
 
-## 고정축과 변화축
+## Fixed Axes And Variation Axes
 
-전곡에 다음을 유지하라.
+Maintain the following across all tracks.
 
-- 전체 분위기와 스타일 세계관
-- 중심 장르 및 자연스러운 인접 장르 범위
-- 공통 핵심 악기 또는 프로덕션 질감 1~2개
-- 승인된 리드 보컬 명단과 믹싱·공간감 기준
-- 상황에 맞는 템포 권역
+- Overall mood and style world
+- Central genre and natural adjacent-genre range
+- 1-2 common core instruments or production textures
+- Approved lead-vocal roster and mix/space standards
+- A tempo zone appropriate to the situation
 
-곡마다 다음을 바꿔라.
+Change the following for each track.
 
-- 중심·보조 악기의 조합, 역할, 음역, 연주법
-- 전주의 길이와 첫 보컬 진입 방식
-- 킥·스네어·하이햇 패턴, 싱코페이션, 필인, 고스트 노트, 악센트
-- 코드 진행과 곡별 고유 화성 장치
-- 멜로디 훅, 리듬 윤곽, 서사와 이미지
+- Combination, role, register, and playing technique of central/supporting instruments
+- Intro length and first vocal-entry method
+- Kick, snare, hi-hat pattern, syncopation, fills, ghost notes, and accents
+- Chord progression and track-specific harmonic device
+- Melodic hook, rhythmic contour, narrative, and imagery
 
-같은 악기를 반복해도 역할·음역·이펙트·연주법 중 하나 이상을 바꿔라. 장르 배합은 기본적으로 중심 70~80%, 인접 20~30%를 사용하되 레퍼런스가 요구하면 조정하라. 연결 고리가 약한 장르로 도약하지 마라.
+Even when reusing the same instrument, change at least one of its role, register, effect, or playing technique. By default, use a genre blend of 70-80% central genre and 20-30% adjacent genre, unless the reference requires otherwise. Do not leap to a weakly related genre.
 
-## 화성 조사
+## Harmony Research
 
-각 곡의 장르 좌표에 가까운 실제 곡을 최소 3개 조사하라. 국가·연대·하위 장르·언어권을 가능한 한 맞추고, 접근 가능한 신뢰 자료에서 코드 또는 화성 특징을 확인하라. 확인할 수 없는 진행은 사실처럼 쓰지 말고 불확실성을 표시하라.
+Research at least three real songs close to each track's genre coordinate. Match country, era, subgenre, and language zone as closely as possible, and confirm chord or harmonic features from accessible reliable sources. Do not present unverifiable progressions as facts; mark uncertainty.
 
-공통 진행, 종지, 모달 특성, 베이스 이동, 섹션 전환을 비교해 새 진행을 설계하라. 한 곡의 정확한 진행을 통째로 복제하지 마라. 대리화음, 차용화음, 세컨더리 도미넌트, 전위, 턴어라운드, 선택적 전조 중 장르에 맞는 장치를 하나 이상 사용하라.
+Compare common progressions, cadences, modal traits, bass movement, and section transitions, then design a new progression. Do not copy one song's exact progression wholesale. Use at least one genre-appropriate device such as substitute chords, borrowed chords, secondary dominants, inversions, turnarounds, or optional modulation.
 
-화성 레퍼런스도 가사의 주 언어가 영어인 팝송, 일본어곡, 한국어곡에서만 선택하라. Primary·Supporting·일반 보조 레퍼런스의 중복은 허용한다. 곡별 화성 레퍼런스는 최소 3개를 사용하고 트랙 간 부분 중복만 허용하라. 두 트랙의 목록 `A`, `B`에 대해 `|A ∩ B| ÷ min(|A|, |B|)`가 50% 이상이면 충돌이다. 각 목록이 3곡이면 1곡 중복은 허용하고 2곡 중복은 불허한다. 수정 때마다 현재 곡을 다른 모든 곡과 쌍별 비교하고, 50% 이상이면 충돌을 만드는 화성 레퍼런스만 같은 허용 언어 풀의 다른 실제 곡으로 교체한 뒤 코드 설계를 다시 검증하라. 실존 곡명과 아티스트명은 설계 근거에만 쓰고 Suno Prompt에는 넣지 마라.
+Harmony references must also come only from songs whose primary lyric language is English, Japanese, or Korean. Overlap among Primary, Supporting, and general auxiliary references is allowed. Each track must use at least three harmony references, and only partial overlap is allowed across tracks. For two track lists `A` and `B`, an overlap of `|A intersection B| / min(|A|, |B|)` at 50% or above is a conflict. If each list contains three songs, one shared song is allowed and two shared songs are not. During every revision, compare the current track pairwise against all other tracks; if overlap is 50% or above, replace only the conflict-causing harmony references with different real songs from the allowed language pool, then revalidate the chord design. Use real song and artist names only as design evidence, not in the Suno Prompt.
 
-## 서로 다른 다이내믹 축
+## Separate Dynamic Axes
 
-다음 값을 하나로 합치지 마라.
+Do not collapse the following values into one.
 
-| 축 | 의미 | 기본 처리 |
+| Axis | Meaning | Default treatment |
 |---|---|---|
-| Energy 3·4·5 | 플레이리스트 안의 상대 추진력 | 4 중심, 3과 5 균형 |
-| Arrangement dynamics | 섹션별 음량·밀도·드럼·레이어 곡선 | 장르의 자연스러운 구조 유지 |
-| Vocal emotional depth | 보컬의 감정 표현 깊이 | 가사와 상황에 맞춤 |
-| Vocal lowest note | 리드 멜로디 최저음 | 승인된 음역 안에서 지정 |
+| Energy 3/4/5 | Relative momentum within the playlist | Center on 4, balance 3 and 5 |
+| Arrangement dynamics | Section-level loudness, density, drums, and layer curve | Preserve the genre's natural structure |
+| Vocal emotional depth | Depth of emotional expression in the vocal | Match lyrics and situation |
+| Vocal lowest note | Lowest note of the lead melody | Specify within the approved range |
 
-사용자가 “다이내믹=감정 깊이+보컬 최저음”이라고 정의하면 Arrangement dynamics는 건드리지 마라. `low emotional dynamic`을 `flat arrangement`, `no chorus lift`, `no fills`, `no layer growth`로 번역하지 마라. 이런 제한은 사용자가 편곡 축에 명시했을 때만 사용하라.
+If the user defines "dynamics" as emotional depth plus vocal lowest note, do not alter Arrangement dynamics. Do not translate `low emotional dynamic` into `flat arrangement`, `no chorus lift`, `no fills`, or `no layer growth`. Use those restrictions only when the user explicitly applies them to the arrangement axis.
 
-## 구조·훅·길이
+## Structure, Hook, And Length
 
-기본 서사는 `Intro → Verse 1 → Pre-Chorus → Chorus → Verse 2 → Pre-Chorus → Chorus → Bridge → Final Chorus → Outro`로 잡고 장르에 맞게 축약·변형하라. 감정선은 상황 제시 → 고조 → 핵심 메시지 → 전환/절정 → 해소로 설계하라.
+Use `Intro -> Verse 1 -> Pre-Chorus -> Chorus -> Verse 2 -> Pre-Chorus -> Chorus -> Bridge -> Final Chorus -> Outro` as the default narrative arc, then shorten or reshape it for the genre. Design the emotional arc as situation setup -> rise -> core message -> turn/climax -> resolution.
 
-10곡 전체 설계마다 각 곡의 훅 전략을 다음 후보에서 무작위로 하나씩 뽑아라.
+For every 10-track full design, randomly assign each track one hook strategy from the following candidates.
 
-- `훅 없음`: 코러스의 서사와 멜로디가 매번 전개됨
-- `반복 훅`: 짧은 문장이나 멜로디를 2~3회 회수
-- `변형 후렴`: 같은 중심 생각을 다른 가사·음역·리듬으로 변형
-- `마지막 1회 회수`: 제목이나 핵심 문장을 마지막 코러스에서만 사용
-- `연주 훅`: 가사 훅 없이 악기·리듬 모티프가 기억점을 담당
+- `No hook`: chorus narrative and melody develop each time
+- `Repeated hook`: a short line or melody returns 2-3 times
+- `Varied chorus`: the same central thought changes through lyric, register, or rhythm
+- `Final-only callback`: the title or key phrase appears only in the final chorus
+- `Instrumental hook`: an instrument or rhythmic motif carries the memorable point without a lyric hook
 
-한 전략이 10곡 중 3곡을 초과하거나 같은 전략이 3곡 연속 나오면 해당 곡만 다시 추첨하라. 선택 결과가 곡의 서사·장르와 충돌하면 임의로 다른 전략을 지정하지 말고 다시 추첨하라. 무작위 배정은 훅의 방식만 정하며 실제 문장·멜로디·리듬은 곡마다 새로 설계하라.
+If one strategy exceeds three tracks out of ten, or the same strategy appears three tracks in a row, reroll only that track. If the selected result conflicts with the track's narrative or genre, do not arbitrarily assign another strategy; reroll. The random assignment determines only the hook method. The actual line, melody, and rhythm must be newly designed for each track.
 
-반복 전략이 뽑힌 경우 반복마다 가사·음역·화음·리듬·악기 중 하나 이상을 변화시켜라. 절대 재생시간을 고정하지 말고 장르 표준 길이의 ±20%를 목표로 하라. BPM, 음절 밀도, 전주, 간주, 아웃트로와 선택된 훅 전략을 반영해 가사량을 계산하라.
+When a repeated strategy is selected, vary at least one of lyric, register, harmony, rhythm, or instrument on each repetition. Do not fix absolute runtime; target +/-20% of the genre-standard length. Calculate lyric volume from BPM, syllable density, intro, interlude, outro, and selected hook strategy.
 
-## 언어와 보컬
+## Language And Vocals
 
-영어를 기본값으로, 일본어와 한국어를 보조 선택지로 사용하라. 한 곡에는 한 언어만 쓰고 제목·훅·가사를 일치시켜라. 장르 좌표를 정할 때 언어도 함께 확정하라.
+Use English as the default, with Japanese and Korean as auxiliary options. Use only one language per track, and align title, hook, and lyrics. Confirm language as part of the genre coordinate.
 
-플레이리스트의 리드는 최대 3명이지만 사용자가 한 명을 지정하면 정확히 한 명만 사용하라. 한 곡의 리드는 단독이다. 백그라운드 코러스·하모니는 사용자 조건과 곡 설계에 따라 허용하되 대체 리드처럼 들리게 설계하지 마라.
+The playlist may have up to three leads, but if the user specifies one vocalist, use exactly that one. Each track has a single lead. Background chorus and harmony are allowed according to user constraints and track design, but do not design them so they sound like an alternate lead.
 
-## 금지 조건
+## Exclusions
 
-곡별 목적에 필요한 금지만 선택하라. 예: 특정 마디까지 보컬 금지, 특정 장르·악기·보컬 기법·믹싱 금지. 예시를 전곡 공통 규칙으로 자동 적용하지 마라.
+Choose only exclusions required for the track's purpose, such as no vocal before a specific bar, or excluding a specific genre, instrument, vocal technique, or mix trait. Do not automatically turn an example into a playlist-wide rule.
 
-금지 개념을 언급하는 것 자체가 결과를 유도한다고 사용자가 판단하면 그 단어를 긍정·부정 양쪽에서 모두 삭제하고 원하는 청감의 긍정 대체어만 사용하라. 금지 목록이 원하는 스타일 설명보다 길어지지 않게 하라.
+If the user decides that mentioning a forbidden concept itself induces the unwanted result, remove that word from both positive and negative wording and use only positive replacement language for the desired sound. Do not let the exclusion list become longer than the desired style description.

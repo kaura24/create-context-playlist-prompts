@@ -1,64 +1,64 @@
-# 프롬프트형 레퍼런스 프로토콜
+# Prompt-Shaped Reference Protocol
 
-## 프롬프트형 레퍼런스를 감지하라
+## Detect Prompt-Shaped References
 
-사용자 입력이 `Hard constraints`, `Style`, BPM, 박자표, 보컬, 악기, 화성, 믹싱, 금지 조건처럼 생성 프롬프트의 문법을 가지며 사용자가 이를 레퍼런스로 제공하면 `Prompt reference`로 기록하라. 실제 곡명이 없다는 이유로 Primary reference를 먼저 요구하지 마라.
+If the user's input has generation-prompt grammar such as `Hard constraints`, `Style`, BPM, time signature, vocal, instrumentation, harmony, mixing, or exclusions, and the user provides it as a reference, record it as a `Prompt reference`. Do not ask for a Primary reference first just because there is no real song title.
 
-프롬프트 안의 문장을 곧바로 최종 Suno Prompt, 10곡 공통 제약 또는 특정 곡의 승인값으로 간주하지 마라. 사용자가 명시한 사실과 음악적으로 추론한 내용을 분리하라.
+Do not treat sentences inside the prompt as the final Suno Prompt, playlist-wide constraints, or approved values for a specific track. Separate facts explicitly stated by the user from musical inferences.
 
-## 시드 설계로 분해하라
+## Decompose Into A Seed Design
 
-다음 축을 표로 정리하라.
+Organize the following axes in a table.
 
-- Context와 청취 장면
-- 국가·연대·시장·중심 장르·인접 장르
-- BPM·박자표·그루브
-- 리드 보컬의 음역·음색·성량·발음·프레이징
-- 공통 질감과 악기 역할
-- 드럼 패턴과 섹션 전환
-- 화성 언어와 종지
-- 전주·구조·훅 후보
-- 보컬과 악기의 공간감·믹싱
-- Hard constraints와 충돌 가능성
+- Context and listening scene
+- Country, era, market, central genre, and adjacent genres
+- BPM, time signature, and groove
+- Lead vocal range, timbre, power, pronunciation, and phrasing
+- Common texture and instrument roles
+- Drum pattern and section transitions
+- Harmonic language and cadences
+- Intro, structure, and hook candidates
+- Vocal/instrument space and mixing
+- Hard constraints and possible conflicts
 
-각 항목을 `명시`, `강한 추론`, `미확정`으로 표시하라. 프롬프트에 없는 감정·상황·문화권을 사실처럼 채우지 마라. 이 표는 10곡 설계를 위한 시드이며 아직 승인된 전체 설계가 아니다.
+Mark each item as `explicit`, `strong inference`, or `unconfirmed`. Do not invent emotions, situations, or cultural zones that are not present in the prompt. This table is only a seed for the 10-track design; it is not yet an approved full design.
 
-## 실제 관련 곡을 추천하라
+## Recommend Real Related Songs
 
-시드 설계와 가까운 실제 곡 5~8개를 조사해 추천하라. 추천 요청은 현재 존재하는 곡과 접근 가능한 근거에 의존하므로 인터넷 검색을 사용하고, 곡명·아티스트·발표 시기·추천 근거를 확인하라.
+Research and recommend 5-8 real songs close to the seed design. This recommendation depends on currently existing songs and accessible evidence, so use internet search and verify song title, artist, release timing, and recommendation rationale.
 
-추천 및 선택 가능한 레퍼런스 풀은 가사의 주 언어를 기준으로 다음 세 종류로만 제한하라.
+Limit the recommendation and selection pool to the following three categories, based on the primary lyric language.
 
-- `팝송`: 영어가 주 언어인 팝 계열 곡
-- `일본어곡`: 일본어가 주 언어인 곡
-- `한국어곡`: 한국어가 주 언어인 곡
+- `English-language pop songs`: pop-adjacent songs whose primary language is English
+- `Japanese-language songs`: songs whose primary language is Japanese
+- `Korean-language songs`: songs whose primary language is Korean
 
-아티스트의 국적이나 활동 시장이 아니라 실제 곡의 주 가사 언어로 분류하라. 다른 언어가 주 언어인 곡과 순수 연주곡은 추천·선택 풀에서 제외하라. 기본 추천표에는 세 종류를 모두 포함하되 곡 수를 기계적으로 동일하게 맞출 필요는 없다.
+Classify by the song's actual primary lyric language, not by the artist's nationality or active market. Exclude songs whose primary language is outside these three categories and exclude purely instrumental pieces. Include all three categories in the default recommendation table, but do not force equal counts mechanically.
 
-후보를 한 방향으로만 몰지 말고 다음 역할 중 필요한 축을 나눠라.
+Do not push all candidates in one direction. Split them across whichever roles are needed.
 
-- 중심 장르와 시대 문법
-- 보컬 프레이징과 음색
-- 악기 배치와 공간감
-- 드럼·그루브
-- 화성·종지
-- 청취 장면과 정서
+- Central genre and era grammar
+- Vocal phrasing and timbre
+- Instrument placement and space
+- Drums and groove
+- Harmony and cadences
+- Listening scene and emotion
 
-각 후보에 `일치 요소`와 `다른 요소`를 함께 적어 복제 위험을 낮춰라. 추천곡은 사용자가 선택하거나 승인하기 전까지 Primary·Supporting reference가 아니다. 추천 단계의 실존 아티스트명과 곡명은 분석 표에만 쓰고 생성용 Prompt에는 넣지 마라.
+For each candidate, include both `matching elements` and `different elements` to reduce copying risk. Recommended songs are not Primary or Supporting references until the user selects or approves them. Use real artist and song names at the recommendation stage only in analysis tables, never in the generation Prompt.
 
-일반 레퍼런스 중복을 허용하라. 같은 곡을 보컬·편곡 등 둘 이상의 분석 역할에 배정하거나, Primary와 Supporting 판단에 다시 사용하거나, 10곡 중 여러 곡의 조사 근거로 재사용할 수 있다. 표와 설계에서 반복 사용되는 역할과 적용 범위를 명시하라.
+Allow general-reference overlap. The same song may be assigned to multiple analysis roles such as vocal and arrangement, reused in Primary/Supporting judgment, or reused as research evidence for multiple tracks in the 10-track plan. In the tables and design, state each repeated song's role and scope of application.
 
-곡별 화성 레퍼런스에는 부분 중복만 허용하라. 두 트랙의 화성 레퍼런스 집합을 `A`, `B`라 할 때 중복률을 `|A ∩ B| ÷ min(|A|, |B|)`로 계산하고, 이 값이 `0.5` 이상이면 불허하라. 각 목록이 3곡이면 1곡 중복은 허용하지만 2곡 중복은 불허한다. 10곡 설계와 수정 단계에서 현재 트랙을 다른 모든 트랙과 쌍별 비교하라.
+Allow only partial overlap in per-track harmony references. For two tracks' harmony-reference sets `A` and `B`, compute overlap as `|A intersection B| / min(|A|, |B|)`; values of `0.5` or higher are not allowed. If each list has three songs, one overlap is allowed but two overlaps are not. During the 10-track design and revision stages, compare the current track pairwise against every other track.
 
-## 추천 후 분위기를 인터뷰하라
+## Interview Mood After Recommendations
 
-관련 곡 표를 먼저 보여준 다음 분위기를 가르는 질문을 한 번에 1~2개만 하라. 프롬프트에 이미 답이 있으면 반복해서 묻지 말고 다음처럼 결과를 크게 바꾸는 축만 확인하라.
+Show the related-song table first, then ask only 1-2 mood-disambiguation questions at a time. If the prompt already answers something, do not ask it again; confirm only axes that would materially change the result, such as:
 
-- 외로움·평온·긴장·해방 중 중심 정서
-- 어두움과 밝음의 비율
-- 정지감과 전진감
-- 보컬의 거리감과 감정 깊이
-- 후렴의 상승감과 편곡 밀도
-- 결말의 체념·회복·미해결 여부
+- central emotion among loneliness, calm, tension, and release
+- ratio of darkness to brightness
+- stillness versus forward motion
+- vocal distance and emotional depth
+- chorus lift and arrangement density
+- ending as resignation, recovery, or unresolved
 
-자유 서술을 확정 입력으로 인정하라. 분위기와 추천곡의 역할이 승인되면 장르 좌표·레퍼런스 DNA·보컬 승인 단계로 이동하고, 그 뒤에만 정확히 10곡의 전체 설계표를 작성하라.
+Treat free-form descriptions as confirmed input. Once the mood and recommendation roles are approved, move to genre coordinate, reference DNA, and vocal approval. Only after that should you create the exact 10-track full design table.
