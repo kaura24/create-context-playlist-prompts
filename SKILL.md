@@ -1,125 +1,83 @@
 ---
 name: create-context-playlist-prompts
-description: Design cohesive 10-track, reference-led playlists and complete Suno main prompts, exclusion prompts, and synchronized title/lyrics for all ten tracks through a track-by-track listening, revision, and approval cycle. Use for situation-specific playlists, prompt-form reference parsing, related-song discovery, reference-song style translation, vocalist consistency, adjacent-genre variation, user-supplied audio target matching, failed-render diagnosis, prompt revision, playlist reset, or project history tracking.
+description: Create, test, and revise cohesive 10-track Suno playlist plans, canonical TrackSpec manifests, paste-ready basic prompts, absolute-exclusion prompts, and complete 3-4 minute lyrics with the title outside the lyric block. Use for context-led playlists, prompt or song references, vocalist and production continuity, Track 1 pilots, batch track production, generated-audio diagnosis, duration verification, targeted revisions, resets, and project history.
 ---
 
 # Create Context Playlist Prompts
 
-Preserve the reference's high-level musical identity, but newly design the melody, hooks, exact chord progression, lyrics, and signature riffs. Get approval for the full 10-track design, then complete Tracks 1-10 through controlled three-prompt listening and approval cycles.
+Create original songs that preserve only high-level reference traits. Design new melodies, hooks, chord progressions, lyrics, and signature parts.
 
-## Read The Required References
+## Autonomy Contract
 
-- New playlist and full design: [references/design-rules.md](references/design-rules.md), [references/structure-patterns.md](references/structure-patterns.md), [references/output-contract.md](references/output-contract.md). Read all three before drafting the 10-track table.
-- Current-track compilation: [references/suno-style-guide.md](references/suno-style-guide.md), [references/output-contract.md](references/output-contract.md), [references/vocal-audio-engineering-protocol.md](references/vocal-audio-engineering-protocol.md). Read all three before outputting the current track's controlled prompt set.
-- Prompt-shaped references such as `Hard constraints` and `Style`: [references/prompt-reference-protocol.md](references/prompt-reference-protocol.md)
-- Audio files, generated renders, and "make it feel like this" comparisons: [references/audio-reference-protocol.md](references/audio-reference-protocol.md)
-- Vocal naturalness, AI-like vocal symptoms, A/B/C sound comparison, and mix engineering: [references/vocal-audio-engineering-protocol.md](references/vocal-audio-engineering-protocol.md)
-- Revision, regeneration, reset, and common-requirement propagation: [references/revision-protocol.md](references/revision-protocol.md)
+Produce a useful artifact in the first response whenever the request contains enough direction to make safe defaults.
 
-## Convert Prompt-Shaped References Into Seeds First
+- Treat explicit user facts as fixed.
+- Fill noncritical gaps with a reversible assumption and list it in an Assumption Ledger.
+- Ask one concise question only when conflicting core requirements, ownership or upload permission, or an irreplaceable choice would materially change the result.
+- Use a single design checkpoint. In the default fast mode, make it informational and continue to the Track 1 pilot in the same response. Pause there only when the user requests approval-sensitive work.
+- Treat missing research as a confidence limit, not a workflow blocker. Use literal observed structure, label provisional claims, and continue without invented citations.
+- Keep drafting later tracks when render evidence is unavailable. Mark them draft-validated and reserve render-verified for listened audio.
 
-When the user provides a reference prompt that combines `Hard constraints`, `Style`, tempo, vocal, instrumentation, and exclusions, do not use it directly as a finished output or as approved constraints. First decompose it into a seed design that separates explicit values from inferred values, then research and recommend real related songs, then interview the user about the desired mood in batches of 1-2 questions. Do not finalize recommended songs as Primary or Supporting references until the user selects them. At this stage, do not output the 10-track design or any final Main Prompt, Exclusion Prompt, or Title And Lyrics.
+## Read Only What The Task Needs
 
-Reference candidates and final selected songs must come only from `English-language pop songs`, `Japanese-language songs`, or `Korean-language songs`, classified by the primary lyric language. The same song may be reused across analysis axes, reference roles, and playlist tracks. However, two tracks' harmony-reference lists must not overlap by 50% or more. Follow the classification and calculation rules in [references/prompt-reference-protocol.md](references/prompt-reference-protocol.md).
+- New playlist, reset, or revision state: [workflow](references/workflow.md)
+- Ten-track map, form, harmony, duration, and vocal design: [design rules](references/design-rules.md)
+- TrackSpec and exact user-facing fields: [output contract](references/output-contract.md)
+- Suno field routing and supported vocabulary: [Suno style guide](references/suno-style-guide.md)
+- Semantic scoring, audio diagnosis, and render verification: [quality and render protocol](references/quality-and-render-protocol.md)
 
-## 1. Separate Work State From Evidence Roles
+## Run The Default Path
 
-Keep the following roles explicit and do not mix them.
+1. Extract Context, reference roles, language, lead-vocal identity, central genre, absolute exclusions, and requested delivery scope.
+2. Record only material inferred values in the Assumption Ledger.
+3. Create a concise Playlist Contract and exactly 10 differentiated track rows.
+4. Create the canonical TrackSpec for Track 1 before writing prose output.
+5. Compile one Basic Prompt from the TrackSpec's eight ordered prompt fields.
+6. Write one Absolute Exclusion Prompt, one title outside all code blocks, and one complete Lyrics block.
+7. Validate the complete set. Repair deterministic failures internally, with a maximum of three full validation attempts.
+8. Label the result PLAN PASS or draft-validated. Continue with the requested tracks without waiting unless the user selected listen-each-track mode.
 
-- `Primary reference`: the main axis for style and musical grammar
-- `Supporting references`: songs that support harmony or arrangement judgment
-- `Target render`: an output audio render the user has approved as "like this"
-- `Rejected render`: a failed result used only to extract failure causes, not to imitate
-- `Context`: weather, time, place, activity, emotion, and other listening situations
-- `Approved constraints`: user-approved rules for vocal, language, exclusions, length, and similar constraints
+## Keep One Canonical TrackSpec
 
-Prioritize the user's latest explicit instruction. Keep the Primary reference as the default style axis, but when the user provides a Target render, apply that audio first for the disputed audible traits. Mark unverifiable musical facts as inferences.
+Store title, language, BPM, metrical pulses per bar, target duration, ordered sections with bars and vocal flags, all eight prompt_fields, and exclusion_prompt in the TrackSpec. Recompile from it after revisions; do not stitch old prose fragments together.
 
-## 2. Do Not Ask What Has Already Been Answered
+Plan every song for 180-240 seconds. Prefer a 195-225 second center to absorb generation variance. Calculate:
 
-Organize country/region, era, market/cultural zone, macro-genre, subgenre, tempo/groove, language, and production grammar hierarchically. Ask only about blanks that would materially change the result, and ask only 1-2 questions at a time. Treat the user's free-form descriptions as confirmed input.
+    planned seconds = total bars × metrical pulses per bar × 60 / BPM
 
-Always keep the following scopes separate.
+Treat lyric-volume checks as duration readiness, not proof of actual runtime. Write every repeated lyric in full and supply enough vocal lines and language-specific lyric units for the planned vocal bars. Confirm actual duration only from a rendered audio file.
 
-- `Energy`: relative playlist momentum, levels 3, 4, and 5
-- `Arrangement dynamics`: section-level loudness, density, drum intensity, and layer movement
-- `Vocal emotional depth`: the emotional depth conveyed by the vocal
-- `Vocal lowest note`: the lowest note in the lead vocal melody
+## Compile One Paste-Ready Track Set
 
-If the user defines dynamics as "emotional depth and vocal lowest note," apply only that definition. Do not expand it into flattened arrangement, no chorus lift, no fills, or no layer growth. Only constrain arrangement dynamics separately when the user explicitly asks for that.
+Treat TrackSpec as the single source of truth. Compile the Basic Prompt deterministically from its eight prompt_fields. Keep the title outside every fenced block so Title, Styles, Exclude, and Lyrics can be pasted into separate Suno fields.
 
-## 3. Get Approval For Reference DNA, Form Evidence, Playlist Contract, Vocal Design, And Engineering
+Use these Basic Prompt fields exactly once and in this order:
 
-From the references, extract genre grammar, era feel, tempo range, groove, vocal phrasing, instrument roles, production density, and space. Present the high-level traits to preserve separately from the lower-level elements to newly design. Use real artist and song names only as analysis evidence, never in the generation prompt.
+1. Style
+2. Feel
+3. Tempo/Groove
+4. Vocal
+5. Instrumentation
+6. Harmony
+7. Form/Flow
+8. Production/Mix
 
-Approve the research contracts in dependency order rather than as one bundled decision: Genre And Reference DNA, Playlist Sound Contract, Form Evidence And Variation Envelopes, Vocal And Engineering Contract, then Initial Harmony Candidate Pool. Ask for no more than 1-2 decisions at a time. When an approved upstream contract changes, revalidate only its dependent downstream artifacts and preserve unaffected approvals.
+Keep the Basic Prompt at 800 characters or fewer and the Absolute Exclusion Prompt at 100 characters or fewer. Put positive audible direction in Basic Prompt, only unusable traits in Absolute Exclusion Prompt, and only structural tags plus complete lyrics in Lyrics. Emit exactly three fenced `text` blocks under `**기본프롬프트**`, `**절대불가프롬프트**`, and `**가사**`; place the title between the second and third fields as `### <title>`.
 
-Translate the Context into a concise `Playlist sound contract` with four parts: listening use case, Common sound, Track variation pool, and Drift boundaries. Treat the use case as a shared audible function, not as a substitute for genre. Get approval for this contract before designing the 10 tracks.
+## Revise Narrowly
 
-Before designing track structures, use [references/structure-patterns.md](references/structure-patterns.md) to research and get approval for the genre's Form Evidence Table and each form's Permitted Variation Envelope. Use only established sources, verified real-song structures, or forms explicitly supplied and approved by the user. Never invent, rename, or assume a form. If no established name is verified, preserve only the literal observed sequence and its limited evidence scope.
+Default feedback scope to track-local. Promote a rule to playlist-lock only when the user explicitly applies it broadly or repeated render evidence supports it. Recompile only affected fields, then validate the whole current-track set. Preserve unaffected tracks and history.
 
-Offer 1-3 virtual lead vocal candidates for the user to choose from. If the user specifies one vocalist, keep exactly that one lead across all tracks and do not create additional IDs or alternate leads. Each track has a single lead; background chorus and harmony are allowed within the approved scope. Get approval for the vocal's range, lowest note, timbre, power, pronunciation, phrasing, emotional depth, and forbidden traits.
+Treat an explicit playlist or project reset as a full active-state reset while preserving archived history. Treat a current-track rewrite as local.
 
-Use [references/vocal-audio-engineering-protocol.md](references/vocal-audio-engineering-protocol.md) to approve a Vocal And Engineering Contract. Translate vague feedback such as `AI-like voice` into audible symptoms involving identity, performance, pronunciation, capture, mix, or generation artifacts. Use those symptoms as controlled A/B/C axes and update the contract from every listening round.
+## Verify Before Delivery
 
-## 4. Separate The Full Design From Actual Outputs
+When a shell is available, run:
 
-Create the full design table for exactly 10 tracks at once. Keep the approved Common sound, central genre, adjacent genres, and tempo zone while giving every track a clear differentiator. For each row, select only an approved evidence-backed form or literal sequence, keep its invariants, and write the exact sequence, Structural Flow Contract, Lyrics tag sequence, and development signature inside its Permitted Variation Envelope. Then design the new section-level chord progression and draw a compatible hook strategy using [references/design-rules.md](references/design-rules.md). Do not choose a hook before the structure it must serve.
+    python3 <skill-dir>/scripts/validate_track_output.py <draft.md> --spec <track-spec.json>
 
-Do not impose a universal quota for form count or reuse. Follow the approved genre evidence even when one form recurs. Create differences only through the form's permitted sequence, repeat, entry, contrast, peak, and ending ranges plus track-specific instruments, drums, harmony, and narrative. Each track must stand alone while serving the shared use case. Before the full design is approved, do not create actual prompts or lyrics.
+For supplied rendered audio, also run:
 
-After approval, start with Track 1 and process one track per approval cycle. For each track, output exactly:
+    python3 <skill-dir>/scripts/validate_render.py <render-file>
 
-1. `Main Prompt A`, `Main Prompt B`, and `Main Prompt C`: three controlled alternatives, each primarily English and at most 800 characters
-2. `Exclusion Prompt`: one shared set of absolute prohibitions, at most 100 characters
-3. `Title And Lyrics`: one shared approved title and complete lyric containing the exact approved bracketed tags such as `[Verse]` and `[Chorus]`
-
-Keep title, lyrics, shared Exclusion Prompt, exact Lyrics tag sequence, lead-vocal identity, language, absolute constraints, and central genre fixed across A/B/C. Treat the shared Lyrics tag sequence as a common scaffold, not as a demand for identical musical realization. Keep feel, harmony, form development, Structural Flow, arrangement, and production similar rather than identical within their approved envelopes, while varying only 1-2 declared axes. This similarity envelope makes those fields eligible for bounded variation; it does not require every eligible field to change in every round. Keep non-test-axis fields semantically at the approved baseline and do not rewrite them merely to create artificial difference. State the controlled differences briefly in Korean.
-
-Wait for the user to generate and listen to the three versions. Record which Main Prompt is closest and which audible traits worked or failed. Classify every correction as `track-local`, `next-track-only`, `remaining-common`, or `project-global`. A chosen A/B/C preference defaults to `remaining-common` unless it depends on the current track's unique design or the user narrows its scope. Store scoped entries in the `Calibration Lock`; expire `next-track-only` after the next track is approved, and never revise an approved track without explicit user instruction. If none is acceptable, create a new controlled set of three Main Prompts while preserving the shared Exclusion Prompt and Title And Lyrics unless the feedback targets those fields. Continue until all ten tracks have approved final results.
-
-Follow the format and checking gates in [references/output-contract.md](references/output-contract.md).
-
-## 5. Compile The Current Track's Controlled Prompt Set Atomically
-
-Do not stitch old sentences together. Write the current track's three Main Prompt alternatives, one shared Exclusion Prompt, and one shared Title And Lyrics from the approved design and latest requirements. Apply the public platform contract in [references/suno-style-guide.md](references/suno-style-guide.md) to field routing and wording, and apply the private project contract from the user's latest instructions, approved design, cumulative Calibration Lock, and this skill to the actual musical content and operating limits. Validate A/B/C as a controlled comparison and validate the track against approved tracks and the remaining 10-track plan.
-
-Compile the Main Prompt in this order.
-
-1. `Style:` country, era, market, and central/adjacent genre
-2. `Feel:` listening use case, emotional tone, arousal, brightness/darkness, and sense of motion
-3. `Tempo/Groove:` BPM, meter, pocket, and rhythmic feel
-4. `Vocal:` the single lead's range, timbre, phrasing, pronunciation, emotional depth, and naturalness target
-5. `Instrumentation:` instrument roles, register, texture, and arrangement behavior
-6. `Harmony:` the new section-level chord progression, mode/color, cadence, and bass motion
-7. `Form/Flow:` the approved form, section functions, buildup/release path, hook return, peak, and ending in plain prose
-8. `Production/Mix:` mic distance, room, stereo placement, transients, dynamics, tonal balance, and processing
-9. Necessary positive guardrails that would break the result if omitted
-
-Compile the Exclusion Prompt separately from only the absolute prohibited styles, instruments, vocal traits, performance behaviors, or mix traits. Keep it at 100 characters or fewer, including spaces and punctuation. Do not count it toward the Main Prompt's 800-character limit. Route positive requirements from a source `Hard constraints` section into the Main Prompt and route explicit prohibitions into the Exclusion Prompt.
-
-Do not place title, lyric lines, artist/song names, citations, absolute prohibitions, or bracketed Lyrics tags such as `[Verse]` or `[Chorus]` in any Main Prompt. A plain structural phrase such as `restrained chorus lift` is allowed; the bracketed `[Chorus]` header belongs only inside Title And Lyrics.
-
-If positive wording in the Main Prompt would induce a trait prohibited by the Exclusion Prompt, remove or replace the conflicting positive wording instead of adding more exclusions. If the user says to remove a concept entirely because mentioning it induces the unwanted result, delete that concept from both prompts and describe only the desired replacement. Do not duplicate exclusions across both prompts.
-
-## 6. Diagnose Revisions Before Regenerating
-
-When there is a failed result, do not revise by guessing from the prompt alone. First classify the difference between the approved design and the actual result. If the user has already described the cause and goal specifically, revise without additional interview. Ask 1-2 diagnostic questions only when the issue is ambiguous.
-
-For revisions, rebuild all three Main Prompt alternatives when the comparison axis or audible target changes. Rebuild the shared Exclusion Prompt or Title And Lyrics only when feedback targets that field, but always revalidate the entire current-track set. Do not provide partial patches, add-on sentences, or diffs. Apply each approved correction only according to its recorded scope and expiry; do not alter already approved tracks unless the user asks.
-
-## 7. Treat Reset As A Full Reset
-
-When the user explicitly says `reset`, `full reset`, `complete reset`, `project reset`, or `playlist reset`, do not treat it as current-track regeneration. Preserve only the history, and clear all active Context, the Playlist sound contract, form evidence, variation envelopes, Structural Flow Contracts, Lyrics tag sequences, Vocal And Engineering Contract, Calibration Lock, all reference roles, Target/Rejected renders, Approved constraints, genre/language/vocal/voicing, common rules, 10-track design and approval, selected revision track, and all result sets.
-
-After reset, restart with the initial interview for a new project. When enough high-level inputs are gathered, present exactly 10 tracks in a new full design table and wait for approval. Before approval, do not output any final Main Prompt, Exclusion Prompt, or Title And Lyrics.
-
-`Redesign the current track from scratch` is not a reset; it is a track-level full regeneration. Do not confuse the two. Follow the detailed state transitions in [references/revision-protocol.md](references/revision-protocol.md).
-
-## 8. Complete Checks And Records
-
-If the controlled-comparison, current-track, or cross-track check fails, do not reveal the result. Internally redesign and rerun all checks. After every track's three Main Prompts, wait for comparative listening feedback, approve one direction, and update the Calibration Lock; do not generate the next track automatically. Keep the completion ledger until all ten tracks have approved final results.
-
-When a shell and scratch file are available, draft the complete current-track output in a temporary Markdown file and run `python3 <this-skill-directory>/scripts/validate_track_output.py <draft-file> --expected-tags <comma-separated-approved-tag-sequence>`. Do not reveal or copy the draft into the response until the validator passes. If it fails, rewrite the complete set and rerun it; never patch only the reported fragment. When no shell is available, apply the same checks manually and target 650-700 Main Prompt characters for margin.
-
-When a workspace is available, use `PROJECT_HISTORY.md` as the index and `history/YYYY-MM-DD__topic-slug.md` as the detailed record. Accumulate approved designs, Main Prompt A/B/C versions, the chosen Main Prompt, shared Exclusion Prompt and Title And Lyrics versions, audible feedback, Calibration Lock updates, failure causes, check results, and state. Do not overwrite prior versions.
+Apply the semantic rubric in the quality protocol after PLAN PASS. Never claim audible quality, language delivery, mix quality, or actual 3-4 minute runtime without render evidence.

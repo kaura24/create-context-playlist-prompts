@@ -1,4 +1,4 @@
 interface:
-  display_name: "Context Playlist Prompts"
-  short_description: "Create cohesive Suno playlist prompts"
-  default_prompt: "Use $create-context-playlist-prompts to plan ten cohesive songs, then create three controlled main prompts, one shared exclusion prompt, and one title/lyrics per track."
+  display_name: "Suno Playlist Studio"
+  short_description: "Build and validate cohesive 10-track Suno playlists"
+  default_prompt: "Use $create-context-playlist-prompts to design a cohesive 10-track Suno playlist and a validated Track 1 pilot with one basic prompt, one absolute-exclusion prompt, an outside title, and complete 3-4 minute lyrics in separate code blocks."

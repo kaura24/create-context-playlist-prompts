@@ -1,0 +1,30 @@
+{
+  "title": "빗소리의 여백",
+  "language": "ko",
+  "target_duration_seconds": 207,
+  "bpm": 88,
+  "metrical_pulses_per_bar": 4,
+  "sections": [
+    {"tag": "Intro", "bars": 4, "vocal": false},
+    {"tag": "Verse", "bars": 12, "vocal": true},
+    {"tag": "Pre-Chorus", "bars": 8, "vocal": true},
+    {"tag": "Chorus", "bars": 8, "vocal": true},
+    {"tag": "Verse", "bars": 12, "vocal": true},
+    {"tag": "Pre-Chorus", "bars": 8, "vocal": true},
+    {"tag": "Chorus", "bars": 8, "vocal": true},
+    {"tag": "Bridge", "bars": 4, "vocal": true},
+    {"tag": "Chorus", "bars": 8, "vocal": true},
+    {"tag": "Outro", "bars": 4, "vocal": false}
+  ],
+  "prompt_fields": {
+    "Style": "Contemporary Korean warm neo-soul, intimate indie-pop.",
+    "Feel": "Rainy Seoul night reading; calm, amber, inward, slow drift.",
+    "Tempo/Groove": "88 BPM, 4/4; laid-back swing, soft syncopation.",
+    "Vocal": "Female alto A3-E5; smoky-warm legato, natural Korean, restrained, stable formants, phrase breaths.",
+    "Instrumentation": "Rhodes lead, low round bass, muted guitar replies, brushes, rim clicks, faint rain texture; airy.",
+    "Harmony": "A/F#m; Verse Bm9-E13-Amaj9-C#7sus4; Pre Dmaj9-Dm9-C#m7-F#7alt; Chorus Bm9-E13-C#m7-F#7sus4; Bridge Dmaj9-E/D-C#m7-F#7alt.",
+    "Form/Flow": "4-bar Rhodes intro; sparse verse; brushes enter in pre; choruses widen; voice/Rhodes bridge; gentle final peak; 4-bar outro.",
+    "Production/Mix": "Close dry lead, gentle dynamics, dark plate, wide keys/guitar, soft transients, warm tape."
+  },
+  "exclusion_prompt": "male lead, duet, rap, trap hi-hats, EDM drops, soprano belting, harsh distortion"
+}

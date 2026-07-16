@@ -1,111 +1,98 @@
-# Music Design Rules
+# Playlist And Track Design Rules
 
-## Contents
+Design from shared function to individual track detail. Keep the source of truth in TrackSpec, not in a wide conversational table.
 
-- Genre coordinates and priority
-- Playlist sound contract
-- Harmony research
-- Dynamic axes
-- Hook and length
-- Language and vocals
-- Exclusions
+## Create The Playlist Contract
 
-## Genre Coordinates And Priority
+Summarize:
 
-Define genre as `country/region -> era -> market/cultural zone -> macro-genre -> subgenre -> tempo/groove -> language -> production grammar`. Even when the high-level genre name is the same, treat it as a separate coordinate if country, era, rhythm, harmony, instrumentation, or mix grammar differs.
+| Use case | Common sound | Variation pool | Drift boundaries |
+|---|---|---|---|
 
-Use the following priority order.
+Keep the listening function, central genre, arousal range, core vocal identity, and mix world coherent. Vary narrative, form realization, groove detail, instrumentation role, harmony, hook method, peak, and ending.
 
-1. The user's latest explicit instruction and approved constraints
-2. The Primary reference's musical identity
-3. Audible evidence from a Target render approved by the user
-4. Natural variation within the central genre and adjacent genres
-5. Fine adjustment for the listening situation
+## Create A Concise 10-Track Map
 
-A Target render does not automatically replace the Primary reference. Use it as more specific evidence only for the traits the user has identified as the target.
+Use exactly 10 rows:
 
-## Translate Context Into A Playlist Sound Contract
+| # | Working title | Scene and emotional turn | Genre/groove | Form and planned duration | Differentiator | Vocal/language | Status |
+|---|---|---|---|---|---|---|---|
 
-Treat Context as the listening function and emotional setting, not as a genre label. Before designing tracks, summarize the approved contract as:
+Make every row audibly distinct without changing the Playlist Contract. Do not burden this overview with every chord, source, or engineering field; keep those details in each TrackSpec.
 
-`Use case | Common sound | Track variation pool | Drift boundaries`
+## Design Each Track In One Direction
 
-### Common Sound
+Use this order:
 
-Maintain the following across all tracks.
+1. Choose the form or literal section sequence.
+2. Define each section's musical job and transition.
+3. Assign bars, vocal flags, entry, peak, and ending.
+4. Map functions to supported Lyrics tags.
+5. Choose a compatible hook strategy.
+6. Design section-level harmony and bass motion.
+7. Assign instrument, drum, vocal, and mix behavior.
 
-- The listening purpose, overall mood, and arousal envelope
-- Central genre and natural adjacent-genre range
-- Brightness, density, transient character, and arrangement-dynamics range
-- 1-2 common core instruments or production textures
-- Approved lead-vocal roster, vocal distance, and mix/space standards
-- A tempo and groove zone appropriate to the situation
+Never rename an observed sequence as an established form. When evidence is weak, retain the literal sequence and label it provisional. Research is required only for claims about real songs, established form names, release facts, or source-specific harmony.
 
-Translate contextual language into audible traits only when the link is justified. For example, rain may support muted transients, close ambience, or restrained high-frequency detail, but it does not require literal rain sound effects.
+## Plan 3-4 Minute Structure
 
-### Track Variation
+Set target_duration_seconds inside 180-240 seconds and prefer 195-225 seconds. Record BPM and the metrical pulse represented by BPM. Calculate planned time from total bars.
 
-Change the following within the Common sound.
+Example at 96 BPM with four metrical pulses per bar:
 
-- Track-specific scene, narrative, imagery, and emotional turn
-- Evidence-backed form, permitted section sequence, development, peak placement, and ending behavior
-- Combination, role, register, effect, and playing technique of central/supporting instruments
-- Intro length, first vocal entry, and transition method
-- Kick, snare, hi-hat pattern, syncopation, fills, ghost notes, and accents
-- Chord progression, harmonic color, and track-specific harmonic device
-- Melodic contour, rhythmic motif, and compatible hook strategy
+    84 bars × 4 × 60 / 96 = 210 seconds
 
-Even when reusing the same instrument, change at least one of its role, register, effect, or playing technique. Set the central/adjacent genre balance from the approved references and Playlist sound contract; do not impose a universal blend ratio or leap to a weakly related genre.
+Allocate bars across intro, vocal sections, instrumental contrast, return, and ending. Keep the bar plan and lyric tags aligned. A valid bar plan proves planned duration only; generated audio establishes actual duration.
 
-Before approval, ask internally: `Does each track vary within the shared use case rather than reinventing it?` If not, revise the track or the contract before showing the table.
+## Size Complete Lyrics
 
-## Harmony Research
+Write every return in full. Avoid shorthand such as x2 or repeat chorus. Give every vocal section performable lines and enough language-specific lyric units for its bars.
 
-Research at least three real songs close to each track's genre coordinate. Match country, era, subgenre, and language zone as closely as possible, and confirm chord or harmonic features from accessible reliable sources. Do not present unverifiable progressions as facts; mark uncertainty.
+- English: count words as a conservative unit.
+- Korean: count Hangul syllable blocks; allow limited English hook words.
+- Japanese: count kana and kanji characters as a conservative readiness proxy.
 
-Compare common progressions, cadences, modal traits, bass movement, and section transitions, then design a new progression. Do not copy one song's exact progression wholesale. Use devices such as substitute chords, borrowed chords, secondary dominants, inversions, turnarounds, or modulation only when the approved genre evidence and track direction support them; do not force one merely to create difference.
+Use density bounds as a structural plausibility check. Treat pronunciation, melisma, held notes, rap density, and actual timing as semantic or render evidence.
 
-Record the newly designed progression section by section, including its cadence or bass-motion logic. Use one baseline progression for Main Prompt A. Keep it for B/C unless harmony is a declared comparison axis; if it is, design bounded related variants inside the approved harmonic language and record the exact difference.
+## Design Original Harmony And Hooks
 
-Harmony references must also come only from songs whose primary lyric language is English, Japanese, or Korean. Overlap among Primary, Supporting, and general auxiliary references is allowed. Each track must use at least three harmony references, and only partial overlap is allowed across tracks. For two track lists `A` and `B`, an overlap of `|A intersection B| / min(|A|, |B|)` at 50% or above is a conflict. If each list contains three songs, one shared song is allowed and two shared songs are not. During every revision, compare the current track pairwise against all other tracks; if overlap is 50% or above, replace only the conflict-causing harmony references with different real songs from the allowed language pool, then revalidate the chord design. Use real song and artist names only as design evidence, not in the Main Prompt or Exclusion Prompt.
+Use references to learn high-level harmonic language, cadence behavior, groove, and arrangement roles. Create a new section-level progression rather than copying one reference wholesale. Use borrowed color, inversions, secondary dominants, modal motion, or modulation only when the genre and narrative support it.
 
-## Separate Dynamic Axes
+Do not require an arbitrary number of harmony references. When the task explicitly requests research, record each reference's role and avoid overusing one source across the playlist.
 
-Do not collapse the following values into one.
+Choose one compatible hook approach:
 
-| Axis | Meaning | Default treatment |
-|---|---|---|
-| Energy 3/4/5 | Relative momentum within the playlist | Center on 4, balance 3 and 5 |
-| Arrangement dynamics | Section-level loudness, density, drums, and layer curve | Preserve the genre's natural structure |
-| Vocal emotional depth | Depth of emotional expression in the vocal | Match lyrics and situation |
-| Vocal lowest note | Lowest note of the lead melody | Specify within the approved range |
+- no recurring hook
+- repeated hook
+- varied return
+- final-only callback
+- instrumental hook
 
-If the user defines "dynamics" as emotional depth plus vocal lowest note, do not alter Arrangement dynamics. Do not translate `low emotional dynamic` into `flat arrangement`, `no chorus lift`, `no fills`, or `no layer growth`. Use those restrictions only when the user explicitly applies them to the arrangement axis.
+Change the actual line, melody concept, rhythm, and harmony for every track.
 
-## Hook And Length
+## Keep Dynamic Axes Separate
 
-Approve the Form Evidence Table, Permitted Variation Envelopes, Structural Flow Contracts, and exact Lyrics tag sequences through [structure-patterns.md](structure-patterns.md). Then choose every track's supported form, sequence, and development signature before assigning its hook. The structure constrains compatible hook candidates; hook randomization must not invent a form, cross an approved variation boundary, add an unsupported section, or rewrite the sequence.
+- Playlist energy: relative momentum among tracks
+- Arrangement dynamics: section density, loudness, drums, and layers
+- Vocal emotional depth: performed emotional intensity
+- Vocal lowest note: lower boundary of the lead melody
 
-Build each track's eligible hook pool from its approved form, Structural Flow Contract, genre evidence, and narrative. When more than one strategy is equally valid, draw one from the eligible pool and record the draw. Use these implementation categories only when compatible:
+Apply feedback only to the named axis. Do not flatten arrangement movement because the user requests restrained vocal emotion.
 
-- `No hook`: the narrative and melody develop without a recurring focal phrase
-- `Repeated hook`: a short line or melody returns 2-3 times
-- `Varied return`: the same central thought changes through lyric, register, harmony, or rhythm at each return
-- `Final-only callback`: the title or key phrase appears only in the closing return or section
-- `Instrumental hook`: an instrument or rhythmic motif carries the memorable point without a lyric hook
+## Keep One Lead Identity
 
-Do not impose a global hook-strategy quota. If a drawn result conflicts with the form, flow, genre, or narrative, remove it from the eligible pool and draw again. The draw determines only the hook method. The actual line, melody, and rhythm must be newly designed for each track.
+Use one lead per track. If the user names one vocalist or voice identity, retain it across the playlist. Keep background harmony subordinate. Specify range, lowest note, register, timbre, phrasing, pronunciation, breath behavior, emotion, mic distance, and rejected artifacts only to the level supported by the request.
 
-When a repeated strategy is selected, vary at least one of lyric, register, harmony, rhythm, or instrument on each repetition. Do not fix absolute runtime; target +/-20% of the genre-standard length. Calculate lyric volume from BPM, syllable density, approved section sequence, intro, interlude, outro, and selected hook strategy.
+Translate vague terms such as natural or non-AI into audible behavior: stable formants, continuous vowels, clear consonants, phrase-level breaths, controlled vibrato, centered lead, and preserved phrase dynamics.
 
-## Language And Vocals
+## Check Playlist Coherence
 
-Use the user-approved language and only one language per track; align title, hook, and lyrics. If language is missing and materially affects the genre coordinate, ask rather than applying a universal default.
+Before compilation, verify:
 
-The playlist may have up to three leads, but if the user specifies one vocalist, use exactly that one. Each track has a single lead. Background chorus and harmony are allowed according to user constraints and track design, but do not design them so they sound like an alternate lead.
-
-## Exclusions
-
-Choose only absolute exclusions required for the track's purpose, such as no vocal before a specific bar, or excluding a specific genre, instrument, vocal technique, or mix trait. Do not automatically turn an example into a playlist-wide rule. The final Exclusion Prompt must fit within 100 characters including spaces and punctuation.
-
-If the user decides that mentioning a forbidden concept itself induces the unwanted result, remove that word from both the Main Prompt and Exclusion Prompt and use only positive replacement language for the desired sound. Do not duplicate an exclusion across both prompts.
+- Every track serves the use case.
+- Every differentiator changes an audible dimension.
+- Form, hook, and lyric tags agree.
+- Planned time is 180-240 seconds.
+- Harmony, groove, and instrument roles avoid accidental duplicates.
+- Language and lead identity match TrackSpec.
+- New musical content does not copy a source's protected expression.
