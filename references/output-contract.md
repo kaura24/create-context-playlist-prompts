@@ -1,6 +1,30 @@
-# TrackSpec And Output Contract
+# PlaylistSpec, TrackSpec, And Output Contract
 
-Build one canonical TrackSpec, then compile the three paste-ready user fields from it.
+For a 10-track playlist, build one canonical PlaylistSpec, validate all bindings, then compile the three paste-ready user fields from the requested bound TrackSpec. An explicit single-track request may use one standalone TrackSpec.
+
+## StructureCatalog And StructurePlan
+
+Keep reusable genre rules and request-specific choices in separate UTF-8 JSON files.
+
+- StructureCatalog has exactly `catalog_revision`, `genre_coordinate`, `evidence`, `genre_lanes`, `variation_envelopes`, and `diversity_contract`.
+- Evidence sources are HTTP(S) URLs or explicit `user:` approvals. Every lane, envelope, and candidate references registered evidence IDs.
+- Each envelope lists permitted complete fingerprints and forbidden partial combinations. Never generate a Cartesian product from independent option lists.
+- StructurePlan has exactly `catalog_revision`, `candidate_pool`, `selection_contract`, and `selections`; its revision must match the catalog.
+- `candidate_pool.minimum_count` is at least 50. The catalog owns distinct-value minimums and minimum pairwise distances for both the pool and selected 10.
+
+Every complete fingerprint contains `genre_lane`, `form_id`, `section_sequence`, `recurrence`, `entry`, `contrast_peak`, `transition_interlude`, `ending`, and `hook_return`. Every selection copies the complete candidate projection into `locked_fingerprint` and may open only non-structural axes.
+
+## PlaylistSpec Binding Schema
+
+Use schema version `1.0`, the catalog's exact revision, one Playlist Contract, the complete validated StructurePlan, and exactly 10 bound tracks:
+
+    {"schema_version":"1.0", "catalog_revision":"genre-catalog-v1",
+     "playlist_contract":{"use_case":"...", "common_sound":"...", "variation_pool":"...", "drift_boundaries":"..."},
+     "structure_plan":{"...":"complete plan"},
+     "tracks":[{"track_id":1, "slot_id":"S01", "candidate_id":"C017",
+                "locked_fingerprint":{"...":"exact selection"}, "spec":{"...":"TrackSpec below"}}]}
+
+Track IDs must be exactly 1 through 10. Each binding must match its selection's slot, candidate, and fingerprint. A compiled TrackSpec moves its selection beyond `reserved`; its exact section-tag sequence and `Form/Flow` must match the selected structure.
 
 ## TrackSpec Schema
 
@@ -35,7 +59,7 @@ Use UTF-8 JSON with exactly these required top-level keys:
       "exclusion_prompt": "screamed vocals, trap hats, brickwall limiting"
     }
 
-Use language values `en`, `ko`, or `ja`. Give every section exactly `tag`, `bars`, and `vocal`. Include every ordered Basic Prompt field in `prompt_fields`, once, with a nonempty single-line value. Keep `exclusion_prompt` as a string, including an empty string when no trait is absolutely forbidden. Keep the TrackSpec beside the draft when a workspace is available.
+Use language values `en`, `ko`, or `ja`. Give every section exactly `tag`, `bars`, and `vocal`. Include every ordered Basic Prompt field in `prompt_fields`, once, with a nonempty single-line value. Keep `exclusion_prompt` as a string, including an empty string when no trait is absolutely forbidden. Keep the PlaylistSpec, catalog, and draft together when a workspace is available. For a standalone single-track request, keep the TrackSpec beside the draft.
 
 ## Emit Three Exact Code Blocks
 
@@ -73,7 +97,7 @@ Join the eight `prompt_fields` in this exact order as `Field: value`, separated 
 7. Form/Flow: supported sequence, entry, build, peak, return, and ending in prose
 8. Production/Mix: performance, dynamics, mic distance, space, stereo, tone, and processing
 
-Keep the compiled prompt at 800 Unicode characters or fewer. Field names and values must match TrackSpec verbatim. Keep artist names, song titles, citations, lyric lines, absolute prohibitions, and bracketed tags out of this block. Use only positive audible direction.
+Keep the compiled prompt at 800 Unicode characters or fewer. Field names and values must match TrackSpec verbatim. Keep artist names, song titles, citations, lyric lines, absolute prohibitions, and bracketed structural tags out of this block. Use only positive audible direction. Structure tags belong only in Lyrics.
 
 ## Compile The Absolute Exclusion Prompt
 
@@ -93,14 +117,20 @@ The bar plan must calculate to 180-240 seconds. Prefer 195-225 seconds to absorb
 
 ## Validate Atomically
 
-Write the complete output to a draft file and run:
+For playlist track `N`, validate the entire bound playlist and its compiled output:
+
+    python3 scripts/validate_playlist_spec.py playlist-spec.json --catalog structure-catalog.json
+    python3 scripts/validate_track_output.py draft.md --playlist playlist-spec.json --catalog structure-catalog.json --track N
+
+For an explicit single-track request only:
 
     python3 scripts/validate_track_output.py draft.md --spec track-spec.json
 
 `PLAN PASS` requires:
 
 - exactly the three requested fenced fields in order, with the title outside them
-- prompt field order, exact TrackSpec traceability, and character caps
+- catalog, slot, fingerprint, section-sequence, and Form/Flow binding
+- prompt field order, exact bound-TrackSpec traceability, and character caps
 - a matching absolute-exclusion field
 - matching title, language, tags, vocal flags, and complete repeated lyrics
 - a 180-240 second target and bar-plan calculation

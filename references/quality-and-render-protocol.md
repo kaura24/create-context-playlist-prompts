@@ -16,7 +16,7 @@ Continue drafting after PLAN PASS when audio is unavailable. State the evidence 
 
 ## Run Deterministic Checks
 
-Use validate_track_output.py with TrackSpec. Treat these as hard failures:
+Use validate_track_output.py in playlist-bound mode; use standalone TrackSpec mode only for a single-track request. Treat these as hard failures:
 
 - malformed or contradictory TrackSpec
 - planned duration outside 180-240 seconds
@@ -43,7 +43,7 @@ After PLAN PASS, score each item from 0 to 2:
 | Main versus Exclusion | conflict | redundant | clean field separation |
 | Playlist fit and differentiation | off-contract | weak distinction | cohesive and clearly differentiated |
 
-Require at least 13 of 16, no zero, and a score of 2 for design traceability, field routing and output contract, and structure and lyric completion. Use a fresh independent reviewer when available. Revise the canonical TrackSpec or affected field, then rescore.
+Require at least 13 of 16, no zero, and a score of 2 for design traceability, field routing and output contract, and structure and lyric completion. Use a fresh independent reviewer when available. Revise the canonical PlaylistSpec binding or affected field, then rescore.
 
 This score tests prompt and lyric quality. It does not prove the generator will follow every instruction.
 

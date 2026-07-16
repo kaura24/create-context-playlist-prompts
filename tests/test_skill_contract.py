@@ -55,6 +55,21 @@ class SkillContractTests(unittest.TestCase):
         self.assertNotIn("Main Prompt A", text)
         self.assertNotIn("A/B/C", text)
 
+    def test_ten_track_workflow_requires_bound_playlist_spec(self) -> None:
+        skill_text = SKILL.read_text(encoding="utf-8")
+        workflow_text = (REFERENCES / "workflow.md").read_text(encoding="utf-8")
+        output_text = (REFERENCES / "output-contract.md").read_text(
+            encoding="utf-8"
+        )
+        combined = "\n".join((skill_text, workflow_text, output_text))
+        self.assertIn("PlaylistSpec", combined)
+        self.assertIn("validate_playlist_spec.py", combined)
+        self.assertIn("--playlist", combined)
+        self.assertIn("--catalog", combined)
+        self.assertIn("--track", combined)
+        self.assertIn("single-track request", combined)
+        self.assertNotIn("Enforce Structural Diversity When Requested", skill_text)
+
     def test_skill_uses_progressive_disclosure_and_valid_links(self) -> None:
         skill_text = SKILL.read_text(encoding="utf-8")
         self.assertLessEqual(len(skill_text.splitlines()), 160)

@@ -6,8 +6,8 @@ Keep the workflow small, resumable, and useful before any listening cycle.
 
 | State | Required artifact | Exit condition |
 |---|---|---|
-| INTAKE | Playlist Contract and Assumption Ledger | Core requirements are coherent |
-| PILOT | 10-track map and validated Track 1 set | Track 1 reaches PLAN PASS |
+| INTAKE | Playlist Contract, Assumption Ledger, and catalog revision | Core requirements are coherent |
+| PILOT | Validated StructurePlan, PlaylistSpec, 10-track map, and Track 1 set | All bindings pass and Track 1 reaches PLAN PASS |
 | CALIBRATE | Render observations and scoped correction | Optional audible question is resolved |
 | PRODUCE | Requested remaining track specs and outputs | Requested scope is draft-validated |
 | COMPLETE | Delivery ledger | Requested scope is verified to the available evidence level |
@@ -41,14 +41,17 @@ Present the following together:
 
 1. Playlist Contract: use case, common sound, variation pool, and drift boundaries
 2. Assumption Ledger
-3. Concise 10-track map
-4. Track 1 TrackSpec summary
+3. Catalog revision, 50+ candidate result, and 10 reserved structural slots
+4. Concise 10-track map and PlaylistSpec summary
+5. Track 1 bound-TrackSpec summary
 
 In fast mode, treat this as an informational checkpoint and include the Track 1 prompt set in the same response. In approval-sensitive mode, hold the Track 1 compilation until that checkpoint is accepted.
 
-## Add A Structural Plan Only When Diversity Is A Requirement
+## Bind Structure Before Every Ten-Track Playlist
 
-For a request that explicitly requires genre-bound structural variety, create the 50-candidate pool and ten-slot reservation before the TrackSpec checkpoint. Keep every candidate evidence-linked and fingerprint-unique. Validate complete permitted combinations, forbidden combinations, allocation, and locked slot fingerprints with `scripts/validate_structure_plan.py`; do not create a TrackSpec from an unvalidated slot.
+Keep reusable genre knowledge in a versioned StructureCatalog and request-specific choices in a StructurePlan. Before the design checkpoint, create at least 50 permitted candidates and reserve exactly 10 slots. The catalog owns evidence, genre lanes, complete permitted combinations, forbidden combinations, distinct-value minimums, and pairwise-distance minimums; the plan owns candidates, allocation, and selections.
+
+Validate the plan with `scripts/validate_structure_plan.py <plan> --catalog <catalog>`. Then create exactly 10 bound TrackSpecs in PlaylistSpec and run `scripts/validate_playlist_spec.py <playlist> --catalog <catalog>`. A TrackSpec cannot choose a different sequence or `Form/Flow` after binding. An explicit single-track request may bypass PlaylistSpec and validate one standalone TrackSpec.
 
 ## Degrade Evidence Without Halting
 
@@ -68,7 +71,7 @@ When external research is unavailable, avoid factual claims that need a citation
 |---|---|
 | fast | Validate Track 1, then draft the requested remaining tracks without waiting for renders |
 | listen-each-track | Pause only at actual render comparison points |
-| revision | Recompile the affected TrackSpec and current output |
+| revision | Update the affected PlaylistSpec binding and recompile the current output |
 
 Label every track with one status:
 
@@ -87,7 +90,7 @@ Use:
 - playlist-lock: remaining tracks after explicit broad instruction or repeated evidence
 - project-global: all tracks only when explicitly requested
 
-Update the canonical TrackSpec first. Recompile only dependent fields, then run the complete current-track validator. Keep already accepted tracks unchanged unless the user names them.
+Update the canonical PlaylistSpec first. Recompile only dependent fields, then run the playlist validator and complete current-track validator. Keep already accepted tracks unchanged unless the user names them.
 
 ## Diagnose Render Feedback
 

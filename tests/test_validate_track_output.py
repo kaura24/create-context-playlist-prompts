@@ -9,6 +9,8 @@ import tempfile
 import unittest
 from pathlib import Path
 
+from tests.test_validate_playlist_spec import valid_playlist_spec
+
 
 ROOT = Path(__file__).resolve().parents[1]
 VALIDATOR = ROOT / "scripts" / "validate_track_output.py"
@@ -66,6 +68,11 @@ def render_output(spec: dict[str, object], lyrics: str | None = None) -> str:
 """
 
 
+def bound_track_lyrics() -> str:
+    lines = "\n".join("조용한밤길따라" for _ in range(12))
+    return f"[Intro]\n\n[Verse]\n{lines}\n\n[Outro]"
+
+
 class TrackOutputValidatorTests(unittest.TestCase):
     def run_validator(
         self,
@@ -97,6 +104,47 @@ class TrackOutputValidatorTests(unittest.TestCase):
                 text=True,
             )
 
+    def run_playlist_validator(
+        self,
+        text: str,
+        catalog: dict[str, object],
+        playlist: dict[str, object],
+        track: int = 1,
+    ) -> subprocess.CompletedProcess[str]:
+        with (
+            tempfile.NamedTemporaryFile(
+                "w", encoding="utf-8", suffix=".md"
+            ) as output_handle,
+            tempfile.NamedTemporaryFile(
+                "w", encoding="utf-8", suffix=".json"
+            ) as playlist_handle,
+            tempfile.NamedTemporaryFile(
+                "w", encoding="utf-8", suffix=".json"
+            ) as catalog_handle,
+        ):
+            output_handle.write(text)
+            output_handle.flush()
+            json.dump(playlist, playlist_handle, ensure_ascii=False)
+            playlist_handle.flush()
+            json.dump(catalog, catalog_handle, ensure_ascii=False)
+            catalog_handle.flush()
+            return subprocess.run(
+                [
+                    sys.executable,
+                    str(VALIDATOR),
+                    output_handle.name,
+                    "--playlist",
+                    playlist_handle.name,
+                    "--catalog",
+                    catalog_handle.name,
+                    "--track",
+                    str(track),
+                ],
+                capture_output=True,
+                check=False,
+                text=True,
+            )
+
     def assert_rejected(
         self,
         text: str,
@@ -115,6 +163,23 @@ class TrackOutputValidatorTests(unittest.TestCase):
         self.assertIn("planned_duration=207.3s", result.stdout)
         self.assertIn("language=ko", result.stdout)
         self.assertIn("duration-ready", result.stdout)
+
+    def test_playlist_mode_binds_output_to_selected_structure(self) -> None:
+        catalog, playlist = valid_playlist_spec()
+        spec = playlist["tracks"][0]["spec"]
+        text = render_output(spec, bound_track_lyrics())
+        result = self.run_playlist_validator(text, catalog, playlist)
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn("scope=playlist-track-1", result.stdout)
+
+    def test_playlist_mode_rejects_trackspec_drift_from_slot(self) -> None:
+        catalog, playlist = valid_playlist_spec()
+        spec = playlist["tracks"][0]["spec"]
+        spec["prompt_fields"]["Form/Flow"] = "Unbound replacement flow"
+        text = render_output(spec, bound_track_lyrics())
+        result = self.run_playlist_validator(text, catalog, playlist)
+        self.assertEqual(result.returncode, 1)
+        self.assertIn("Form/Flow does not match selected slot", result.stdout)
 
     def test_golden_output_has_three_blocks_and_outside_title(self) -> None:
         self.assertEqual(GOLDEN_OUTPUT.count(FENCE + "text"), 3)
@@ -187,6 +252,15 @@ class TrackOutputValidatorTests(unittest.TestCase):
         self.assert_rejected(
             render_output(spec),
             "duplicated in Basic Prompt",
+            spec,
+        )
+
+    def test_rejects_bracketed_structure_tag_in_exclusion_prompt(self) -> None:
+        spec = copy.deepcopy(GOLDEN_SPEC)
+        spec["exclusion_prompt"] = "[Chorus], trap hats"
+        self.assert_rejected(
+            render_output(spec),
+            "bracketed text reserved for Lyrics",
             spec,
         )
 

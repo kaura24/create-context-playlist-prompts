@@ -1,6 +1,6 @@
 ---
 name: create-context-playlist-prompts
-description: Create, test, and revise cohesive 10-track Suno playlist plans, canonical TrackSpec manifests, paste-ready basic prompts, absolute-exclusion prompts, and complete 3-4 minute lyrics with the title outside the lyric block. Use for context-led playlists, prompt or song references, vocalist and production continuity, Track 1 pilots, batch track production, generated-audio diagnosis, duration verification, targeted revisions, resets, and project history.
+description: Create, test, and revise cohesive 10-track Suno playlists from versioned genre-structure catalogs, pools of at least 50 structurally distinct candidates, and one bound PlaylistSpec. Compile paste-ready prompts, exclusions, and complete 3-4 minute lyrics with Suno section tags only in Lyrics and the title outside every code block. Use for context-led playlists, Track 1 pilots, batch production, audio diagnosis, revision, resets, and project history.
 ---
 
 # Create Context Playlist Prompts
@@ -22,7 +22,7 @@ Produce a useful artifact in the first response whenever the request contains en
 
 - New playlist, reset, or revision state: [workflow](references/workflow.md)
 - Ten-track map, form, harmony, duration, and vocal design: [design rules](references/design-rules.md)
-- TrackSpec and exact user-facing fields: [output contract](references/output-contract.md)
+- PlaylistSpec, TrackSpec, and exact user-facing fields: [output contract](references/output-contract.md)
 - Suno field routing and supported vocabulary: [Suno style guide](references/suno-style-guide.md)
 - Semantic scoring, audio diagnosis, and render verification: [quality and render protocol](references/quality-and-render-protocol.md)
 
@@ -30,34 +30,35 @@ Produce a useful artifact in the first response whenever the request contains en
 
 1. Extract Context, reference roles, language, lead-vocal identity, central genre, absolute exclusions, and requested delivery scope.
 2. Record only material inferred values in the Assumption Ledger.
-3. Create a concise Playlist Contract and exactly 10 differentiated track rows.
-4. Create the canonical TrackSpec for Track 1 before writing prose output.
-5. Compile one Basic Prompt from the TrackSpec's eight ordered prompt fields.
-6. Write one Absolute Exclusion Prompt, one title outside all code blocks, and one complete Lyrics block.
-7. Validate the complete set. Repair deterministic failures internally, with a maximum of three full validation attempts.
-8. Label the result PLAN PASS or draft-validated. Continue with the requested tracks without waiting unless the user selected listen-each-track mode.
+3. Select or build a versioned genre-structure catalog with traceable evidence, complete variation envelopes, and explicit diversity minimums.
+4. Generate at least 50 permitted candidates, measure structural distance, reserve exactly 10, and validate the StructurePlan against that catalog.
+5. Create one PlaylistSpec that binds all 10 reserved slots to all 10 TrackSpecs before compiling any playlist track.
+6. Validate the PlaylistSpec, then compile the requested track from its bound TrackSpec.
+7. Emit one Basic Prompt, one Absolute Exclusion Prompt, one outside title, and one complete Lyrics block. Validate them in playlist-bound mode.
+8. Repair deterministic failures internally, with a maximum of three full validation attempts, then label the result PLAN PASS or draft-validated.
 
-## Keep One Canonical TrackSpec
+## Keep One Canonical PlaylistSpec
 
-Store title, language, BPM, metrical pulses per bar, target duration, ordered sections with bars and vocal flags, all eight prompt_fields, and exclusion_prompt in the TrackSpec. Recompile from it after revisions; do not stitch old prose fragments together.
+For a 10-track playlist, PlaylistSpec is the single source of truth. It contains the Playlist Contract, validated StructurePlan, and exactly 10 slot-bound TrackSpecs. Each binding repeats `slot_id`, `candidate_id`, and `locked_fingerprint`; its TrackSpec section sequence and plain-prose `Form/Flow` must match the selected slot. A standalone TrackSpec is allowed only for an explicit single-track request.
 
+Each nested TrackSpec stores title, language, BPM, metrical pulses per bar, target duration, ordered sections with bars and vocal flags, all eight `prompt_fields`, and `exclusion_prompt`. Recompile from it after revisions; do not stitch old prose fragments together.
 Plan every song for 180-240 seconds. Prefer a 195-225 second center to absorb generation variance. Calculate:
 
     planned seconds = total bars × metrical pulses per bar × 60 / BPM
 
 Treat lyric-volume checks as duration readiness, not proof of actual runtime. Write every repeated lyric in full and supply enough vocal lines and language-specific lyric units for the planned vocal bars. Confirm actual duration only from a rendered audio file.
 
-## Enforce Structural Diversity When Requested
+## Enforce Structural Diversity For Every Playlist
 
-When the user requires genre-conditioned structural diversity, build the structural plan before compiling TrackSpecs. Record at least 50 evidence-linked candidate fingerprints across approved genre lanes, then reserve exactly ten different candidates for the playlist. A fingerprint contains genre lane, form, exact section sequence, recurrence, entry, contrast/peak, transition/interlude, ending, and hook-return behavior.
+Before every 10-track playlist, build the structural plan from a separately versioned catalog. Record at least 50 evidence-linked candidate fingerprints across approved genre lanes, then reserve exactly 10 candidates that meet catalog-owned distinct-value and pairwise-distance minimums. A fingerprint contains genre lane, form, exact section sequence, recurrence, entry, contrast/peak, transition/interlude, ending, and hook-return behavior.
 
 Each variation envelope must enumerate its permitted complete fingerprint combinations and any forbidden partial combinations. Do not treat a Cartesian product of separately plausible options as valid. Each reserved slot must copy its candidate as `locked_fingerprint`; after design it may move through `reserved`, `consumed-by-design`, `active`, and `finalized` with an approved plain-prose `main_prompt_form_flow`.
 
-Run `python3 <skill-dir>/scripts/validate_structure_plan.py <plan.json>` before using a structural plan. A failure blocks TrackSpec compilation for that plan. The TrackSpec still supplies Suno output: use plain prose in `Form/Flow`, put bracketed structural tags only in Lyrics, and keep the title outside every code block.
+Run the catalog, plan, and playlist validators in order. Do not compile a playlist track until all 10 bindings pass. Use plain prose in `Form/Flow`; put bracketed Suno structural tags only in Lyrics, never in the Basic Prompt or Exclusion Prompt, and keep the title outside every code block.
 
 ## Compile One Paste-Ready Track Set
 
-Treat TrackSpec as the single source of truth. Compile the Basic Prompt deterministically from its eight prompt_fields. Keep the title outside every fenced block so Title, Styles, Exclude, and Lyrics can be pasted into separate Suno fields.
+Compile the Basic Prompt deterministically from the bound TrackSpec's eight `prompt_fields`. Keep the title outside every fenced block so Title, Styles, Exclude, and Lyrics can be pasted into separate Suno fields.
 
 Use these Basic Prompt fields exactly once and in this order:
 
@@ -80,7 +81,13 @@ Treat an explicit playlist or project reset as a full active-state reset while p
 
 ## Verify Before Delivery
 
-When a shell is available, run:
+For a 10-track playlist, run:
+
+    python3 <skill-dir>/scripts/validate_structure_plan.py <plan.json> --catalog <catalog.json>
+    python3 <skill-dir>/scripts/validate_playlist_spec.py <playlist-spec.json> --catalog <catalog.json>
+    python3 <skill-dir>/scripts/validate_track_output.py <draft.md> --playlist <playlist-spec.json> --catalog <catalog.json> --track <N>
+
+For an explicit single-track request only, run:
 
     python3 <skill-dir>/scripts/validate_track_output.py <draft.md> --spec <track-spec.json>
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate one paste-ready track output against its canonical TrackSpec."""
+"""Validate one paste-ready track output against a bound or standalone TrackSpec."""
 
 from __future__ import annotations
 
@@ -71,11 +71,26 @@ HAN = re.compile(r"[\u3400-\u9fff]")
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
     parser.add_argument("output", type=Path)
-    parser.add_argument(
+    source = parser.add_mutually_exclusive_group(required=True)
+    source.add_argument(
         "--spec",
         type=Path,
-        required=True,
-        help="Canonical TrackSpec JSON",
+        help="Standalone TrackSpec JSON for an explicit single-track request",
+    )
+    source.add_argument(
+        "--playlist",
+        type=Path,
+        help="Canonical ten-track PlaylistSpec JSON",
+    )
+    parser.add_argument(
+        "--catalog",
+        type=Path,
+        help="Versioned structure catalog required with --playlist",
+    )
+    parser.add_argument(
+        "--track",
+        type=int,
+        help="Bound track number required with --playlist",
     )
     return parser.parse_args()
 
@@ -373,6 +388,10 @@ def validate_exclusion(
         errors.append(
             f"Absolute Exclusion Prompt is {len(exclusion)} characters; maximum is 100"
         )
+    if BRACKETED_TEXT.search(exclusion):
+        errors.append(
+            "Absolute Exclusion Prompt contains bracketed text reserved for Lyrics"
+        )
     for trait in (item.strip() for item in exclusion.split(",")):
         if trait and len(trait) >= 4 and trait.casefold() in main.casefold():
             errors.append(
@@ -523,7 +542,33 @@ def main() -> int:
     except OSError as exc:
         print(f"ERROR: Cannot read output: {exc}")
         return 1
-    spec = load_spec(args.spec, errors)
+
+    validation_scope = "single-track"
+    spec: dict[str, Any] | None = None
+    if args.playlist is not None:
+        if args.catalog is None or args.track is None:
+            print("ERROR: --playlist requires both --catalog and --track")
+            return 1
+        from validate_playlist_spec import load_and_validate
+
+        playlist_errors, tracks = load_and_validate(args.playlist, args.catalog)
+        errors.extend(playlist_errors)
+        bound_track = tracks.get(args.track)
+        if bound_track is None:
+            errors.append(f"PlaylistSpec has no bound track {args.track}")
+        else:
+            bound_spec = bound_track.get("spec")
+            if isinstance(bound_spec, dict):
+                spec = bound_spec
+            else:
+                errors.append(f"Bound track {args.track} has no valid TrackSpec")
+        validation_scope = f"playlist-track-{args.track}"
+    else:
+        if args.catalog is not None or args.track is not None:
+            print("ERROR: --catalog and --track are valid only with --playlist")
+            return 1
+        spec = load_spec(args.spec, errors)
+
     validation_errors, measurements = validate(text, spec)
     errors.extend(validation_errors)
     if errors:
@@ -533,6 +578,7 @@ def main() -> int:
 
     print(
         "PLAN PASS: "
+        f"scope={validation_scope}, "
         f"planned_duration={measurements['planned_duration']:.1f}s, "
         f"language={measurements['language']}, "
         f"lyric_lines={measurements['lyric_lines']}, "

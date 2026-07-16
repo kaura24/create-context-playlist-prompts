@@ -1,6 +1,6 @@
 # Playlist And Track Design Rules
 
-Design from shared function to individual track detail. Keep the source of truth in TrackSpec, not in a wide conversational table.
+Design from shared function to individual track detail. Keep the source of truth in PlaylistSpec, not in a wide conversational table.
 
 ## Create The Playlist Contract
 
@@ -18,17 +18,17 @@ Use exactly 10 rows:
 | # | Working title | Scene and emotional turn | Genre/groove | Form and planned duration | Differentiator | Vocal/language | Status |
 |---|---|---|---|---|---|---|---|
 
-Make every row audibly distinct without changing the Playlist Contract. Do not burden this overview with every chord, source, or engineering field; keep those details in each TrackSpec.
+Derive every row from one of the 10 bound PlaylistSpec tracks. Make rows audibly distinct without changing the Playlist Contract. Keep detailed chords, sources, and engineering fields in the nested TrackSpecs.
 
 ## Design Each Track In One Direction
 
 Use this order:
 
-1. Choose the form or literal section sequence.
-2. Define each section's musical job and transition.
-3. Assign bars, vocal flags, entry, peak, and ending.
-4. Map functions to supported Lyrics tags.
-5. Choose a compatible hook strategy.
+1. Consume one validated reserved slot; do not choose a new form or sequence.
+2. Preserve its locked fingerprint and write matching plain-prose `Form/Flow`.
+3. Define each section's musical job and transition.
+4. Assign bars and vocal flags without changing the locked tag sequence.
+5. Realize the locked hook-return behavior with original material.
 6. Design section-level harmony and bass motion.
 7. Assign instrument, drum, vocal, and mix behavior.
 
@@ -90,6 +90,7 @@ Translate vague terms such as natural or non-AI into audible behavior: stable fo
 Before compilation, verify:
 
 - Every track serves the use case.
+- All 10 TrackSpecs remain bound to distinct validated slots.
 - Every differentiator changes an audible dimension.
 - Form, hook, and lyric tags agree.
 - Planned time is 180-240 seconds.

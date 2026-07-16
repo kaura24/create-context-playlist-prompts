@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import copy
 import json
 import re
 import sys
@@ -22,6 +23,20 @@ from structure_contract import (
 
 MINIMUM_CANDIDATES = 50
 TRACK_COUNT = 10
+CATALOG_KEYS = {
+    "catalog_revision",
+    "genre_coordinate",
+    "evidence",
+    "genre_lanes",
+    "variation_envelopes",
+    "diversity_contract",
+}
+PLAN_KEYS = {
+    "catalog_revision",
+    "candidate_pool",
+    "selection_contract",
+    "selections",
+}
 SECTION_MENTION = re.compile(
     r"\b(" + "|".join(re.escape(section) for section in sorted(SUPPORTED_SECTIONS)) + r")\b"
 )
@@ -30,6 +45,12 @@ SECTION_MENTION = re.compile(
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
     parser.add_argument("plan", type=Path)
+    parser.add_argument(
+        "--catalog",
+        type=Path,
+        required=True,
+        help="Versioned genre structure catalog JSON",
+    )
     return parser.parse_args()
 
 
@@ -113,7 +134,7 @@ def validate_requirements(
             )
 
 
-def validate(plan: Any) -> list[str]:
+def _validate_combined(plan: Any) -> list[str]:
     errors: list[str] = []
     if not isinstance(plan, dict):
         return ["Plan root must be a JSON object"]
@@ -510,6 +531,156 @@ def validate(plan: Any) -> list[str]:
     return errors
 
 
+def validate_root_keys(
+    value: Any,
+    expected: set[str],
+    label: str,
+    errors: list[str],
+) -> bool:
+    if not isinstance(value, dict):
+        errors.append(f"{label} root must be a JSON object")
+        return False
+    missing = sorted(expected - set(value))
+    unknown = sorted(set(value) - expected)
+    if missing:
+        errors.append(f"{label} is missing keys: {', '.join(missing)}")
+    if unknown:
+        errors.append(f"{label} has unknown keys: {', '.join(unknown)}")
+    return not missing and not unknown
+
+
+def fingerprint_distance(left: dict[str, Any], right: dict[str, Any]) -> int:
+    return sum(
+        canonical(left.get(field)) != canonical(right.get(field))
+        for field in STRUCTURAL_DIMENSIONS
+    )
+
+
+def validate_minimum_distance(
+    items: list[dict[str, Any]],
+    minimum: Any,
+    label: str,
+    errors: list[str],
+) -> None:
+    if (
+        not isinstance(minimum, int)
+        or isinstance(minimum, bool)
+        or not 1 <= minimum <= len(STRUCTURAL_DIMENSIONS)
+    ):
+        errors.append(
+            f"{label} must be an integer from 1 to {len(STRUCTURAL_DIMENSIONS)}"
+        )
+        return
+    closest: tuple[int, str, str] | None = None
+    for left_index, left in enumerate(items):
+        for right in items[left_index + 1 :]:
+            distance = fingerprint_distance(left, right)
+            left_id = str(left.get("candidate_id", left.get("slot_id", left_index + 1)))
+            right_id = str(right.get("candidate_id", right.get("slot_id", "?")))
+            if closest is None or distance < closest[0]:
+                closest = (distance, left_id, right_id)
+    if closest is not None and closest[0] < minimum:
+        errors.append(
+            f"{label} requires structural distance {minimum}; "
+            f"closest pair {closest[1]}/{closest[2]} has {closest[0]}"
+        )
+
+
+def validate(plan: Any, catalog: Any) -> list[str]:
+    errors: list[str] = []
+    plan_valid = validate_root_keys(plan, PLAN_KEYS, "Plan", errors)
+    catalog_valid = validate_root_keys(catalog, CATALOG_KEYS, "Catalog", errors)
+    if not plan_valid or not catalog_valid:
+        return errors
+
+    if not nonempty_string(catalog.get("catalog_revision")):
+        errors.append("Catalog catalog_revision must be a non-empty string")
+    if plan.get("catalog_revision") != catalog.get("catalog_revision"):
+        errors.append("Plan catalog_revision does not match the catalog")
+
+    evidence_items = catalog.get("evidence")
+    if isinstance(evidence_items, list):
+        for index, item in enumerate(evidence_items, start=1):
+            if not isinstance(item, dict):
+                continue
+            source = item.get("source")
+            if not isinstance(source, str) or not (
+                re.match(r"^https?://\S+$", source)
+                or re.match(r"^user:\S.+$", source)
+            ):
+                errors.append(
+                    f"evidence[{index}].source must be an http(s) URL or user: approval"
+                )
+
+    diversity = catalog.get("diversity_contract")
+    if not isinstance(diversity, dict):
+        errors.append("Catalog diversity_contract must be an object")
+        diversity = {}
+    expected_diversity_keys = {
+        "candidate_minimums",
+        "selection_minimums",
+        "minimum_candidate_distance",
+        "minimum_selection_distance",
+    }
+    missing_diversity = sorted(expected_diversity_keys - set(diversity))
+    unknown_diversity = sorted(set(diversity) - expected_diversity_keys)
+    if missing_diversity:
+        errors.append(
+            "Catalog diversity_contract is missing keys: "
+            + ", ".join(missing_diversity)
+        )
+    if unknown_diversity:
+        errors.append(
+            "Catalog diversity_contract has unknown keys: "
+            + ", ".join(unknown_diversity)
+        )
+
+    combined = copy.deepcopy(catalog)
+    combined.update(copy.deepcopy(plan))
+    pool = combined.get("candidate_pool")
+    contract = combined.get("selection_contract")
+    if isinstance(pool, dict):
+        pool["dimension_requirements"] = copy.deepcopy(
+            diversity.get("candidate_minimums")
+        )
+    if isinstance(contract, dict):
+        contract["dimension_requirements"] = copy.deepcopy(
+            diversity.get("selection_minimums")
+        )
+    errors.extend(_validate_combined(combined))
+
+    candidates = pool.get("candidates", []) if isinstance(pool, dict) else []
+    if isinstance(candidates, list):
+        typed_candidates = [item for item in candidates if isinstance(item, dict)]
+        validate_minimum_distance(
+            typed_candidates,
+            diversity.get("minimum_candidate_distance"),
+            "candidate_pool",
+            errors,
+        )
+
+        selections = combined.get("selections")
+        by_id = {
+            item.get("candidate_id"): item
+            for item in typed_candidates
+            if nonempty_string(item.get("candidate_id"))
+        }
+        selected_candidates: list[dict[str, Any]] = []
+        if isinstance(selections, list):
+            for selection in selections:
+                if isinstance(selection, dict):
+                    candidate = by_id.get(selection.get("candidate_id"))
+                    if candidate is not None:
+                        selected_candidates.append(candidate)
+        validate_minimum_distance(
+            selected_candidates,
+            diversity.get("minimum_selection_distance"),
+            "selections",
+            errors,
+        )
+    return errors
+
+
 def main() -> int:
     args = parse_args()
     try:
@@ -518,7 +689,13 @@ def main() -> int:
         print(f"ERROR: unable to read plan: {error}")
         return 1
 
-    errors = validate(plan)
+    try:
+        catalog = json.loads(args.catalog.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as error:
+        print(f"ERROR: unable to read catalog: {error}")
+        return 1
+
+    errors = validate(plan, catalog)
     if errors:
         for error in errors:
             print(f"ERROR: {error}")
@@ -528,7 +705,7 @@ def main() -> int:
     states = Counter(item["state"] for item in plan["selections"])
     state_summary = ", ".join(f"{state}={states.get(state, 0)}" for state in sorted(SELECTION_STATES))
     print(
-        f"PASS: {candidate_count} genre-valid candidates; "
+        f"PASS: {candidate_count} catalog-bound candidates; "
         f"{TRACK_COUNT} structural slots ({state_summary})"
     )
     return 0
