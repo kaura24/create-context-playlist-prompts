@@ -46,6 +46,10 @@ Present the following together:
 
 In fast mode, treat this as an informational checkpoint and include the Track 1 prompt set in the same response. In approval-sensitive mode, hold the Track 1 compilation until that checkpoint is accepted.
 
+## Add A Structural Plan Only When Diversity Is A Requirement
+
+For a request that explicitly requires genre-bound structural variety, create the 50-candidate pool and ten-slot reservation before the TrackSpec checkpoint. Keep every candidate evidence-linked and fingerprint-unique. Validate complete permitted combinations, forbidden combinations, allocation, and locked slot fingerprints with `scripts/validate_structure_plan.py`; do not create a TrackSpec from an unvalidated slot.
+
 ## Degrade Evidence Without Halting
 
 Classify evidence as:

@@ -47,6 +47,14 @@ Plan every song for 180-240 seconds. Prefer a 195-225 second center to absorb ge
 
 Treat lyric-volume checks as duration readiness, not proof of actual runtime. Write every repeated lyric in full and supply enough vocal lines and language-specific lyric units for the planned vocal bars. Confirm actual duration only from a rendered audio file.
 
+## Enforce Structural Diversity When Requested
+
+When the user requires genre-conditioned structural diversity, build the structural plan before compiling TrackSpecs. Record at least 50 evidence-linked candidate fingerprints across approved genre lanes, then reserve exactly ten different candidates for the playlist. A fingerprint contains genre lane, form, exact section sequence, recurrence, entry, contrast/peak, transition/interlude, ending, and hook-return behavior.
+
+Each variation envelope must enumerate its permitted complete fingerprint combinations and any forbidden partial combinations. Do not treat a Cartesian product of separately plausible options as valid. Each reserved slot must copy its candidate as `locked_fingerprint`; after design it may move through `reserved`, `consumed-by-design`, `active`, and `finalized` with an approved plain-prose `main_prompt_form_flow`.
+
+Run `python3 <skill-dir>/scripts/validate_structure_plan.py <plan.json>` before using a structural plan. A failure blocks TrackSpec compilation for that plan. The TrackSpec still supplies Suno output: use plain prose in `Form/Flow`, put bracketed structural tags only in Lyrics, and keep the title outside every code block.
+
 ## Compile One Paste-Ready Track Set
 
 Treat TrackSpec as the single source of truth. Compile the Basic Prompt deterministically from its eight prompt_fields. Keep the title outside every fenced block so Title, Styles, Exclude, and Lyrics can be pasted into separate Suno fields.
