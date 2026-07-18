@@ -1,0 +1,102 @@
+{
+  "schema_version": "1.0",
+  "track_id": 1,
+  "reviewer": "Codex independent verisimilitude reviewer",
+  "independent": true,
+  "lyrics_sha256": "a0c9499291a4b94cb34e8f96e38c78c062db0b5a42361d83ccbf0cc8bdf81ec1",
+  "criteria": {
+    "design_traceability": {
+      "score": 2,
+      "evidence": [
+        "The lyrics follow the bound Intro–Verse–Pre-Chorus–Chorus cycle, Bridge, varied final Chorus, and lyric-free Outro.",
+        "The repeated title hook, radio-build narrative, restrained bridge arrival, and retrospective final return trace directly to the TrackSpec and locked fingerprint."
+      ]
+    },
+    "field_routing": {
+      "score": 2,
+      "evidence": [
+        "The Lyrics block contains only supported structural tags and complete lyric text, with title, musical directions, and exclusions routed outside it."
+      ]
+    },
+    "musical_coherence": {
+      "score": 2,
+      "evidence": [
+        "Six-line narrative verses, compact pre-choruses, repeated four-line choruses, and a reflective bridge and final return reinforce the restrained ambient-ballad form."
+      ]
+    },
+    "title_narrative_hook": {
+      "score": 2,
+      "evidence": [
+        "Voice Beyond the Wipers is distinctive, repeats prominently, and names the midnight broadcast that accompanies the speaker from departure to arrival."
+      ]
+    },
+    "language_singability": {
+      "score": 2,
+      "evidence": [
+        "The English is natural, concrete, and performable, with line lengths and section densities suited to the planned twelve-bar verses and eight-bar vocal sections."
+      ]
+    },
+    "structure_completion": {
+      "score": 2,
+      "evidence": [
+        "Every vocal section is complete, the repeated chorus is written in full, the final chorus is meaningfully varied, and Intro and Outro remain lyric-free."
+      ]
+    },
+    "main_vs_exclusion": {
+      "score": 2,
+      "evidence": [
+        "The lyric text contains neither production instructions nor prohibited traits, preserving clean separation from the Basic and Exclusion prompts."
+      ]
+    },
+    "playlist_fit_differentiation": {
+      "score": 2,
+      "evidence": [
+        "The rainy midnight drive, low-intensity solitude, radio companionship, and journey toward home fit the playlist contract while giving Track 01 a specific broadcast-host premise."
+      ]
+    },
+    "premise_and_causality": {
+      "score": 2,
+      "evidence": [
+        "The relationship ending explains the unread message and the speaker's need for company that asks for nothing.",
+        "The speaker raises the radio, hears the host dedicate a song to drivers, restores the fading station after the underpass, ignores the newly lit phone, and keeps listening through the remaining miles.",
+        "Parking, hearing the host's sign-off, switching off the engine, and then carrying the unanswered phone inside form a complete and physically coherent arrival sequence."
+      ]
+    },
+    "narrative_verisimilitude": {
+      "score": 2,
+      "evidence": [
+        "The longer river route, underpass reception loss, dial search, lane merge, weather report, bridge, exit sign, parking, and engine shutdown behave truthfully within the rainy-night driving premise.",
+        "Choosing a passive radio voice over replying to a final message is consistently motivated by the speaker's recent separation and desire for non-demanding companionship.",
+        "The host's final note and goodnight plausibly coincide with the after-one arrival and earn the chorus's past-tense resolution."
+      ]
+    },
+    "scene_and_timeline_continuity": {
+      "score": 2,
+      "evidence": [
+        "The route progresses coherently from the departure block through the river road, underpass, right-hand lane, bridge, exit, and building.",
+        "The explicit times advance plausibly from 12:15 to 12:43 to after 1:00, with the deliberately longer river road supporting the elapsed drive.",
+        "The final actions remain in causal order: park, hear the sign-off, switch off the engine, and carry the phone inside."
+      ]
+    },
+    "speaker_addressee_consistency": {
+      "score": 2,
+      "evidence": [
+        "The narrator remains the solitary driver, the former partner remains background context for the unread message, and the choruses consistently address the radio host or broadcast voice.",
+        "The host is initially identified by role and later by she without any identity or role shift."
+      ]
+    },
+    "line_level_semantics": {
+      "score": 2,
+      "evidence": [
+        "The final message waits beneath the map is context-supported as an unread notification held beneath the navigation display.",
+        "A piano starts inside the dashboard clearly describes the requested song beginning through the car audio system.",
+        "The station fading in the underpass, scanning the dial, merging, passing the bridge, seeing the exit, and parking all have clear literal scene functions.",
+        "The final bridge lines establish an intelligible action sequence, and the varied chorus accurately converts the earlier request to stay into a completed arrival."
+      ]
+    }
+  },
+  "contradictions": [],
+  "verisimilitude_breaks": [],
+  "unexplained_images": [],
+  "status": "PASS"
+}

@@ -1,0 +1,81 @@
+{
+  "schema_version": "1.0",
+  "track_id": 2,
+  "reviewer": "Codex independent lyric reviewer",
+  "independent": true,
+  "lyrics_sha256": "deda5627556c43cd6f8c52077a0da6466b79a0d2f8932a287f2e84138f43c0b5",
+  "criteria": {
+    "design_traceability": {
+      "score": 2,
+      "evidence": ["The rainy red-light setting, held confession, long verse/compact chorus shape, repeated hook, second-chorus ceiling, and silent coda all trace directly to the bound TrackSpec and C006 fingerprint."]
+    },
+    "field_routing": {
+      "score": 2,
+      "evidence": ["The current output has the exact three paste-ready fenced fields in order, keeps the title outside them, and confines structural tags and lyric text to the Lyrics block."]
+    },
+    "musical_coherence": {
+      "score": 2,
+      "evidence": ["The restrained 78 BPM pulse, nylon-guitar and muted-piano palette, near-field low-register vocal, minor-subdominant chorus color, and gentle coda all support the suspended red-light mood."]
+    },
+    "title_narrative_hook": {
+      "score": 2,
+      "evidence": ["The title is dramatized by the recurring 'Stay red a little longer' hook, while the changed final response, 'I'll leave when the light turns green,' resolves the central image and narrative."]
+    },
+    "language_singability": {
+      "score": 2,
+      "evidence": ["The English uses natural syntax, concrete verbs, mostly short clauses, and repeatable open-vowel hook phrases suitable for the specified restrained ballad delivery."]
+    },
+    "structure_completion": {
+      "score": 2,
+      "evidence": ["All six bound sections appear in the required Intro-Verse-Chorus-Verse-Chorus-Coda order; both instrumental sections are lyric-free, both choruses are written in full, and the lyric load passes duration-readiness validation."]
+    },
+    "main_vs_exclusion": {
+      "score": 2,
+      "evidence": ["The Basic Prompt contains positive audible direction, while the exclusion field is limited to disallowed accompaniment, vocal, and dynamic traits without contradicting the requested jazz-alto vocal identity."]
+    },
+    "playlist_fit_differentiation": {
+      "score": 2,
+      "evidence": ["The track shares the playlist's rainy night-drive, narrow-dynamic K-pop ballad language while distinguishing itself through the C006 letter-refrain form, red-light suspension, nylon-guitar entry, subtle hook level, and instrumental coda."]
+    },
+    "premise_and_causality": {
+      "score": 2,
+      "evidence": [
+        "The breakup message explains the narrator's reluctance to go home and desire for the light to remain red; taking the long river route then extends that same avoidance rather than introducing a new motive.",
+        "Almost calling leads to the deliberate choice to keep both hands on the wheel; rereading the message at the next stop leads to accepting the ending and finishing the drive alone."
+      ]
+    },
+    "narrative_verisimilitude": {
+      "score": 2,
+      "evidence": [
+        "The narrator's choices stay true to a recently separated person seeking a brief delay: rereading a final message while stopped, taking a longer route, nearly calling, and postponing home are all emotionally prepared by the opening verse.",
+        "The shift from asking for more red-light time to promising to leave on green is earned by the intervening restraint, second stopped intersection, rereading, and conscious breath; it is a modest internal decision rather than an abrupt recovery."
+      ]
+    },
+    "scene_and_timeline_continuity": {
+      "score": 2,
+      "evidence": [
+        "The sequence progresses coherently from a nearly-two-a.m. red light after leaving the addressee's place, to a southbound river detour, a closing gas station, a bridge, and the next stopped intersection.",
+        "The phone remains face down on the passenger seat between the first and second stops, and 'This time' clearly marks the later rereading rather than an unexplained temporal reset."
+      ]
+    },
+    "speaker_addressee_consistency": {
+      "score": 2,
+      "evidence": [
+        "A single first-person driver narrates throughout, and every second-person reference points consistently to the former partner who sent the final message.",
+        "The choruses preserve the same situation and addressee; the narrator's stance changes from delay to acceptance without any role or viewpoint shift."
+      ]
+    },
+    "line_level_semantics": {
+      "score": 2,
+      "evidence": [
+        "'The wipers clear the glass, then rain returns' literally establishes the repeating visual obstruction and supports the narrator's inability to obtain lasting emotional clarity.",
+        "'Then keep my hands at ten and two instead' has a clear literal action and context-supported meaning: the narrator rejects the impulse to call while driving.",
+        "'I'll leave when the light turns green' literally completes the stopped-car action and semantically converts the repeated red-light plea into a bounded decision to continue."
+      ]
+    }
+  },
+  "contradictions": [],
+  "verisimilitude_breaks": [],
+  "unexplained_images": [],
+  "status": "PASS"
+}

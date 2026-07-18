@@ -1,0 +1,86 @@
+{
+  "schema_version": "1.0",
+  "track_id": 3,
+  "reviewer": "Codex independent track-03 tempo-harmony reviewer",
+  "independent": true,
+  "lyrics_sha256": "84f64840541b2c9816f19150f0922bc17fe1411d46e15558e8b6509b89648fac",
+  "criteria": {
+    "design_traceability": {
+      "score": 2,
+      "evidence": [
+        "The exact Intro-Verse-Pre-Chorus-Chorus-Verse-Pre-Chorus-Chorus-Bridge-Refrain-Outro sequence realizes S03/C011, including two full choruses and a separate late refrain.",
+        "The 72-bar allocation at 76 BPM calculates to 227.4 seconds and gives the near-empty intro, rests, drumless bridge, refrain, and bare outro enough temporal space.",
+        "Dm(add9), two-bar harmonic pacing, descending bass, suspended cadences, sparse instrumentation, and A3-C5 vocals use open design axes without changing the locked fingerprint."
+      ]
+    },
+    "field_routing": {
+      "score": 2,
+      "evidence": ["The output retains three text fences and an outside title; 76 BPM is routed to Tempo/Groove, A3-C5 to Vocal, sparse roles to Instrumentation, and tonal center, harmonic rhythm, bass motion, and cadences to Harmony."]
+    },
+    "musical_coherence": {
+      "score": 2,
+      "evidence": ["At 76 BPM, the half-time pulse supports full-bar drum gaps and audible vocal rests; Dm(add9), Gm7-Dm/F-Eb motion, suspended dominant resolution, and a Dm/C refrain close create rainy restraint with descending-bass color."]
+    },
+    "title_narrative_hook": {
+      "score": 2,
+      "evidence": ["Past Your Exit names the decisive action, the chorus repeats that action as its hook, and the refrain broadens it from a missed ramp into leaving the former relationship's road alone."]
+    },
+    "language_singability": {
+      "score": 2,
+      "evidence": ["The English is idiomatic and concrete, and 76 BPM lets longer navigation lines alternate naturally with compact hooks, low A3-B4 phrases, and audible rests under the C5 ceiling."]
+    },
+    "structure_completion": {
+      "score": 2,
+      "evidence": ["All ten planned sections appear in order; every vocal section has complete lyrics, both choruses are written in full, and the nonvocal Intro and Outro contain no lyric text."]
+    },
+    "main_vs_exclusion": {
+      "score": 2,
+      "evidence": ["The Basic Prompt positively specifies A3-C5, sparse layers, bounded drums, rests, and intermittent space; Exclusion keeps jazz backing, dense layers, nonstop drums, notes above C5, and belting out without contradiction."]
+    },
+    "playlist_fit_differentiation": {
+      "score": 2,
+      "evidence": ["Rain, a slow cross-town drive, sparse accompaniment, and low alto fit the playlist, while 76 BPM, Dm(add9), descending-bass and suspended-cadence color, the spare-key decision, and the late refrain distinguish this slot."]
+    },
+    "premise_and_causality": {
+      "score": 2,
+      "evidence": [
+        "The owner's request and the narrator's promise explain why the spare key is in the car and why the route initially points to the building.",
+        "Passing the exit causes the navigation to recalculate; choosing mail instead then causes the narrator to stow the key, accept the route home, and leave the street alone."
+      ]
+    },
+    "narrative_verisimilitude": {
+      "score": 2,
+      "evidence": [
+        "A spare key, a building guard, and the owner's check-in all belong to the same ended-relationship premise and make the attempted return feel grounded.",
+        "The narrator's missed exit is an earned boundary choice: the chorus rejects the visit, the message receives a concrete revised plan, and the bridge explains that mailing the key can finish the obligation without revisiting the street.",
+        "The rain, traffic, exit ramp, red light, phone stand, glove box, and changing route remain ordinary parts of one continuous drive rather than decorative images detached from the action."
+      ]
+    },
+    "scene_and_timeline_continuity": {
+      "score": 2,
+      "evidence": [
+        "The scene advances coherently from the cross-town approach, to passing the ramp, to the next red light and reply, to a redirected route home.",
+        "Moving the key from cup holder to glove box and the rain becoming lighter on another side of town are both localized developments within that same drive, with no unexplained time or place jump."
+      ]
+    },
+    "speaker_addressee_consistency": {
+      "score": 2,
+      "evidence": [
+        "The speaker remains the first-person driver throughout, and you remains the same former key owner whose building, message, street, and request organize the song.",
+        "No lyric assigns the driving, texting, promise, or key ownership to a conflicting character."
+      ]
+    },
+    "line_level_semantics": {
+      "score": 2,
+      "evidence": [
+        "The map's twelve-minute estimate, approaching-exit warning, recalculation, and later shorter route home form a literal and consistent navigation sequence.",
+        "The metallic rattle stops because the loose spare key is moved from the cup holder into the glove box, so the sensory detail has an explicit physical cause.",
+        "An envelope carrying back the key and leaving your road alone are context-supported extensions of the already stated plan to mail the key and drive home."
+      ]
+    }
+  },
+  "contradictions": [],
+  "verisimilitude_breaks": [],
+  "unexplained_images": [],
+  "status": "PASS"
+}

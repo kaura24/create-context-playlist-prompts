@@ -1,0 +1,2641 @@
+{
+  "schema_version": "1.0",
+  "catalog_revision": "rainy-night-kpop-ballad-web-v1",
+  "playlist_contract": {
+    "use_case": "비 오는 밤 드라이브의 외로움을 조용한 동행과 새벽의 해소로 이동",
+    "common_sound": "K-pop 발라드 반주, 좁은 편곡 다이내믹, A3-D5 저음 중심의 일본 모던 여성 재즈 보컬 음색·프레이징",
+    "variation_pool": "10개 웹 레퍼런스별 구조·화성 변환; hook seed rainy-night-drive-hook-v1로 3 subtle, 4 moderate, 3 strong 균형 셔플",
+    "drift_boundaries": "All tracks: A3-D5, mostly A3-C#5, no high-note climax or drum crescendo. Tracks 1-3 English; Tracks 4-10 require language confirmation before output. No jazz accompaniment, swing, walking bass, jazz comping, brushes, horns, scat, or rap verses"
+  },
+  "structure_plan": {
+    "catalog_revision": "rainy-night-kpop-ballad-web-v1",
+    "candidate_pool": {
+      "minimum_count": 50,
+      "candidates": [
+        {
+          "candidate_id": "C001",
+          "genre_lane": "central-night-ballad",
+          "form_id": "radio-build-ballad",
+          "envelope_id": "V01",
+          "evidence_ids": [
+            "E01"
+          ],
+          "section_sequence": [
+            "Intro",
+            "Verse",
+            "Pre-Chorus",
+            "Chorus",
+            "Verse",
+            "Pre-Chorus",
+            "Chorus",
+            "Bridge",
+            "Chorus",
+            "Outro"
+          ],
+          "recurrence": "two full chorus returns followed by a lyrically varied final return",
+          "entry": "four bars of felt piano fragments and a deep ambient bed before the voice",
+          "contrast_peak": "the bridge changes spectral color while the voice stays below D5 and the final return keeps the same narrow loudness ceiling",
+          "transition_interlude": "each pre-chorus adds harmonic color while holding drum density, loudness, and the low vocal register steady",
+          "ending": "four ambient instrumental bars dissolve the piano fragments into rain",
+          "hook_return": "Varied return"
+        },
+        {
+          "candidate_id": "C002",
+          "genre_lane": "central-night-ballad",
+          "form_id": "radio-build-ballad",
+          "envelope_id": "V01",
+          "evidence_ids": [
+            "E01"
+          ],
+          "section_sequence": [
+            "Intro",
+            "Verse",
+            "Pre-Chorus",
+            "Chorus",
+            "Verse",
+            "Pre-Chorus",
+            "Chorus",
+            "Bridge",
+            "Chorus",
+            "Break",
+            "Outro"
+          ],
+          "recurrence": "slot-01-variant-1-return-logic",
+          "entry": "slot-01-variant-1-entry-gesture",
+          "contrast_peak": "slot-01-variant-1-peak-curve",
+          "transition_interlude": "slot-01-variant-1-transition-path",
+          "ending": "slot-01-variant-1-ending-shape",
+          "hook_return": "Repeated hook"
+        },
+        {
+          "candidate_id": "C003",
+          "genre_lane": "central-night-ballad",
+          "form_id": "radio-build-ballad",
+          "envelope_id": "V01",
+          "evidence_ids": [
+            "E01"
+          ],
+          "section_sequence": [
+            "Intro",
+            "Verse",
+            "Pre-Chorus",
+            "Chorus",
+            "Verse",
+            "Pre-Chorus",
+            "Chorus",
+            "Bridge",
+            "Chorus",
+            "Refrain",
+            "Outro"
+          ],
+          "recurrence": "slot-01-variant-2-return-logic",
+          "entry": "slot-01-variant-2-entry-gesture",
+          "contrast_peak": "slot-01-variant-2-peak-curve",
+          "transition_interlude": "slot-01-variant-2-transition-path",
+          "ending": "slot-01-variant-2-ending-shape",
+          "hook_return": "Varied return"
+        },
+        {
+          "candidate_id": "C004",
+          "genre_lane": "central-night-ballad",
+          "form_id": "radio-build-ballad",
+          "envelope_id": "V01",
+          "evidence_ids": [
+            "E01"
+          ],
+          "section_sequence": [
+            "Intro",
+            "Verse",
+            "Pre-Chorus",
+            "Chorus",
+            "Verse",
+            "Pre-Chorus",
+            "Chorus",
+            "Bridge",
+            "Chorus",
+            "Drop",
+            "Outro"
+          ],
+          "recurrence": "slot-01-variant-3-return-logic",
+          "entry": "slot-01-variant-3-entry-gesture",
+          "contrast_peak": "slot-01-variant-3-peak-curve",
+          "transition_interlude": "slot-01-variant-3-transition-path",
+          "ending": "slot-01-variant-3-ending-shape",
+          "hook_return": "Final-only callback"
+        },
+        {
+          "candidate_id": "C005",
+          "genre_lane": "central-night-ballad",
+          "form_id": "radio-build-ballad",
+          "envelope_id": "V01",
+          "evidence_ids": [
+            "E01"
+          ],
+          "section_sequence": [
+            "Intro",
+            "Verse",
+            "Pre-Chorus",
+            "Chorus",
+            "Verse",
+            "Pre-Chorus",
+            "Chorus",
+            "Bridge",
+            "Chorus",
+            "Hook",
+            "Outro"
+          ],
+          "recurrence": "slot-01-variant-4-return-logic",
+          "entry": "slot-01-variant-4-entry-gesture",
+          "contrast_peak": "slot-01-variant-4-peak-curve",
+          "transition_interlude": "slot-01-variant-4-transition-path",
+          "ending": "slot-01-variant-4-ending-shape",
+          "hook_return": "Instrumental hook"
+        },
+        {
+          "candidate_id": "C006",
+          "genre_lane": "intimate-pop-ballad",
+          "form_id": "letter-refrain-ballad",
+          "envelope_id": "V02",
+          "evidence_ids": [
+            "E02"
+          ],
+          "section_sequence": [
+            "Intro",
+            "Verse",
+            "Chorus",
+            "Verse",
+            "Chorus",
+            "Coda"
+          ],
+          "recurrence": "two compact chorus returns carry the same central confession",
+          "entry": "quiet guitar arpeggio opens before a long first verse",
+          "contrast_peak": "the second chorus is the emotional ceiling rather than a large climax",
+          "transition_interlude": "verse endings thin before each direct chorus arrival",
+          "ending": "an eight-bar instrumental coda releases the suspended light",
+          "hook_return": "Repeated hook"
+        },
+        {
+          "candidate_id": "C007",
+          "genre_lane": "intimate-pop-ballad",
+          "form_id": "letter-refrain-ballad",
+          "envelope_id": "V02",
+          "evidence_ids": [
+            "E02"
+          ],
+          "section_sequence": [
+            "Intro",
+            "Verse",
+            "Chorus",
+            "Verse",
+            "Chorus",
+            "Break",
+            "Coda"
+          ],
+          "recurrence": "slot-02-variant-1-return-logic",
+          "entry": "slot-02-variant-1-entry-gesture",
+          "contrast_peak": "slot-02-variant-1-peak-curve",
+          "transition_interlude": "slot-02-variant-1-transition-path",
+          "ending": "slot-02-variant-1-ending-shape",
+          "hook_return": "Varied return"
+        },
+        {
+          "candidate_id": "C008",
+          "genre_lane": "intimate-pop-ballad",
+          "form_id": "letter-refrain-ballad",
+          "envelope_id": "V02",
+          "evidence_ids": [
+            "E02"
+          ],
+          "section_sequence": [
+            "Intro",
+            "Verse",
+            "Chorus",
+            "Verse",
+            "Chorus",
+            "Refrain",
+            "Coda"
+          ],
+          "recurrence": "slot-02-variant-2-return-logic",
+          "entry": "slot-02-variant-2-entry-gesture",
+          "contrast_peak": "slot-02-variant-2-peak-curve",
+          "transition_interlude": "slot-02-variant-2-transition-path",
+          "ending": "slot-02-variant-2-ending-shape",
+          "hook_return": "Final-only callback"
+        },
+        {
+          "candidate_id": "C009",
+          "genre_lane": "intimate-pop-ballad",
+          "form_id": "letter-refrain-ballad",
+          "envelope_id": "V02",
+          "evidence_ids": [
+            "E02"
+          ],
+          "section_sequence": [
+            "Intro",
+            "Verse",
+            "Chorus",
+            "Verse",
+            "Chorus",
+            "Drop",
+            "Coda"
+          ],
+          "recurrence": "slot-02-variant-3-return-logic",
+          "entry": "slot-02-variant-3-entry-gesture",
+          "contrast_peak": "slot-02-variant-3-peak-curve",
+          "transition_interlude": "slot-02-variant-3-transition-path",
+          "ending": "slot-02-variant-3-ending-shape",
+          "hook_return": "Instrumental hook"
+        },
+        {
+          "candidate_id": "C010",
+          "genre_lane": "intimate-pop-ballad",
+          "form_id": "letter-refrain-ballad",
+          "envelope_id": "V02",
+          "evidence_ids": [
+            "E02"
+          ],
+          "section_sequence": [
+            "Intro",
+            "Verse",
+            "Chorus",
+            "Verse",
+            "Chorus",
+            "Hook",
+            "Coda"
+          ],
+          "recurrence": "slot-02-variant-4-return-logic",
+          "entry": "slot-02-variant-4-entry-gesture",
+          "contrast_peak": "slot-02-variant-4-peak-curve",
+          "transition_interlude": "slot-02-variant-4-transition-path",
+          "ending": "slot-02-variant-4-ending-shape",
+          "hook_return": "No hook"
+        },
+        {
+          "candidate_id": "C011",
+          "genre_lane": "central-night-ballad",
+          "form_id": "rain-memory-refrain",
+          "envelope_id": "V03",
+          "evidence_ids": [
+            "E03"
+          ],
+          "section_sequence": [
+            "Intro",
+            "Verse",
+            "Pre-Chorus",
+            "Chorus",
+            "Verse",
+            "Pre-Chorus",
+            "Chorus",
+            "Bridge",
+            "Refrain",
+            "Outro"
+          ],
+          "recurrence": "two choruses lead to a separate late refrain",
+          "entry": "soft synth pulse and piano establish motion before the voice",
+          "contrast_peak": "the standalone refrain becomes the peak after a drumless bridge",
+          "transition_interlude": "pre-choruses tighten the pulse and lift the inner line",
+          "ending": "a short pulse-and-piano outro closes the reflected image",
+          "hook_return": "Final-only callback"
+        },
+        {
+          "candidate_id": "C012",
+          "genre_lane": "central-night-ballad",
+          "form_id": "rain-memory-refrain",
+          "envelope_id": "V03",
+          "evidence_ids": [
+            "E03"
+          ],
+          "section_sequence": [
+            "Intro",
+            "Verse",
+            "Pre-Chorus",
+            "Chorus",
+            "Verse",
+            "Pre-Chorus",
+            "Chorus",
+            "Bridge",
+            "Refrain",
+            "Break",
+            "Outro"
+          ],
+          "recurrence": "slot-03-variant-1-return-logic",
+          "entry": "slot-03-variant-1-entry-gesture",
+          "contrast_peak": "slot-03-variant-1-peak-curve",
+          "transition_interlude": "slot-03-variant-1-transition-path",
+          "ending": "slot-03-variant-1-ending-shape",
+          "hook_return": "Final-only callback"
+        },
+        {
+          "candidate_id": "C013",
+          "genre_lane": "central-night-ballad",
+          "form_id": "rain-memory-refrain",
+          "envelope_id": "V03",
+          "evidence_ids": [
+            "E03"
+          ],
+          "section_sequence": [
+            "Intro",
+            "Verse",
+            "Pre-Chorus",
+            "Chorus",
+            "Verse",
+            "Pre-Chorus",
+            "Chorus",
+            "Bridge",
+            "Refrain",
+            "Refrain",
+            "Outro"
+          ],
+          "recurrence": "slot-03-variant-2-return-logic",
+          "entry": "slot-03-variant-2-entry-gesture",
+          "contrast_peak": "slot-03-variant-2-peak-curve",
+          "transition_interlude": "slot-03-variant-2-transition-path",
+          "ending": "slot-03-variant-2-ending-shape",
+          "hook_return": "Instrumental hook"
+        },
+        {
+          "candidate_id": "C014",
+          "genre_lane": "central-night-ballad",
+          "form_id": "rain-memory-refrain",
+          "envelope_id": "V03",
+          "evidence_ids": [
+            "E03"
+          ],
+          "section_sequence": [
+            "Intro",
+            "Verse",
+            "Pre-Chorus",
+            "Chorus",
+            "Verse",
+            "Pre-Chorus",
+            "Chorus",
+            "Bridge",
+            "Refrain",
+            "Drop",
+            "Outro"
+          ],
+          "recurrence": "slot-03-variant-3-return-logic",
+          "entry": "slot-03-variant-3-entry-gesture",
+          "contrast_peak": "slot-03-variant-3-peak-curve",
+          "transition_interlude": "slot-03-variant-3-transition-path",
+          "ending": "slot-03-variant-3-ending-shape",
+          "hook_return": "No hook"
+        },
+        {
+          "candidate_id": "C015",
+          "genre_lane": "central-night-ballad",
+          "form_id": "rain-memory-refrain",
+          "envelope_id": "V03",
+          "evidence_ids": [
+            "E03"
+          ],
+          "section_sequence": [
+            "Intro",
+            "Verse",
+            "Pre-Chorus",
+            "Chorus",
+            "Verse",
+            "Pre-Chorus",
+            "Chorus",
+            "Bridge",
+            "Refrain",
+            "Hook",
+            "Outro"
+          ],
+          "recurrence": "slot-03-variant-4-return-logic",
+          "entry": "slot-03-variant-4-entry-gesture",
+          "contrast_peak": "slot-03-variant-4-peak-curve",
+          "transition_interlude": "slot-03-variant-4-transition-path",
+          "ending": "slot-03-variant-4-ending-shape",
+          "hook_return": "Repeated hook"
+        },
+        {
+          "candidate_id": "C016",
+          "genre_lane": "intimate-pop-ballad",
+          "form_id": "narrative-coda-ballad",
+          "envelope_id": "V04",
+          "evidence_ids": [
+            "E04"
+          ],
+          "section_sequence": [
+            "Intro",
+            "Verse",
+            "Pre-Chorus",
+            "Chorus",
+            "Break",
+            "Verse",
+            "Pre-Chorus",
+            "Chorus",
+            "Coda"
+          ],
+          "recurrence": "two chorus statements defer the final conclusion to the coda",
+          "entry": "piano and muted guitar present the narrative tone",
+          "contrast_peak": "the second chorus opens into the coda instead of another peak",
+          "transition_interlude": "a four-bar instrumental break separates the two narrative halves",
+          "ending": "the coda states the acceptance and resolves the deceptive motion",
+          "hook_return": "Varied return"
+        },
+        {
+          "candidate_id": "C017",
+          "genre_lane": "intimate-pop-ballad",
+          "form_id": "narrative-coda-ballad",
+          "envelope_id": "V04",
+          "evidence_ids": [
+            "E04"
+          ],
+          "section_sequence": [
+            "Intro",
+            "Verse",
+            "Pre-Chorus",
+            "Chorus",
+            "Break",
+            "Verse",
+            "Pre-Chorus",
+            "Chorus",
+            "Break",
+            "Coda"
+          ],
+          "recurrence": "slot-04-variant-1-return-logic",
+          "entry": "slot-04-variant-1-entry-gesture",
+          "contrast_peak": "slot-04-variant-1-peak-curve",
+          "transition_interlude": "slot-04-variant-1-transition-path",
+          "ending": "slot-04-variant-1-ending-shape",
+          "hook_return": "Instrumental hook"
+        },
+        {
+          "candidate_id": "C018",
+          "genre_lane": "intimate-pop-ballad",
+          "form_id": "narrative-coda-ballad",
+          "envelope_id": "V04",
+          "evidence_ids": [
+            "E04"
+          ],
+          "section_sequence": [
+            "Intro",
+            "Verse",
+            "Pre-Chorus",
+            "Chorus",
+            "Break",
+            "Verse",
+            "Pre-Chorus",
+            "Chorus",
+            "Refrain",
+            "Coda"
+          ],
+          "recurrence": "slot-04-variant-2-return-logic",
+          "entry": "slot-04-variant-2-entry-gesture",
+          "contrast_peak": "slot-04-variant-2-peak-curve",
+          "transition_interlude": "slot-04-variant-2-transition-path",
+          "ending": "slot-04-variant-2-ending-shape",
+          "hook_return": "No hook"
+        },
+        {
+          "candidate_id": "C019",
+          "genre_lane": "intimate-pop-ballad",
+          "form_id": "narrative-coda-ballad",
+          "envelope_id": "V04",
+          "evidence_ids": [
+            "E04"
+          ],
+          "section_sequence": [
+            "Intro",
+            "Verse",
+            "Pre-Chorus",
+            "Chorus",
+            "Break",
+            "Verse",
+            "Pre-Chorus",
+            "Chorus",
+            "Drop",
+            "Coda"
+          ],
+          "recurrence": "slot-04-variant-3-return-logic",
+          "entry": "slot-04-variant-3-entry-gesture",
+          "contrast_peak": "slot-04-variant-3-peak-curve",
+          "transition_interlude": "slot-04-variant-3-transition-path",
+          "ending": "slot-04-variant-3-ending-shape",
+          "hook_return": "Repeated hook"
+        },
+        {
+          "candidate_id": "C020",
+          "genre_lane": "intimate-pop-ballad",
+          "form_id": "narrative-coda-ballad",
+          "envelope_id": "V04",
+          "evidence_ids": [
+            "E04"
+          ],
+          "section_sequence": [
+            "Intro",
+            "Verse",
+            "Pre-Chorus",
+            "Chorus",
+            "Break",
+            "Verse",
+            "Pre-Chorus",
+            "Chorus",
+            "Hook",
+            "Coda"
+          ],
+          "recurrence": "slot-04-variant-4-return-logic",
+          "entry": "slot-04-variant-4-entry-gesture",
+          "contrast_peak": "slot-04-variant-4-peak-curve",
+          "transition_interlude": "slot-04-variant-4-transition-path",
+          "ending": "slot-04-variant-4-ending-shape",
+          "hook_return": "Varied return"
+        },
+        {
+          "candidate_id": "C021",
+          "genre_lane": "dramatic-ost-ballad",
+          "form_id": "modulating-peak-ballad",
+          "envelope_id": "V05",
+          "evidence_ids": [
+            "E05"
+          ],
+          "section_sequence": [
+            "Intro",
+            "Verse",
+            "Chorus",
+            "Break",
+            "Verse",
+            "Chorus",
+            "Bridge",
+            "Chorus",
+            "Outro"
+          ],
+          "recurrence": "two restrained choruses prepare one transposed final chorus",
+          "entry": "grand piano states the minor tonal center",
+          "contrast_peak": "the bridge changes harmonic color before a same-register final chorus under the same loudness ceiling",
+          "transition_interlude": "a short instrumental break resets the dynamic floor",
+          "ending": "four bars sustain the new key after the final lyric",
+          "hook_return": "Final-only callback"
+        },
+        {
+          "candidate_id": "C022",
+          "genre_lane": "dramatic-ost-ballad",
+          "form_id": "modulating-peak-ballad",
+          "envelope_id": "V05",
+          "evidence_ids": [
+            "E05"
+          ],
+          "section_sequence": [
+            "Intro",
+            "Verse",
+            "Chorus",
+            "Break",
+            "Verse",
+            "Chorus",
+            "Bridge",
+            "Chorus",
+            "Break",
+            "Outro"
+          ],
+          "recurrence": "slot-05-variant-1-return-logic",
+          "entry": "slot-05-variant-1-entry-gesture",
+          "contrast_peak": "slot-05-variant-1-peak-curve",
+          "transition_interlude": "slot-05-variant-1-transition-path",
+          "ending": "slot-05-variant-1-ending-shape",
+          "hook_return": "No hook"
+        },
+        {
+          "candidate_id": "C023",
+          "genre_lane": "dramatic-ost-ballad",
+          "form_id": "modulating-peak-ballad",
+          "envelope_id": "V05",
+          "evidence_ids": [
+            "E05"
+          ],
+          "section_sequence": [
+            "Intro",
+            "Verse",
+            "Chorus",
+            "Break",
+            "Verse",
+            "Chorus",
+            "Bridge",
+            "Chorus",
+            "Refrain",
+            "Outro"
+          ],
+          "recurrence": "slot-05-variant-2-return-logic",
+          "entry": "slot-05-variant-2-entry-gesture",
+          "contrast_peak": "slot-05-variant-2-peak-curve",
+          "transition_interlude": "slot-05-variant-2-transition-path",
+          "ending": "slot-05-variant-2-ending-shape",
+          "hook_return": "Repeated hook"
+        },
+        {
+          "candidate_id": "C024",
+          "genre_lane": "dramatic-ost-ballad",
+          "form_id": "modulating-peak-ballad",
+          "envelope_id": "V05",
+          "evidence_ids": [
+            "E05"
+          ],
+          "section_sequence": [
+            "Intro",
+            "Verse",
+            "Chorus",
+            "Break",
+            "Verse",
+            "Chorus",
+            "Bridge",
+            "Chorus",
+            "Drop",
+            "Outro"
+          ],
+          "recurrence": "slot-05-variant-3-return-logic",
+          "entry": "slot-05-variant-3-entry-gesture",
+          "contrast_peak": "slot-05-variant-3-peak-curve",
+          "transition_interlude": "slot-05-variant-3-transition-path",
+          "ending": "slot-05-variant-3-ending-shape",
+          "hook_return": "Varied return"
+        },
+        {
+          "candidate_id": "C025",
+          "genre_lane": "dramatic-ost-ballad",
+          "form_id": "modulating-peak-ballad",
+          "envelope_id": "V05",
+          "evidence_ids": [
+            "E05"
+          ],
+          "section_sequence": [
+            "Intro",
+            "Verse",
+            "Chorus",
+            "Break",
+            "Verse",
+            "Chorus",
+            "Bridge",
+            "Chorus",
+            "Hook",
+            "Outro"
+          ],
+          "recurrence": "slot-05-variant-4-return-logic",
+          "entry": "slot-05-variant-4-entry-gesture",
+          "contrast_peak": "slot-05-variant-4-peak-curve",
+          "transition_interlude": "slot-05-variant-4-transition-path",
+          "ending": "slot-05-variant-4-ending-shape",
+          "hook_return": "Final-only callback"
+        },
+        {
+          "candidate_id": "C026",
+          "genre_lane": "dramatic-ost-ballad",
+          "form_id": "triple-lift-ost-ballad",
+          "envelope_id": "V06",
+          "evidence_ids": [
+            "E06"
+          ],
+          "section_sequence": [
+            "Intro",
+            "Verse",
+            "Pre-Chorus",
+            "Chorus",
+            "Verse",
+            "Pre-Chorus",
+            "Chorus",
+            "Bridge",
+            "Pre-Chorus",
+            "Chorus",
+            "Outro"
+          ],
+          "recurrence": "three chorus arrivals are each delayed by a pre-chorus",
+          "entry": "piano ostinato and low strings establish the apology",
+          "contrast_peak": "the bridge darkens before a third pre-chorus withholds the final downbeat",
+          "transition_interlude": "pre-choruses use dominant tension as the recurring hinge",
+          "ending": "a short firm close follows the final confession",
+          "hook_return": "Repeated hook"
+        },
+        {
+          "candidate_id": "C027",
+          "genre_lane": "dramatic-ost-ballad",
+          "form_id": "triple-lift-ost-ballad",
+          "envelope_id": "V06",
+          "evidence_ids": [
+            "E06"
+          ],
+          "section_sequence": [
+            "Intro",
+            "Verse",
+            "Pre-Chorus",
+            "Chorus",
+            "Verse",
+            "Pre-Chorus",
+            "Chorus",
+            "Bridge",
+            "Pre-Chorus",
+            "Chorus",
+            "Break",
+            "Outro"
+          ],
+          "recurrence": "slot-06-variant-1-return-logic",
+          "entry": "slot-06-variant-1-entry-gesture",
+          "contrast_peak": "slot-06-variant-1-peak-curve",
+          "transition_interlude": "slot-06-variant-1-transition-path",
+          "ending": "slot-06-variant-1-ending-shape",
+          "hook_return": "Repeated hook"
+        },
+        {
+          "candidate_id": "C028",
+          "genre_lane": "dramatic-ost-ballad",
+          "form_id": "triple-lift-ost-ballad",
+          "envelope_id": "V06",
+          "evidence_ids": [
+            "E06"
+          ],
+          "section_sequence": [
+            "Intro",
+            "Verse",
+            "Pre-Chorus",
+            "Chorus",
+            "Verse",
+            "Pre-Chorus",
+            "Chorus",
+            "Bridge",
+            "Pre-Chorus",
+            "Chorus",
+            "Refrain",
+            "Outro"
+          ],
+          "recurrence": "slot-06-variant-2-return-logic",
+          "entry": "slot-06-variant-2-entry-gesture",
+          "contrast_peak": "slot-06-variant-2-peak-curve",
+          "transition_interlude": "slot-06-variant-2-transition-path",
+          "ending": "slot-06-variant-2-ending-shape",
+          "hook_return": "Varied return"
+        },
+        {
+          "candidate_id": "C029",
+          "genre_lane": "dramatic-ost-ballad",
+          "form_id": "triple-lift-ost-ballad",
+          "envelope_id": "V06",
+          "evidence_ids": [
+            "E06"
+          ],
+          "section_sequence": [
+            "Intro",
+            "Verse",
+            "Pre-Chorus",
+            "Chorus",
+            "Verse",
+            "Pre-Chorus",
+            "Chorus",
+            "Bridge",
+            "Pre-Chorus",
+            "Chorus",
+            "Drop",
+            "Outro"
+          ],
+          "recurrence": "slot-06-variant-3-return-logic",
+          "entry": "slot-06-variant-3-entry-gesture",
+          "contrast_peak": "slot-06-variant-3-peak-curve",
+          "transition_interlude": "slot-06-variant-3-transition-path",
+          "ending": "slot-06-variant-3-ending-shape",
+          "hook_return": "Final-only callback"
+        },
+        {
+          "candidate_id": "C030",
+          "genre_lane": "dramatic-ost-ballad",
+          "form_id": "triple-lift-ost-ballad",
+          "envelope_id": "V06",
+          "evidence_ids": [
+            "E06"
+          ],
+          "section_sequence": [
+            "Intro",
+            "Verse",
+            "Pre-Chorus",
+            "Chorus",
+            "Verse",
+            "Pre-Chorus",
+            "Chorus",
+            "Bridge",
+            "Pre-Chorus",
+            "Chorus",
+            "Hook",
+            "Outro"
+          ],
+          "recurrence": "slot-06-variant-4-return-logic",
+          "entry": "slot-06-variant-4-entry-gesture",
+          "contrast_peak": "slot-06-variant-4-peak-curve",
+          "transition_interlude": "slot-06-variant-4-transition-path",
+          "ending": "slot-06-variant-4-ending-shape",
+          "hook_return": "Instrumental hook"
+        },
+        {
+          "candidate_id": "C031",
+          "genre_lane": "intimate-pop-ballad",
+          "form_id": "lullaby-bridge-coda",
+          "envelope_id": "V07",
+          "evidence_ids": [
+            "E07"
+          ],
+          "section_sequence": [
+            "Intro",
+            "Verse",
+            "Chorus",
+            "Verse",
+            "Chorus",
+            "Bridge",
+            "Chorus",
+            "Coda"
+          ],
+          "recurrence": "two chorus returns expand into one longer final chorus",
+          "entry": "soft piano and bowed texture enter at the lowest energy",
+          "contrast_peak": "the bridge suspends the pulse rather than increasing loudness",
+          "transition_interlude": "chromatic bass motion connects each verse to its chorus",
+          "ending": "the coda resolves the open dominant and lets the city lights fade",
+          "hook_return": "Varied return"
+        },
+        {
+          "candidate_id": "C032",
+          "genre_lane": "intimate-pop-ballad",
+          "form_id": "lullaby-bridge-coda",
+          "envelope_id": "V07",
+          "evidence_ids": [
+            "E07"
+          ],
+          "section_sequence": [
+            "Intro",
+            "Verse",
+            "Chorus",
+            "Verse",
+            "Chorus",
+            "Bridge",
+            "Chorus",
+            "Break",
+            "Coda"
+          ],
+          "recurrence": "slot-07-variant-1-return-logic",
+          "entry": "slot-07-variant-1-entry-gesture",
+          "contrast_peak": "slot-07-variant-1-peak-curve",
+          "transition_interlude": "slot-07-variant-1-transition-path",
+          "ending": "slot-07-variant-1-ending-shape",
+          "hook_return": "Varied return"
+        },
+        {
+          "candidate_id": "C033",
+          "genre_lane": "intimate-pop-ballad",
+          "form_id": "lullaby-bridge-coda",
+          "envelope_id": "V07",
+          "evidence_ids": [
+            "E07"
+          ],
+          "section_sequence": [
+            "Intro",
+            "Verse",
+            "Chorus",
+            "Verse",
+            "Chorus",
+            "Bridge",
+            "Chorus",
+            "Refrain",
+            "Coda"
+          ],
+          "recurrence": "slot-07-variant-2-return-logic",
+          "entry": "slot-07-variant-2-entry-gesture",
+          "contrast_peak": "slot-07-variant-2-peak-curve",
+          "transition_interlude": "slot-07-variant-2-transition-path",
+          "ending": "slot-07-variant-2-ending-shape",
+          "hook_return": "Final-only callback"
+        },
+        {
+          "candidate_id": "C034",
+          "genre_lane": "intimate-pop-ballad",
+          "form_id": "lullaby-bridge-coda",
+          "envelope_id": "V07",
+          "evidence_ids": [
+            "E07"
+          ],
+          "section_sequence": [
+            "Intro",
+            "Verse",
+            "Chorus",
+            "Verse",
+            "Chorus",
+            "Bridge",
+            "Chorus",
+            "Drop",
+            "Coda"
+          ],
+          "recurrence": "slot-07-variant-3-return-logic",
+          "entry": "slot-07-variant-3-entry-gesture",
+          "contrast_peak": "slot-07-variant-3-peak-curve",
+          "transition_interlude": "slot-07-variant-3-transition-path",
+          "ending": "slot-07-variant-3-ending-shape",
+          "hook_return": "Instrumental hook"
+        },
+        {
+          "candidate_id": "C035",
+          "genre_lane": "intimate-pop-ballad",
+          "form_id": "lullaby-bridge-coda",
+          "envelope_id": "V07",
+          "evidence_ids": [
+            "E07"
+          ],
+          "section_sequence": [
+            "Intro",
+            "Verse",
+            "Chorus",
+            "Verse",
+            "Chorus",
+            "Bridge",
+            "Chorus",
+            "Hook",
+            "Coda"
+          ],
+          "recurrence": "slot-07-variant-4-return-logic",
+          "entry": "slot-07-variant-4-entry-gesture",
+          "contrast_peak": "slot-07-variant-4-peak-curve",
+          "transition_interlude": "slot-07-variant-4-transition-path",
+          "ending": "slot-07-variant-4-ending-shape",
+          "hook_return": "No hook"
+        },
+        {
+          "candidate_id": "C036",
+          "genre_lane": "central-night-ballad",
+          "form_id": "promise-return-ballad",
+          "envelope_id": "V08",
+          "evidence_ids": [
+            "E08"
+          ],
+          "section_sequence": [
+            "Intro",
+            "Verse",
+            "Pre-Chorus",
+            "Chorus",
+            "Verse",
+            "Chorus",
+            "Bridge",
+            "Chorus",
+            "Outro"
+          ],
+          "recurrence": "the second cycle skips its pre-chorus before the final return",
+          "entry": "bright piano begins with a steady driving pulse",
+          "contrast_peak": "the bridge suspends harmony before a clean final chorus landing",
+          "transition_interlude": "the missing second pre-chorus creates forward acceleration",
+          "ending": "four bars hold the tonic-add-six color after the promise",
+          "hook_return": "Repeated hook"
+        },
+        {
+          "candidate_id": "C037",
+          "genre_lane": "central-night-ballad",
+          "form_id": "promise-return-ballad",
+          "envelope_id": "V08",
+          "evidence_ids": [
+            "E08"
+          ],
+          "section_sequence": [
+            "Intro",
+            "Verse",
+            "Pre-Chorus",
+            "Chorus",
+            "Verse",
+            "Chorus",
+            "Bridge",
+            "Chorus",
+            "Break",
+            "Outro"
+          ],
+          "recurrence": "slot-08-variant-1-return-logic",
+          "entry": "slot-08-variant-1-entry-gesture",
+          "contrast_peak": "slot-08-variant-1-peak-curve",
+          "transition_interlude": "slot-08-variant-1-transition-path",
+          "ending": "slot-08-variant-1-ending-shape",
+          "hook_return": "Final-only callback"
+        },
+        {
+          "candidate_id": "C038",
+          "genre_lane": "central-night-ballad",
+          "form_id": "promise-return-ballad",
+          "envelope_id": "V08",
+          "evidence_ids": [
+            "E08"
+          ],
+          "section_sequence": [
+            "Intro",
+            "Verse",
+            "Pre-Chorus",
+            "Chorus",
+            "Verse",
+            "Chorus",
+            "Bridge",
+            "Chorus",
+            "Refrain",
+            "Outro"
+          ],
+          "recurrence": "slot-08-variant-2-return-logic",
+          "entry": "slot-08-variant-2-entry-gesture",
+          "contrast_peak": "slot-08-variant-2-peak-curve",
+          "transition_interlude": "slot-08-variant-2-transition-path",
+          "ending": "slot-08-variant-2-ending-shape",
+          "hook_return": "Instrumental hook"
+        },
+        {
+          "candidate_id": "C039",
+          "genre_lane": "central-night-ballad",
+          "form_id": "promise-return-ballad",
+          "envelope_id": "V08",
+          "evidence_ids": [
+            "E08"
+          ],
+          "section_sequence": [
+            "Intro",
+            "Verse",
+            "Pre-Chorus",
+            "Chorus",
+            "Verse",
+            "Chorus",
+            "Bridge",
+            "Chorus",
+            "Drop",
+            "Outro"
+          ],
+          "recurrence": "slot-08-variant-3-return-logic",
+          "entry": "slot-08-variant-3-entry-gesture",
+          "contrast_peak": "slot-08-variant-3-peak-curve",
+          "transition_interlude": "slot-08-variant-3-transition-path",
+          "ending": "slot-08-variant-3-ending-shape",
+          "hook_return": "No hook"
+        },
+        {
+          "candidate_id": "C040",
+          "genre_lane": "central-night-ballad",
+          "form_id": "promise-return-ballad",
+          "envelope_id": "V08",
+          "evidence_ids": [
+            "E08"
+          ],
+          "section_sequence": [
+            "Intro",
+            "Verse",
+            "Pre-Chorus",
+            "Chorus",
+            "Verse",
+            "Chorus",
+            "Bridge",
+            "Chorus",
+            "Hook",
+            "Outro"
+          ],
+          "recurrence": "slot-08-variant-4-return-logic",
+          "entry": "slot-08-variant-4-entry-gesture",
+          "contrast_peak": "slot-08-variant-4-peak-curve",
+          "transition_interlude": "slot-08-variant-4-transition-path",
+          "ending": "slot-08-variant-4-ending-shape",
+          "hook_return": "Repeated hook"
+        },
+        {
+          "candidate_id": "C041",
+          "genre_lane": "central-night-ballad",
+          "form_id": "chorus-first-memory-ballad",
+          "envelope_id": "V09",
+          "evidence_ids": [
+            "E09"
+          ],
+          "section_sequence": [
+            "Verse",
+            "Chorus",
+            "Verse",
+            "Chorus",
+            "Bridge",
+            "Chorus",
+            "Coda"
+          ],
+          "recurrence": "three direct chorus returns arrive without pre-choruses",
+          "entry": "the lead voice begins immediately with no instrumental intro",
+          "contrast_peak": "the bridge narrows before the final chorus adds the minor-subdominant shade",
+          "transition_interlude": "short verse endings turn directly into the chorus downbeat",
+          "ending": "a four-bar coda keeps the final direction unresolved but calm",
+          "hook_return": "Repeated hook"
+        },
+        {
+          "candidate_id": "C042",
+          "genre_lane": "central-night-ballad",
+          "form_id": "chorus-first-memory-ballad",
+          "envelope_id": "V09",
+          "evidence_ids": [
+            "E09"
+          ],
+          "section_sequence": [
+            "Verse",
+            "Chorus",
+            "Verse",
+            "Chorus",
+            "Bridge",
+            "Chorus",
+            "Break",
+            "Coda"
+          ],
+          "recurrence": "slot-09-variant-1-return-logic",
+          "entry": "slot-09-variant-1-entry-gesture",
+          "contrast_peak": "slot-09-variant-1-peak-curve",
+          "transition_interlude": "slot-09-variant-1-transition-path",
+          "ending": "slot-09-variant-1-ending-shape",
+          "hook_return": "Instrumental hook"
+        },
+        {
+          "candidate_id": "C043",
+          "genre_lane": "central-night-ballad",
+          "form_id": "chorus-first-memory-ballad",
+          "envelope_id": "V09",
+          "evidence_ids": [
+            "E09"
+          ],
+          "section_sequence": [
+            "Verse",
+            "Chorus",
+            "Verse",
+            "Chorus",
+            "Bridge",
+            "Chorus",
+            "Refrain",
+            "Coda"
+          ],
+          "recurrence": "slot-09-variant-2-return-logic",
+          "entry": "slot-09-variant-2-entry-gesture",
+          "contrast_peak": "slot-09-variant-2-peak-curve",
+          "transition_interlude": "slot-09-variant-2-transition-path",
+          "ending": "slot-09-variant-2-ending-shape",
+          "hook_return": "No hook"
+        },
+        {
+          "candidate_id": "C044",
+          "genre_lane": "central-night-ballad",
+          "form_id": "chorus-first-memory-ballad",
+          "envelope_id": "V09",
+          "evidence_ids": [
+            "E09"
+          ],
+          "section_sequence": [
+            "Verse",
+            "Chorus",
+            "Verse",
+            "Chorus",
+            "Bridge",
+            "Chorus",
+            "Drop",
+            "Coda"
+          ],
+          "recurrence": "slot-09-variant-3-return-logic",
+          "entry": "slot-09-variant-3-entry-gesture",
+          "contrast_peak": "slot-09-variant-3-peak-curve",
+          "transition_interlude": "slot-09-variant-3-transition-path",
+          "ending": "slot-09-variant-3-ending-shape",
+          "hook_return": "Repeated hook"
+        },
+        {
+          "candidate_id": "C045",
+          "genre_lane": "central-night-ballad",
+          "form_id": "chorus-first-memory-ballad",
+          "envelope_id": "V09",
+          "evidence_ids": [
+            "E09"
+          ],
+          "section_sequence": [
+            "Verse",
+            "Chorus",
+            "Verse",
+            "Chorus",
+            "Bridge",
+            "Chorus",
+            "Hook",
+            "Coda"
+          ],
+          "recurrence": "slot-09-variant-4-return-logic",
+          "entry": "slot-09-variant-4-entry-gesture",
+          "contrast_peak": "slot-09-variant-4-peak-curve",
+          "transition_interlude": "slot-09-variant-4-transition-path",
+          "ending": "slot-09-variant-4-ending-shape",
+          "hook_return": "Varied return"
+        },
+        {
+          "candidate_id": "C046",
+          "genre_lane": "dramatic-ost-ballad",
+          "form_id": "hook-led-final-ballad",
+          "envelope_id": "V10",
+          "evidence_ids": [
+            "E10"
+          ],
+          "section_sequence": [
+            "Intro",
+            "Verse",
+            "Hook",
+            "Verse",
+            "Hook",
+            "Bridge",
+            "Chorus",
+            "Outro"
+          ],
+          "recurrence": "two compact hooks prepare a single full final chorus",
+          "entry": "piano and synth strings frame the last rainy miles",
+          "contrast_peak": "the only full chorus is reserved for the ending after a darker bridge",
+          "transition_interlude": "each short hook returns quickly to narrative motion",
+          "ending": "four quiet bars turn the parallel-minor color back toward dawn",
+          "hook_return": "Final-only callback"
+        },
+        {
+          "candidate_id": "C047",
+          "genre_lane": "dramatic-ost-ballad",
+          "form_id": "hook-led-final-ballad",
+          "envelope_id": "V10",
+          "evidence_ids": [
+            "E10"
+          ],
+          "section_sequence": [
+            "Intro",
+            "Verse",
+            "Hook",
+            "Verse",
+            "Hook",
+            "Bridge",
+            "Chorus",
+            "Break",
+            "Outro"
+          ],
+          "recurrence": "slot-10-variant-1-return-logic",
+          "entry": "slot-10-variant-1-entry-gesture",
+          "contrast_peak": "slot-10-variant-1-peak-curve",
+          "transition_interlude": "slot-10-variant-1-transition-path",
+          "ending": "slot-10-variant-1-ending-shape",
+          "hook_return": "No hook"
+        },
+        {
+          "candidate_id": "C048",
+          "genre_lane": "dramatic-ost-ballad",
+          "form_id": "hook-led-final-ballad",
+          "envelope_id": "V10",
+          "evidence_ids": [
+            "E10"
+          ],
+          "section_sequence": [
+            "Intro",
+            "Verse",
+            "Hook",
+            "Verse",
+            "Hook",
+            "Bridge",
+            "Chorus",
+            "Refrain",
+            "Outro"
+          ],
+          "recurrence": "slot-10-variant-2-return-logic",
+          "entry": "slot-10-variant-2-entry-gesture",
+          "contrast_peak": "slot-10-variant-2-peak-curve",
+          "transition_interlude": "slot-10-variant-2-transition-path",
+          "ending": "slot-10-variant-2-ending-shape",
+          "hook_return": "Repeated hook"
+        },
+        {
+          "candidate_id": "C049",
+          "genre_lane": "dramatic-ost-ballad",
+          "form_id": "hook-led-final-ballad",
+          "envelope_id": "V10",
+          "evidence_ids": [
+            "E10"
+          ],
+          "section_sequence": [
+            "Intro",
+            "Verse",
+            "Hook",
+            "Verse",
+            "Hook",
+            "Bridge",
+            "Chorus",
+            "Drop",
+            "Outro"
+          ],
+          "recurrence": "slot-10-variant-3-return-logic",
+          "entry": "slot-10-variant-3-entry-gesture",
+          "contrast_peak": "slot-10-variant-3-peak-curve",
+          "transition_interlude": "slot-10-variant-3-transition-path",
+          "ending": "slot-10-variant-3-ending-shape",
+          "hook_return": "Varied return"
+        },
+        {
+          "candidate_id": "C050",
+          "genre_lane": "dramatic-ost-ballad",
+          "form_id": "hook-led-final-ballad",
+          "envelope_id": "V10",
+          "evidence_ids": [
+            "E10"
+          ],
+          "section_sequence": [
+            "Intro",
+            "Verse",
+            "Hook",
+            "Verse",
+            "Hook",
+            "Bridge",
+            "Chorus",
+            "Hook",
+            "Outro"
+          ],
+          "recurrence": "slot-10-variant-4-return-logic",
+          "entry": "slot-10-variant-4-entry-gesture",
+          "contrast_peak": "slot-10-variant-4-peak-curve",
+          "transition_interlude": "slot-10-variant-4-transition-path",
+          "ending": "slot-10-variant-4-ending-shape",
+          "hook_return": "Final-only callback"
+        }
+      ]
+    },
+    "selection_contract": {
+      "track_count": 10,
+      "envelope_allocations": [
+        {
+          "envelope_id": "V01",
+          "track_count": 1
+        },
+        {
+          "envelope_id": "V02",
+          "track_count": 1
+        },
+        {
+          "envelope_id": "V03",
+          "track_count": 1
+        },
+        {
+          "envelope_id": "V04",
+          "track_count": 1
+        },
+        {
+          "envelope_id": "V05",
+          "track_count": 1
+        },
+        {
+          "envelope_id": "V06",
+          "track_count": 1
+        },
+        {
+          "envelope_id": "V07",
+          "track_count": 1
+        },
+        {
+          "envelope_id": "V08",
+          "track_count": 1
+        },
+        {
+          "envelope_id": "V09",
+          "track_count": 1
+        },
+        {
+          "envelope_id": "V10",
+          "track_count": 1
+        }
+      ]
+    },
+    "selections": [
+      {
+        "track": 1,
+        "slot_id": "S01",
+        "candidate_id": "C001",
+        "reference_evidence_id": "E01",
+        "locked_fingerprint": {
+          "genre_lane": "central-night-ballad",
+          "form_id": "radio-build-ballad",
+          "section_sequence": [
+            "Intro",
+            "Verse",
+            "Pre-Chorus",
+            "Chorus",
+            "Verse",
+            "Pre-Chorus",
+            "Chorus",
+            "Bridge",
+            "Chorus",
+            "Outro"
+          ],
+          "recurrence": "two full chorus returns followed by a lyrically varied final return",
+          "entry": "four bars of felt piano fragments and a deep ambient bed before the voice",
+          "contrast_peak": "the bridge changes spectral color while the voice stays below D5 and the final return keeps the same narrow loudness ceiling",
+          "transition_interlude": "each pre-chorus adds harmonic color while holding drum density, loudness, and the low vocal register steady",
+          "ending": "four ambient instrumental bars dissolve the piano fragments into rain",
+          "hook_return": "Varied return"
+        },
+        "open_axes": [
+          "bar allocation",
+          "new chord progression",
+          "instrument roles",
+          "lyric narrative",
+          "hook prominence"
+        ],
+        "state": "finalized",
+        "main_prompt_form_flow": "4-bar ambient entry; even density and low register; color-shift bridge; final return dissolves into rain; strong hook prominence"
+      },
+      {
+        "track": 2,
+        "slot_id": "S02",
+        "candidate_id": "C006",
+        "reference_evidence_id": "E02",
+        "locked_fingerprint": {
+          "genre_lane": "intimate-pop-ballad",
+          "form_id": "letter-refrain-ballad",
+          "section_sequence": [
+            "Intro",
+            "Verse",
+            "Chorus",
+            "Verse",
+            "Chorus",
+            "Coda"
+          ],
+          "recurrence": "two compact chorus returns carry the same central confession",
+          "entry": "quiet guitar arpeggio opens before a long first verse",
+          "contrast_peak": "the second chorus is the emotional ceiling rather than a large climax",
+          "transition_interlude": "verse endings thin before each direct chorus arrival",
+          "ending": "an eight-bar instrumental coda releases the suspended light",
+          "hook_return": "Repeated hook"
+        },
+        "open_axes": [
+          "bar allocation",
+          "new chord progression",
+          "instrument roles",
+          "lyric narrative",
+          "hook prominence"
+        ],
+        "state": "finalized",
+        "main_prompt_form_flow": "4-bar guitar entry; long verse, compact chorus, long verse, compact chorus; 8-bar coda fades with the red light; subtle hook prominence"
+      },
+      {
+        "track": 3,
+        "slot_id": "S03",
+        "candidate_id": "C011",
+        "reference_evidence_id": "E03",
+        "locked_fingerprint": {
+          "genre_lane": "central-night-ballad",
+          "form_id": "rain-memory-refrain",
+          "section_sequence": [
+            "Intro",
+            "Verse",
+            "Pre-Chorus",
+            "Chorus",
+            "Verse",
+            "Pre-Chorus",
+            "Chorus",
+            "Bridge",
+            "Refrain",
+            "Outro"
+          ],
+          "recurrence": "two choruses lead to a separate late refrain",
+          "entry": "soft synth pulse and piano establish motion before the voice",
+          "contrast_peak": "the standalone refrain becomes the peak after a drumless bridge",
+          "transition_interlude": "pre-choruses tighten the pulse and lift the inner line",
+          "ending": "a short pulse-and-piano outro closes the reflected image",
+          "hook_return": "Final-only callback"
+        },
+        "open_axes": [
+          "bar allocation",
+          "new chord progression",
+          "instrument roles",
+          "lyric narrative",
+          "hook prominence"
+        ],
+        "state": "active",
+        "main_prompt_form_flow": "Near-empty intro; half-bar vocal rests; one-bar air before choruses; drumless bridge; standalone refrain; bare outro; moderate hook prominence"
+      },
+      {
+        "track": 4,
+        "slot_id": "S04",
+        "candidate_id": "C016",
+        "reference_evidence_id": "E04",
+        "locked_fingerprint": {
+          "genre_lane": "intimate-pop-ballad",
+          "form_id": "narrative-coda-ballad",
+          "section_sequence": [
+            "Intro",
+            "Verse",
+            "Pre-Chorus",
+            "Chorus",
+            "Break",
+            "Verse",
+            "Pre-Chorus",
+            "Chorus",
+            "Coda"
+          ],
+          "recurrence": "two chorus statements defer the final conclusion to the coda",
+          "entry": "piano and muted guitar present the narrative tone",
+          "contrast_peak": "the second chorus opens into the coda instead of another peak",
+          "transition_interlude": "a four-bar instrumental break separates the two narrative halves",
+          "ending": "the coda states the acceptance and resolves the deceptive motion",
+          "hook_return": "Varied return"
+        },
+        "open_axes": [
+          "bar allocation",
+          "new chord progression",
+          "instrument roles",
+          "lyric narrative",
+          "hook prominence"
+        ],
+        "state": "consumed-by-design",
+        "main_prompt_form_flow": "Short entry; narrative verse and pre-chorus pairs; four-bar instrumental breath; second chorus opens directly into the concluding coda; subtle hook prominence"
+      },
+      {
+        "track": 5,
+        "slot_id": "S05",
+        "candidate_id": "C021",
+        "reference_evidence_id": "E05",
+        "locked_fingerprint": {
+          "genre_lane": "dramatic-ost-ballad",
+          "form_id": "modulating-peak-ballad",
+          "section_sequence": [
+            "Intro",
+            "Verse",
+            "Chorus",
+            "Break",
+            "Verse",
+            "Chorus",
+            "Bridge",
+            "Chorus",
+            "Outro"
+          ],
+          "recurrence": "two restrained choruses prepare one transposed final chorus",
+          "entry": "grand piano states the minor tonal center",
+          "contrast_peak": "the bridge changes harmonic color before a same-register final chorus under the same loudness ceiling",
+          "transition_interlude": "a short instrumental break resets the dynamic floor",
+          "ending": "four bars sustain the new key after the final lyric",
+          "hook_return": "Final-only callback"
+        },
+        "open_axes": [
+          "bar allocation",
+          "new chord progression",
+          "instrument roles",
+          "lyric narrative",
+          "hook prominence"
+        ],
+        "state": "consumed-by-design",
+        "main_prompt_form_flow": "Piano statement; direct first chorus; instrumental breath; second cycle deepens; bridge pivots harmonically into a same-register final chorus; strong hook prominence"
+      },
+      {
+        "track": 6,
+        "slot_id": "S06",
+        "candidate_id": "C026",
+        "reference_evidence_id": "E06",
+        "locked_fingerprint": {
+          "genre_lane": "dramatic-ost-ballad",
+          "form_id": "triple-lift-ost-ballad",
+          "section_sequence": [
+            "Intro",
+            "Verse",
+            "Pre-Chorus",
+            "Chorus",
+            "Verse",
+            "Pre-Chorus",
+            "Chorus",
+            "Bridge",
+            "Pre-Chorus",
+            "Chorus",
+            "Outro"
+          ],
+          "recurrence": "three chorus arrivals are each delayed by a pre-chorus",
+          "entry": "piano ostinato and low strings establish the apology",
+          "contrast_peak": "the bridge darkens before a third pre-chorus withholds the final downbeat",
+          "transition_interlude": "pre-choruses use dominant tension as the recurring hinge",
+          "ending": "a short firm close follows the final confession",
+          "hook_return": "Repeated hook"
+        },
+        "open_axes": [
+          "bar allocation",
+          "new chord progression",
+          "instrument roles",
+          "lyric narrative",
+          "hook prominence"
+        ],
+        "state": "consumed-by-design",
+        "main_prompt_form_flow": "Compact verse cycles; each pre-chorus withholds the downbeat; bridge darkens; one more pre-chorus delays the final chorus and short close; subtle hook prominence"
+      },
+      {
+        "track": 7,
+        "slot_id": "S07",
+        "candidate_id": "C031",
+        "reference_evidence_id": "E07",
+        "locked_fingerprint": {
+          "genre_lane": "intimate-pop-ballad",
+          "form_id": "lullaby-bridge-coda",
+          "section_sequence": [
+            "Intro",
+            "Verse",
+            "Chorus",
+            "Verse",
+            "Chorus",
+            "Bridge",
+            "Chorus",
+            "Coda"
+          ],
+          "recurrence": "two chorus returns expand into one longer final chorus",
+          "entry": "soft piano and bowed texture enter at the lowest energy",
+          "contrast_peak": "the bridge suspends the pulse rather than increasing loudness",
+          "transition_interlude": "chromatic bass motion connects each verse to its chorus",
+          "ending": "the coda resolves the open dominant and lets the city lights fade",
+          "hook_return": "Varied return"
+        },
+        "open_axes": [
+          "bar allocation",
+          "new chord progression",
+          "instrument roles",
+          "lyric narrative",
+          "hook prominence"
+        ],
+        "state": "consumed-by-design",
+        "main_prompt_form_flow": "Two-bar-feel piano entry; paired verse and chorus; bridge suspends the pulse; expanded last chorus dissolves into an eight-bar coda; moderate hook prominence"
+      },
+      {
+        "track": 8,
+        "slot_id": "S08",
+        "candidate_id": "C036",
+        "reference_evidence_id": "E08",
+        "locked_fingerprint": {
+          "genre_lane": "central-night-ballad",
+          "form_id": "promise-return-ballad",
+          "section_sequence": [
+            "Intro",
+            "Verse",
+            "Pre-Chorus",
+            "Chorus",
+            "Verse",
+            "Chorus",
+            "Bridge",
+            "Chorus",
+            "Outro"
+          ],
+          "recurrence": "the second cycle skips its pre-chorus before the final return",
+          "entry": "bright piano begins with a steady driving pulse",
+          "contrast_peak": "the bridge suspends harmony before a clean final chorus landing",
+          "transition_interlude": "the missing second pre-chorus creates forward acceleration",
+          "ending": "four bars hold the tonic-add-six color after the promise",
+          "hook_return": "Repeated hook"
+        },
+        "open_axes": [
+          "bar allocation",
+          "new chord progression",
+          "instrument roles",
+          "lyric narrative",
+          "hook prominence"
+        ],
+        "state": "consumed-by-design",
+        "main_prompt_form_flow": "Bright four-bar entry; first verse earns a pre-chorus; second verse skips it for momentum; bridge suspends; final chorus lands cleanly; strong hook prominence"
+      },
+      {
+        "track": 9,
+        "slot_id": "S09",
+        "candidate_id": "C041",
+        "reference_evidence_id": "E09",
+        "locked_fingerprint": {
+          "genre_lane": "central-night-ballad",
+          "form_id": "chorus-first-memory-ballad",
+          "section_sequence": [
+            "Verse",
+            "Chorus",
+            "Verse",
+            "Chorus",
+            "Bridge",
+            "Chorus",
+            "Coda"
+          ],
+          "recurrence": "three direct chorus returns arrive without pre-choruses",
+          "entry": "the lead voice begins immediately with no instrumental intro",
+          "contrast_peak": "the bridge narrows before the final chorus adds the minor-subdominant shade",
+          "transition_interlude": "short verse endings turn directly into the chorus downbeat",
+          "ending": "a four-bar coda keeps the final direction unresolved but calm",
+          "hook_return": "Repeated hook"
+        },
+        "open_axes": [
+          "bar allocation",
+          "new chord progression",
+          "instrument roles",
+          "lyric narrative",
+          "hook prominence"
+        ],
+        "state": "consumed-by-design",
+        "main_prompt_form_flow": "Voice begins immediately; chorus arrives without a pre-section; shorter second verse; bridge narrows; final chorus leaves a four-bar coda; moderate hook prominence"
+      },
+      {
+        "track": 10,
+        "slot_id": "S10",
+        "candidate_id": "C046",
+        "reference_evidence_id": "E10",
+        "locked_fingerprint": {
+          "genre_lane": "dramatic-ost-ballad",
+          "form_id": "hook-led-final-ballad",
+          "section_sequence": [
+            "Intro",
+            "Verse",
+            "Hook",
+            "Verse",
+            "Hook",
+            "Bridge",
+            "Chorus",
+            "Outro"
+          ],
+          "recurrence": "two compact hooks prepare a single full final chorus",
+          "entry": "piano and synth strings frame the last rainy miles",
+          "contrast_peak": "the only full chorus is reserved for the ending after a darker bridge",
+          "transition_interlude": "each short hook returns quickly to narrative motion",
+          "ending": "four quiet bars turn the parallel-minor color back toward dawn",
+          "hook_return": "Final-only callback"
+        },
+        "open_axes": [
+          "bar allocation",
+          "new chord progression",
+          "instrument roles",
+          "lyric narrative",
+          "hook prominence"
+        ],
+        "state": "consumed-by-design",
+        "main_prompt_form_flow": "Short cinematic entry; two verse-hook cycles; bridge turns darker; the only full chorus arrives at the end and resolves into four quiet bars; moderate hook prominence"
+      }
+    ]
+  },
+  "tracks": [
+    {
+      "track_id": 1,
+      "slot_id": "S01",
+      "candidate_id": "C001",
+      "locked_fingerprint": {
+        "genre_lane": "central-night-ballad",
+        "form_id": "radio-build-ballad",
+        "section_sequence": [
+          "Intro",
+          "Verse",
+          "Pre-Chorus",
+          "Chorus",
+          "Verse",
+          "Pre-Chorus",
+          "Chorus",
+          "Bridge",
+          "Chorus",
+          "Outro"
+        ],
+        "recurrence": "two full chorus returns followed by a lyrically varied final return",
+        "entry": "four bars of felt piano fragments and a deep ambient bed before the voice",
+        "contrast_peak": "the bridge changes spectral color while the voice stays below D5 and the final return keeps the same narrow loudness ceiling",
+        "transition_interlude": "each pre-chorus adds harmonic color while holding drum density, loudness, and the low vocal register steady",
+        "ending": "four ambient instrumental bars dissolve the piano fragments into rain",
+        "hook_return": "Varied return"
+      },
+      "spec": {
+        "title": "Voice Beyond the Wipers",
+        "language": "en",
+        "target_duration_seconds": 218.2,
+        "bpm": 88,
+        "metrical_pulses_per_bar": 4,
+        "sections": [
+          {
+            "tag": "Intro",
+            "bars": 4,
+            "vocal": false
+          },
+          {
+            "tag": "Verse",
+            "bars": 12,
+            "vocal": true
+          },
+          {
+            "tag": "Pre-Chorus",
+            "bars": 8,
+            "vocal": true
+          },
+          {
+            "tag": "Chorus",
+            "bars": 8,
+            "vocal": true
+          },
+          {
+            "tag": "Verse",
+            "bars": 12,
+            "vocal": true
+          },
+          {
+            "tag": "Pre-Chorus",
+            "bars": 8,
+            "vocal": true
+          },
+          {
+            "tag": "Chorus",
+            "bars": 8,
+            "vocal": true
+          },
+          {
+            "tag": "Bridge",
+            "bars": 8,
+            "vocal": true
+          },
+          {
+            "tag": "Chorus",
+            "bars": 8,
+            "vocal": true
+          },
+          {
+            "tag": "Outro",
+            "bars": 4,
+            "vocal": false
+          }
+        ],
+        "prompt_fields": {
+          "Style": "Nocturnal K-pop ambient ballad",
+          "Feel": "Rainy midnight drive; a radio voice softens solitude; steady low intensity",
+          "Tempo/Groove": "88 BPM, 4/4; restrained straight ballad pulse",
+          "Vocal": "Japanese modern female jazz alto A3-D5, centered A3-C#5; smoky-clear English, small intervals, restrained vibrato",
+          "Instrumentation": "Felt piano, deep ambient synth bed, round bass, soft pop kit, diffuse guitar and strings",
+          "Harmony": "Bm; Verse Bm-Gmaj7-D/F#-A; Pre Em7-F#7-Bm-A/C#; Chorus Gmaj7-A-F#m7-Bm, Em7-A-Dmaj7-F#7; final G-A-D",
+          "Form/Flow": "4-bar ambient entry; even density and low register; color-shift bridge; final return dissolves into rain; strong hook prominence",
+          "Production/Mix": "Close lead, narrow dynamics, long dark reverb, air, soft transients, stable lows"
+        },
+        "exclusion_prompt": "swing, walking bass, jazz comping, brushes, horns, scat, drum crescendos, notes above D5, belting"
+      }
+    },
+    {
+      "track_id": 2,
+      "slot_id": "S02",
+      "candidate_id": "C006",
+      "locked_fingerprint": {
+        "genre_lane": "intimate-pop-ballad",
+        "form_id": "letter-refrain-ballad",
+        "section_sequence": [
+          "Intro",
+          "Verse",
+          "Chorus",
+          "Verse",
+          "Chorus",
+          "Coda"
+        ],
+        "recurrence": "two compact chorus returns carry the same central confession",
+        "entry": "quiet guitar arpeggio opens before a long first verse",
+        "contrast_peak": "the second chorus is the emotional ceiling rather than a large climax",
+        "transition_interlude": "verse endings thin before each direct chorus arrival",
+        "ending": "an eight-bar instrumental coda releases the suspended light",
+        "hook_return": "Repeated hook"
+      },
+      "spec": {
+        "title": "While the Light Stays Red",
+        "language": "en",
+        "target_duration_seconds": 209.2,
+        "bpm": 78,
+        "metrical_pulses_per_bar": 4,
+        "sections": [
+          {
+            "tag": "Intro",
+            "bars": 4,
+            "vocal": false
+          },
+          {
+            "tag": "Verse",
+            "bars": 16,
+            "vocal": true
+          },
+          {
+            "tag": "Chorus",
+            "bars": 12,
+            "vocal": true
+          },
+          {
+            "tag": "Verse",
+            "bars": 16,
+            "vocal": true
+          },
+          {
+            "tag": "Chorus",
+            "bars": 12,
+            "vocal": true
+          },
+          {
+            "tag": "Coda",
+            "bars": 8,
+            "vocal": false
+          }
+        ],
+        "prompt_fields": {
+          "Style": "Nocturnal K-pop ballad",
+          "Feel": "Rainy red light; an unsent confession held in patient motion",
+          "Tempo/Groove": "78 BPM, 4/4; restrained straight ballad pulse",
+          "Vocal": "Japanese modern female jazz alto A3-D5, centered A3-C#5; smoky-clear English, small intervals, restrained vibrato",
+          "Instrumentation": "Nylon guitar arpeggio, muted piano, warm bass, soft straight pop percussion, distant strings",
+          "Harmony": "C; Verse C-Em7-Fmaj7-G; Chorus F-Fm-Em7-Am7-Dm7-G-C; coda Fm-C with descending inner voice",
+          "Form/Flow": "4-bar guitar entry; long verse, compact chorus, long verse, compact chorus; 8-bar coda fades with the red light; subtle hook prominence",
+          "Production/Mix": "Near-field vocal, narrow dynamics, gentle chorus bloom, tape haze, soft transients, steady drums"
+        },
+        "exclusion_prompt": "swing, walking bass, jazz comping, brushes, horns, scat, drum crescendos, notes above D5, belting"
+      }
+    },
+    {
+      "track_id": 3,
+      "slot_id": "S03",
+      "candidate_id": "C011",
+      "locked_fingerprint": {
+        "genre_lane": "central-night-ballad",
+        "form_id": "rain-memory-refrain",
+        "section_sequence": [
+          "Intro",
+          "Verse",
+          "Pre-Chorus",
+          "Chorus",
+          "Verse",
+          "Pre-Chorus",
+          "Chorus",
+          "Bridge",
+          "Refrain",
+          "Outro"
+        ],
+        "recurrence": "two choruses lead to a separate late refrain",
+        "entry": "soft synth pulse and piano establish motion before the voice",
+        "contrast_peak": "the standalone refrain becomes the peak after a drumless bridge",
+        "transition_interlude": "pre-choruses tighten the pulse and lift the inner line",
+        "ending": "a short pulse-and-piano outro closes the reflected image",
+        "hook_return": "Final-only callback"
+      },
+      "spec": {
+        "title": "Past Your Exit",
+        "language": "en",
+        "target_duration_seconds": 227.4,
+        "bpm": 76,
+        "metrical_pulses_per_bar": 4,
+        "sections": [
+          {
+            "tag": "Intro",
+            "bars": 4,
+            "vocal": false
+          },
+          {
+            "tag": "Verse",
+            "bars": 10,
+            "vocal": true
+          },
+          {
+            "tag": "Pre-Chorus",
+            "bars": 6,
+            "vocal": true
+          },
+          {
+            "tag": "Chorus",
+            "bars": 8,
+            "vocal": true
+          },
+          {
+            "tag": "Verse",
+            "bars": 10,
+            "vocal": true
+          },
+          {
+            "tag": "Pre-Chorus",
+            "bars": 6,
+            "vocal": true
+          },
+          {
+            "tag": "Chorus",
+            "bars": 8,
+            "vocal": true
+          },
+          {
+            "tag": "Bridge",
+            "bars": 8,
+            "vocal": true
+          },
+          {
+            "tag": "Refrain",
+            "bars": 8,
+            "vocal": true
+          },
+          {
+            "tag": "Outro",
+            "bars": 4,
+            "vocal": false
+          }
+        ],
+        "prompt_fields": {
+          "Style": "Rainy nocturnal K-pop ballad",
+          "Feel": "Slow rainy drive; returning a spare key becomes quiet separation",
+          "Tempo/Groove": "76 BPM, 4/4; slow half-time ballad; full-bar drum gaps",
+          "Vocal": "Japanese modern female jazz alto A3-C5, mostly A3-B4; smoky-clear English, C5 ceiling, low phrases, audible rests",
+          "Instrumentation": "Sparse piano, low synth, round bass; rim and kick in choruses; single strings at turns",
+          "Harmony": "Dm(add9); Verse Dm-C/E-Bbmaj7-F/A; Pre Gm7-Dm/F-Eb-Asus4-A; Chorus Bbmaj7-C-Am7-Dm, Gm7-Asus4-Dm; Refrain Bb-C-Dm-Dm/C; two-bar changes, descending bass, suspended cadences",
+          "Form/Flow": "Near-empty intro; half-bar vocal rests; one-bar air before choruses; drumless bridge; standalone refrain; bare outro; moderate hook prominence",
+          "Production/Mix": "Close low lead, dry phrase gaps, intermittent ambience, short dark tails, centered lows, narrow dynamics, soft transients"
+        },
+        "exclusion_prompt": "jazz backing, swing, walking bass, brushes, horns, scat, dense layers, nonstop drums, >C5, belting"
+      }
+    },
+    {
+      "track_id": 4,
+      "slot_id": "S04",
+      "candidate_id": "C016",
+      "locked_fingerprint": {
+        "genre_lane": "intimate-pop-ballad",
+        "form_id": "narrative-coda-ballad",
+        "section_sequence": [
+          "Intro",
+          "Verse",
+          "Pre-Chorus",
+          "Chorus",
+          "Break",
+          "Verse",
+          "Pre-Chorus",
+          "Chorus",
+          "Coda"
+        ],
+        "recurrence": "two chorus statements defer the final conclusion to the coda",
+        "entry": "piano and muted guitar present the narrative tone",
+        "contrast_peak": "the second chorus opens into the coda instead of another peak",
+        "transition_interlude": "a four-bar instrumental break separates the two narrative halves",
+        "ending": "the coda states the acceptance and resolves the deceptive motion",
+        "hook_return": "Varied return"
+      },
+      "spec": {
+        "title": "돌아가지 않는 출구",
+        "language": "ko",
+        "target_duration_seconds": 223.3,
+        "bpm": 86,
+        "metrical_pulses_per_bar": 4,
+        "sections": [
+          {
+            "tag": "Intro",
+            "bars": 4,
+            "vocal": false
+          },
+          {
+            "tag": "Verse",
+            "bars": 12,
+            "vocal": true
+          },
+          {
+            "tag": "Pre-Chorus",
+            "bars": 8,
+            "vocal": true
+          },
+          {
+            "tag": "Chorus",
+            "bars": 12,
+            "vocal": true
+          },
+          {
+            "tag": "Break",
+            "bars": 4,
+            "vocal": false
+          },
+          {
+            "tag": "Verse",
+            "bars": 12,
+            "vocal": true
+          },
+          {
+            "tag": "Pre-Chorus",
+            "bars": 8,
+            "vocal": true
+          },
+          {
+            "tag": "Chorus",
+            "bars": 12,
+            "vocal": true
+          },
+          {
+            "tag": "Coda",
+            "bars": 8,
+            "vocal": false
+          }
+        ],
+        "prompt_fields": {
+          "Style": "Korean nocturnal K-pop ballad; cinematic pop",
+          "Feel": "Circling an exit in steady rain; resistance slowly becomes acceptance",
+          "Tempo/Groove": "86 BPM, 4/4; restrained straight ballad pulse",
+          "Vocal": "Japanese modern female jazz alto A3-D5, mostly A3-C#5; smoky-clear natural Korean, small intervals, D5 ceiling, restrained vibrato",
+          "Instrumentation": "Acoustic piano, fingered bass, muted electric guitar, compact pop drums, restrained cello line",
+          "Harmony": "A; Verse A-E/G#-F#m-D; Pre D-E-F#m-C#7; Chorus A-D-E-A; coda D-E-C#m-F#m-Bm-E-A",
+          "Form/Flow": "Short entry; narrative verse and pre-chorus pairs; four-bar instrumental breath; second chorus opens directly into the concluding coda; subtle hook prominence",
+          "Production/Mix": "Natural lead detail, centered acoustic core, firm kick, restrained stereo lift only in the coda; narrow dynamics, soft transients, steady drums"
+        },
+        "exclusion_prompt": "swing, walking bass, jazz comping, brushes, horns, scat, drum crescendos, notes above D5, belting"
+      }
+    },
+    {
+      "track_id": 5,
+      "slot_id": "S05",
+      "candidate_id": "C021",
+      "locked_fingerprint": {
+        "genre_lane": "dramatic-ost-ballad",
+        "form_id": "modulating-peak-ballad",
+        "section_sequence": [
+          "Intro",
+          "Verse",
+          "Chorus",
+          "Break",
+          "Verse",
+          "Chorus",
+          "Bridge",
+          "Chorus",
+          "Outro"
+        ],
+        "recurrence": "two restrained choruses prepare one transposed final chorus",
+        "entry": "grand piano states the minor tonal center",
+        "contrast_peak": "the bridge changes harmonic color before a same-register final chorus under the same loudness ceiling",
+        "transition_interlude": "a short instrumental break resets the dynamic floor",
+        "ending": "four bars sustain the new key after the final lyric",
+        "hook_return": "Final-only callback"
+      },
+      "spec": {
+        "title": "첫 비가 닿는 곳",
+        "language": "ko",
+        "target_duration_seconds": 205.7,
+        "bpm": 84,
+        "metrical_pulses_per_bar": 4,
+        "sections": [
+          {
+            "tag": "Intro",
+            "bars": 4,
+            "vocal": false
+          },
+          {
+            "tag": "Verse",
+            "bars": 12,
+            "vocal": true
+          },
+          {
+            "tag": "Chorus",
+            "bars": 8,
+            "vocal": true
+          },
+          {
+            "tag": "Break",
+            "bars": 4,
+            "vocal": false
+          },
+          {
+            "tag": "Verse",
+            "bars": 12,
+            "vocal": true
+          },
+          {
+            "tag": "Chorus",
+            "bars": 8,
+            "vocal": true
+          },
+          {
+            "tag": "Bridge",
+            "bars": 8,
+            "vocal": true
+          },
+          {
+            "tag": "Chorus",
+            "bars": 12,
+            "vocal": true
+          },
+          {
+            "tag": "Outro",
+            "bars": 4,
+            "vocal": false
+          }
+        ],
+        "prompt_fields": {
+          "Style": "Korean nocturnal K-pop ballad; cinematic pop",
+          "Feel": "Cold rain turning warm; a restrained promise gains harmonic warmth without a loudness peak",
+          "Tempo/Groove": "84 BPM, 4/4; restrained straight ballad pulse",
+          "Vocal": "Japanese modern female jazz alto A3-D5, mostly A3-C#5; smoky-clear natural Korean, small intervals, D5 ceiling, restrained vibrato",
+          "Instrumentation": "Grand piano, low tom pulse, electric bass, pop strings, clean electric-guitar sustain",
+          "Harmony": "C#m; Verse F#m-B-E-A-G#7-C#m; Chorus A-B-G#m-C#m-F#m-G#7; bridge A-B-C#sus; final key D#m",
+          "Form/Flow": "Piano statement; direct first chorus; instrumental breath; second cycle deepens; bridge pivots harmonically into a same-register final chorus; strong hook prominence",
+          "Production/Mix": "Intimate opening, restrained orchestral color, soft pop drums, short dark reverb; narrow dynamics, soft transients, steady drums"
+        },
+        "exclusion_prompt": "swing, walking bass, jazz comping, brushes, horns, scat, drum crescendos, notes above D5, belting"
+      }
+    },
+    {
+      "track_id": 6,
+      "slot_id": "S06",
+      "candidate_id": "C026",
+      "locked_fingerprint": {
+        "genre_lane": "dramatic-ost-ballad",
+        "form_id": "triple-lift-ost-ballad",
+        "section_sequence": [
+          "Intro",
+          "Verse",
+          "Pre-Chorus",
+          "Chorus",
+          "Verse",
+          "Pre-Chorus",
+          "Chorus",
+          "Bridge",
+          "Pre-Chorus",
+          "Chorus",
+          "Outro"
+        ],
+        "recurrence": "three chorus arrivals are each delayed by a pre-chorus",
+        "entry": "piano ostinato and low strings establish the apology",
+        "contrast_peak": "the bridge darkens before a third pre-chorus withholds the final downbeat",
+        "transition_interlude": "pre-choruses use dominant tension as the recurring hinge",
+        "ending": "a short firm close follows the final confession",
+        "hook_return": "Repeated hook"
+      },
+      "spec": {
+        "title": "늦은 차선의 고백",
+        "language": "ko",
+        "target_duration_seconds": 213.3,
+        "bpm": 90,
+        "metrical_pulses_per_bar": 4,
+        "sections": [
+          {
+            "tag": "Intro",
+            "bars": 4,
+            "vocal": false
+          },
+          {
+            "tag": "Verse",
+            "bars": 8,
+            "vocal": true
+          },
+          {
+            "tag": "Pre-Chorus",
+            "bars": 8,
+            "vocal": true
+          },
+          {
+            "tag": "Chorus",
+            "bars": 8,
+            "vocal": true
+          },
+          {
+            "tag": "Verse",
+            "bars": 8,
+            "vocal": true
+          },
+          {
+            "tag": "Pre-Chorus",
+            "bars": 8,
+            "vocal": true
+          },
+          {
+            "tag": "Chorus",
+            "bars": 8,
+            "vocal": true
+          },
+          {
+            "tag": "Bridge",
+            "bars": 8,
+            "vocal": true
+          },
+          {
+            "tag": "Pre-Chorus",
+            "bars": 8,
+            "vocal": true
+          },
+          {
+            "tag": "Chorus",
+            "bars": 8,
+            "vocal": true
+          },
+          {
+            "tag": "Outro",
+            "bars": 4,
+            "vocal": false
+          }
+        ],
+        "prompt_fields": {
+          "Style": "Korean nocturnal K-pop ballad; cinematic pop",
+          "Feel": "A late apology on an empty lane; tension is held until the final confession",
+          "Tempo/Groove": "90 BPM, 4/4; restrained straight ballad pulse",
+          "Vocal": "Japanese modern female jazz alto A3-D5, mostly A3-C#5; smoky-clear natural Korean, small intervals, D5 ceiling, restrained vibrato",
+          "Instrumentation": "Piano ostinato, low strings, steady pop bass, kick-snare ballad kit, single clean guitar counterline",
+          "Harmony": "Bb; Verse Bb-F/A-Gm-Eb; Pre Cm-D7-Gm-F; Chorus Eb-F-Dm-Gm-Cm-F-Bb; Bridge Gb-Db-Ebm-F",
+          "Form/Flow": "Compact verse cycles; each pre-chorus withholds the downbeat; bridge darkens; one more pre-chorus delays the final chorus and short close; subtle hook prominence",
+          "Production/Mix": "Focused vocal, soft steady drums, dark verses, final string color under the same ceiling, clear low strings; narrow dynamics, soft transients, steady drums"
+        },
+        "exclusion_prompt": "swing, walking bass, jazz comping, brushes, horns, scat, drum crescendos, notes above D5, belting"
+      }
+    },
+    {
+      "track_id": 7,
+      "slot_id": "S07",
+      "candidate_id": "C031",
+      "locked_fingerprint": {
+        "genre_lane": "intimate-pop-ballad",
+        "form_id": "lullaby-bridge-coda",
+        "section_sequence": [
+          "Intro",
+          "Verse",
+          "Chorus",
+          "Verse",
+          "Chorus",
+          "Bridge",
+          "Chorus",
+          "Coda"
+        ],
+        "recurrence": "two chorus returns expand into one longer final chorus",
+        "entry": "soft piano and bowed texture enter at the lowest energy",
+        "contrast_peak": "the bridge suspends the pulse rather than increasing loudness",
+        "transition_interlude": "chromatic bass motion connects each verse to its chorus",
+        "ending": "the coda resolves the open dominant and lets the city lights fade",
+        "hook_return": "Varied return"
+      },
+      "spec": {
+        "title": "잠들지 않는 유리창",
+        "language": "ko",
+        "target_duration_seconds": 216.0,
+        "bpm": 80,
+        "metrical_pulses_per_bar": 4,
+        "sections": [
+          {
+            "tag": "Intro",
+            "bars": 4,
+            "vocal": false
+          },
+          {
+            "tag": "Verse",
+            "bars": 12,
+            "vocal": true
+          },
+          {
+            "tag": "Chorus",
+            "bars": 8,
+            "vocal": true
+          },
+          {
+            "tag": "Verse",
+            "bars": 12,
+            "vocal": true
+          },
+          {
+            "tag": "Chorus",
+            "bars": 8,
+            "vocal": true
+          },
+          {
+            "tag": "Bridge",
+            "bars": 8,
+            "vocal": true
+          },
+          {
+            "tag": "Chorus",
+            "bars": 12,
+            "vocal": true
+          },
+          {
+            "tag": "Coda",
+            "bars": 8,
+            "vocal": false
+          }
+        ],
+        "prompt_fields": {
+          "Style": "Korean nocturnal K-pop ballad; cinematic pop",
+          "Feel": "A sleepless windshield gradually releases the city lights one by one",
+          "Tempo/Groove": "80 BPM, 4/4; restrained straight ballad pulse",
+          "Vocal": "Japanese modern female jazz alto A3-D5, mostly A3-C#5; smoky-clear natural Korean, small intervals, D5 ceiling, restrained vibrato",
+          "Instrumentation": "Soft piano, bowed synth texture, warm bass, minimal straight pulse, distant reverse-guitar breaths",
+          "Harmony": "Eb; Verse Eb-Fm-Gm-Am7b5-Bb7; Chorus Ab-Bb-Gm-Cm-Fm-Bb; Bridge Cm-Abm-Eb/Bb-Bbsus; coda Abm-Eb",
+          "Form/Flow": "Two-bar-feel piano entry; paired verse and chorus; bridge suspends the pulse; expanded last chorus dissolves into an eight-bar coda; moderate hook prominence",
+          "Production/Mix": "Very close lead, dim high end, slow stereo opening, quiet low-frequency pulse, long but dark tail; narrow dynamics, soft transients, steady drums"
+        },
+        "exclusion_prompt": "swing, walking bass, jazz comping, brushes, horns, scat, drum crescendos, notes above D5, belting"
+      }
+    },
+    {
+      "track_id": 8,
+      "slot_id": "S08",
+      "candidate_id": "C036",
+      "locked_fingerprint": {
+        "genre_lane": "central-night-ballad",
+        "form_id": "promise-return-ballad",
+        "section_sequence": [
+          "Intro",
+          "Verse",
+          "Pre-Chorus",
+          "Chorus",
+          "Verse",
+          "Chorus",
+          "Bridge",
+          "Chorus",
+          "Outro"
+        ],
+        "recurrence": "the second cycle skips its pre-chorus before the final return",
+        "entry": "bright piano begins with a steady driving pulse",
+        "contrast_peak": "the bridge suspends harmony before a clean final chorus landing",
+        "transition_interlude": "the missing second pre-chorus creates forward acceleration",
+        "ending": "four bars hold the tonic-add-six color after the promise",
+        "hook_return": "Repeated hook"
+      },
+      "spec": {
+        "title": "모든 밤의 방향",
+        "language": "ko",
+        "target_duration_seconds": 214.5,
+        "bpm": 94,
+        "metrical_pulses_per_bar": 4,
+        "sections": [
+          {
+            "tag": "Intro",
+            "bars": 4,
+            "vocal": false
+          },
+          {
+            "tag": "Verse",
+            "bars": 12,
+            "vocal": true
+          },
+          {
+            "tag": "Pre-Chorus",
+            "bars": 8,
+            "vocal": true
+          },
+          {
+            "tag": "Chorus",
+            "bars": 12,
+            "vocal": true
+          },
+          {
+            "tag": "Verse",
+            "bars": 12,
+            "vocal": true
+          },
+          {
+            "tag": "Chorus",
+            "bars": 12,
+            "vocal": true
+          },
+          {
+            "tag": "Bridge",
+            "bars": 8,
+            "vocal": true
+          },
+          {
+            "tag": "Chorus",
+            "bars": 12,
+            "vocal": true
+          },
+          {
+            "tag": "Outro",
+            "bars": 4,
+            "vocal": false
+          }
+        ],
+        "prompt_fields": {
+          "Style": "Korean nocturnal K-pop ballad; cinematic pop",
+          "Feel": "A steady promise through wet intersections; warmer and more forward than the surrounding tracks",
+          "Tempo/Groove": "94 BPM, 4/4; restrained straight ballad pulse",
+          "Vocal": "Japanese modern female jazz alto A3-D5, mostly A3-C#5; smoky-clear natural Korean, small intervals, D5 ceiling, restrained vibrato",
+          "Instrumentation": "Bright piano, pulsing electric bass, clean guitar eighths, straight pop kit, compact string ensemble",
+          "Harmony": "Db; Verse Db-Ab/C-Bbm-Ab-Gb; Pre Ebm-Bbm-Gb-Ab; Chorus Db-F7-Bbm-Gb-Ebm-Ab; Bridge Gb-Ab-Bbm-Ab",
+          "Form/Flow": "Bright four-bar entry; first verse earns a pre-chorus; second verse skips it for momentum; bridge suspends; final chorus lands cleanly; strong hook prominence",
+          "Production/Mix": "Present lead, firmer kick, clear stereo guitar, controlled strings, crisp but rain-softened top end; narrow dynamics, soft transients, steady drums"
+        },
+        "exclusion_prompt": "swing, walking bass, jazz comping, brushes, horns, scat, drum crescendos, notes above D5, belting"
+      }
+    },
+    {
+      "track_id": 9,
+      "slot_id": "S09",
+      "candidate_id": "C041",
+      "locked_fingerprint": {
+        "genre_lane": "central-night-ballad",
+        "form_id": "chorus-first-memory-ballad",
+        "section_sequence": [
+          "Verse",
+          "Chorus",
+          "Verse",
+          "Chorus",
+          "Bridge",
+          "Chorus",
+          "Coda"
+        ],
+        "recurrence": "three direct chorus returns arrive without pre-choruses",
+        "entry": "the lead voice begins immediately with no instrumental intro",
+        "contrast_peak": "the bridge narrows before the final chorus adds the minor-subdominant shade",
+        "transition_interlude": "short verse endings turn directly into the chorus downbeat",
+        "ending": "a four-bar coda keeps the final direction unresolved but calm",
+        "hook_return": "Repeated hook"
+      },
+      "spec": {
+        "title": "네가 없는 교차로",
+        "language": "ko",
+        "target_duration_seconds": 207.3,
+        "bpm": 88,
+        "metrical_pulses_per_bar": 4,
+        "sections": [
+          {
+            "tag": "Verse",
+            "bars": 16,
+            "vocal": true
+          },
+          {
+            "tag": "Chorus",
+            "bars": 12,
+            "vocal": true
+          },
+          {
+            "tag": "Verse",
+            "bars": 12,
+            "vocal": true
+          },
+          {
+            "tag": "Chorus",
+            "bars": 12,
+            "vocal": true
+          },
+          {
+            "tag": "Bridge",
+            "bars": 8,
+            "vocal": true
+          },
+          {
+            "tag": "Chorus",
+            "bars": 12,
+            "vocal": true
+          },
+          {
+            "tag": "Coda",
+            "bars": 4,
+            "vocal": false
+          }
+        ],
+        "prompt_fields": {
+          "Style": "Korean nocturnal K-pop ballad; cinematic pop",
+          "Feel": "An empty intersection; absence is accepted while the shared direction remains",
+          "Tempo/Groove": "88 BPM, 4/4; restrained straight ballad pulse",
+          "Vocal": "Japanese modern female jazz alto A3-D5, mostly A3-C#5; smoky-clear natural Korean, small intervals, D5 ceiling, restrained vibrato",
+          "Instrumentation": "Voice-first opening, piano chords, round bass, restrained straight drums, low synth strings",
+          "Harmony": "A; Verse A-E/G#-F#m-D; Chorus A-C#m-F#m-D-Bm-E; Bridge D-E-C#m-F#m-Bm-E; final D-Dm-A",
+          "Form/Flow": "Voice begins immediately; chorus arrives without a pre-section; shorter second verse; bridge narrows; final chorus leaves a four-bar coda; moderate hook prominence",
+          "Production/Mix": "Up-front voice from bar one, small room, stable center, chorus width from pads, gentle road-noise texture; narrow dynamics, soft transients, steady drums"
+        },
+        "exclusion_prompt": "swing, walking bass, jazz comping, brushes, horns, scat, drum crescendos, notes above D5, belting"
+      }
+    },
+    {
+      "track_id": 10,
+      "slot_id": "S10",
+      "candidate_id": "C046",
+      "locked_fingerprint": {
+        "genre_lane": "dramatic-ost-ballad",
+        "form_id": "hook-led-final-ballad",
+        "section_sequence": [
+          "Intro",
+          "Verse",
+          "Hook",
+          "Verse",
+          "Hook",
+          "Bridge",
+          "Chorus",
+          "Outro"
+        ],
+        "recurrence": "two compact hooks prepare a single full final chorus",
+        "entry": "piano and synth strings frame the last rainy miles",
+        "contrast_peak": "the only full chorus is reserved for the ending after a darker bridge",
+        "transition_interlude": "each short hook returns quickly to narrative motion",
+        "ending": "four quiet bars turn the parallel-minor color back toward dawn",
+        "hook_return": "Final-only callback"
+      },
+      "spec": {
+        "title": "비가 멎기 전까지",
+        "language": "ko",
+        "target_duration_seconds": 210.7,
+        "bpm": 82,
+        "metrical_pulses_per_bar": 4,
+        "sections": [
+          {
+            "tag": "Intro",
+            "bars": 4,
+            "vocal": false
+          },
+          {
+            "tag": "Verse",
+            "bars": 12,
+            "vocal": true
+          },
+          {
+            "tag": "Hook",
+            "bars": 8,
+            "vocal": true
+          },
+          {
+            "tag": "Verse",
+            "bars": 12,
+            "vocal": true
+          },
+          {
+            "tag": "Hook",
+            "bars": 8,
+            "vocal": true
+          },
+          {
+            "tag": "Bridge",
+            "bars": 8,
+            "vocal": true
+          },
+          {
+            "tag": "Chorus",
+            "bars": 16,
+            "vocal": true
+          },
+          {
+            "tag": "Outro",
+            "bars": 4,
+            "vocal": false
+          }
+        ],
+        "prompt_fields": {
+          "Style": "Korean nocturnal K-pop ballad; cinematic pop",
+          "Feel": "The last rainy miles before dawn; grief loosens and the road finally opens",
+          "Tempo/Groove": "82 BPM, 4/4; restrained straight ballad pulse",
+          "Vocal": "Japanese modern female jazz alto A3-D5, mostly A3-C#5; smoky-clear natural Korean, small intervals, D5 ceiling, restrained vibrato",
+          "Instrumentation": "Piano and synth-string intro, sustained clean guitar, electric bass, soft straight pop drums, low cello support",
+          "Harmony": "F#; Verse F#-A#m-D#m-B; Hook B-C#-A#m-D#m; Bridge G#m-C#-F#-D#m-B-C#; final F#-C#/E#-D#m-B-Bm-F#",
+          "Form/Flow": "Short cinematic entry; two verse-hook cycles; bridge turns darker; the only full chorus arrives at the end and resolves into four quiet bars; moderate hook prominence",
+          "Production/Mix": "Dark verses, diffuse final color under the same ceiling, soft drum transients, warm low mids, intimate vocal; narrow dynamics, soft transients, steady drums"
+        },
+        "exclusion_prompt": "swing, walking bass, jazz comping, brushes, horns, scat, drum crescendos, notes above D5, belting"
+      }
+    }
+  ]
+}
