@@ -18,7 +18,7 @@ Prefer concrete music vocabulary:
 - measured BPM, meter, pocket, syncopation, or rubato
 - section movement such as restrained entry, crescendo, bridge contrast, return, or coda
 - instrument role, register, texture, and articulation
-- vocal range, phrasing, pronunciation, vibrato, breath, and emotional depth
+- vocal range, phrasing, pronunciation, vibrato, phrase joins, and emotional depth; under a repeated-artifact lock, suppress both the direct lexical family and adjacent performance or capture cues across every active field
 - mic distance, room, dynamics, stereo position, transients, tone, and processing
 
 Use evocative language only when it implies an audible behavior. Keep reference artist and song names in analysis, not generation fields.

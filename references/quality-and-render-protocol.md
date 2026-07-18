@@ -47,10 +47,9 @@ After PLAN PASS, score each item from 0 to 2:
 | Scene and timeline continuity | unexplained jumps | recoverable gap | place, time, and action progress coherently |
 | Speaker and addressee consistency | roles shift | slight ambiguity | narrator and addressed person remain stable |
 | Line-level semantics | nonsensical imagery | isolated strain | every line has a literal or context-supported meaning |
-
 Require at least 23/26, no zero, and 2 for design traceability, routing, completion, `premise_and_causality`, `narrative_verisimilitude`, `scene_and_timeline_continuity`, `speaker_addressee_consistency`, and `line_level_semantics`. Bind the fresh review with `lyrics_sha256`; require evidence and empty `contradictions`, `verisimilitude_breaks`, and `unexplained_images`, then run `validate_lyric_review.py`. Judge truth within the established premise, not event frequency in ordinary life.
 
-This score tests prompt and lyric quality. It does not prove the generator will follow every instruction.
+This score tests prompt and lyric quality. It does not prove the generator will follow every instruction. Treat an unconfirmed lead-role label, a direct token, or an adjacent cue that violates an active artifact-suppression lock as a design-traceability and musical-coherence failure; archives are outside this check.
 
 ## Measure Render Duration
 

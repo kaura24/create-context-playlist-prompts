@@ -1,0 +1,109 @@
+{
+  "schema_version": "1.0",
+  "track_id": 6,
+  "reviewer": "Codex independent lyric and prompt reviewer",
+  "independent": true,
+  "lyrics_sha256": "a268197283050920be8490fbf7ae86df03be4b6d40497e96e35e22a080a37687",
+  "criteria": {
+    "design_traceability": {
+      "score": 2,
+      "evidence": [
+        "Every eight-bar vocal section has four two-bar lyric lines, every Pre-Chorus delays its Chorus, and the near-empty Bridge and flat-density ending follow the TrackSpec.",
+        "The first three Chorus lines remain identical; all fourth lines use an eight-syllable frame with matching SAVE, DRAFT, SEND, answer, and PARK, PARKED, HOME stresses."
+      ]
+    },
+    "field_routing": {
+      "score": 2,
+      "evidence": [
+        "The Basic Prompt contains the positive low-dynamic ambient arrangement and stable low vocal result, the Exclusion Prompt contains the unusable percussion-led, violin, cello, piano-intro, and vocal-ceiling traits, and the Lyrics block contains only supported tags and lyric text."
+      ]
+    },
+    "musical_coherence": {
+      "score": 2,
+      "evidence": [
+        "The low electric-guitar ostinato, mono bass drone, diffuse dark synth, recessed floor-tom support, narrow dynamics, flat density, and near-empty bridge reinforce one restrained ambient OST-ballad design without promoting percussion to a lead role.",
+        "The Chorus fourth lines preserve one rhythmic frame—save my answer till I park, draft my answer while I'm parked, send my answer then drive home—while the apology resolves without a louder climax."
+      ]
+    },
+    "title_narrative_hook": {
+      "score": 2,
+      "evidence": [
+        "What You Meant Was Care names the precise misunderstanding at the center of the story and returns consistently as the chorus hook.",
+        "The final Chorus preserves the care–safe road–control hook while the matched fourth-line frame advances from saving to drafting to sending the answer and driving home."
+      ]
+    },
+    "language_singability": {
+      "score": 2,
+      "evidence": [
+        "The English is natural and direct, including You said the low road was under water, The flood barriers close the road, and I draft my answer while I'm parked.",
+        "The paired Verse lines sit near ten syllables, the paired Pre-Chorus lines near eight, and all Chorus fourth lines use eight syllables with aligned terminal stresses."
+      ]
+    },
+    "structure_completion": {
+      "score": 2,
+      "evidence": [
+        "All vocal sections contain exactly four complete lines, all three Choruses are written in full, the Bridge and third Pre-Chorus complete the parked-car apology, and Intro and Outro remain lyric-free.",
+        "The current 36 lines and 248 English units pass deterministic duration readiness for the 234.1-second plan."
+      ]
+    },
+    "main_vs_exclusion": {
+      "score": 2,
+      "evidence": [
+        "Positive directions specify guitar, bass drone, recessed floor-tom support, dark synth, diffuse ambience, narrow dynamics, and flat density, while percussion-led and other unusable traits remain confined to the exclusion field.",
+        "The requested non-piano intro is positively defined by guitar and bass and protected by piano intro in the exclusions; violin and cello are excluded and absent from the instrumentation."
+      ]
+    },
+    "playlist_fit_differentiation": {
+      "score": 2,
+      "evidence": [
+        "Track 06 preserves the playlist's rainy-night, low-register, narrow-dynamic K-pop-ballad identity while using an ambient guitar-and-drone opening with recessed percussion support instead of Track 01's felt piano, Track 03's sparse piano, or Track 04's piano-guitar entry.",
+        "Its flood-warning misunderstanding and sent service-plaza apology differ from Track 01's radio companionship, Track 02's unsent red-light confession, Track 03's spare-key separation, Track 04's refusal to revisit an old address, and Track 05's stranded-sister pickup.",
+        "The triple pre-chorus delay, parked-car writing sequence, no-string instrumentation, and subdued final confession give Track 06 a distinct structural and narrative role."
+      ]
+    },
+    "premise_and_causality": {
+      "score": 2,
+      "evidence": [
+        "The addressee warns that the lower road is flooding; flood barriers then confirm the warning and cause the speaker to reinterpret concern previously dismissed as control.",
+        "The speaker explicitly promises to answer only after parking, enters the service plaza, parks, switches off the engine, opens the message, drafts and revises the apology, sends it, and only then restarts the car.",
+        "Clearing You were right about the road is causally motivated because factual agreement alone does not acknowledge the speaker's unfair accusation, leading to the fuller apology."
+      ]
+    },
+    "narrative_verisimilitude": {
+      "score": 2,
+      "evidence": [
+        "A 12:20 departure, road-flood warning, visible barriers, elevated ring road, loading yards, service-plaza access lane, and 12:34 arrival form a plausible fourteen-minute driving sequence.",
+        "The speaker keeps both hands on the wheel, leaves the arriving message unread, keeps the phone mounted through engine shutdown, and performs all opening, typing, revision, reading, and sending while parked.",
+        "After sending, the speaker allows the response to wait, starts the car, and resumes the trip rather than reading or composing while moving."
+      ]
+    },
+    "scene_and_timeline_continuity": {
+      "score": 2,
+      "evidence": [
+        "The scene advances continuously from the addressee's building to the ring road, loading yards, flood barriers, service-plaza access lane, canopy parking space, and onward drive home.",
+        "The explicit times progress from 12:20 departure to 12:34 service-plaza arrival without an unexplained jump.",
+        "The parked sequence remains physically ordered: park, switch off the engine, open the mounted phone, compose and send the message, start the car, and continue home."
+      ]
+    },
+    "speaker_addressee_consistency": {
+      "score": 2,
+      "evidence": [
+        "The first-person speaker remains the driver throughout, and you consistently denotes the person who exited at the building, warned about the flooding, and receives the apology.",
+        "No third party takes over the warning, message, accusation, or apology, and the repeated care-versus-control language preserves the same interpersonal conflict."
+      ]
+    },
+    "line_level_semantics": {
+      "score": 2,
+      "evidence": [
+        "The flood barriers close the road concretely confirms the earlier under-water warning and changes the speaker's interpretation.",
+        "Both hands stay steady on the wheel and I shut the engine down; phone stays mounted separate driving from phone use.",
+        "Then clear the line; I owe you more explains why the factual first draft is deleted before the direct apology.",
+        "I send the words and let them wait followed by I send my answer, then drive home preserves the safe order of sending before departure."
+      ]
+    }
+  },
+  "contradictions": [],
+  "verisimilitude_breaks": [],
+  "unexplained_images": [],
+  "status": "PASS"
+}

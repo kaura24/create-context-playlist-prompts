@@ -11,6 +11,7 @@ STRUCTURAL_DIMENSIONS = (
     "section_sequence",
     "recurrence",
     "entry",
+    "groove_signature",
     "contrast_peak",
     "transition_interlude",
     "ending",

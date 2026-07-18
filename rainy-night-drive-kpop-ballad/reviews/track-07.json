@@ -1,0 +1,120 @@
+{
+  "schema_version": "1.0",
+  "track_id": 7,
+  "reviewer": "Codex independent track-07 lyric and prompt reviewer",
+  "independent": true,
+  "lyrics_sha256": "297490701b8e9bf6a375886b3932a542964c30d87e78c6b034b0d83d9eabb63b",
+  "criteria": {
+    "design_traceability": {
+      "score": 2,
+      "evidence": [
+        "Filtered-synth intro, six two-bar lines per Verse, four per initial Chorus and Bridge, six-line final Chorus, and lyric-free eight-bar Coda match the canonical TrackSpec.",
+        "The filtered pad, reverse guitar, warm bass, support-only pulse, bridge-only piano, suspended Bridge pulse, narrow dynamics, and varied final return all trace to the locked fingerprint and prompt fields.",
+        "The active payload retains no unconfirmed percussion-lead label: support-only pulse is positive direction and percussion-led is confined to the Exclusion Prompt."
+      ]
+    },
+    "field_routing": {
+      "score": 2,
+      "evidence": [
+        "The Basic Prompt contains positive arrangement, form, vocal, and mix direction; the Exclusion Prompt contains percussion-led, violin, cello, piano-intro, range, and belting prohibitions; the title remains outside all blocks.",
+        "Lyrics contains only supported section tags and complete lyric text, with no production or exclusion instructions."
+      ]
+    },
+    "musical_coherence": {
+      "score": 2,
+      "evidence": [
+        "Dream-pop lullaby styling, filtered synth, reverse guitar, warm bass, support-only pulse, dim top, quiet lows, narrow dynamics, and a long dark tail reinforce the quiet rainy ride.",
+        "Bridge piano enters only when the pulse suspends, providing contrast through harmony and texture rather than loudness.",
+        "No audible result is inferred; this score reflects only the consistency of the written form, arrangement, harmony, and mix instructions."
+      ]
+    },
+    "title_narrative_hook": {
+      "score": 2,
+      "evidence": [
+        "I'll Keep the Road Quiet is distinctive and directly names the driver's promise to protect the exhausted passenger's sleep.",
+        "The first two Choruses retain Sleep through the lights and the road-quiet promise, while the expanded final Chorus converts that promise into the completed past-tense result.",
+        "The second Chorus's nearly-home variation and the final Chorus's completed-arrival language implement the specified varied return without changing the hook's meaning."
+      ]
+    },
+    "language_singability": {
+      "score": 2,
+      "evidence": [
+        "The English is natural and performable, including You close the door and fasten your seat belt, I keep below the posted speed, and Then park the car before I wake you.",
+        "The Verse lines remain approximately eight to eleven syllables and each has two bars, leaving adequate room for natural lexical stress without dense compression.",
+        "The first three lines of the first two Choruses are identical; their fourth lines preserve the SLEEP-LIGHTS and HOME-centered stress frame while allowing a one-syllable varied ending.",
+        "The expanded final Chorus uses closely corresponding past-tense phrases such as I'll take/I took and needs saying/needed saying, while its additional two lines are supported by the larger twelve-bar allocation.",
+        "This is a text-level prosody judgment only and does not claim that a generated melody or pronunciation will follow the intended stress."
+      ]
+    },
+    "structure_completion": {
+      "score": 2,
+      "evidence": [
+        "Both twelve-bar Verses have six complete lines, both initial eight-bar Choruses and the eight-bar Bridge have four complete lines, and the twelve-bar final Chorus has six complete lines.",
+        "The non-vocal Intro and Coda contain no lyric lines, and all repeated passages are written in full without shorthand.",
+        "The current output passes deterministic validation at 216.0 planned seconds with 30 lyric lines and 232 English units."
+      ]
+    },
+    "main_vs_exclusion": {
+      "score": 2,
+      "evidence": [
+        "Positive instrumentation specifies filtered synth, reverse guitar, warm bass, support-only pulse, and bridge piano; unusable percussion-led, violin, cello, and piano-intro results are confined to Exclusion.",
+        "Bridge piano does not conflict with piano intro because the prompt explicitly delays piano until the Bridge.",
+        "The Vocal field uses positive outcomes such as clear English, stable tone, and clean joins, while active Basic, Exclusion, Title, and Lyrics fields contain none of the suppressed artifact-linked cue families."
+      ]
+    },
+    "playlist_fit_differentiation": {
+      "score": 2,
+      "evidence": [
+        "Track 07 preserves the rainy-night, low-register, narrow-dynamic playlist identity while occupying its quietest interior point through dream-pop lullaby color and a sleeping passenger.",
+        "Its filtered-synth and reverse-guitar opening, support-only pulse, bridge-only piano, and expanded final Chorus distinguish it from the preceding radio, confession, separation, route-choice, family-rescue, and parked-apology narratives.",
+        "The narrative goal is caretaking through an even ride rather than romantic rumination or confrontation, giving the track a clear playlist role."
+      ]
+    },
+    "premise_and_causality": {
+      "score": 2,
+      "evidence": [
+        "The passenger finishes a 1:15 late shift, reports a persistent headache, fastens the seat belt, and falls asleep, giving the driver a clear reason to dim the dash, choose the river road, and maintain an even pace.",
+        "The driver keeps below the posted speed, reports the remaining ten minutes when the passenger briefly wakes, and allows the passenger to settle again.",
+        "At the destination, the driver takes the building ramp, parks before waking the passenger, switches off the engine, and only then touches the passenger's shoulder."
+      ]
+    },
+    "narrative_verisimilitude": {
+      "score": 2,
+      "evidence": [
+        "A forty-eight-minute journey from 1:15 to the appearance of the home street at 2:03 is plausible for a rainy late-night river-road route.",
+        "The seat belt, clear lanes, reduced speed, signal stop, spoken ten-minute update, building ramp, parking, engine shutdown, and gentle wake-up all behave truthfully within the established caretaking premise.",
+        "The canonical premise establishes a late-shift departure but does not identify a hospital; the lyrics correctly preserve the confirmed post-shift context without inventing an unsupported workplace."
+      ]
+    },
+    "scene_and_timeline_continuity": {
+      "score": 2,
+      "evidence": [
+        "Time progresses from the 1:15 departure through the river road, bridge, depot, narrowing road, signal, final ten minutes, and 2:03 arrival without reversal or unexplained displacement.",
+        "The passenger falls asleep before the bridge, wakes once near a signal, receives the ten-minute update, settles again, and remains asleep until after parking.",
+        "The final physical sequence is coherent: the home street appears, the bakery is passed, the car takes the building ramp, parks, the engine is switched off, and only then is the passenger touched and awakened."
+      ]
+    },
+    "speaker_addressee_consistency": {
+      "score": 2,
+      "evidence": [
+        "I remains the driver and caretaker throughout, while you remains the exhausted late-shift passenger.",
+        "Our street, our building, and home consistently describe the shared destination without introducing a third speaker or changing the addressee.",
+        "The imperative Sleep through the lights and the final statement You slept through the lights preserve the same speaker-to-passenger relationship."
+      ]
+    },
+    "line_level_semantics": {
+      "score": 2,
+      "evidence": [
+        "I dim the dash and take the river road gives the passenger's headache and fatigue concrete consequences in the driver's choices.",
+        "You wake once when the signal changes is supported by the stopped or restarting car, and the following ten-minute update explains the brief exchange.",
+        "Then park the car before I wake you explicitly establishes the required safety and action order.",
+        "I switch the engine off beneath our building followed by I touch your shoulder and say, we're here preserves the parked-car sequence.",
+        "The road is still functions as a context-supported closing image: the journey has ended and the quiet promised by the hook remains after arrival."
+      ]
+    }
+  },
+  "contradictions": [],
+  "verisimilitude_breaks": [],
+  "unexplained_images": [],
+  "status": "PASS"
+}

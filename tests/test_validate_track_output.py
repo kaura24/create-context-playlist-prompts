@@ -240,6 +240,61 @@ class TrackOutputValidatorTests(unittest.TestCase):
         self.assertIn("bracketed text", result.stdout)
         self.assertIn("negative command", result.stdout)
 
+    def test_rejects_respiration_tokens_across_active_fields(self) -> None:
+        spec = copy.deepcopy(GOLDEN_SPEC)
+        fields = spec["prompt_fields"]
+        assert isinstance(fields, dict)
+        fields["Vocal"] += "; breathy delivery"
+        self.assert_rejected(
+            render_output(spec),
+            "respiration-related token in Basic Prompt",
+            spec,
+        )
+
+        spec = copy.deepcopy(GOLDEN_SPEC)
+        spec["exclusion_prompt"] = "audible inhales"
+        self.assert_rejected(
+            render_output(spec),
+            "respiration-related token in Absolute Exclusion Prompt",
+            spec,
+        )
+
+        lyrics = golden_lyrics().replace("젖은 골목의 작은 불빛", "젖은 골목의 숨소리", 1)
+        self.assert_rejected(
+            render_output(GOLDEN_SPEC, lyrics),
+            "respiration-related token in Lyrics",
+        )
+
+    def test_respiration_scan_uses_word_boundaries(self) -> None:
+        spec = copy.deepcopy(GOLDEN_SPEC)
+        fields = spec["prompt_fields"]
+        assert isinstance(fields, dict)
+        fields["Feel"] += "; bright sight after rain"
+        result = self.run_validator(render_output(spec), spec)
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+
+    def test_rejects_artifact_adjacent_vocal_cues(self) -> None:
+        for field, cue in (
+            ("Vocal", "smoky-clear tone"),
+            ("Vocal", "whispered delivery"),
+            ("Vocal", "audible rests"),
+            ("Production/Mix", "intimate vocal"),
+            ("Production/Mix", "intimate low lead"),
+            ("Production/Mix", "near-field vocal"),
+            ("Production/Mix", "very close lead"),
+            ("Production/Mix", "close-mic lead"),
+        ):
+            with self.subTest(cue=cue):
+                spec = copy.deepcopy(GOLDEN_SPEC)
+                fields = spec["prompt_fields"]
+                assert isinstance(fields, dict)
+                fields[field] += f"; {cue}"
+                self.assert_rejected(
+                    render_output(spec),
+                    "artifact-linked vocal cue in Basic Prompt",
+                    spec,
+                )
+
     def test_rejects_exclusion_mismatch_overflow_and_duplication(self) -> None:
         mismatch = GOLDEN_OUTPUT.replace("male lead, duet, rap", "banjo, opera", 1)
         self.assert_rejected(
@@ -354,7 +409,7 @@ class TrackOutputValidatorTests(unittest.TestCase):
     def test_rejects_empty_vocal_or_lyric_in_instrumental_section(self) -> None:
         empty_vocal = golden_lyrics().replace(
             "[Verse]\n유리창에 번진 도시가\n책상 위로 천천히 내려와\n"
-            "젖은 골목의 작은 숨결\n문장 사이에 조용히 앉아",
+            "젖은 골목의 작은 불빛\n문장 사이에 조용히 앉아",
             "[Verse]",
             1,
         )

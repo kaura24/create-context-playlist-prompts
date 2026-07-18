@@ -1,0 +1,108 @@
+{
+  "schema_version": "1.0",
+  "track_id": 8,
+  "reviewer": "Codex independent revised track-08 lyric, prompt, and reference-role reviewer",
+  "independent": true,
+  "lyrics_sha256": "c199b81ceb95f405c09f7039706956008770b11c387e52c27bc3559da2444b9c",
+  "criteria": {
+    "design_traceability": {
+      "score": 2,
+      "evidence": [
+        "The section sequence exactly matches the revised S08/C036 TrackSpec and locked fingerprint.",
+        "Both complete Verse-Pre-Chorus-Chorus cycles realize the E08 structure role before the Bridge and expanded final Chorus; the Coda is an original ending.",
+        "The E11 harmony role remains high-level and the E12 binding is limited to rain, separation, recurring return, and continuing care without source-specific imagery."
+      ]
+    },
+    "field_routing": {
+      "score": 2,
+      "evidence": [
+        "The output contains exactly three text fences with the title outside them.",
+        "Positive form, instrumentation, harmony, and mix direction stay in Basic; unusable traits stay in Exclusion; Lyrics contains only supported tags and English lyrics."
+      ]
+    },
+    "musical_coherence": {
+      "score": 2,
+      "evidence": [
+        "The 74 BPM pulse, pad-bass opening, clean guitar, delayed electric piano, support-only kick, and dark ambience form one coherent nocturnal ballad.",
+        "Hook prominence comes from title repetition and a stable low contour, not a higher melody, louder percussion, or denser layers.",
+        "No audible result is inferred; this is a written-design judgment."
+      ]
+    },
+    "title_narrative_hook": {
+      "score": 2,
+      "evidence": [
+        "Same Time Next Sunday is a five-syllable title hook and the concrete answer to the repeated visit question.",
+        "The final Chorus deepens the appointment into a commitment to remember for both people without pitch or loudness escalation."
+      ]
+    },
+    "language_singability": {
+      "score": 2,
+      "evidence": [
+        "The revised English is grammatical and performable, including I'll bring your cardigan; we'll finish the page.",
+        "Each vocal section consistently allows about two bars per phrase, and the five title syllables map naturally to the specified five-note hook.",
+        "This is a text-level prosody judgment only."
+      ]
+    },
+    "structure_completion": {
+      "score": 2,
+      "evidence": [
+        "Every vocal section is fully populated, both nonvocal sections contain no lyrics, and all returns are written in full.",
+        "The 66-bar plan at 74 BPM calculates to 214.1 seconds."
+      ]
+    },
+    "main_vs_exclusion": {
+      "score": 2,
+      "evidence": [
+        "Positive instrumentation names pad, bass, clean guitar, delayed electric piano, and support-only kick; piano intro, percussion-led output, violin, and cello stay in Exclusion.",
+        "The A3-C5 range and mostly sub-Bb4 melody agree with the >C5 and belting exclusions."
+      ]
+    },
+    "playlist_fit_differentiation": {
+      "score": 2,
+      "evidence": [
+        "Track 8 keeps the rainy-night, low-register, narrow-dynamic playlist identity while centering a weekly intergenerational care promise.",
+        "Its cardigan repair, shared crossword, directly given lemon drops, remembered school lunches, and Sunday appointment are distinct from Tracks 1-7."
+      ]
+    },
+    "premise_and_causality": {
+      "score": 2,
+      "evidence": [
+        "The cardigan repair and crossword create practical reasons to return, while the repeated question directly causes the Sunday answer and hook.",
+        "The directly given lemon drops connect past caregiving to the final reciprocal-care promise."
+      ]
+    },
+    "narrative_verisimilitude": {
+      "score": 2,
+      "evidence": [
+        "An older loved one can forget dates while retaining long-practiced care habits; the promise is specific and proportionate rather than an implausible cure.",
+        "The lobby, crossword, cardigan, lemon drops, rainy drive, car seat, home arrival, and keys belong to one grounded visit-and-return context."
+      ]
+    },
+    "scene_and_timeline_continuity": {
+      "score": 2,
+      "evidence": [
+        "The visit ends at nine, the speaker drives one rainy city mile, and arrives home at nine-thirty without an unexplained gap.",
+        "Before the seven o'clock news defines the next visit's arrival time; the nonvocal Coda introduces no later event."
+      ]
+    },
+    "speaker_addressee_consistency": {
+      "score": 2,
+      "evidence": [
+        "I remains the visiting daughter and you remains the same older loved one throughout.",
+        "The final us joins the same two people in a shared memory commitment."
+      ]
+    },
+    "line_level_semantics": {
+      "score": 2,
+      "evidence": [
+        "The crossword, cardigan repair, sleeve-catching question, direct lemon-drop gift, rainy departure, and home arrival form one causal sequence.",
+        "The school-lunch line explains the lemon drops, while If Sunday slips away from you is resolved literally by I'll remember it for us.",
+        "Setting the cardigan beside the keys follows logically from carrying it inside after parking."
+      ]
+    }
+  },
+  "contradictions": [],
+  "verisimilitude_breaks": [],
+  "unexplained_images": [],
+  "status": "PASS"
+}

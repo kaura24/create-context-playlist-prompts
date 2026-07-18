@@ -1,0 +1,128 @@
+{
+  "schema_version": "1.0",
+  "track_id": 9,
+  "reviewer": "Codex independent rebuilt track-09 lyric, prompt, and reference-role reviewer",
+  "independent": true,
+  "lyrics_sha256": "daafae6efac1bef84a7a68ffa0b88178e183d64be0612c28609a19832f15f47e",
+  "criteria": {
+    "design_traceability": {
+      "score": 2,
+      "evidence": [
+        "The Verse-Chorus-Verse-Chorus-Bridge-Chorus-Coda sequence, voice-first opening, three direct Chorus returns, short verse-to-chorus transitions, and four-bar nonvocal Coda exactly match S09/C041 and its locked fingerprint.",
+        "The rebuilt Harmony field now assigns Coda Ebm(add9), explicitly tracing the required borrowed minor-subdominant hold after the final self-acceptance lyric.",
+        "E09 remains structure-only: the voice-first direct Verse-Chorus cycles, Bridge, and final Chorus are distilled while the four-bar Coda is identified as an original addition.",
+        "E13 remains a high-level harmony role: Track 9 uses a newly composed Bb-centered progression with G minor motion, Eb minor color, inversions, and suspended dominant release rather than a source progression.",
+        "E14 remains a high-level emotional and hook role: the crowded hotel reception, valet departure, rainy solo drive, title Quiet, Not Lonely, and new low 3-3-2-1-2 motif use no source lyric, melody, or concrete image."
+      ]
+    },
+    "field_routing": {
+      "score": 2,
+      "evidence": [
+        "The output contains exactly three text fences for Basic Prompt, Absolute Exclusion Prompt, and Lyrics, with Quiet, Not Lonely outside the fences as the title.",
+        "Voice and instrument entry, section-specific texture, harmony including Coda color, fixed hook contour, form, and mix remain in the positive Basic Prompt; unusable traits remain in Exclusion.",
+        "The Lyrics block contains only supported tags and complete English lyric text, with no production, reference, range, or exclusion instructions."
+      ]
+    },
+    "musical_coherence": {
+      "score": 2,
+      "evidence": [
+        "At 74 BPM, the low voice and pad opening, delayed bass, Verse-2 muted guitar, recessed Chorus kick, and dark ambience create a coherent transition from crowded reception to private relief.",
+        "Moderate hook prominence comes from the repeated five-syllable title and fixed low five-note 3-3-2-1-2 rhythm, so catchiness coexists with mostly sub-Bb4 singing, an A3-C5 ceiling, narrow dynamics, and flat Chorus density.",
+        "The Bridge changes perspective and harmony without requiring higher melody, louder percussion, or denser layers, and the Ebm(add9) Coda preserves reflective color after the final acceptance statement.",
+        "No audible result is inferred; this score concerns only the internal coherence of the written form, harmony, arrangement, vocal range, and lyric design."
+      ]
+    },
+    "title_narrative_hook": {
+      "score": 2,
+      "evidence": [
+        "Quiet, Not Lonely is a concise five-syllable hook that names the speaker's distinction between imposed loneliness at the reception and chosen quiet in the car.",
+        "Each Chorus opens and closes with the exact title, while the final Chorus inserts The empty seat is only space to resolve the central fear without changing the hook contour.",
+        "The fixed repeated title supplies catchiness through wording and rhythm rather than a loud or high climax."
+      ]
+    },
+    "language_singability": {
+      "score": 2,
+      "evidence": [
+        "The English is natural and performable, with concrete phrases such as I wait there while the valet brings my car and I turn the radio off before the bridge.",
+        "The twelve-bar first Verse has six lines, both ten-bar initial Choruses have five lines, the second ten-bar Verse has five lines, the eight-bar Bridge has four lines, and the twelve-bar final Chorus has six lines, consistently allowing about two bars per phrase.",
+        "The five title syllables map directly to the specified five-note motif, while longer Verse and Bridge lines have sufficient space at 74 BPM for normal lexical stress.",
+        "Chorus fragments such as No one asking who I'm waiting for function naturally as parallel list phrases after Quiet, not lonely and do not create a semantic or prosodic break.",
+        "This is a text-level prosody judgment and does not claim that a generated render will realize the intended melody or pronunciation."
+      ]
+    },
+    "structure_completion": {
+      "score": 2,
+      "evidence": [
+        "Every vocal section contains one complete line per planned two-bar phrase, all three Choruses are written in full, and the expanded final Chorus uses its additional two bars for a sixth line.",
+        "The four-bar nonvocal Coda contains no lyric line, and there is no repeat shorthand or placeholder text.",
+        "The 66-bar plan at 74 BPM calculates to approximately 214.1 seconds, within the required 180-240-second planning window."
+      ]
+    },
+    "main_vs_exclusion": {
+      "score": 2,
+      "evidence": [
+        "Positive instrumentation specifies voice, low pad, delayed bass, Verse-2 muted guitar, and recessed support-only Chorus kick; percussion-led output, piano intro, violin, and cello remain confined to Exclusion.",
+        "The A3-C5 range and mostly sub-Bb4 delivery agree with the exclusions of notes above C5 and belting.",
+        "The ambient K-pop styling and jazz-alto vocal identity do not conflict with jazz backing being excluded, because the prohibition concerns accompaniment rather than vocal timbre."
+      ]
+    },
+    "playlist_fit_differentiation": {
+      "score": 2,
+      "evidence": [
+        "Track 9 preserves the rainy-night, low-register, narrow-dynamic, support-percussion playlist identity while framing solitude as relief after a socially crowded reception.",
+        "Its voice-on-bar-one opening, valet and ballroom setting, radio-off transition, empty-seat reinterpretation, fixed low title motif, and borrowed-minor Coda distinguish it from the family care, route choice, rescue, apology, and sleeping-passenger narratives of Tracks 1-8.",
+        "The emotional destination is self-directed acceptance rather than reunion, confrontation, or caretaking, giving the track a distinct late-playlist function."
+      ]
+    },
+    "premise_and_causality": {
+      "score": 2,
+      "evidence": [
+        "Repeated questions about arriving alone cause the speaker to offer the face-saving friend-was-running-late explanation and establish why the reception feels socially exposing.",
+        "Leaving the ballroom removes the questioning audience; the awning, valet, car, rain, and switched-off radio then create the quiet in which the speaker can reconsider being alone.",
+        "The empty passenger seat initially evokes fear of being forgotten, but the drive and Bridge reframe it as neutral space, causing the final Chorus to add The empty seat is only space.",
+        "The comparison between chandelier loneliness and road quiet directly causes the concluding claim that the quiet belongs to the speaker."
+      ]
+    },
+    "narrative_verisimilitude": {
+      "score": 2,
+      "evidence": [
+        "A late hotel reception with a band packing up, guests asking about a companion, an awning, and valet service is a coherent setting for the speaker's social discomfort and departure.",
+        "Giving a polite excuse about a delayed friend is a plausible face-saving response to repeated intrusive questions, and the lyric does not require the friend to become an active character later.",
+        "Turning off the radio while driving is an ordinary low-risk action that supports the desire for quiet; the mirror, bridge, passenger seat, roadside signs, and rain remain grounded in the same drive.",
+        "The speaker's emotional change is proportionate: she does not deny the earlier loneliness but distinguishes it from chosen solitude and stops treating the empty seat as proof of rejection."
+      ]
+    },
+    "scene_and_timeline_continuity": {
+      "score": 2,
+      "evidence": [
+        "The sequence progresses from the 11:10 reception ending, to goodbyes at the ballroom doors, waiting under the hotel awning, receiving the car from the valet, and driving away in rain.",
+        "The hotel sign shrinking in the mirror establishes forward movement before the radio is switched off and the car reaches the bridge and darkened roadside signs.",
+        "The Bridge is an interior comparison made during the same drive, and the final Chorus resolves that reflection without adding an unexplained location, person, or time jump.",
+        "The lyric ends in motion and the following nonvocal Coda adds no contradictory event or unsupported destination."
+      ]
+    },
+    "speaker_addressee_consistency": {
+      "score": 2,
+      "evidence": [
+        "I remains the reception guest and driver throughout; no second-person addressee or alternate narrator is introduced.",
+        "Someone remains an incidental reception guest, while my friend appears only inside the speaker's face-saving explanation and does not take over the narrative.",
+        "The Choruses and Bridge remain the same speaker's self-directed reframing of solitude, preserving one perspective from ballroom to car."
+      ]
+    },
+    "line_level_semantics": {
+      "score": 2,
+      "evidence": [
+        "The band packing up, ballroom-door goodbye, hotel awning, and valet bringing the car form a literal and coherent departure sequence.",
+        "My friend was running late is a plausible social explanation for arriving alone, while No story I have to give later states that the speaker no longer accepts an obligation to justify herself.",
+        "The hotel sign growing smaller in the mirror indicates forward travel, and turning off the radio gives The rain is all I hear a concrete diegetic basis.",
+        "The empty passenger seat is only space, not proof I was forgotten explicitly distinguishes a physical fact from the fearful meaning the speaker had assigned to it.",
+        "Chandeliers metonymically represent the crowded ballroom, darkened signs represent the quieter road, and every room knowing my story clearly means the people in those social spaces rather than a literal sentient room.",
+        "The final added line The empty seat is only space restates the completed interpretation immediately before the title hook returns."
+      ]
+    }
+  },
+  "contradictions": [],
+  "verisimilitude_breaks": [],
+  "unexplained_images": [],
+  "status": "PASS"
+}

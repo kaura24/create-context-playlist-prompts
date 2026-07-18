@@ -47,7 +47,10 @@ class SkillContractTests(unittest.TestCase):
         output_text = (REFERENCES / "output-contract.md").read_text(
             encoding="utf-8"
         )
-        self.assertIn("Resolve Language And Dynamics Before Research", skill_text)
+        self.assertIn(
+            "Resolve Language, Dynamics, And Percussion Role Before Research",
+            skill_text,
+        )
         self.assertIn("Do not infer lyric language", workflow_text)
         self.assertIn("vocal highest note", design_text)
         self.assertIn("high-note policy", design_text)
@@ -64,6 +67,48 @@ class SkillContractTests(unittest.TestCase):
         self.assertIn("recorded seed", text)
         self.assertIn("does not override locked hook-return behavior", text)
         self.assertIn("Strong means memorable", text)
+
+    def test_one_existing_reference_supplies_a_bounded_hook_melody_model(self) -> None:
+        text = self.operational_markdown()
+        self.assertIn("hook-melody model", text)
+        self.assertIn("exactly one of the three", text)
+        self.assertIn(
+            "motif length, contour class, rhythmic cell, title placement, and return pattern",
+            text,
+        )
+        self.assertIn("new note sequence", text)
+        self.assertIn("never its actual melody", text)
+
+    def test_playlist_requires_distinct_bound_opening_and_groove_signatures(self) -> None:
+        text = self.operational_markdown()
+        self.assertIn("opening signature", text)
+        self.assertIn("groove signature", text)
+        self.assertIn("exactly three pipe-separated clauses", text)
+        self.assertIn("differ on at least two of three axes", text)
+        self.assertIn("support-only percussion", text)
+
+    def test_percussion_led_requires_explicit_opt_in(self) -> None:
+        skill_text = SKILL.read_text(encoding="utf-8")
+        workflow_text = (REFERENCES / "workflow.md").read_text(encoding="utf-8")
+        design_text = (REFERENCES / "design-rules.md").read_text(encoding="utf-8")
+        self.assertIn("percussion-role choices", skill_text)
+        self.assertIn("Present support-only before percussion-led", workflow_text)
+        self.assertIn("require explicit opt-in for percussion-led", workflow_text)
+        self.assertIn("omit percussion-led from Style", design_text)
+
+    def test_operational_docs_suppress_respiration_token_family(self) -> None:
+        text = self.operational_markdown()
+        self.assertIn("artifact-token suppression lock", text)
+        self.assertIn("two-stage artifact-token suppression lock", text)
+        self.assertIn("artifact-adjacent performance and capture cues", text)
+        self.assertIn("Basic, Exclusion, Title, and Lyrics", text)
+        self.assertIsNone(
+            re.search(
+                r"\b(?:breath\w*|inhale\w*|exhale\w*|gasp\w*|sigh\w*)\b",
+                text,
+                re.IGNORECASE,
+            )
+        )
 
     def test_draft_validation_requires_bound_lyric_content_review(self) -> None:
         text = self.operational_markdown()
@@ -109,9 +154,14 @@ class SkillContractTests(unittest.TestCase):
             path.read_text(encoding="utf-8")
             for path in (SKILL, REFERENCES / "workflow.md", REFERENCES / "output-contract.md")
         )
-        self.assertIn("reference_evidence_id", combined)
+        self.assertIn("reference_bindings", combined)
+        self.assertIn("exactly three", combined)
+        self.assertIn("structure", combined)
+        self.assertIn("harmony", combined)
+        self.assertIn("emotional_arc", combined)
+        self.assertIn("real-song", combined)
         self.assertIn("HTTP(S)", combined)
-        self.assertIn("best-fit web reference", combined)
+        self.assertNotIn("reference_evidence_id", combined)
         self.assertIn("All 10 `Harmony` fields must be distinct", combined)
 
     def test_skill_uses_progressive_disclosure_and_valid_links(self) -> None:

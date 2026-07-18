@@ -57,9 +57,9 @@ def valid_playlist_spec() -> tuple[dict[str, object], dict[str, object]]:
                 (
                     "Korean catalog-bound soul pop",
                     f"Distinct scene {selection['track']}; steady motion",
-                    f"{bpm:.2f} BPM, 4/4; relaxed pocket",
+                    f"{bpm:.2f} BPM, 4/4; {candidate['groove_signature']}",
                     "One Korean alto; stable formants and clear consonants",
-                    f"Unique instrument role {selection['track']}; compact drums",
+                    f"{candidate['entry']}; compact drums",
                     f"Original progression family {selection['track']}; clear cadence",
                     flow,
                     f"Mix profile {selection['track']}; centered lead and short room",
@@ -198,6 +198,24 @@ class PlaylistSpecValidatorTests(unittest.TestCase):
         result = self.run_validator(catalog, playlist)
         self.assertEqual(result.returncode, 1)
         self.assertIn("Form/Flow does not match selected slot", result.stdout)
+
+    def test_rejects_prompt_missing_locked_opening_signature(self) -> None:
+        catalog, playlist = valid_playlist_spec()
+        playlist["tracks"][0]["spec"]["prompt_fields"]["Instrumentation"] = (
+            "Unrelated instrument opening; compact drums"
+        )
+        result = self.run_validator(catalog, playlist)
+        self.assertEqual(result.returncode, 1)
+        self.assertIn("does not encode locked entry signature", result.stdout)
+
+    def test_rejects_prompt_missing_locked_groove_signature(self) -> None:
+        catalog, playlist = valid_playlist_spec()
+        playlist["tracks"][0]["spec"]["prompt_fields"]["Tempo/Groove"] = (
+            "80 BPM, 4/4; generic straight pulse"
+        )
+        result = self.run_validator(catalog, playlist)
+        self.assertEqual(result.returncode, 1)
+        self.assertIn("does not encode locked groove signature", result.stdout)
 
     def test_rejects_duplicate_harmony_plans(self) -> None:
         catalog, playlist = valid_playlist_spec()

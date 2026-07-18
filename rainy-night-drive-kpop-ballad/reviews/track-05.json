@@ -1,0 +1,120 @@
+{
+  "schema_version": "1.0",
+  "track_id": 5,
+  "reviewer": "Codex independent track-05 revised-prompt reviewer",
+  "independent": true,
+  "lyrics_sha256": "cd825a0b4fccb4f61fc24ecd3f5279a1cd0c7377d90737fb8500e9159ec288c1",
+  "criteria": {
+    "design_traceability": {
+      "score": 2,
+      "evidence": [
+        "The Intro-Verse-Chorus-Break-Verse-Chorus-Bridge-Chorus-Outro sequence exactly realizes S05/C021, including two restrained cycles, a four-bar instrumental reset, a bridge pivot, a transposed final chorus, and a four-bar nonvocal ending.",
+        "Muted guitar harmonics and ambient pad provide the minor-key entry specified by the revised locked fingerprint; low piano enters only after the Break.",
+        "The C#m(add9) opening plan pivots by semitone to D minor for the final chorus while the Vocal field explicitly keeps the melody in the same A3-D5 register, tracing the locked harmonic-color peak without an octave lift or louder ceiling.",
+        "Stay under the station light carries the first two choruses, while the exact title Under the Station Light returns in the expanded final chorus, realizing strong prominence and the final title callback.",
+        "The final lyric completes the pickup before the short Outro sustains the new key, matching the locked ending rather than introducing another narrative section."
+      ]
+    },
+    "field_routing": {
+      "score": 2,
+      "evidence": [
+        "The output contains exactly three separate text fences for Basic Prompt, Absolute Exclusion Prompt, and Lyrics, with Under the Station Light outside the fences as the title.",
+        "Guitar harmonics, pad, mono bass, electronic kick, and post-Break piano remain in Instrumentation; the entry and final return remain in Form/Flow; flat density and dark ambience remain in Production/Mix.",
+        "Piano intro, violin, and cello appear only as prohibited traits and are absent from the positive intro design and Lyrics block."
+      ]
+    },
+    "musical_coherence": {
+      "score": 2,
+      "evidence": [
+        "Muted guitar harmonics and ambient pad create a cold suspended opening without the removed piano-led or orchestral-string entrance.",
+        "Mono bass, soft electronic kick, centered lows, soft transients, and an intimate low lead anchor the wide dark ambience without increasing density.",
+        "The semitone C-sharp-minor-to-D-minor modulation supplies harmonic contrast while same-register phrasing, narrow dynamics, flat density, and the D5 ceiling preserve the restrained profile."
+      ]
+    },
+    "title_narrative_hook": {
+      "score": 2,
+      "evidence": [
+        "Station light functions simultaneously as the title image, the sister's safe waiting point, the driver's visual locator, and the repeated chorus hook.",
+        "The hook progresses from an instruction at ten minutes, to reassurance at two minutes, to the exact title at arrival, so repetition advances rather than stalls the story."
+      ]
+    },
+    "language_singability": {
+      "score": 2,
+      "evidence": [
+        "The English is concrete and performable, with longer narrative lines in the verses, a compact repeated chorus command, and low connected phrases suited to the specified alto range and restrained ballad tempo.",
+        "Road, weather, countdown, and pickup wording remains readily understandable despite the cinematic compression required by the lyric form."
+      ]
+    },
+    "structure_completion": {
+      "score": 2,
+      "evidence": [
+        "All nine planned sections appear in exact order; the nonvocal Intro, Break, and Outro contain no lyric lines, and every Verse, Chorus, and Bridge is fully populated.",
+        "All three chorus passages are written in full, with the twelve-bar final chorus expanded to complete the arrival and boarding action rather than ending on a repeat instruction."
+      ]
+    },
+    "main_vs_exclusion": {
+      "score": 2,
+      "evidence": [
+        "The Basic Prompt assigns the intro to muted guitar harmonics and ambient pad and delays low piano until after the Break, while piano intro is confined to the exclusion field.",
+        "Violin and cello remain absent from positive instrumentation; same-register modulation agrees with the exclusions of octave lift, notes above D5, and belting."
+      ]
+    },
+    "playlist_fit_differentiation": {
+      "score": 2,
+      "evidence": [
+        "Rainy-night driving, low alto phrasing, narrow dynamics, and non-jazz K-pop-ballad accompaniment fit the playlist contract.",
+        "The stranded-sister rescue, flooded low-road detour, northern hill approach, station countdown, and completed pickup sharply differ from Tracks 3 and 4, whose core actions concern former partners, missed exits, and changing separation routes.",
+        "The ambient-electronic entry, delayed piano, mono low end, flat density, same-register semitone modulation, and final arrival chorus give Track 5 a distinct identity."
+      ]
+    },
+    "premise_and_causality": {
+      "score": 2,
+      "evidence": [
+        "The sister's 11:40 call, failed last bus, locked waiting room, and exposed canopy establish why she is stranded and why the speaker must drive to the station.",
+        "Floodwater marked on the low road causes the northern-hill detour; that safer route explains the elevated crossing, countdown, crest view, and later approach to Terminal Road.",
+        "The station light and yellow hood provide a shared visual plan, enabling the driver to identify the sister from the crest and complete the pickup beside the gate.",
+        "Clearing the passenger seat and heating the passenger side prepare for the exact final consequence: the sister opens the door and climbs inside."
+      ]
+    },
+    "narrative_verisimilitude": {
+      "score": 2,
+      "evidence": [
+        "A last service can fail after a station waiting room has closed, leaving a passenger under an exterior canopy; the sister's call and repeated location details are appropriate responses to that situation.",
+        "The driver checks mapped floodwater before departure, chooses the hill route, stays below the posted warning speed, uses a hands-free message through the car speakers, and never performs an unsafe manual phone action while moving.",
+        "Turning up the passenger-side heat before arrival is an earned act of preparation for a rain-soaked sister, not an arbitrary gesture, and it supports the song's quiet reconnection theme.",
+        "The bridge establishes the speaker's winter isolation, so answering this call and knowing whom she is driving for plausibly earns the emotional restoration promised by the TrackSpec."
+      ]
+    },
+    "scene_and_timeline_continuity": {
+      "score": 2,
+      "evidence": [
+        "The sequence proceeds from the 11:40 call and departure, to the ten-minute estimate, northern-hill detour, eight-minute dashboard countdown, crest view, two-minute estimate, Terminal Road turn, gate arrival, and boarding.",
+        "The low-road flood warning motivates the hill route before the drive begins, and the later view above the flooded crossing confirms rather than contradicts that detour.",
+        "The terminal clock and yellow coat first become visible from the crest, after which the two-minute approach and turn onto Terminal Road provide a coherent final distance rather than an instantaneous location jump.",
+        "The final chorus ends with the sister inside the car, and the following nonvocal Outro introduces no later event that would reopen the timeline."
+      ]
+    },
+    "speaker_addressee_consistency": {
+      "score": 2,
+      "evidence": [
+        "The first-person speaker remains the sister who receives the call and drives throughout, while you consistently refers to the same stranded sister waiting at the station.",
+        "My sister in the opening, your message in the second verse, and your yellow coat and boarding in the choruses all preserve the same family relationship and addressee.",
+        "The bridge's references to ignored calls and the passenger side describe the same speaker's isolation and present rescue, without introducing a former partner or other recipient."
+      ]
+    },
+    "line_level_semantics": {
+      "score": 2,
+      "evidence": [
+        "The traffic map's water warning, northern-hill alternative, flooded crossing below, warning speed, crest, and final Terminal Road turn form a physically intelligible route.",
+        "The ten-minute, eight-minute, and two-minute references are compatible stages of one approach rather than conflicting travel times.",
+        "Stay under the station light and keep your yellow hood where I can see it are actionable location instructions, and the later sight of the yellow coat fulfills both details.",
+        "The message playing through car speakers denotes hands-free playback, while turning up the passenger-side heater prepares the empty seat for the sister's imminent arrival.",
+        "Rain blowing through the roof is supported by the earlier open station canopy and describes wind-driven rain reaching the sheltered waiting area rather than an unrelated image."
+      ]
+    }
+  },
+  "contradictions": [],
+  "verisimilitude_breaks": [],
+  "unexplained_images": [],
+  "status": "PASS"
+}

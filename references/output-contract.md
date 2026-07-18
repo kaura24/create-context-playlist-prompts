@@ -7,12 +7,12 @@ For a 10-track playlist, build one canonical PlaylistSpec, validate all bindings
 Keep reusable genre rules and request-specific choices in separate UTF-8 JSON files.
 
 - StructureCatalog has exactly `catalog_revision`, `genre_coordinate`, `evidence`, `genre_lanes`, `variation_envelopes`, and `diversity_contract`.
-- Evidence sources are HTTP(S) URLs or explicit `user:` approvals. Every lane, envelope, and candidate references registered evidence IDs. For real-song research, put artist, track, observed structural trait, observed harmonic behavior, and selection reason in the evidence record's `scope`.
+- Evidence sources are HTTP(S) URLs or explicit `user:` approvals. Every lane, envelope, and candidate references registered evidence IDs. A final reference evidence record requires `kind: real-song`, nonempty `artist` and `track`, an inspected HTTP(S) source, and a concise `scope`; `user:` evidence cannot fill a final role.
 - Each envelope lists permitted complete fingerprints and forbidden partial combinations. Never generate a Cartesian product from independent option lists.
 - StructurePlan has exactly `catalog_revision`, `candidate_pool`, `selection_contract`, and `selections`; its revision must match the catalog.
 - `candidate_pool.minimum_count` is at least 50. The catalog owns distinct-value minimums and minimum pairwise distances for both the pool and selected 10.
 
-Every complete fingerprint contains `genre_lane`, `form_id`, `section_sequence`, `recurrence`, `entry`, `contrast_peak`, `transition_interlude`, `ending`, and `hook_return`. Every selection copies the complete candidate projection into `locked_fingerprint`, identifies one of that candidate's HTTP(S) evidence records as `reference_evidence_id`, and may open only non-structural axes.
+Every complete fingerprint contains `genre_lane`, `form_id`, `section_sequence`, `recurrence`, `entry`, `groove_signature`, `contrast_peak`, `transition_interlude`, `ending`, and `hook_return`. Encode `entry` as `lead source | onset gesture | vocal-entry timing` and `groove_signature` as `subdivision or pulse | accent or bass placement | support-only drum-rest cycle`. Each has exactly three pipe-separated clauses; selected pairs differ on at least two of three axes. Every selection copies the complete candidate projection into `locked_fingerprint` and adds `reference_bindings`: exactly three rows with `role`, `evidence_id`, and nonempty `distilled_trait`. Roles are exactly `structure`, `harmony`, and `emotional_arc`; evidence IDs, source URLs, and real-song identities are distinct inside the trio and all three are cited by the candidate. For each new track, prefix exactly one of the three distilled traits with `Hook model:` and describe only motif length, contour class, rhythmic cell, title placement, and return pattern. A selection may open only non-structural axes.
 
 ## PlaylistSpec Binding Schema
 
@@ -24,7 +24,7 @@ Use schema version `1.0`, the catalog's exact revision, one Playlist Contract, t
      "tracks":[{"track_id":1, "slot_id":"S01", "candidate_id":"C017",
                 "locked_fingerprint":{"...":"exact selection"}, "spec":{"...":"TrackSpec below"}}]}
 
-Track IDs must be exactly 1 through 10. Each selection needs a candidate-cited HTTP(S) `reference_evidence_id`; each binding must match its slot, candidate, fingerprint, section sequence, and `Form/Flow`. Keep all 10 `Harmony` fields distinct and newly composed from their references' high-level models. Before binding, route exact language to TrackSpec, vocal boundary and high-note policy to `Vocal`, climax and assigned hook prominence to `Form/Flow`, and arrangement range to `Production/Mix`; repeat playlist-wide rules in the contract and affected TrackSpecs. A random hook level uses the workflow's recorded seed and balanced shuffled bag, never a new structure.
+Track IDs must be exactly 1 through 10. Each selection needs three candidate-cited real-song HTTP(S) `reference_bindings`; each playlist binding must match its slot, candidate, fingerprint, section sequence, `Form/Flow`, opening signature, and groove signature. All opening clauses must appear in `Instrumentation` or `Form/Flow`; all groove clauses must appear in `Tempo/Groove`. Keep all 10 `Harmony` fields distinct and newly composed from high-level models rather than source expressions. Before binding, route exact language to TrackSpec, vocal boundary and high-note policy to `Vocal`, climax and assigned hook prominence to `Form/Flow`, and arrangement range to `Production/Mix`; repeat playlist-wide rules in the contract and affected TrackSpecs. A random hook level uses the workflow's recorded seed and balanced shuffled bag, never a new structure.
 
 ## TrackSpec Schema
 

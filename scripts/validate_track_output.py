@@ -66,6 +66,20 @@ LATIN_WORD = re.compile(r"[A-Za-z]+(?:['’-][A-Za-z]+)?")
 HANGUL = re.compile(r"[\uac00-\ud7a3]")
 KANA = re.compile(r"[\u3040-\u30ff]")
 HAN = re.compile(r"[\u3400-\u9fff]")
+RESPIRATION_TOKEN = re.compile(
+    r"\b(?:breath(?:e[sd]?|ing|y|iness|less|es)?|"
+    r"inhale(?:s|d|ing)?|exhale(?:s|d|ing)?|"
+    r"gasp(?:s|ed|ing)?|sigh(?:s|ed|ing)?)\b|"
+    r"(?:\b숨(?:을|이|만|도|과|의)?\b|숨소리|숨결|호흡|들숨|날숨|한숨|息遣い|吐息|呼吸)",
+    re.IGNORECASE,
+)
+ARTIFACT_ADJACENT_VOCAL_CUE = re.compile(
+    r"\bsmoky(?:-clear)?\b|\bwhisper(?:s|ed|ing|y)?\b|\baudible\s+rests?\b|"
+    r"\b(?:airy|intimate|near-field)(?:\s+low)?\s+(?:vocal|voice|lead|delivery|singing|tone)\b|"
+    r"\b(?:very\s+)?close(?:\s+low)?\s+(?:vocal|voice|lead|delivery|singing|tone)\b|"
+    r"\bclose(?:-|\s*)mic(?:'d|ed)?(?:\s+(?:vocal|voice|lead|delivery|singing|tone))?\b",
+    re.IGNORECASE,
+)
 
 
 def parse_args() -> argparse.Namespace:
@@ -500,6 +514,25 @@ def validate(
         "exclusion_prompt": "",
         "planned_duration": None,
     }
+
+    for label, value in (
+        ("Basic Prompt", compiled["main"]),
+        ("Absolute Exclusion Prompt", compiled["exclusion"]),
+        ("Title", compiled["title"]),
+        ("Lyrics", compiled["lyrics"]),
+    ):
+        match = RESPIRATION_TOKEN.search(value)
+        if match:
+            errors.append(
+                f"Active generation payload contains respiration-related token in {label}: "
+                f"{match.group(0)}"
+            )
+        adjacent_match = ARTIFACT_ADJACENT_VOCAL_CUE.search(value)
+        if adjacent_match:
+            errors.append(
+                f"Active generation payload contains artifact-linked vocal cue in {label}: "
+                f"{adjacent_match.group(0)}"
+            )
 
     main_length = validate_basic_prompt(
         compiled["main"], normalized_spec["prompt_fields"], errors

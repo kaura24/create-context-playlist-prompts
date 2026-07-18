@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import copy
+import itertools
 import json
 import re
 import sys
@@ -23,6 +24,7 @@ from structure_contract import (
 
 MINIMUM_CANDIDATES = 50
 TRACK_COUNT = 10
+REFERENCE_ROLES = {"structure", "harmony", "emotional_arc"}
 CATALOG_KEYS = {
     "catalog_revision",
     "genre_coordinate",
@@ -74,6 +76,19 @@ def validate_string_list(
 
 def canonical(value: Any) -> str:
     return json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
+
+
+def signature_parts(
+    value: Any, label: str, errors: list[str]
+) -> tuple[str, str, str] | None:
+    if not nonempty_string(value):
+        return None
+    parts = [part.strip() for part in value.split("|")]
+    if len(parts) != 3 or any(not part for part in parts):
+        errors.append(f"{label} must contain exactly 3 pipe-separated clauses")
+        return None
+    normalized = [" ".join(part.casefold().split()) for part in parts]
+    return normalized[0], normalized[1], normalized[2]
 
 
 def fingerprint(candidate: dict[str, Any]) -> tuple[str, ...]:
@@ -352,6 +367,7 @@ def _validate_combined(plan: Any) -> list[str]:
         for field in (
             "recurrence",
             "entry",
+            "groove_signature",
             "contrast_peak",
             "transition_interlude",
             "ending",
@@ -366,6 +382,12 @@ def _validate_combined(plan: Any) -> list[str]:
                     )
         if item.get("hook_return") not in HOOK_RETURNS:
             errors.append(f"candidate {candidate_id} has unsupported hook_return")
+        signature_parts(item.get("entry"), f"candidate {candidate_id}.entry", errors)
+        signature_parts(
+            item.get("groove_signature"),
+            f"candidate {candidate_id}.groove_signature",
+            errors,
+        )
 
         for count, section in re.findall(
             r"\b(\d+)\s+(" + "|".join(re.escape(name) for name in sorted(SUPPORTED_SECTIONS))
@@ -448,6 +470,8 @@ def _validate_combined(plan: Any) -> list[str]:
     slot_ids: set[str] = set()
     selected_ids: set[str] = set()
     selected_candidates: list[dict[str, Any]] = []
+    selected_openings: list[tuple[Any, tuple[str, str, str]]] = []
+    selected_grooves: list[tuple[Any, tuple[str, str, str]]] = []
     selected_envelopes: Counter[str] = Counter()
     selected_states: Counter[str] = Counter()
     for index, item in enumerate(selection_items, start=1):
@@ -486,26 +510,89 @@ def _validate_combined(plan: Any) -> list[str]:
                 errors.append(
                     f"selection {slot_id}.locked_fingerprint does not match candidate {candidate_id}"
                 )
+            opening = signature_parts(
+                candidate.get("entry"), f"selection {slot_id}.entry", []
+            )
+            groove = signature_parts(
+                candidate.get("groove_signature"),
+                f"selection {slot_id}.groove_signature",
+                [],
+            )
+            if opening is not None:
+                selected_openings.append((track, opening))
+            if groove is not None:
+                selected_grooves.append((track, groove))
 
-        reference_id = item.get("reference_evidence_id")
-        if not nonempty_string(reference_id):
-            errors.append(f"selection {slot_id}.reference_evidence_id must be non-empty")
-        else:
+        binding_items = item.get("reference_bindings")
+        if not isinstance(binding_items, list) or len(binding_items) != len(REFERENCE_ROLES):
+            errors.append(
+                f"selection {slot_id}.reference_bindings must contain exactly 3 rows"
+            )
+        if not isinstance(binding_items, list):
+            binding_items = []
+
+        reference_roles: list[str] = []
+        reference_ids: list[str] = []
+        reference_sources: list[str] = []
+        reference_songs: list[tuple[str, str]] = []
+        for binding_index, binding in enumerate(binding_items, start=1):
+            label = f"selection {slot_id}.reference_bindings[{binding_index}]"
+            if not isinstance(binding, dict):
+                errors.append(f"{label} must be an object")
+                continue
+            role = binding.get("role")
+            if nonempty_string(role):
+                reference_roles.append(role)
+            else:
+                errors.append(f"{label}.role must be non-empty")
+
+            reference_id = binding.get("evidence_id")
+            if not nonempty_string(reference_id):
+                errors.append(f"{label}.evidence_id must be non-empty")
+                continue
+            reference_ids.append(reference_id)
+            if not nonempty_string(binding.get("distilled_trait")):
+                errors.append(f"{label}.distilled_trait must be non-empty")
+
             reference = evidence_by_id.get(reference_id)
             if reference is None:
+                errors.append(f"{label} references unknown evidence {reference_id}")
+                continue
+            source = reference.get("source")
+            if not isinstance(source, str) or not re.match(r"^https?://\S+$", source):
                 errors.append(
-                    f"selection {slot_id}.reference_evidence_id references unknown evidence {reference_id}"
+                    f"selection {slot_id} evidence {reference_id} must resolve to an HTTP(S) source"
                 )
             else:
-                source = reference.get("source")
-                if not isinstance(source, str) or not re.match(r"^https?://\S+$", source):
-                    errors.append(
-                        f"selection {slot_id}.reference_evidence_id must resolve to an HTTP(S) source"
-                    )
+                reference_sources.append(source.casefold())
+            if reference.get("kind") != "real-song":
+                errors.append(
+                    f"selection {slot_id} evidence {reference_id} must have kind real-song"
+                )
+            artist = reference.get("artist")
+            track_name = reference.get("track")
+            if not nonempty_string(artist) or not nonempty_string(track_name):
+                errors.append(
+                    f"selection {slot_id} evidence {reference_id} must name a real song with artist and track"
+                )
+            else:
+                reference_songs.append((artist.strip().casefold(), track_name.strip().casefold()))
             if candidate is not None and reference_id not in candidate.get("evidence_ids", []):
                 errors.append(
-                    f"selection {slot_id}.reference_evidence_id is not cited by candidate {candidate_id}"
+                    f"selection {slot_id} evidence {reference_id} is not cited by candidate {candidate_id}"
                 )
+
+        if set(reference_roles) != REFERENCE_ROLES or len(reference_roles) != len(REFERENCE_ROLES):
+            errors.append(
+                f"selection {slot_id}.reference_bindings roles must be exactly "
+                + ", ".join(sorted(REFERENCE_ROLES))
+            )
+        if len(reference_ids) == len(REFERENCE_ROLES) and len(set(reference_ids)) != len(REFERENCE_ROLES):
+            errors.append(f"selection {slot_id}.reference_bindings must use 3 distinct evidence IDs")
+        if len(reference_sources) == len(REFERENCE_ROLES) and len(set(reference_sources)) != len(REFERENCE_ROLES):
+            errors.append(f"selection {slot_id}.reference_bindings must use 3 distinct source URLs")
+        if len(reference_songs) == len(REFERENCE_ROLES) and len(set(reference_songs)) != len(REFERENCE_ROLES):
+            errors.append(f"selection {slot_id}.reference_bindings must use 3 distinct real songs")
 
         open_axes = validate_string_list(
             item.get("open_axes"), f"selection {slot_id}.open_axes", errors, allow_empty=True
@@ -543,6 +630,19 @@ def _validate_combined(plan: Any) -> list[str]:
         errors.append(f"selected envelope {envelope_id} has no envelope allocation")
     if selected_states.get("active", 0) > 1:
         errors.append("selections may contain at most one active slot")
+
+    for label, signatures in (
+        ("opening", selected_openings),
+        ("groove", selected_grooves),
+    ):
+        for (left_track, left), (right_track, right) in itertools.combinations(
+            signatures, 2
+        ):
+            if sum(a != b for a, b in zip(left, right, strict=True)) < 2:
+                errors.append(
+                    f"tracks {left_track} and {right_track} {label} signatures "
+                    "must differ on at least 2 of 3 axes"
+                )
 
     validate_requirements(
         contract.get("dimension_requirements"),

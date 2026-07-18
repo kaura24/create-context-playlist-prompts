@@ -1,6 +1,6 @@
 **기본프롬프트**
 ```text
-Style: Nocturnal K-pop ballad Feel: Rainy red light; an unsent confession held in patient motion Tempo/Groove: 78 BPM, 4/4; restrained straight ballad pulse Vocal: Japanese modern female jazz alto A3-D5, centered A3-C#5; smoky-clear English, small intervals, restrained vibrato Instrumentation: Nylon guitar arpeggio, muted piano, warm bass, soft straight pop percussion, distant strings Harmony: C; Verse C-Em7-Fmaj7-G; Chorus F-Fm-Em7-Am7-Dm7-G-C; coda Fm-C with descending inner voice Form/Flow: 4-bar guitar entry; long verse, compact chorus, long verse, compact chorus; 8-bar coda fades with the red light; subtle hook prominence Production/Mix: Near-field vocal, narrow dynamics, gentle chorus bloom, tape haze, soft transients, steady drums
+Style: Nocturnal K-pop ballad Feel: Rainy red light; an unsent confession held in patient motion Tempo/Groove: 78 BPM, 4/4; straight eighths | guitar on 2-and | kick every 2 bars Vocal: Japanese modern female jazz alto A3-D5, centered A3-C#5; clear English, stable tone, clean joins, small intervals, restrained vibrato Instrumentation: nylon guitar | broken thirds | vocal bar 5; warm bass, muted keys, soft kick Harmony: C; Verse C-Em7-Fmaj7-G; Chorus F-Fm-Em7-Am7-Dm7-G-C; coda Fm-C with descending inner voice Form/Flow: 4-bar guitar entry; long verse, compact chorus, long verse, compact chorus; 8-bar coda fades with the red light; subtle hook prominence Production/Mix: Centered low lead, narrow dynamics, gentle chorus bloom, tape haze, soft transients, steady drums
 ```
 
 **절대불가프롬프트**
@@ -39,7 +39,7 @@ I almost call you when I reach the bridge
 Then keep my hands at ten and two instead
 The phone stays face down on the passenger seat
 At the next intersection traffic stops again
-This time I breathe before I read your message
+This time I pause before I read your message
 And know I can finish the drive alone
 
 [Chorus]

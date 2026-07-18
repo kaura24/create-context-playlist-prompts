@@ -1,0 +1,83 @@
+{
+  "schema_version": "1.0",
+  "track_id": 4,
+  "reviewer": "Codex independent track-04 lyric reviewer",
+  "independent": true,
+  "lyrics_sha256": "f98c039f6d907f35c2e34259ad200321bda8d4cf8fb9e885e1b7c621a2ae9b26",
+  "criteria": {
+    "design_traceability": {
+      "score": 2,
+      "evidence": ["The nine-section S04 sequence, four-bar Break, vocal Coda, repeated four-note title hook, varied second Chorus, and deferred conclusion all match the bound design."]
+    },
+    "field_routing": {
+      "score": 2,
+      "evidence": ["Hook contour and rhythm stay in Form/Flow, clean joins and silent gaps stay in Vocal and Mix, and Lyrics contains only supported tags and text."]
+    },
+    "musical_coherence": {
+      "score": 2,
+      "evidence": ["At 82 BPM, repeated wording, fixed syncopation, and a four-note descending contour create strong hook prominence without violating the narrow dynamics or A3-D5 ceiling."]
+    },
+    "title_narrative_hook": {
+      "score": 2,
+      "evidence": ["Not That Exit Again repeats three times per chorus and changes from refusal in the first return to enacted forward motion in the second."]
+    },
+    "language_singability": {
+      "score": 2,
+      "evidence": ["Concrete English narrative lines alternate with a compact repeatable hook suited to low phrases and silent gaps."]
+    },
+    "structure_completion": {
+      "score": 2,
+      "evidence": ["All nine sections appear in order; Intro and Break are lyric-free, every vocal section is complete, both Choruses are written in full, and the Coda resolves the Home-label premise."]
+    },
+    "main_vs_exclusion": {
+      "score": 2,
+      "evidence": ["Range, hook, form, clean joins, and silent-gap instructions remain separated from Lyrics, and generation fields contain no unwanted vocal-artifact vocabulary."]
+    },
+    "playlist_fit_differentiation": {
+      "score": 1,
+      "evidence": ["The strong syncopated title hook, Break, and vocal Coda distinguish the music, but the old-address, exit, and navigation premise partially overlaps Track 3's separation drive."]
+    },
+    "premise_and_causality": {
+      "score": 2,
+      "evidence": [
+        "The unchanged Home label explains why navigation repeatedly routes the speaker toward the former apartment and why the exit became a three-week habit.",
+        "Taking the through lane prevents another return; stopping at the gas station makes the edit safe, changing Home redraws the route, and the new label enables the Coda's resolution."
+      ]
+    },
+    "narrative_verisimilitude": {
+      "score": 2,
+      "evidence": [
+        "A former address can remain saved as Home after a move, and the established three-week habit gives the automatic pull toward the exit a character-specific cause.",
+        "The driver edits navigation only after passing the split and stopping at a gas station, then pulls out when the road is clear.",
+        "The repeated failed returns make tonight's lane choice and permanent label change feel earned rather than abruptly symbolic."
+      ]
+    },
+    "scene_and_timeline_continuity": {
+      "score": 2,
+      "evidence": [
+        "The route progresses from the approaching western exit to the southbound lane, gas-station stop, redrawn river route, and final eleven-minute approach home.",
+        "The old exit is explicitly behind the speaker before the new route continues, so no unexplained reversal occurs.",
+        "Dashboard interaction, phone placement, and departure happen sequentially while stopped."
+      ]
+    },
+    "speaker_addressee_consistency": {
+      "score": 2,
+      "evidence": [
+        "The first-person speaker remains the driver and former resident throughout.",
+        "Your consistently refers to the same person associated with the old apartment, street, and saved address."
+      ]
+    },
+    "line_level_semantics": {
+      "score": 2,
+      "evidence": [
+        "The blue route, green exit sign, lane split, turn-signal impulse, through lane, and passed ramp describe one legible road decision.",
+        "Opening saved places on the dashboard, relabeling Home, receiving a redrawn route, and placing the connected phone face down form a compatible parked navigation workflow.",
+        "The absent U-turn, gas-station canopy, river route, eleven-minute estimate, and final corner all have literal or clearly supported scene functions."
+      ]
+    }
+  },
+  "contradictions": [],
+  "verisimilitude_breaks": [],
+  "unexplained_images": [],
+  "status": "PASS"
+}

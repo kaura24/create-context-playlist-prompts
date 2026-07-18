@@ -55,6 +55,14 @@ def nonempty_string(value: Any) -> bool:
     return isinstance(value, str) and bool(value.strip())
 
 
+def signature_is_encoded(signature: Any, prompt_text: str) -> bool:
+    if not isinstance(signature, str):
+        return False
+    parts = [" ".join(part.casefold().split()) for part in signature.split("|")]
+    haystack = " ".join(prompt_text.casefold().split())
+    return len(parts) == 3 and all(part and part in haystack for part in parts)
+
+
 def validate_exact_keys(
     value: Any,
     expected: set[str],
@@ -187,6 +195,22 @@ def validate(
         expected_flow = selection.get("main_prompt_form_flow")
         if fields.get("Form/Flow") != expected_flow:
             errors.append(f"track {track_id} Form/Flow does not match selected slot")
+        fingerprint = track.get("locked_fingerprint")
+        if isinstance(fingerprint, dict):
+            opening_text = " ".join(
+                str(fields.get(field, "")) for field in ("Instrumentation", "Form/Flow")
+            )
+            if not signature_is_encoded(fingerprint.get("entry"), opening_text):
+                errors.append(
+                    f"track {track_id} prompt does not encode locked entry signature"
+                )
+            if not signature_is_encoded(
+                fingerprint.get("groove_signature"),
+                str(fields.get("Tempo/Groove", "")),
+            ):
+                errors.append(
+                    f"track {track_id} prompt does not encode locked groove signature"
+                )
 
     if sorted(seen_ids) != list(range(1, TRACK_COUNT + 1)):
         errors.append(f"PlaylistSpec track_ids must be exactly 1 through {TRACK_COUNT}")

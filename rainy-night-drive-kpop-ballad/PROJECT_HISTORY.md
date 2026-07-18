@@ -1,7 +1,7 @@
 # Rainy Night Drive K-pop Ballad
 
 - Date: 2026-07-17
-- State: PRODUCE (Tracks 1-3 draft-validated)
+- State: PRODUCE (Tracks 1-9 PLAN PASS after global opening/groove migration; Track 10 active)
 - Mode: fast
 - Catalog: `structure-catalog.json`
 - Plan: `structure-plan.json`
@@ -12,5 +12,17 @@
 - Track 2 review: `reviews/track-02.json`
 - Track 3: `exports/track-03.md`
 - Track 3 review: `reviews/track-03.json`
+- Track 4: `exports/track-04.md`
+- Track 4 review: `reviews/track-04.json`
+- Track 5: `exports/track-05.md`
+- Track 5 review: `reviews/track-05.json`
+- Track 6: `exports/track-06.md`
+- Track 6 review: `reviews/track-06.json`
+- Track 7: `exports/track-07.md`
+- Track 7 review: `reviews/track-07.json`
+- Track 8: `exports/track-08.md`
+- Track 8 review: `reviews/track-08.json`
+- Track 9: `exports/track-09.md`
+- Track 9 review: `reviews/track-09.json`
 - Detail: `history/2026-07-17__rainy-night-drive-kpop-ballad.md`
 - Evidence boundary: web pages inspected; no audio renders supplied

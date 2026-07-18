@@ -1,14 +1,14 @@
 {
   "schema_version": "1.0",
-  "catalog_revision": "rainy-night-kpop-ballad-web-v1",
+  "catalog_revision": "rainy-night-kpop-ballad-web-v3",
   "playlist_contract": {
     "use_case": "비 오는 밤 드라이브의 외로움을 조용한 동행과 새벽의 해소로 이동",
-    "common_sound": "K-pop 발라드 반주, 좁은 편곡 다이내믹, A3-D5 저음 중심의 일본 모던 여성 재즈 보컬 음색·프레이징",
-    "variation_pool": "10개 웹 레퍼런스별 구조·화성 변환; hook seed rainy-night-drive-hook-v1로 3 subtle, 4 moderate, 3 strong 균형 셔플",
-    "drift_boundaries": "All tracks: A3-D5, mostly A3-C#5, no high-note climax or drum crescendo. Tracks 1-3 English; Tracks 4-10 require language confirmation before output. No jazz accompaniment, swing, walking bass, jazz comping, brushes, horns, scat, or rap verses"
+    "common_sound": "K-pop 발라드 반주, 좁은 편곡 다이내믹, support-only 퍼커션, A3-D5 저음 중심의 일본 모던 여성 재즈 보컬 음색·프레이징",
+    "variation_pool": "곡마다 실존곡 3개를 structure·harmony·emotional_arc 역할로 웹 조사해 고수준 특성만 증류; hook seed rainy-night-drive-hook-v1 균형 셔플; 각 곡의 3축 opening·groove signature는 다른 곡과 최소 2축이 다르고 실제 프롬프트에 결합됨",
+    "drift_boundaries": "All tracks: A3-D5, mostly A3-C#5, no high-note climax or drum crescendo. Percussion remains support-only unless explicitly confirmed. Tracks 1-9 English; Track 10 requires language confirmation before output. No jazz accompaniment, swing, walking bass, jazz comping, brushes, horns, scat, or rap verses"
   },
   "structure_plan": {
-    "catalog_revision": "rainy-night-kpop-ballad-web-v1",
+    "catalog_revision": "rainy-night-kpop-ballad-web-v3",
     "candidate_pool": {
       "minimum_count": 50,
       "candidates": [
@@ -18,7 +18,9 @@
           "form_id": "radio-build-ballad",
           "envelope_id": "V01",
           "evidence_ids": [
-            "E01"
+            "E01",
+            "E03",
+            "E10"
           ],
           "section_sequence": [
             "Intro",
@@ -33,7 +35,8 @@
             "Outro"
           ],
           "recurrence": "two full chorus returns followed by a lyrically varied final return",
-          "entry": "four bars of felt piano fragments and a deep ambient bed before the voice",
+          "entry": "felt piano | two-note gaps | vocal bar 5",
+          "groove_signature": "quarters | bass pickup to beat 1 | rim alternate bars",
           "contrast_peak": "the bridge changes spectral color while the voice stays below D5 and the final return keeps the same narrow loudness ceiling",
           "transition_interlude": "each pre-chorus adds harmonic color while holding drum density, loudness, and the low vocal register steady",
           "ending": "four ambient instrumental bars dissolve the piano fragments into rain",
@@ -45,7 +48,9 @@
           "form_id": "radio-build-ballad",
           "envelope_id": "V01",
           "evidence_ids": [
-            "E01"
+            "E01",
+            "E03",
+            "E10"
           ],
           "section_sequence": [
             "Intro",
@@ -61,7 +66,8 @@
             "Outro"
           ],
           "recurrence": "slot-01-variant-1-return-logic",
-          "entry": "slot-01-variant-1-entry-gesture",
+          "entry": "lead-01-1 | gesture-01-1 | vocal-01-1",
+          "groove_signature": "pulse-01-1 | accent-01-1 | support-01-1",
           "contrast_peak": "slot-01-variant-1-peak-curve",
           "transition_interlude": "slot-01-variant-1-transition-path",
           "ending": "slot-01-variant-1-ending-shape",
@@ -73,7 +79,9 @@
           "form_id": "radio-build-ballad",
           "envelope_id": "V01",
           "evidence_ids": [
-            "E01"
+            "E01",
+            "E03",
+            "E10"
           ],
           "section_sequence": [
             "Intro",
@@ -89,7 +97,8 @@
             "Outro"
           ],
           "recurrence": "slot-01-variant-2-return-logic",
-          "entry": "slot-01-variant-2-entry-gesture",
+          "entry": "lead-01-2 | gesture-01-2 | vocal-01-2",
+          "groove_signature": "pulse-01-2 | accent-01-2 | support-01-2",
           "contrast_peak": "slot-01-variant-2-peak-curve",
           "transition_interlude": "slot-01-variant-2-transition-path",
           "ending": "slot-01-variant-2-ending-shape",
@@ -101,7 +110,9 @@
           "form_id": "radio-build-ballad",
           "envelope_id": "V01",
           "evidence_ids": [
-            "E01"
+            "E01",
+            "E03",
+            "E10"
           ],
           "section_sequence": [
             "Intro",
@@ -117,7 +128,8 @@
             "Outro"
           ],
           "recurrence": "slot-01-variant-3-return-logic",
-          "entry": "slot-01-variant-3-entry-gesture",
+          "entry": "lead-01-3 | gesture-01-3 | vocal-01-3",
+          "groove_signature": "pulse-01-3 | accent-01-3 | support-01-3",
           "contrast_peak": "slot-01-variant-3-peak-curve",
           "transition_interlude": "slot-01-variant-3-transition-path",
           "ending": "slot-01-variant-3-ending-shape",
@@ -129,7 +141,9 @@
           "form_id": "radio-build-ballad",
           "envelope_id": "V01",
           "evidence_ids": [
-            "E01"
+            "E01",
+            "E03",
+            "E10"
           ],
           "section_sequence": [
             "Intro",
@@ -145,7 +159,8 @@
             "Outro"
           ],
           "recurrence": "slot-01-variant-4-return-logic",
-          "entry": "slot-01-variant-4-entry-gesture",
+          "entry": "lead-01-4 | gesture-01-4 | vocal-01-4",
+          "groove_signature": "pulse-01-4 | accent-01-4 | support-01-4",
           "contrast_peak": "slot-01-variant-4-peak-curve",
           "transition_interlude": "slot-01-variant-4-transition-path",
           "ending": "slot-01-variant-4-ending-shape",
@@ -157,7 +172,9 @@
           "form_id": "letter-refrain-ballad",
           "envelope_id": "V02",
           "evidence_ids": [
-            "E02"
+            "E02",
+            "E04",
+            "E01"
           ],
           "section_sequence": [
             "Intro",
@@ -168,7 +185,8 @@
             "Coda"
           ],
           "recurrence": "two compact chorus returns carry the same central confession",
-          "entry": "quiet guitar arpeggio opens before a long first verse",
+          "entry": "nylon guitar | broken thirds | vocal bar 5",
+          "groove_signature": "straight eighths | guitar on 2-and | kick every 2 bars",
           "contrast_peak": "the second chorus is the emotional ceiling rather than a large climax",
           "transition_interlude": "verse endings thin before each direct chorus arrival",
           "ending": "an eight-bar instrumental coda releases the suspended light",
@@ -180,7 +198,9 @@
           "form_id": "letter-refrain-ballad",
           "envelope_id": "V02",
           "evidence_ids": [
-            "E02"
+            "E02",
+            "E04",
+            "E01"
           ],
           "section_sequence": [
             "Intro",
@@ -192,7 +212,8 @@
             "Coda"
           ],
           "recurrence": "slot-02-variant-1-return-logic",
-          "entry": "slot-02-variant-1-entry-gesture",
+          "entry": "lead-02-1 | gesture-02-1 | vocal-02-1",
+          "groove_signature": "pulse-02-1 | accent-02-1 | support-02-1",
           "contrast_peak": "slot-02-variant-1-peak-curve",
           "transition_interlude": "slot-02-variant-1-transition-path",
           "ending": "slot-02-variant-1-ending-shape",
@@ -204,7 +225,9 @@
           "form_id": "letter-refrain-ballad",
           "envelope_id": "V02",
           "evidence_ids": [
-            "E02"
+            "E02",
+            "E04",
+            "E01"
           ],
           "section_sequence": [
             "Intro",
@@ -216,7 +239,8 @@
             "Coda"
           ],
           "recurrence": "slot-02-variant-2-return-logic",
-          "entry": "slot-02-variant-2-entry-gesture",
+          "entry": "lead-02-2 | gesture-02-2 | vocal-02-2",
+          "groove_signature": "pulse-02-2 | accent-02-2 | support-02-2",
           "contrast_peak": "slot-02-variant-2-peak-curve",
           "transition_interlude": "slot-02-variant-2-transition-path",
           "ending": "slot-02-variant-2-ending-shape",
@@ -228,7 +252,9 @@
           "form_id": "letter-refrain-ballad",
           "envelope_id": "V02",
           "evidence_ids": [
-            "E02"
+            "E02",
+            "E04",
+            "E01"
           ],
           "section_sequence": [
             "Intro",
@@ -240,7 +266,8 @@
             "Coda"
           ],
           "recurrence": "slot-02-variant-3-return-logic",
-          "entry": "slot-02-variant-3-entry-gesture",
+          "entry": "lead-02-3 | gesture-02-3 | vocal-02-3",
+          "groove_signature": "pulse-02-3 | accent-02-3 | support-02-3",
           "contrast_peak": "slot-02-variant-3-peak-curve",
           "transition_interlude": "slot-02-variant-3-transition-path",
           "ending": "slot-02-variant-3-ending-shape",
@@ -252,7 +279,9 @@
           "form_id": "letter-refrain-ballad",
           "envelope_id": "V02",
           "evidence_ids": [
-            "E02"
+            "E02",
+            "E04",
+            "E01"
           ],
           "section_sequence": [
             "Intro",
@@ -264,7 +293,8 @@
             "Coda"
           ],
           "recurrence": "slot-02-variant-4-return-logic",
-          "entry": "slot-02-variant-4-entry-gesture",
+          "entry": "lead-02-4 | gesture-02-4 | vocal-02-4",
+          "groove_signature": "pulse-02-4 | accent-02-4 | support-02-4",
           "contrast_peak": "slot-02-variant-4-peak-curve",
           "transition_interlude": "slot-02-variant-4-transition-path",
           "ending": "slot-02-variant-4-ending-shape",
@@ -276,7 +306,9 @@
           "form_id": "rain-memory-refrain",
           "envelope_id": "V03",
           "evidence_ids": [
-            "E03"
+            "E03",
+            "E07",
+            "E04"
           ],
           "section_sequence": [
             "Intro",
@@ -291,7 +323,8 @@
             "Outro"
           ],
           "recurrence": "two choruses lead to a separate late refrain",
-          "entry": "soft synth pulse and piano establish motion before the voice",
+          "entry": "low synth | single-note pulses | vocal bar 5",
+          "groove_signature": "half notes | synth on beat 4 | full-bar drum gaps",
           "contrast_peak": "the standalone refrain becomes the peak after a drumless bridge",
           "transition_interlude": "pre-choruses tighten the pulse and lift the inner line",
           "ending": "a short pulse-and-piano outro closes the reflected image",
@@ -303,7 +336,9 @@
           "form_id": "rain-memory-refrain",
           "envelope_id": "V03",
           "evidence_ids": [
-            "E03"
+            "E03",
+            "E07",
+            "E04"
           ],
           "section_sequence": [
             "Intro",
@@ -319,7 +354,8 @@
             "Outro"
           ],
           "recurrence": "slot-03-variant-1-return-logic",
-          "entry": "slot-03-variant-1-entry-gesture",
+          "entry": "lead-03-1 | gesture-03-1 | vocal-03-1",
+          "groove_signature": "pulse-03-1 | accent-03-1 | support-03-1",
           "contrast_peak": "slot-03-variant-1-peak-curve",
           "transition_interlude": "slot-03-variant-1-transition-path",
           "ending": "slot-03-variant-1-ending-shape",
@@ -331,7 +367,9 @@
           "form_id": "rain-memory-refrain",
           "envelope_id": "V03",
           "evidence_ids": [
-            "E03"
+            "E03",
+            "E07",
+            "E04"
           ],
           "section_sequence": [
             "Intro",
@@ -347,7 +385,8 @@
             "Outro"
           ],
           "recurrence": "slot-03-variant-2-return-logic",
-          "entry": "slot-03-variant-2-entry-gesture",
+          "entry": "lead-03-2 | gesture-03-2 | vocal-03-2",
+          "groove_signature": "pulse-03-2 | accent-03-2 | support-03-2",
           "contrast_peak": "slot-03-variant-2-peak-curve",
           "transition_interlude": "slot-03-variant-2-transition-path",
           "ending": "slot-03-variant-2-ending-shape",
@@ -359,7 +398,9 @@
           "form_id": "rain-memory-refrain",
           "envelope_id": "V03",
           "evidence_ids": [
-            "E03"
+            "E03",
+            "E07",
+            "E04"
           ],
           "section_sequence": [
             "Intro",
@@ -375,7 +416,8 @@
             "Outro"
           ],
           "recurrence": "slot-03-variant-3-return-logic",
-          "entry": "slot-03-variant-3-entry-gesture",
+          "entry": "lead-03-3 | gesture-03-3 | vocal-03-3",
+          "groove_signature": "pulse-03-3 | accent-03-3 | support-03-3",
           "contrast_peak": "slot-03-variant-3-peak-curve",
           "transition_interlude": "slot-03-variant-3-transition-path",
           "ending": "slot-03-variant-3-ending-shape",
@@ -387,7 +429,9 @@
           "form_id": "rain-memory-refrain",
           "envelope_id": "V03",
           "evidence_ids": [
-            "E03"
+            "E03",
+            "E07",
+            "E04"
           ],
           "section_sequence": [
             "Intro",
@@ -403,7 +447,8 @@
             "Outro"
           ],
           "recurrence": "slot-03-variant-4-return-logic",
-          "entry": "slot-03-variant-4-entry-gesture",
+          "entry": "lead-03-4 | gesture-03-4 | vocal-03-4",
+          "groove_signature": "pulse-03-4 | accent-03-4 | support-03-4",
           "contrast_peak": "slot-03-variant-4-peak-curve",
           "transition_interlude": "slot-03-variant-4-transition-path",
           "ending": "slot-03-variant-4-ending-shape",
@@ -415,7 +460,9 @@
           "form_id": "narrative-coda-ballad",
           "envelope_id": "V04",
           "evidence_ids": [
-            "E04"
+            "E04",
+            "E02",
+            "E03"
           ],
           "section_sequence": [
             "Intro",
@@ -429,7 +476,8 @@
             "Coda"
           ],
           "recurrence": "two chorus statements defer the final conclusion to the coda",
-          "entry": "piano and muted guitar present the narrative tone",
+          "entry": "muted guitar | offbeat knocks | vocal bar 5",
+          "groove_signature": "dotted eighths | guitar on 4-and | kick alternate bars",
           "contrast_peak": "the second chorus opens into the coda instead of another peak",
           "transition_interlude": "a four-bar instrumental break separates the two narrative halves",
           "ending": "the coda states the acceptance and resolves the deceptive motion",
@@ -441,7 +489,9 @@
           "form_id": "narrative-coda-ballad",
           "envelope_id": "V04",
           "evidence_ids": [
-            "E04"
+            "E04",
+            "E02",
+            "E03"
           ],
           "section_sequence": [
             "Intro",
@@ -456,7 +506,8 @@
             "Coda"
           ],
           "recurrence": "slot-04-variant-1-return-logic",
-          "entry": "slot-04-variant-1-entry-gesture",
+          "entry": "lead-04-1 | gesture-04-1 | vocal-04-1",
+          "groove_signature": "pulse-04-1 | accent-04-1 | support-04-1",
           "contrast_peak": "slot-04-variant-1-peak-curve",
           "transition_interlude": "slot-04-variant-1-transition-path",
           "ending": "slot-04-variant-1-ending-shape",
@@ -468,7 +519,9 @@
           "form_id": "narrative-coda-ballad",
           "envelope_id": "V04",
           "evidence_ids": [
-            "E04"
+            "E04",
+            "E02",
+            "E03"
           ],
           "section_sequence": [
             "Intro",
@@ -483,7 +536,8 @@
             "Coda"
           ],
           "recurrence": "slot-04-variant-2-return-logic",
-          "entry": "slot-04-variant-2-entry-gesture",
+          "entry": "lead-04-2 | gesture-04-2 | vocal-04-2",
+          "groove_signature": "pulse-04-2 | accent-04-2 | support-04-2",
           "contrast_peak": "slot-04-variant-2-peak-curve",
           "transition_interlude": "slot-04-variant-2-transition-path",
           "ending": "slot-04-variant-2-ending-shape",
@@ -495,7 +549,9 @@
           "form_id": "narrative-coda-ballad",
           "envelope_id": "V04",
           "evidence_ids": [
-            "E04"
+            "E04",
+            "E02",
+            "E03"
           ],
           "section_sequence": [
             "Intro",
@@ -510,7 +566,8 @@
             "Coda"
           ],
           "recurrence": "slot-04-variant-3-return-logic",
-          "entry": "slot-04-variant-3-entry-gesture",
+          "entry": "lead-04-3 | gesture-04-3 | vocal-04-3",
+          "groove_signature": "pulse-04-3 | accent-04-3 | support-04-3",
           "contrast_peak": "slot-04-variant-3-peak-curve",
           "transition_interlude": "slot-04-variant-3-transition-path",
           "ending": "slot-04-variant-3-ending-shape",
@@ -522,7 +579,9 @@
           "form_id": "narrative-coda-ballad",
           "envelope_id": "V04",
           "evidence_ids": [
-            "E04"
+            "E04",
+            "E02",
+            "E03"
           ],
           "section_sequence": [
             "Intro",
@@ -537,7 +596,8 @@
             "Coda"
           ],
           "recurrence": "slot-04-variant-4-return-logic",
-          "entry": "slot-04-variant-4-entry-gesture",
+          "entry": "lead-04-4 | gesture-04-4 | vocal-04-4",
+          "groove_signature": "pulse-04-4 | accent-04-4 | support-04-4",
           "contrast_peak": "slot-04-variant-4-peak-curve",
           "transition_interlude": "slot-04-variant-4-transition-path",
           "ending": "slot-04-variant-4-ending-shape",
@@ -549,7 +609,9 @@
           "form_id": "modulating-peak-ballad",
           "envelope_id": "V05",
           "evidence_ids": [
-            "E05"
+            "E05",
+            "E06",
+            "E02"
           ],
           "section_sequence": [
             "Intro",
@@ -563,7 +625,8 @@
             "Outro"
           ],
           "recurrence": "two restrained choruses prepare one transposed final chorus",
-          "entry": "grand piano states the minor tonal center",
+          "entry": "guitar harmonics | alternating dyads | vocal bar 5",
+          "groove_signature": "two-beat cycle | bass before beat 3 | drums at section turns",
           "contrast_peak": "the bridge changes harmonic color before a same-register final chorus under the same loudness ceiling",
           "transition_interlude": "a short instrumental break resets the dynamic floor",
           "ending": "four bars sustain the new key after the final lyric",
@@ -575,7 +638,9 @@
           "form_id": "modulating-peak-ballad",
           "envelope_id": "V05",
           "evidence_ids": [
-            "E05"
+            "E05",
+            "E06",
+            "E02"
           ],
           "section_sequence": [
             "Intro",
@@ -590,7 +655,8 @@
             "Outro"
           ],
           "recurrence": "slot-05-variant-1-return-logic",
-          "entry": "slot-05-variant-1-entry-gesture",
+          "entry": "lead-05-1 | gesture-05-1 | vocal-05-1",
+          "groove_signature": "pulse-05-1 | accent-05-1 | support-05-1",
           "contrast_peak": "slot-05-variant-1-peak-curve",
           "transition_interlude": "slot-05-variant-1-transition-path",
           "ending": "slot-05-variant-1-ending-shape",
@@ -602,7 +668,9 @@
           "form_id": "modulating-peak-ballad",
           "envelope_id": "V05",
           "evidence_ids": [
-            "E05"
+            "E05",
+            "E06",
+            "E02"
           ],
           "section_sequence": [
             "Intro",
@@ -617,7 +685,8 @@
             "Outro"
           ],
           "recurrence": "slot-05-variant-2-return-logic",
-          "entry": "slot-05-variant-2-entry-gesture",
+          "entry": "lead-05-2 | gesture-05-2 | vocal-05-2",
+          "groove_signature": "pulse-05-2 | accent-05-2 | support-05-2",
           "contrast_peak": "slot-05-variant-2-peak-curve",
           "transition_interlude": "slot-05-variant-2-transition-path",
           "ending": "slot-05-variant-2-ending-shape",
@@ -629,7 +698,9 @@
           "form_id": "modulating-peak-ballad",
           "envelope_id": "V05",
           "evidence_ids": [
-            "E05"
+            "E05",
+            "E06",
+            "E02"
           ],
           "section_sequence": [
             "Intro",
@@ -644,7 +715,8 @@
             "Outro"
           ],
           "recurrence": "slot-05-variant-3-return-logic",
-          "entry": "slot-05-variant-3-entry-gesture",
+          "entry": "lead-05-3 | gesture-05-3 | vocal-05-3",
+          "groove_signature": "pulse-05-3 | accent-05-3 | support-05-3",
           "contrast_peak": "slot-05-variant-3-peak-curve",
           "transition_interlude": "slot-05-variant-3-transition-path",
           "ending": "slot-05-variant-3-ending-shape",
@@ -656,7 +728,9 @@
           "form_id": "modulating-peak-ballad",
           "envelope_id": "V05",
           "evidence_ids": [
-            "E05"
+            "E05",
+            "E06",
+            "E02"
           ],
           "section_sequence": [
             "Intro",
@@ -671,7 +745,8 @@
             "Outro"
           ],
           "recurrence": "slot-05-variant-4-return-logic",
-          "entry": "slot-05-variant-4-entry-gesture",
+          "entry": "lead-05-4 | gesture-05-4 | vocal-05-4",
+          "groove_signature": "pulse-05-4 | accent-05-4 | support-05-4",
           "contrast_peak": "slot-05-variant-4-peak-curve",
           "transition_interlude": "slot-05-variant-4-transition-path",
           "ending": "slot-05-variant-4-ending-shape",
@@ -683,7 +758,9 @@
           "form_id": "triple-lift-ost-ballad",
           "envelope_id": "V06",
           "evidence_ids": [
-            "E06"
+            "E06",
+            "E03",
+            "E05"
           ],
           "section_sequence": [
             "Intro",
@@ -699,7 +776,8 @@
             "Outro"
           ],
           "recurrence": "three chorus arrivals are each delayed by a pre-chorus",
-          "entry": "piano ostinato and low strings establish the apology",
+          "entry": "mono bass | guitar-answer pedal | vocal bar 5",
+          "groove_signature": "withheld downbeat | bass on beat 2 | tom every 4 bars",
           "contrast_peak": "the bridge darkens before a third pre-chorus withholds the final downbeat",
           "transition_interlude": "pre-choruses use dominant tension as the recurring hinge",
           "ending": "a short firm close follows the final confession",
@@ -711,7 +789,9 @@
           "form_id": "triple-lift-ost-ballad",
           "envelope_id": "V06",
           "evidence_ids": [
-            "E06"
+            "E06",
+            "E03",
+            "E05"
           ],
           "section_sequence": [
             "Intro",
@@ -728,7 +808,8 @@
             "Outro"
           ],
           "recurrence": "slot-06-variant-1-return-logic",
-          "entry": "slot-06-variant-1-entry-gesture",
+          "entry": "lead-06-1 | gesture-06-1 | vocal-06-1",
+          "groove_signature": "pulse-06-1 | accent-06-1 | support-06-1",
           "contrast_peak": "slot-06-variant-1-peak-curve",
           "transition_interlude": "slot-06-variant-1-transition-path",
           "ending": "slot-06-variant-1-ending-shape",
@@ -740,7 +821,9 @@
           "form_id": "triple-lift-ost-ballad",
           "envelope_id": "V06",
           "evidence_ids": [
-            "E06"
+            "E06",
+            "E03",
+            "E05"
           ],
           "section_sequence": [
             "Intro",
@@ -757,7 +840,8 @@
             "Outro"
           ],
           "recurrence": "slot-06-variant-2-return-logic",
-          "entry": "slot-06-variant-2-entry-gesture",
+          "entry": "lead-06-2 | gesture-06-2 | vocal-06-2",
+          "groove_signature": "pulse-06-2 | accent-06-2 | support-06-2",
           "contrast_peak": "slot-06-variant-2-peak-curve",
           "transition_interlude": "slot-06-variant-2-transition-path",
           "ending": "slot-06-variant-2-ending-shape",
@@ -769,7 +853,9 @@
           "form_id": "triple-lift-ost-ballad",
           "envelope_id": "V06",
           "evidence_ids": [
-            "E06"
+            "E06",
+            "E03",
+            "E05"
           ],
           "section_sequence": [
             "Intro",
@@ -786,7 +872,8 @@
             "Outro"
           ],
           "recurrence": "slot-06-variant-3-return-logic",
-          "entry": "slot-06-variant-3-entry-gesture",
+          "entry": "lead-06-3 | gesture-06-3 | vocal-06-3",
+          "groove_signature": "pulse-06-3 | accent-06-3 | support-06-3",
           "contrast_peak": "slot-06-variant-3-peak-curve",
           "transition_interlude": "slot-06-variant-3-transition-path",
           "ending": "slot-06-variant-3-ending-shape",
@@ -798,7 +885,9 @@
           "form_id": "triple-lift-ost-ballad",
           "envelope_id": "V06",
           "evidence_ids": [
-            "E06"
+            "E06",
+            "E03",
+            "E05"
           ],
           "section_sequence": [
             "Intro",
@@ -815,7 +904,8 @@
             "Outro"
           ],
           "recurrence": "slot-06-variant-4-return-logic",
-          "entry": "slot-06-variant-4-entry-gesture",
+          "entry": "lead-06-4 | gesture-06-4 | vocal-06-4",
+          "groove_signature": "pulse-06-4 | accent-06-4 | support-06-4",
           "contrast_peak": "slot-06-variant-4-peak-curve",
           "transition_interlude": "slot-06-variant-4-transition-path",
           "ending": "slot-06-variant-4-ending-shape",
@@ -827,7 +917,9 @@
           "form_id": "lullaby-bridge-coda",
           "envelope_id": "V07",
           "evidence_ids": [
-            "E07"
+            "E07",
+            "E01",
+            "E02"
           ],
           "section_sequence": [
             "Intro",
@@ -840,7 +932,8 @@
             "Coda"
           ],
           "recurrence": "two chorus returns expand into one longer final chorus",
-          "entry": "soft piano and bowed texture enter at the lowest energy",
+          "entry": "reverse guitar | paired swells | vocal bar 5",
+          "groove_signature": "even eighths | fourth-bar drop | kick on Chorus beat 1",
           "contrast_peak": "the bridge suspends the pulse rather than increasing loudness",
           "transition_interlude": "chromatic bass motion connects each verse to its chorus",
           "ending": "the coda resolves the open dominant and lets the city lights fade",
@@ -852,7 +945,9 @@
           "form_id": "lullaby-bridge-coda",
           "envelope_id": "V07",
           "evidence_ids": [
-            "E07"
+            "E07",
+            "E01",
+            "E02"
           ],
           "section_sequence": [
             "Intro",
@@ -866,7 +961,8 @@
             "Coda"
           ],
           "recurrence": "slot-07-variant-1-return-logic",
-          "entry": "slot-07-variant-1-entry-gesture",
+          "entry": "lead-07-1 | gesture-07-1 | vocal-07-1",
+          "groove_signature": "pulse-07-1 | accent-07-1 | support-07-1",
           "contrast_peak": "slot-07-variant-1-peak-curve",
           "transition_interlude": "slot-07-variant-1-transition-path",
           "ending": "slot-07-variant-1-ending-shape",
@@ -878,7 +974,9 @@
           "form_id": "lullaby-bridge-coda",
           "envelope_id": "V07",
           "evidence_ids": [
-            "E07"
+            "E07",
+            "E01",
+            "E02"
           ],
           "section_sequence": [
             "Intro",
@@ -892,7 +990,8 @@
             "Coda"
           ],
           "recurrence": "slot-07-variant-2-return-logic",
-          "entry": "slot-07-variant-2-entry-gesture",
+          "entry": "lead-07-2 | gesture-07-2 | vocal-07-2",
+          "groove_signature": "pulse-07-2 | accent-07-2 | support-07-2",
           "contrast_peak": "slot-07-variant-2-peak-curve",
           "transition_interlude": "slot-07-variant-2-transition-path",
           "ending": "slot-07-variant-2-ending-shape",
@@ -904,7 +1003,9 @@
           "form_id": "lullaby-bridge-coda",
           "envelope_id": "V07",
           "evidence_ids": [
-            "E07"
+            "E07",
+            "E01",
+            "E02"
           ],
           "section_sequence": [
             "Intro",
@@ -918,7 +1019,8 @@
             "Coda"
           ],
           "recurrence": "slot-07-variant-3-return-logic",
-          "entry": "slot-07-variant-3-entry-gesture",
+          "entry": "lead-07-3 | gesture-07-3 | vocal-07-3",
+          "groove_signature": "pulse-07-3 | accent-07-3 | support-07-3",
           "contrast_peak": "slot-07-variant-3-peak-curve",
           "transition_interlude": "slot-07-variant-3-transition-path",
           "ending": "slot-07-variant-3-ending-shape",
@@ -930,7 +1032,9 @@
           "form_id": "lullaby-bridge-coda",
           "envelope_id": "V07",
           "evidence_ids": [
-            "E07"
+            "E07",
+            "E01",
+            "E02"
           ],
           "section_sequence": [
             "Intro",
@@ -944,7 +1048,8 @@
             "Coda"
           ],
           "recurrence": "slot-07-variant-4-return-logic",
-          "entry": "slot-07-variant-4-entry-gesture",
+          "entry": "lead-07-4 | gesture-07-4 | vocal-07-4",
+          "groove_signature": "pulse-07-4 | accent-07-4 | support-07-4",
           "contrast_peak": "slot-07-variant-4-peak-curve",
           "transition_interlude": "slot-07-variant-4-transition-path",
           "ending": "slot-07-variant-4-ending-shape",
@@ -956,7 +1061,9 @@
           "form_id": "promise-return-ballad",
           "envelope_id": "V08",
           "evidence_ids": [
-            "E08"
+            "E08",
+            "E11",
+            "E12"
           ],
           "section_sequence": [
             "Intro",
@@ -964,16 +1071,18 @@
             "Pre-Chorus",
             "Chorus",
             "Verse",
+            "Pre-Chorus",
             "Chorus",
             "Bridge",
             "Chorus",
-            "Outro"
+            "Coda"
           ],
-          "recurrence": "the second cycle skips its pre-chorus before the final return",
-          "entry": "bright piano begins with a steady driving pulse",
-          "contrast_peak": "the bridge suspends harmony before a clean final chorus landing",
-          "transition_interlude": "the missing second pre-chorus creates forward acceleration",
-          "ending": "four bars hold the tonic-add-six color after the promise",
+          "recurrence": "two complete verse-pre-chorus-chorus cycles lead to a bridge and expanded final return",
+          "entry": "analog pad | guitar-answer chord | vocal bar 5",
+          "groove_signature": "half-bar pulse | bass on 3-and | kick on first Chorus bars",
+          "contrast_peak": "the bridge changes harmonic color while the exact title hook stays in the same low register and loudness ceiling",
+          "transition_interlude": "both pre-choruses shorten the wording and hold density before the title hook",
+          "ending": "four bars hold the unresolved minor-add-nine color after the promise",
           "hook_return": "Repeated hook"
         },
         {
@@ -982,7 +1091,9 @@
           "form_id": "promise-return-ballad",
           "envelope_id": "V08",
           "evidence_ids": [
-            "E08"
+            "E08",
+            "E11",
+            "E12"
           ],
           "section_sequence": [
             "Intro",
@@ -990,14 +1101,16 @@
             "Pre-Chorus",
             "Chorus",
             "Verse",
+            "Pre-Chorus",
             "Chorus",
             "Bridge",
             "Chorus",
             "Break",
-            "Outro"
+            "Coda"
           ],
           "recurrence": "slot-08-variant-1-return-logic",
-          "entry": "slot-08-variant-1-entry-gesture",
+          "entry": "lead-08-1 | gesture-08-1 | vocal-08-1",
+          "groove_signature": "pulse-08-1 | accent-08-1 | support-08-1",
           "contrast_peak": "slot-08-variant-1-peak-curve",
           "transition_interlude": "slot-08-variant-1-transition-path",
           "ending": "slot-08-variant-1-ending-shape",
@@ -1009,7 +1122,9 @@
           "form_id": "promise-return-ballad",
           "envelope_id": "V08",
           "evidence_ids": [
-            "E08"
+            "E08",
+            "E11",
+            "E12"
           ],
           "section_sequence": [
             "Intro",
@@ -1017,14 +1132,16 @@
             "Pre-Chorus",
             "Chorus",
             "Verse",
+            "Pre-Chorus",
             "Chorus",
             "Bridge",
             "Chorus",
             "Refrain",
-            "Outro"
+            "Coda"
           ],
           "recurrence": "slot-08-variant-2-return-logic",
-          "entry": "slot-08-variant-2-entry-gesture",
+          "entry": "lead-08-2 | gesture-08-2 | vocal-08-2",
+          "groove_signature": "pulse-08-2 | accent-08-2 | support-08-2",
           "contrast_peak": "slot-08-variant-2-peak-curve",
           "transition_interlude": "slot-08-variant-2-transition-path",
           "ending": "slot-08-variant-2-ending-shape",
@@ -1036,7 +1153,9 @@
           "form_id": "promise-return-ballad",
           "envelope_id": "V08",
           "evidence_ids": [
-            "E08"
+            "E08",
+            "E11",
+            "E12"
           ],
           "section_sequence": [
             "Intro",
@@ -1044,14 +1163,16 @@
             "Pre-Chorus",
             "Chorus",
             "Verse",
+            "Pre-Chorus",
             "Chorus",
             "Bridge",
             "Chorus",
             "Drop",
-            "Outro"
+            "Coda"
           ],
           "recurrence": "slot-08-variant-3-return-logic",
-          "entry": "slot-08-variant-3-entry-gesture",
+          "entry": "lead-08-3 | gesture-08-3 | vocal-08-3",
+          "groove_signature": "pulse-08-3 | accent-08-3 | support-08-3",
           "contrast_peak": "slot-08-variant-3-peak-curve",
           "transition_interlude": "slot-08-variant-3-transition-path",
           "ending": "slot-08-variant-3-ending-shape",
@@ -1063,7 +1184,9 @@
           "form_id": "promise-return-ballad",
           "envelope_id": "V08",
           "evidence_ids": [
-            "E08"
+            "E08",
+            "E11",
+            "E12"
           ],
           "section_sequence": [
             "Intro",
@@ -1071,14 +1194,16 @@
             "Pre-Chorus",
             "Chorus",
             "Verse",
+            "Pre-Chorus",
             "Chorus",
             "Bridge",
             "Chorus",
             "Hook",
-            "Outro"
+            "Coda"
           ],
           "recurrence": "slot-08-variant-4-return-logic",
-          "entry": "slot-08-variant-4-entry-gesture",
+          "entry": "lead-08-4 | gesture-08-4 | vocal-08-4",
+          "groove_signature": "pulse-08-4 | accent-08-4 | support-08-4",
           "contrast_peak": "slot-08-variant-4-peak-curve",
           "transition_interlude": "slot-08-variant-4-transition-path",
           "ending": "slot-08-variant-4-ending-shape",
@@ -1087,10 +1212,12 @@
         {
           "candidate_id": "C041",
           "genre_lane": "central-night-ballad",
-          "form_id": "chorus-first-memory-ballad",
+          "form_id": "voice-first-relief-ballad",
           "envelope_id": "V09",
           "evidence_ids": [
-            "E09"
+            "E09",
+            "E13",
+            "E14"
           ],
           "section_sequence": [
             "Verse",
@@ -1102,19 +1229,22 @@
             "Coda"
           ],
           "recurrence": "three direct chorus returns arrive without pre-choruses",
-          "entry": "the lead voice begins immediately with no instrumental intro",
-          "contrast_peak": "the bridge narrows before the final chorus adds the minor-subdominant shade",
+          "entry": "lead voice | pad-unison onset | vocal bar 1",
+          "groove_signature": "two-bar pulse | bass on beat 3 | kick alternate Chorus bars",
+          "contrast_peak": "the bridge changes perspective before the final chorus repeats the same new five-note title motif in the low register",
           "transition_interlude": "short verse endings turn directly into the chorus downbeat",
-          "ending": "a four-bar coda keeps the final direction unresolved but calm",
+          "ending": "a four-bar coda holds the borrowed minor-subdominant after self-acceptance",
           "hook_return": "Repeated hook"
         },
         {
           "candidate_id": "C042",
           "genre_lane": "central-night-ballad",
-          "form_id": "chorus-first-memory-ballad",
+          "form_id": "voice-first-relief-ballad",
           "envelope_id": "V09",
           "evidence_ids": [
-            "E09"
+            "E09",
+            "E13",
+            "E14"
           ],
           "section_sequence": [
             "Verse",
@@ -1127,7 +1257,8 @@
             "Coda"
           ],
           "recurrence": "slot-09-variant-1-return-logic",
-          "entry": "slot-09-variant-1-entry-gesture",
+          "entry": "lead-09-1 | gesture-09-1 | vocal-09-1",
+          "groove_signature": "pulse-09-1 | accent-09-1 | support-09-1",
           "contrast_peak": "slot-09-variant-1-peak-curve",
           "transition_interlude": "slot-09-variant-1-transition-path",
           "ending": "slot-09-variant-1-ending-shape",
@@ -1136,10 +1267,12 @@
         {
           "candidate_id": "C043",
           "genre_lane": "central-night-ballad",
-          "form_id": "chorus-first-memory-ballad",
+          "form_id": "voice-first-relief-ballad",
           "envelope_id": "V09",
           "evidence_ids": [
-            "E09"
+            "E09",
+            "E13",
+            "E14"
           ],
           "section_sequence": [
             "Verse",
@@ -1152,7 +1285,8 @@
             "Coda"
           ],
           "recurrence": "slot-09-variant-2-return-logic",
-          "entry": "slot-09-variant-2-entry-gesture",
+          "entry": "lead-09-2 | gesture-09-2 | vocal-09-2",
+          "groove_signature": "pulse-09-2 | accent-09-2 | support-09-2",
           "contrast_peak": "slot-09-variant-2-peak-curve",
           "transition_interlude": "slot-09-variant-2-transition-path",
           "ending": "slot-09-variant-2-ending-shape",
@@ -1161,10 +1295,12 @@
         {
           "candidate_id": "C044",
           "genre_lane": "central-night-ballad",
-          "form_id": "chorus-first-memory-ballad",
+          "form_id": "voice-first-relief-ballad",
           "envelope_id": "V09",
           "evidence_ids": [
-            "E09"
+            "E09",
+            "E13",
+            "E14"
           ],
           "section_sequence": [
             "Verse",
@@ -1177,7 +1313,8 @@
             "Coda"
           ],
           "recurrence": "slot-09-variant-3-return-logic",
-          "entry": "slot-09-variant-3-entry-gesture",
+          "entry": "lead-09-3 | gesture-09-3 | vocal-09-3",
+          "groove_signature": "pulse-09-3 | accent-09-3 | support-09-3",
           "contrast_peak": "slot-09-variant-3-peak-curve",
           "transition_interlude": "slot-09-variant-3-transition-path",
           "ending": "slot-09-variant-3-ending-shape",
@@ -1186,10 +1323,12 @@
         {
           "candidate_id": "C045",
           "genre_lane": "central-night-ballad",
-          "form_id": "chorus-first-memory-ballad",
+          "form_id": "voice-first-relief-ballad",
           "envelope_id": "V09",
           "evidence_ids": [
-            "E09"
+            "E09",
+            "E13",
+            "E14"
           ],
           "section_sequence": [
             "Verse",
@@ -1202,7 +1341,8 @@
             "Coda"
           ],
           "recurrence": "slot-09-variant-4-return-logic",
-          "entry": "slot-09-variant-4-entry-gesture",
+          "entry": "lead-09-4 | gesture-09-4 | vocal-09-4",
+          "groove_signature": "pulse-09-4 | accent-09-4 | support-09-4",
           "contrast_peak": "slot-09-variant-4-peak-curve",
           "transition_interlude": "slot-09-variant-4-transition-path",
           "ending": "slot-09-variant-4-ending-shape",
@@ -1214,7 +1354,9 @@
           "form_id": "hook-led-final-ballad",
           "envelope_id": "V10",
           "evidence_ids": [
-            "E10"
+            "E10",
+            "E05",
+            "E09"
           ],
           "section_sequence": [
             "Intro",
@@ -1227,7 +1369,8 @@
             "Outro"
           ],
           "recurrence": "two compact hooks prepare a single full final chorus",
-          "entry": "piano and synth strings frame the last rainy miles",
+          "entry": "FM bell | three-note sub-synth cell | vocal bar 5",
+          "groove_signature": "3+3+2 synth cell | bass across barline | kick at section turns",
           "contrast_peak": "the only full chorus is reserved for the ending after a darker bridge",
           "transition_interlude": "each short hook returns quickly to narrative motion",
           "ending": "four quiet bars turn the parallel-minor color back toward dawn",
@@ -1239,7 +1382,9 @@
           "form_id": "hook-led-final-ballad",
           "envelope_id": "V10",
           "evidence_ids": [
-            "E10"
+            "E10",
+            "E05",
+            "E09"
           ],
           "section_sequence": [
             "Intro",
@@ -1253,7 +1398,8 @@
             "Outro"
           ],
           "recurrence": "slot-10-variant-1-return-logic",
-          "entry": "slot-10-variant-1-entry-gesture",
+          "entry": "lead-10-1 | gesture-10-1 | vocal-10-1",
+          "groove_signature": "pulse-10-1 | accent-10-1 | support-10-1",
           "contrast_peak": "slot-10-variant-1-peak-curve",
           "transition_interlude": "slot-10-variant-1-transition-path",
           "ending": "slot-10-variant-1-ending-shape",
@@ -1265,7 +1411,9 @@
           "form_id": "hook-led-final-ballad",
           "envelope_id": "V10",
           "evidence_ids": [
-            "E10"
+            "E10",
+            "E05",
+            "E09"
           ],
           "section_sequence": [
             "Intro",
@@ -1279,7 +1427,8 @@
             "Outro"
           ],
           "recurrence": "slot-10-variant-2-return-logic",
-          "entry": "slot-10-variant-2-entry-gesture",
+          "entry": "lead-10-2 | gesture-10-2 | vocal-10-2",
+          "groove_signature": "pulse-10-2 | accent-10-2 | support-10-2",
           "contrast_peak": "slot-10-variant-2-peak-curve",
           "transition_interlude": "slot-10-variant-2-transition-path",
           "ending": "slot-10-variant-2-ending-shape",
@@ -1291,7 +1440,9 @@
           "form_id": "hook-led-final-ballad",
           "envelope_id": "V10",
           "evidence_ids": [
-            "E10"
+            "E10",
+            "E05",
+            "E09"
           ],
           "section_sequence": [
             "Intro",
@@ -1305,7 +1456,8 @@
             "Outro"
           ],
           "recurrence": "slot-10-variant-3-return-logic",
-          "entry": "slot-10-variant-3-entry-gesture",
+          "entry": "lead-10-3 | gesture-10-3 | vocal-10-3",
+          "groove_signature": "pulse-10-3 | accent-10-3 | support-10-3",
           "contrast_peak": "slot-10-variant-3-peak-curve",
           "transition_interlude": "slot-10-variant-3-transition-path",
           "ending": "slot-10-variant-3-ending-shape",
@@ -1317,7 +1469,9 @@
           "form_id": "hook-led-final-ballad",
           "envelope_id": "V10",
           "evidence_ids": [
-            "E10"
+            "E10",
+            "E05",
+            "E09"
           ],
           "section_sequence": [
             "Intro",
@@ -1331,7 +1485,8 @@
             "Outro"
           ],
           "recurrence": "slot-10-variant-4-return-logic",
-          "entry": "slot-10-variant-4-entry-gesture",
+          "entry": "lead-10-4 | gesture-10-4 | vocal-10-4",
+          "groove_signature": "pulse-10-4 | accent-10-4 | support-10-4",
           "contrast_peak": "slot-10-variant-4-peak-curve",
           "transition_interlude": "slot-10-variant-4-transition-path",
           "ending": "slot-10-variant-4-ending-shape",
@@ -1389,7 +1544,23 @@
         "track": 1,
         "slot_id": "S01",
         "candidate_id": "C001",
-        "reference_evidence_id": "E01",
+        "reference_bindings": [
+          {
+            "role": "structure",
+            "evidence_id": "E01",
+            "distilled_trait": "Radio-style verse build and color-shift bridge"
+          },
+          {
+            "role": "harmony",
+            "evidence_id": "E03",
+            "distilled_trait": "Minor center, descending bass, and suspended cadence behavior"
+          },
+          {
+            "role": "emotional_arc",
+            "evidence_id": "E10",
+            "distilled_trait": "Loss loosens through continued forward motion"
+          }
+        ],
         "locked_fingerprint": {
           "genre_lane": "central-night-ballad",
           "form_id": "radio-build-ballad",
@@ -1406,7 +1577,8 @@
             "Outro"
           ],
           "recurrence": "two full chorus returns followed by a lyrically varied final return",
-          "entry": "four bars of felt piano fragments and a deep ambient bed before the voice",
+          "entry": "felt piano | two-note gaps | vocal bar 5",
+          "groove_signature": "quarters | bass pickup to beat 1 | rim alternate bars",
           "contrast_peak": "the bridge changes spectral color while the voice stays below D5 and the final return keeps the same narrow loudness ceiling",
           "transition_interlude": "each pre-chorus adds harmonic color while holding drum density, loudness, and the low vocal register steady",
           "ending": "four ambient instrumental bars dissolve the piano fragments into rain",
@@ -1426,7 +1598,23 @@
         "track": 2,
         "slot_id": "S02",
         "candidate_id": "C006",
-        "reference_evidence_id": "E02",
+        "reference_bindings": [
+          {
+            "role": "structure",
+            "evidence_id": "E02",
+            "distilled_trait": "Long verse and compact refrain with a short coda"
+          },
+          {
+            "role": "harmony",
+            "evidence_id": "E04",
+            "distilled_trait": "Diatonic clarity darkened by a minor-subdominant turn"
+          },
+          {
+            "role": "emotional_arc",
+            "evidence_id": "E01",
+            "distilled_trait": "A remote voice turns solitude into temporary company"
+          }
+        ],
         "locked_fingerprint": {
           "genre_lane": "intimate-pop-ballad",
           "form_id": "letter-refrain-ballad",
@@ -1439,7 +1627,8 @@
             "Coda"
           ],
           "recurrence": "two compact chorus returns carry the same central confession",
-          "entry": "quiet guitar arpeggio opens before a long first verse",
+          "entry": "nylon guitar | broken thirds | vocal bar 5",
+          "groove_signature": "straight eighths | guitar on 2-and | kick every 2 bars",
           "contrast_peak": "the second chorus is the emotional ceiling rather than a large climax",
           "transition_interlude": "verse endings thin before each direct chorus arrival",
           "ending": "an eight-bar instrumental coda releases the suspended light",
@@ -1459,7 +1648,23 @@
         "track": 3,
         "slot_id": "S03",
         "candidate_id": "C011",
-        "reference_evidence_id": "E03",
+        "reference_bindings": [
+          {
+            "role": "structure",
+            "evidence_id": "E03",
+            "distilled_trait": "Recurring build followed by a separate late refrain"
+          },
+          {
+            "role": "harmony",
+            "evidence_id": "E07",
+            "distilled_trait": "Delayed resolution and chromatic bass connection"
+          },
+          {
+            "role": "emotional_arc",
+            "evidence_id": "E04",
+            "distilled_trait": "A repeated habit yields to a final act of acceptance"
+          }
+        ],
         "locked_fingerprint": {
           "genre_lane": "central-night-ballad",
           "form_id": "rain-memory-refrain",
@@ -1476,7 +1681,8 @@
             "Outro"
           ],
           "recurrence": "two choruses lead to a separate late refrain",
-          "entry": "soft synth pulse and piano establish motion before the voice",
+          "entry": "low synth | single-note pulses | vocal bar 5",
+          "groove_signature": "half notes | synth on beat 4 | full-bar drum gaps",
           "contrast_peak": "the standalone refrain becomes the peak after a drumless bridge",
           "transition_interlude": "pre-choruses tighten the pulse and lift the inner line",
           "ending": "a short pulse-and-piano outro closes the reflected image",
@@ -1489,14 +1695,30 @@
           "lyric narrative",
           "hook prominence"
         ],
-        "state": "active",
+        "state": "finalized",
         "main_prompt_form_flow": "Near-empty intro; half-bar vocal rests; one-bar air before choruses; drumless bridge; standalone refrain; bare outro; moderate hook prominence"
       },
       {
         "track": 4,
         "slot_id": "S04",
         "candidate_id": "C016",
-        "reference_evidence_id": "E04",
+        "reference_bindings": [
+          {
+            "role": "structure",
+            "evidence_id": "E04",
+            "distilled_trait": "Two narrative cycles release into an extended coda"
+          },
+          {
+            "role": "harmony",
+            "evidence_id": "E02",
+            "distilled_trait": "Minor-subdominant color shadows an otherwise clear tonal frame"
+          },
+          {
+            "role": "emotional_arc",
+            "evidence_id": "E03",
+            "distilled_trait": "Rain revives a memory before a deliberate separation choice"
+          }
+        ],
         "locked_fingerprint": {
           "genre_lane": "intimate-pop-ballad",
           "form_id": "narrative-coda-ballad",
@@ -1512,7 +1734,8 @@
             "Coda"
           ],
           "recurrence": "two chorus statements defer the final conclusion to the coda",
-          "entry": "piano and muted guitar present the narrative tone",
+          "entry": "muted guitar | offbeat knocks | vocal bar 5",
+          "groove_signature": "dotted eighths | guitar on 4-and | kick alternate bars",
           "contrast_peak": "the second chorus opens into the coda instead of another peak",
           "transition_interlude": "a four-bar instrumental break separates the two narrative halves",
           "ending": "the coda states the acceptance and resolves the deceptive motion",
@@ -1525,14 +1748,30 @@
           "lyric narrative",
           "hook prominence"
         ],
-        "state": "consumed-by-design",
-        "main_prompt_form_flow": "Short entry; narrative verse and pre-chorus pairs; four-bar instrumental breath; second chorus opens directly into the concluding coda; subtle hook prominence"
+        "state": "finalized",
+        "main_prompt_form_flow": "Muted-guitar entry; four-note descending title hook on a fixed syncopated rhythm; four-bar break; varied second chorus opens into the concluding coda; strong hook prominence"
       },
       {
         "track": 5,
         "slot_id": "S05",
         "candidate_id": "C021",
-        "reference_evidence_id": "E05",
+        "reference_bindings": [
+          {
+            "role": "structure",
+            "evidence_id": "E05",
+            "distilled_trait": "Restrained cycles prepare a late transformed final chorus"
+          },
+          {
+            "role": "harmony",
+            "evidence_id": "E06",
+            "distilled_trait": "Dominant tension supports a dramatic turn without jazz motion"
+          },
+          {
+            "role": "emotional_arc",
+            "evidence_id": "E02",
+            "distilled_trait": "Private concern becomes a direct promise of arrival"
+          }
+        ],
         "locked_fingerprint": {
           "genre_lane": "dramatic-ost-ballad",
           "form_id": "modulating-peak-ballad",
@@ -1548,7 +1787,8 @@
             "Outro"
           ],
           "recurrence": "two restrained choruses prepare one transposed final chorus",
-          "entry": "grand piano states the minor tonal center",
+          "entry": "guitar harmonics | alternating dyads | vocal bar 5",
+          "groove_signature": "two-beat cycle | bass before beat 3 | drums at section turns",
           "contrast_peak": "the bridge changes harmonic color before a same-register final chorus under the same loudness ceiling",
           "transition_interlude": "a short instrumental break resets the dynamic floor",
           "ending": "four bars sustain the new key after the final lyric",
@@ -1561,14 +1801,30 @@
           "lyric narrative",
           "hook prominence"
         ],
-        "state": "consumed-by-design",
-        "main_prompt_form_flow": "Piano statement; direct first chorus; instrumental breath; second cycle deepens; bridge pivots harmonically into a same-register final chorus; strong hook prominence"
+        "state": "finalized",
+        "main_prompt_form_flow": "Guitar-harmonic and pad intro; two restrained cycles and four-bar break; semitone bridge pivot; same-register final title chorus; short outro; strong hook prominence"
       },
       {
         "track": 6,
         "slot_id": "S06",
         "candidate_id": "C026",
-        "reference_evidence_id": "E06",
+        "reference_bindings": [
+          {
+            "role": "structure",
+            "evidence_id": "E06",
+            "distilled_trait": "Repeated pre-choruses delay the final direct statement"
+          },
+          {
+            "role": "harmony",
+            "evidence_id": "E03",
+            "distilled_trait": "Minor add-nine color and suspended dominant release"
+          },
+          {
+            "role": "emotional_arc",
+            "evidence_id": "E05",
+            "distilled_trait": "Defensiveness gives way to open care at the final return"
+          }
+        ],
         "locked_fingerprint": {
           "genre_lane": "dramatic-ost-ballad",
           "form_id": "triple-lift-ost-ballad",
@@ -1586,7 +1842,8 @@
             "Outro"
           ],
           "recurrence": "three chorus arrivals are each delayed by a pre-chorus",
-          "entry": "piano ostinato and low strings establish the apology",
+          "entry": "mono bass | guitar-answer pedal | vocal bar 5",
+          "groove_signature": "withheld downbeat | bass on beat 2 | tom every 4 bars",
           "contrast_peak": "the bridge darkens before a third pre-chorus withholds the final downbeat",
           "transition_interlude": "pre-choruses use dominant tension as the recurring hinge",
           "ending": "a short firm close follows the final confession",
@@ -1599,14 +1856,30 @@
           "lyric narrative",
           "hook prominence"
         ],
-        "state": "consumed-by-design",
-        "main_prompt_form_flow": "Compact verse cycles; each pre-chorus withholds the downbeat; bridge darkens; one more pre-chorus delays the final chorus and short close; subtle hook prominence"
+        "state": "finalized",
+        "main_prompt_form_flow": "Guitar-bass intro; four two-bar lyric lines per 8-bar vocal section; fixed chorus rhythm and word stress; pre-choruses delay the downbeat; near-empty bridge; final apology at flat density; short close; subtle hook prominence"
       },
       {
         "track": 7,
         "slot_id": "S07",
         "candidate_id": "C031",
-        "reference_evidence_id": "E07",
+        "reference_bindings": [
+          {
+            "role": "structure",
+            "evidence_id": "E07",
+            "distilled_trait": "Two returns expand into a longer final chorus and coda"
+          },
+          {
+            "role": "harmony",
+            "evidence_id": "E01",
+            "distilled_trait": "Chromatic bass motion links restrained minor and relative-major color"
+          },
+          {
+            "role": "emotional_arc",
+            "evidence_id": "E02",
+            "distilled_trait": "Quiet protection is proved through an ordinary completed act"
+          }
+        ],
         "locked_fingerprint": {
           "genre_lane": "intimate-pop-ballad",
           "form_id": "lullaby-bridge-coda",
@@ -1621,7 +1894,8 @@
             "Coda"
           ],
           "recurrence": "two chorus returns expand into one longer final chorus",
-          "entry": "soft piano and bowed texture enter at the lowest energy",
+          "entry": "reverse guitar | paired swells | vocal bar 5",
+          "groove_signature": "even eighths | fourth-bar drop | kick on Chorus beat 1",
           "contrast_peak": "the bridge suspends the pulse rather than increasing loudness",
           "transition_interlude": "chromatic bass motion connects each verse to its chorus",
           "ending": "the coda resolves the open dominant and lets the city lights fade",
@@ -1634,14 +1908,30 @@
           "lyric narrative",
           "hook prominence"
         ],
-        "state": "consumed-by-design",
-        "main_prompt_form_flow": "Two-bar-feel piano entry; paired verse and chorus; bridge suspends the pulse; expanded last chorus dissolves into an eight-bar coda; moderate hook prominence"
+        "state": "finalized",
+        "main_prompt_form_flow": "Reverse-guitar intro; six two-bar lines per verse, four per chorus or bridge; chromatic bass links returns; bridge piano suspends pulse; six-line final chorus; eight-bar coda; moderate hook prominence"
       },
       {
         "track": 8,
         "slot_id": "S08",
         "candidate_id": "C036",
-        "reference_evidence_id": "E08",
+        "reference_bindings": [
+          {
+            "role": "structure",
+            "evidence_id": "E08",
+            "distilled_trait": "Two complete Verse-Pre-Chorus-Chorus cycles lead to a Bridge and final Chorus"
+          },
+          {
+            "role": "harmony",
+            "evidence_id": "E11",
+            "distilled_trait": "Slow minor-centered rhythm, major-seventh color, secondary-dominant pull, and a darkened subdominant"
+          },
+          {
+            "role": "emotional_arc",
+            "evidence_id": "E12",
+            "distilled_trait": "Rain deepens separation; recurring returns preserve the bond; the ending accepts distance without ending care"
+          }
+        ],
         "locked_fingerprint": {
           "genre_lane": "central-night-ballad",
           "form_id": "promise-return-ballad",
@@ -1651,16 +1941,18 @@
             "Pre-Chorus",
             "Chorus",
             "Verse",
+            "Pre-Chorus",
             "Chorus",
             "Bridge",
             "Chorus",
-            "Outro"
+            "Coda"
           ],
-          "recurrence": "the second cycle skips its pre-chorus before the final return",
-          "entry": "bright piano begins with a steady driving pulse",
-          "contrast_peak": "the bridge suspends harmony before a clean final chorus landing",
-          "transition_interlude": "the missing second pre-chorus creates forward acceleration",
-          "ending": "four bars hold the tonic-add-six color after the promise",
+          "recurrence": "two complete verse-pre-chorus-chorus cycles lead to a bridge and expanded final return",
+          "entry": "analog pad | guitar-answer chord | vocal bar 5",
+          "groove_signature": "half-bar pulse | bass on 3-and | kick on first Chorus bars",
+          "contrast_peak": "the bridge changes harmonic color while the exact title hook stays in the same low register and loudness ceiling",
+          "transition_interlude": "both pre-choruses shorten the wording and hold density before the title hook",
+          "ending": "four bars hold the unresolved minor-add-nine color after the promise",
           "hook_return": "Repeated hook"
         },
         "open_axes": [
@@ -1670,17 +1962,33 @@
           "lyric narrative",
           "hook prominence"
         ],
-        "state": "consumed-by-design",
-        "main_prompt_form_flow": "Bright four-bar entry; first verse earns a pre-chorus; second verse skips it for momentum; bridge suspends; final chorus lands cleanly; strong hook prominence"
+        "state": "finalized",
+        "main_prompt_form_flow": "Pad-bass intro; two eight-bar Verse-Pre-Chorus-Chorus cycles; six-bar Bridge; twelve-bar final Chorus expands the same low five-note title hook; four-bar close; strong hook prominence"
       },
       {
         "track": 9,
         "slot_id": "S09",
         "candidate_id": "C041",
-        "reference_evidence_id": "E09",
+        "reference_bindings": [
+          {
+            "role": "structure",
+            "evidence_id": "E09",
+            "distilled_trait": "Direct Verse-Chorus cycles begin with the voice, then move through Bridge and final Chorus"
+          },
+          {
+            "role": "harmony",
+            "evidence_id": "E13",
+            "distilled_trait": "A major center softens through relative-minor motion, borrowed minor-subdominant color, and direct cadence"
+          },
+          {
+            "role": "emotional_arc",
+            "evidence_id": "E14",
+            "distilled_trait": "Hook model: compact title-centered return plus an arc from loneliness among people to self-directed acceptance; write a new note sequence"
+          }
+        ],
         "locked_fingerprint": {
           "genre_lane": "central-night-ballad",
-          "form_id": "chorus-first-memory-ballad",
+          "form_id": "voice-first-relief-ballad",
           "section_sequence": [
             "Verse",
             "Chorus",
@@ -1691,10 +1999,11 @@
             "Coda"
           ],
           "recurrence": "three direct chorus returns arrive without pre-choruses",
-          "entry": "the lead voice begins immediately with no instrumental intro",
-          "contrast_peak": "the bridge narrows before the final chorus adds the minor-subdominant shade",
+          "entry": "lead voice | pad-unison onset | vocal bar 1",
+          "groove_signature": "two-bar pulse | bass on beat 3 | kick alternate Chorus bars",
+          "contrast_peak": "the bridge changes perspective before the final chorus repeats the same new five-note title motif in the low register",
           "transition_interlude": "short verse endings turn directly into the chorus downbeat",
-          "ending": "a four-bar coda keeps the final direction unresolved but calm",
+          "ending": "a four-bar coda holds the borrowed minor-subdominant after self-acceptance",
           "hook_return": "Repeated hook"
         },
         "open_axes": [
@@ -1704,14 +2013,30 @@
           "lyric narrative",
           "hook prominence"
         ],
-        "state": "consumed-by-design",
-        "main_prompt_form_flow": "Voice begins immediately; chorus arrives without a pre-section; shorter second verse; bridge narrows; final chorus leaves a four-bar coda; moderate hook prominence"
+        "state": "finalized",
+        "main_prompt_form_flow": "Voice starts bar one; 12-bar Verse, 10-bar Chorus, then 10-bar Verse and Chorus; 8-bar Bridge; 12-bar final Chorus; 4-bar Coda; each Chorus opens and closes with a new low five-note 3-3-2-1-2 motif in fixed rhythm; moderate hook prominence"
       },
       {
         "track": 10,
         "slot_id": "S10",
         "candidate_id": "C046",
-        "reference_evidence_id": "E10",
+        "reference_bindings": [
+          {
+            "role": "structure",
+            "evidence_id": "E10",
+            "distilled_trait": "Two compact hooks defer the only full chorus to the end"
+          },
+          {
+            "role": "harmony",
+            "evidence_id": "E05",
+            "distilled_trait": "Late tonal transformation creates a final color crest"
+          },
+          {
+            "role": "emotional_arc",
+            "evidence_id": "E09",
+            "distilled_trait": "Immediate address moves grief toward a dawn-facing release"
+          }
+        ],
         "locked_fingerprint": {
           "genre_lane": "dramatic-ost-ballad",
           "form_id": "hook-led-final-ballad",
@@ -1726,7 +2051,8 @@
             "Outro"
           ],
           "recurrence": "two compact hooks prepare a single full final chorus",
-          "entry": "piano and synth strings frame the last rainy miles",
+          "entry": "FM bell | three-note sub-synth cell | vocal bar 5",
+          "groove_signature": "3+3+2 synth cell | bass across barline | kick at section turns",
           "contrast_peak": "the only full chorus is reserved for the ending after a darker bridge",
           "transition_interlude": "each short hook returns quickly to narrative motion",
           "ending": "four quiet bars turn the parallel-minor color back toward dawn",
@@ -1739,8 +2065,8 @@
           "lyric narrative",
           "hook prominence"
         ],
-        "state": "consumed-by-design",
-        "main_prompt_form_flow": "Short cinematic entry; two verse-hook cycles; bridge turns darker; the only full chorus arrives at the end and resolves into four quiet bars; moderate hook prominence"
+        "state": "active",
+        "main_prompt_form_flow": "FM-bell and sub-synth entry; two verse-hook cycles; bridge turns darker; the only full chorus arrives at the end and resolves into four quiet bars; moderate hook prominence"
       }
     ]
   },
@@ -1765,7 +2091,8 @@
           "Outro"
         ],
         "recurrence": "two full chorus returns followed by a lyrically varied final return",
-        "entry": "four bars of felt piano fragments and a deep ambient bed before the voice",
+        "entry": "felt piano | two-note gaps | vocal bar 5",
+        "groove_signature": "quarters | bass pickup to beat 1 | rim alternate bars",
         "contrast_peak": "the bridge changes spectral color while the voice stays below D5 and the final return keeps the same narrow loudness ceiling",
         "transition_interlude": "each pre-chorus adds harmonic color while holding drum density, loudness, and the low vocal register steady",
         "ending": "four ambient instrumental bars dissolve the piano fragments into rain",
@@ -1832,12 +2159,12 @@
         "prompt_fields": {
           "Style": "Nocturnal K-pop ambient ballad",
           "Feel": "Rainy midnight drive; a radio voice softens solitude; steady low intensity",
-          "Tempo/Groove": "88 BPM, 4/4; restrained straight ballad pulse",
-          "Vocal": "Japanese modern female jazz alto A3-D5, centered A3-C#5; smoky-clear English, small intervals, restrained vibrato",
-          "Instrumentation": "Felt piano, deep ambient synth bed, round bass, soft pop kit, diffuse guitar and strings",
+          "Tempo/Groove": "88 BPM, 4/4; quarters | bass pickup to beat 1 | rim alternate bars",
+          "Vocal": "Japanese modern female jazz alto A3-D5, centered A3-C#5; clear English, stable tone, clean joins, small intervals, restrained vibrato",
+          "Instrumentation": "felt piano | two-note gaps | vocal bar 5; ambient synth, round bass, rim support",
           "Harmony": "Bm; Verse Bm-Gmaj7-D/F#-A; Pre Em7-F#7-Bm-A/C#; Chorus Gmaj7-A-F#m7-Bm, Em7-A-Dmaj7-F#7; final G-A-D",
           "Form/Flow": "4-bar ambient entry; even density and low register; color-shift bridge; final return dissolves into rain; strong hook prominence",
-          "Production/Mix": "Close lead, narrow dynamics, long dark reverb, air, soft transients, stable lows"
+          "Production/Mix": "Centered low lead, narrow dynamics, long dark reverb, air, soft transients, stable lows"
         },
         "exclusion_prompt": "swing, walking bass, jazz comping, brushes, horns, scat, drum crescendos, notes above D5, belting"
       }
@@ -1858,7 +2185,8 @@
           "Coda"
         ],
         "recurrence": "two compact chorus returns carry the same central confession",
-        "entry": "quiet guitar arpeggio opens before a long first verse",
+        "entry": "nylon guitar | broken thirds | vocal bar 5",
+        "groove_signature": "straight eighths | guitar on 2-and | kick every 2 bars",
         "contrast_peak": "the second chorus is the emotional ceiling rather than a large climax",
         "transition_interlude": "verse endings thin before each direct chorus arrival",
         "ending": "an eight-bar instrumental coda releases the suspended light",
@@ -1905,12 +2233,12 @@
         "prompt_fields": {
           "Style": "Nocturnal K-pop ballad",
           "Feel": "Rainy red light; an unsent confession held in patient motion",
-          "Tempo/Groove": "78 BPM, 4/4; restrained straight ballad pulse",
-          "Vocal": "Japanese modern female jazz alto A3-D5, centered A3-C#5; smoky-clear English, small intervals, restrained vibrato",
-          "Instrumentation": "Nylon guitar arpeggio, muted piano, warm bass, soft straight pop percussion, distant strings",
+          "Tempo/Groove": "78 BPM, 4/4; straight eighths | guitar on 2-and | kick every 2 bars",
+          "Vocal": "Japanese modern female jazz alto A3-D5, centered A3-C#5; clear English, stable tone, clean joins, small intervals, restrained vibrato",
+          "Instrumentation": "nylon guitar | broken thirds | vocal bar 5; warm bass, muted keys, soft kick",
           "Harmony": "C; Verse C-Em7-Fmaj7-G; Chorus F-Fm-Em7-Am7-Dm7-G-C; coda Fm-C with descending inner voice",
           "Form/Flow": "4-bar guitar entry; long verse, compact chorus, long verse, compact chorus; 8-bar coda fades with the red light; subtle hook prominence",
-          "Production/Mix": "Near-field vocal, narrow dynamics, gentle chorus bloom, tape haze, soft transients, steady drums"
+          "Production/Mix": "Centered low lead, narrow dynamics, gentle chorus bloom, tape haze, soft transients, steady drums"
         },
         "exclusion_prompt": "swing, walking bass, jazz comping, brushes, horns, scat, drum crescendos, notes above D5, belting"
       }
@@ -1935,7 +2263,8 @@
           "Outro"
         ],
         "recurrence": "two choruses lead to a separate late refrain",
-        "entry": "soft synth pulse and piano establish motion before the voice",
+        "entry": "low synth | single-note pulses | vocal bar 5",
+        "groove_signature": "half notes | synth on beat 4 | full-bar drum gaps",
         "contrast_peak": "the standalone refrain becomes the peak after a drumless bridge",
         "transition_interlude": "pre-choruses tighten the pulse and lift the inner line",
         "ending": "a short pulse-and-piano outro closes the reflected image",
@@ -2002,12 +2331,12 @@
         "prompt_fields": {
           "Style": "Rainy nocturnal K-pop ballad",
           "Feel": "Slow rainy drive; returning a spare key becomes quiet separation",
-          "Tempo/Groove": "76 BPM, 4/4; slow half-time ballad; full-bar drum gaps",
-          "Vocal": "Japanese modern female jazz alto A3-C5, mostly A3-B4; smoky-clear English, C5 ceiling, low phrases, audible rests",
-          "Instrumentation": "Sparse piano, low synth, round bass; rim and kick in choruses; single strings at turns",
+          "Tempo/Groove": "76 BPM, 4/4; half notes | synth on beat 4 | full-bar drum gaps",
+          "Vocal": "Japanese modern female jazz alto A3-C5, mostly A3-B4; clear English, stable tone, clean joins, C5 ceiling, low phrases",
+          "Instrumentation": "low synth | single-note pulses | vocal bar 5; round bass, delayed sparse piano, rim support",
           "Harmony": "Dm(add9); Verse Dm-C/E-Bbmaj7-F/A; Pre Gm7-Dm/F-Eb-Asus4-A; Chorus Bbmaj7-C-Am7-Dm, Gm7-Asus4-Dm; Refrain Bb-C-Dm-Dm/C; two-bar changes, descending bass, suspended cadences",
           "Form/Flow": "Near-empty intro; half-bar vocal rests; one-bar air before choruses; drumless bridge; standalone refrain; bare outro; moderate hook prominence",
-          "Production/Mix": "Close low lead, dry phrase gaps, intermittent ambience, short dark tails, centered lows, narrow dynamics, soft transients"
+          "Production/Mix": "Centered low lead, clean phrase gaps, intermittent ambience, short dark tails, centered lows, narrow dynamics, soft transients"
         },
         "exclusion_prompt": "jazz backing, swing, walking bass, brushes, horns, scat, dense layers, nonstop drums, >C5, belting"
       }
@@ -2031,17 +2360,18 @@
           "Coda"
         ],
         "recurrence": "two chorus statements defer the final conclusion to the coda",
-        "entry": "piano and muted guitar present the narrative tone",
+        "entry": "muted guitar | offbeat knocks | vocal bar 5",
+        "groove_signature": "dotted eighths | guitar on 4-and | kick alternate bars",
         "contrast_peak": "the second chorus opens into the coda instead of another peak",
         "transition_interlude": "a four-bar instrumental break separates the two narrative halves",
         "ending": "the coda states the acceptance and resolves the deceptive motion",
         "hook_return": "Varied return"
       },
       "spec": {
-        "title": "돌아가지 않는 출구",
-        "language": "ko",
-        "target_duration_seconds": 223.3,
-        "bpm": 86,
+        "title": "Not That Exit Again",
+        "language": "en",
+        "target_duration_seconds": 234.1,
+        "bpm": 82,
         "metrical_pulses_per_bar": 4,
         "sections": [
           {
@@ -2087,20 +2417,20 @@
           {
             "tag": "Coda",
             "bars": 8,
-            "vocal": false
+            "vocal": true
           }
         ],
         "prompt_fields": {
-          "Style": "Korean nocturnal K-pop ballad; cinematic pop",
-          "Feel": "Circling an exit in steady rain; resistance slowly becomes acceptance",
-          "Tempo/Groove": "86 BPM, 4/4; restrained straight ballad pulse",
-          "Vocal": "Japanese modern female jazz alto A3-D5, mostly A3-C#5; smoky-clear natural Korean, small intervals, D5 ceiling, restrained vibrato",
-          "Instrumentation": "Acoustic piano, fingered bass, muted electric guitar, compact pop drums, restrained cello line",
-          "Harmony": "A; Verse A-E/G#-F#m-D; Pre D-E-F#m-C#7; Chorus A-D-E-A; coda D-E-C#m-F#m-Bm-E-A",
-          "Form/Flow": "Short entry; narrative verse and pre-chorus pairs; four-bar instrumental breath; second chorus opens directly into the concluding coda; subtle hook prominence",
-          "Production/Mix": "Natural lead detail, centered acoustic core, firm kick, restrained stereo lift only in the coda; narrow dynamics, soft transients, steady drums"
+          "Style": "Rainy K-pop ballad with a restrained pop hook",
+          "Feel": "Steady rainy drive; breaking the habit of returning to an old address",
+          "Tempo/Groove": "82 BPM, 4/4; dotted eighths | guitar on 4-and | kick alternate bars",
+          "Vocal": "Japanese modern female jazz alto A3-D5, mostly A3-C#5; clear English, stable tone, compact low phrases, clean joins, silent gaps",
+          "Instrumentation": "muted guitar | offbeat knocks | vocal bar 5; warm bass, muted synth answers, compact drums",
+          "Harmony": "F#m; Verse F#m-D-A/E-E; Pre Bm-D-E-C#sus4-C#; Chorus A-E/G#-F#m-D, Bm-C#7-F#m; Coda D-E-C#m-F#m-Bm-C#-F#m",
+          "Form/Flow": "Muted-guitar entry; four-note descending title hook on a fixed syncopated rhythm; four-bar break; varied second chorus opens into the concluding coda; strong hook prominence",
+          "Production/Mix": "Centered low lead, clean silent phrase gaps, centered acoustic core, narrow dynamics, soft transients, coda-only stereo lift"
         },
-        "exclusion_prompt": "swing, walking bass, jazz comping, brushes, horns, scat, drum crescendos, notes above D5, belting"
+        "exclusion_prompt": "jazz backing, swing, walking bass, brushes, horns, scat, >D5, belting"
       }
     },
     {
@@ -2122,15 +2452,16 @@
           "Outro"
         ],
         "recurrence": "two restrained choruses prepare one transposed final chorus",
-        "entry": "grand piano states the minor tonal center",
+        "entry": "guitar harmonics | alternating dyads | vocal bar 5",
+        "groove_signature": "two-beat cycle | bass before beat 3 | drums at section turns",
         "contrast_peak": "the bridge changes harmonic color before a same-register final chorus under the same loudness ceiling",
         "transition_interlude": "a short instrumental break resets the dynamic floor",
         "ending": "four bars sustain the new key after the final lyric",
         "hook_return": "Final-only callback"
       },
       "spec": {
-        "title": "첫 비가 닿는 곳",
-        "language": "ko",
+        "title": "Under the Station Light",
+        "language": "en",
         "target_duration_seconds": 205.7,
         "bpm": 84,
         "metrical_pulses_per_bar": 4,
@@ -2182,16 +2513,16 @@
           }
         ],
         "prompt_fields": {
-          "Style": "Korean nocturnal K-pop ballad; cinematic pop",
-          "Feel": "Cold rain turning warm; a restrained promise gains harmonic warmth without a loudness peak",
-          "Tempo/Groove": "84 BPM, 4/4; restrained straight ballad pulse",
-          "Vocal": "Japanese modern female jazz alto A3-D5, mostly A3-C#5; smoky-clear natural Korean, small intervals, D5 ceiling, restrained vibrato",
-          "Instrumentation": "Grand piano, low tom pulse, electric bass, pop strings, clean electric-guitar sustain",
-          "Harmony": "C#m; Verse F#m-B-E-A-G#7-C#m; Chorus A-B-G#m-C#m-F#m-G#7; bridge A-B-C#sus; final key D#m",
-          "Form/Flow": "Piano statement; direct first chorus; instrumental breath; second cycle deepens; bridge pivots harmonically into a same-register final chorus; strong hook prominence",
-          "Production/Mix": "Intimate opening, restrained orchestral color, soft pop drums, short dark reverb; narrow dynamics, soft transients, steady drums"
+          "Style": "Rainy ambient-electronic K-pop OST ballad",
+          "Feel": "Cold rain; collecting a stranded sister restores connection",
+          "Tempo/Groove": "84 BPM, 4/4; two-beat cycle | bass before beat 3 | drums at section turns",
+          "Vocal": "Japanese modern female jazz alto A3-D5; clear English, stable tone, clean joins, mostly below C#5, low phrases, same-register modulation",
+          "Instrumentation": "guitar harmonics | alternating dyads | vocal bar 5; ambient pad, mono bass, soft kick",
+          "Harmony": "C#m(add9); Verse C#m-E/B-Amaj7-G#sus4; Chorus F#m-A-E/G#-C#m, D-B-G#7; Bridge A-F#m-Bsus4-C#sus4; final Dm: Gm-Bb-F/A-Dm, Eb-C-A7-Dm",
+          "Form/Flow": "Guitar-harmonic and pad intro; two restrained cycles and four-bar break; semitone bridge pivot; same-register final title chorus; short outro; strong hook prominence",
+          "Production/Mix": "Centered low lead, narrow dynamics, flat density, wide dark ambience, clear gaps, soft transients, centered lows"
         },
-        "exclusion_prompt": "swing, walking bass, jazz comping, brushes, horns, scat, drum crescendos, notes above D5, belting"
+        "exclusion_prompt": "jazz backing, swing, brushes, horns, scat, violin, cello, piano intro, octave lift, >D5, belting"
       }
     },
     {
@@ -2215,17 +2546,18 @@
           "Outro"
         ],
         "recurrence": "three chorus arrivals are each delayed by a pre-chorus",
-        "entry": "piano ostinato and low strings establish the apology",
+        "entry": "mono bass | guitar-answer pedal | vocal bar 5",
+        "groove_signature": "withheld downbeat | bass on beat 2 | tom every 4 bars",
         "contrast_peak": "the bridge darkens before a third pre-chorus withholds the final downbeat",
         "transition_interlude": "pre-choruses use dominant tension as the recurring hinge",
         "ending": "a short firm close follows the final confession",
         "hook_return": "Repeated hook"
       },
       "spec": {
-        "title": "늦은 차선의 고백",
-        "language": "ko",
-        "target_duration_seconds": 213.3,
-        "bpm": 90,
+        "title": "What You Meant Was Care",
+        "language": "en",
+        "target_duration_seconds": 234.1,
+        "bpm": 82,
         "metrical_pulses_per_bar": 4,
         "sections": [
           {
@@ -2285,16 +2617,16 @@
           }
         ],
         "prompt_fields": {
-          "Style": "Korean nocturnal K-pop ballad; cinematic pop",
-          "Feel": "A late apology on an empty lane; tension is held until the final confession",
-          "Tempo/Groove": "90 BPM, 4/4; restrained straight ballad pulse",
-          "Vocal": "Japanese modern female jazz alto A3-D5, mostly A3-C#5; smoky-clear natural Korean, small intervals, D5 ceiling, restrained vibrato",
-          "Instrumentation": "Piano ostinato, low strings, steady pop bass, kick-snare ballad kit, single clean guitar counterline",
-          "Harmony": "Bb; Verse Bb-F/A-Gm-Eb; Pre Cm-D7-Gm-F; Chorus Eb-F-Dm-Gm-Cm-F-Bb; Bridge Gb-Db-Ebm-F",
-          "Form/Flow": "Compact verse cycles; each pre-chorus withholds the downbeat; bridge darkens; one more pre-chorus delays the final chorus and short close; subtle hook prominence",
-          "Production/Mix": "Focused vocal, soft steady drums, dark verses, final string color under the same ceiling, clear low strings; narrow dynamics, soft transients, steady drums"
+          "Style": "Dark ambient K-pop OST ballad",
+          "Feel": "Rainy ring road; concern misread as control becomes a parked-car apology",
+          "Tempo/Groove": "82 BPM, 4/4; withheld downbeat | bass on beat 2 | tom every 4 bars",
+          "Vocal": "Japanese modern female jazz alto A3-D5; clear English, mostly A3-C5; stable tone, clean joins, syllabic low melody, D5 ceiling",
+          "Instrumentation": "mono bass | guitar-answer pedal | vocal bar 5; low guitar, dark synth, recessed tom",
+          "Harmony": "Gm(add9); Verse Gm-Ebmaj7-Bb/F-F; Pre Cm-Eb-Dsus4-D; Chorus Eb-F-Dm-Gm-Cm-D7-Gm; Bridge Bb/F-Ebmaj7-Cm-Dsus4",
+          "Form/Flow": "Guitar-bass intro; four two-bar lyric lines per 8-bar vocal section; fixed chorus rhythm and word stress; pre-choruses delay the downbeat; near-empty bridge; final apology at flat density; short close; subtle hook prominence",
+          "Production/Mix": "Centered low lead, narrow dynamics, flat density, dark ambience, recessed floor tom, mono lows"
         },
-        "exclusion_prompt": "swing, walking bass, jazz comping, brushes, horns, scat, drum crescendos, notes above D5, belting"
+        "exclusion_prompt": "jazz backing, swing, brushes, horns, scat, violin, cello, piano intro, percussion-led, >D5, belting"
       }
     },
     {
@@ -2315,15 +2647,16 @@
           "Coda"
         ],
         "recurrence": "two chorus returns expand into one longer final chorus",
-        "entry": "soft piano and bowed texture enter at the lowest energy",
+        "entry": "reverse guitar | paired swells | vocal bar 5",
+        "groove_signature": "even eighths | fourth-bar drop | kick on Chorus beat 1",
         "contrast_peak": "the bridge suspends the pulse rather than increasing loudness",
         "transition_interlude": "chromatic bass motion connects each verse to its chorus",
         "ending": "the coda resolves the open dominant and lets the city lights fade",
         "hook_return": "Varied return"
       },
       "spec": {
-        "title": "잠들지 않는 유리창",
-        "language": "ko",
+        "title": "I'll Keep the Road Quiet",
+        "language": "en",
         "target_duration_seconds": 216.0,
         "bpm": 80,
         "metrical_pulses_per_bar": 4,
@@ -2370,16 +2703,16 @@
           }
         ],
         "prompt_fields": {
-          "Style": "Korean nocturnal K-pop ballad; cinematic pop",
-          "Feel": "A sleepless windshield gradually releases the city lights one by one",
-          "Tempo/Groove": "80 BPM, 4/4; restrained straight ballad pulse",
-          "Vocal": "Japanese modern female jazz alto A3-D5, mostly A3-C#5; smoky-clear natural Korean, small intervals, D5 ceiling, restrained vibrato",
-          "Instrumentation": "Soft piano, bowed synth texture, warm bass, minimal straight pulse, distant reverse-guitar breaths",
+          "Style": "Rainy dream-pop K-pop lullaby ballad",
+          "Feel": "Rainy post-shift drive; an exhausted passenger sleeps through an even ride home",
+          "Tempo/Groove": "80 BPM, 4/4; even eighths | fourth-bar drop | kick on Chorus beat 1",
+          "Vocal": "Japanese modern female jazz alto A3-D5; clear English, mostly A3-C5; stable tone, clean joins, syllabic low melody, D5 ceiling",
+          "Instrumentation": "reverse guitar | paired swells | vocal bar 5; filtered pad, warm bass, support pulse",
           "Harmony": "Eb; Verse Eb-Fm-Gm-Am7b5-Bb7; Chorus Ab-Bb-Gm-Cm-Fm-Bb; Bridge Cm-Abm-Eb/Bb-Bbsus; coda Abm-Eb",
-          "Form/Flow": "Two-bar-feel piano entry; paired verse and chorus; bridge suspends the pulse; expanded last chorus dissolves into an eight-bar coda; moderate hook prominence",
-          "Production/Mix": "Very close lead, dim high end, slow stereo opening, quiet low-frequency pulse, long but dark tail; narrow dynamics, soft transients, steady drums"
+          "Form/Flow": "Reverse-guitar intro; six two-bar lines per verse, four per chorus or bridge; chromatic bass links returns; bridge piano suspends pulse; six-line final chorus; eight-bar coda; moderate hook prominence",
+          "Production/Mix": "Centered low lead, narrow dynamics, dim top, slow stereo opening, quiet lows, long dark tail, soft transients"
         },
-        "exclusion_prompt": "swing, walking bass, jazz comping, brushes, horns, scat, drum crescendos, notes above D5, belting"
+        "exclusion_prompt": "jazz backing, swing, brushes, horns, scat, violin, cello, piano intro, percussion-led, >D5, belting"
       }
     },
     {
@@ -2395,23 +2728,25 @@
           "Pre-Chorus",
           "Chorus",
           "Verse",
+          "Pre-Chorus",
           "Chorus",
           "Bridge",
           "Chorus",
-          "Outro"
+          "Coda"
         ],
-        "recurrence": "the second cycle skips its pre-chorus before the final return",
-        "entry": "bright piano begins with a steady driving pulse",
-        "contrast_peak": "the bridge suspends harmony before a clean final chorus landing",
-        "transition_interlude": "the missing second pre-chorus creates forward acceleration",
-        "ending": "four bars hold the tonic-add-six color after the promise",
+        "recurrence": "two complete verse-pre-chorus-chorus cycles lead to a bridge and expanded final return",
+        "entry": "analog pad | guitar-answer chord | vocal bar 5",
+        "groove_signature": "half-bar pulse | bass on 3-and | kick on first Chorus bars",
+        "contrast_peak": "the bridge changes harmonic color while the exact title hook stays in the same low register and loudness ceiling",
+        "transition_interlude": "both pre-choruses shorten the wording and hold density before the title hook",
+        "ending": "four bars hold the unresolved minor-add-nine color after the promise",
         "hook_return": "Repeated hook"
       },
       "spec": {
-        "title": "모든 밤의 방향",
-        "language": "ko",
-        "target_duration_seconds": 214.5,
-        "bpm": 94,
+        "title": "Same Time Next Sunday",
+        "language": "en",
+        "target_duration_seconds": 214.1,
+        "bpm": 74,
         "metrical_pulses_per_bar": 4,
         "sections": [
           {
@@ -2421,56 +2756,61 @@
           },
           {
             "tag": "Verse",
-            "bars": 12,
+            "bars": 8,
             "vocal": true
           },
           {
             "tag": "Pre-Chorus",
-            "bars": 8,
+            "bars": 4,
             "vocal": true
           },
           {
             "tag": "Chorus",
-            "bars": 12,
+            "bars": 8,
             "vocal": true
           },
           {
             "tag": "Verse",
-            "bars": 12,
-            "vocal": true
-          },
-          {
-            "tag": "Chorus",
-            "bars": 12,
-            "vocal": true
-          },
-          {
-            "tag": "Bridge",
             "bars": 8,
             "vocal": true
           },
           {
+            "tag": "Pre-Chorus",
+            "bars": 4,
+            "vocal": true
+          },
+          {
+            "tag": "Chorus",
+            "bars": 8,
+            "vocal": true
+          },
+          {
+            "tag": "Bridge",
+            "bars": 6,
+            "vocal": true
+          },
+          {
             "tag": "Chorus",
             "bars": 12,
             "vocal": true
           },
           {
-            "tag": "Outro",
+            "tag": "Coda",
             "bars": 4,
             "vocal": false
           }
         ],
         "prompt_fields": {
-          "Style": "Korean nocturnal K-pop ballad; cinematic pop",
-          "Feel": "A steady promise through wet intersections; warmer and more forward than the surrounding tracks",
-          "Tempo/Groove": "94 BPM, 4/4; restrained straight ballad pulse",
-          "Vocal": "Japanese modern female jazz alto A3-D5, mostly A3-C#5; smoky-clear natural Korean, small intervals, D5 ceiling, restrained vibrato",
-          "Instrumentation": "Bright piano, pulsing electric bass, clean guitar eighths, straight pop kit, compact string ensemble",
-          "Harmony": "Db; Verse Db-Ab/C-Bbm-Ab-Gb; Pre Ebm-Bbm-Gb-Ab; Chorus Db-F7-Bbm-Gb-Ebm-Ab; Bridge Gb-Ab-Bbm-Ab",
-          "Form/Flow": "Bright four-bar entry; first verse earns a pre-chorus; second verse skips it for momentum; bridge suspends; final chorus lands cleanly; strong hook prominence",
-          "Production/Mix": "Present lead, firmer kick, clear stereo guitar, controlled strings, crisp but rain-softened top end; narrow dynamics, soft transients, steady drums"
+          "Style": "Nocturnal ambient K-pop promise ballad",
+          "Feel": "Rainy drive after visiting; separation becomes a kept promise",
+          "Tempo/Groove": "74 BPM, 4/4; half-bar pulse | bass on 3-and | kick on first Chorus bars",
+          "Vocal": "Japanese modern female jazz alto A3-C5, mostly below Bb4; clear English, stable tone, clean joins, low syllabic melody",
+          "Instrumentation": "analog pad | guitar-answer chord | vocal bar 5; rounded bass, delayed electric keys, recessed kick",
+          "Harmony": "Cm(add9); Verse Cm-Ab-Eb/Bb-Bbsus; Pre Fm-Cm/Eb-Db-Gsus-G; Chorus Eb/G-Ab-Cm/Bb-Bb, Fm-Abm6-Eb/Bb-G; Bridge Ab-Eb/G-Fm-Cm/Eb-Db-Bb",
+          "Form/Flow": "Pad-bass intro; two eight-bar Verse-Pre-Chorus-Chorus cycles; six-bar Bridge; twelve-bar final Chorus expands the same low five-note title hook; four-bar close; strong hook prominence",
+          "Production/Mix": "Centered low lead; narrow dynamics, dark wide ambience, empty sides, flat Chorus density, soft transients"
         },
-        "exclusion_prompt": "swing, walking bass, jazz comping, brushes, horns, scat, drum crescendos, notes above D5, belting"
+        "exclusion_prompt": "jazz backing,swing,brushes,horns,scat,violin,cello,piano intro,percussion-led,>C5,belting"
       }
     },
     {
@@ -2479,7 +2819,7 @@
       "candidate_id": "C041",
       "locked_fingerprint": {
         "genre_lane": "central-night-ballad",
-        "form_id": "chorus-first-memory-ballad",
+        "form_id": "voice-first-relief-ballad",
         "section_sequence": [
           "Verse",
           "Chorus",
@@ -2490,37 +2830,38 @@
           "Coda"
         ],
         "recurrence": "three direct chorus returns arrive without pre-choruses",
-        "entry": "the lead voice begins immediately with no instrumental intro",
-        "contrast_peak": "the bridge narrows before the final chorus adds the minor-subdominant shade",
+        "entry": "lead voice | pad-unison onset | vocal bar 1",
+        "groove_signature": "two-bar pulse | bass on beat 3 | kick alternate Chorus bars",
+        "contrast_peak": "the bridge changes perspective before the final chorus repeats the same new five-note title motif in the low register",
         "transition_interlude": "short verse endings turn directly into the chorus downbeat",
-        "ending": "a four-bar coda keeps the final direction unresolved but calm",
+        "ending": "a four-bar coda holds the borrowed minor-subdominant after self-acceptance",
         "hook_return": "Repeated hook"
       },
       "spec": {
-        "title": "네가 없는 교차로",
-        "language": "ko",
-        "target_duration_seconds": 207.3,
-        "bpm": 88,
+        "title": "Quiet, Not Lonely",
+        "language": "en",
+        "target_duration_seconds": 214.1,
+        "bpm": 74,
         "metrical_pulses_per_bar": 4,
         "sections": [
           {
             "tag": "Verse",
-            "bars": 16,
+            "bars": 12,
             "vocal": true
           },
           {
             "tag": "Chorus",
-            "bars": 12,
+            "bars": 10,
             "vocal": true
           },
           {
             "tag": "Verse",
-            "bars": 12,
+            "bars": 10,
             "vocal": true
           },
           {
             "tag": "Chorus",
-            "bars": 12,
+            "bars": 10,
             "vocal": true
           },
           {
@@ -2540,16 +2881,16 @@
           }
         ],
         "prompt_fields": {
-          "Style": "Korean nocturnal K-pop ballad; cinematic pop",
-          "Feel": "An empty intersection; absence is accepted while the shared direction remains",
-          "Tempo/Groove": "88 BPM, 4/4; restrained straight ballad pulse",
-          "Vocal": "Japanese modern female jazz alto A3-D5, mostly A3-C#5; smoky-clear natural Korean, small intervals, D5 ceiling, restrained vibrato",
-          "Instrumentation": "Voice-first opening, piano chords, round bass, restrained straight drums, low synth strings",
-          "Harmony": "A; Verse A-E/G#-F#m-D; Chorus A-C#m-F#m-D-Bm-E; Bridge D-E-C#m-F#m-Bm-E; final D-Dm-A",
-          "Form/Flow": "Voice begins immediately; chorus arrives without a pre-section; shorter second verse; bridge narrows; final chorus leaves a four-bar coda; moderate hook prominence",
-          "Production/Mix": "Up-front voice from bar one, small room, stable center, chorus width from pads, gentle road-noise texture; narrow dynamics, soft transients, steady drums"
+          "Style": "Ambient K-pop ballad",
+          "Feel": "Rainy post-reception drive; solitude becomes relief",
+          "Tempo/Groove": "74 BPM, 4/4; two-bar pulse | bass on beat 3 | kick alternate Chorus bars",
+          "Vocal": "Japanese modern female jazz alto A3-C5, mostly below Bb4; clear English, stable tone, clean joins, syllabic",
+          "Instrumentation": "lead voice | pad-unison onset | vocal bar 1; low bass, Verse-2 muted guitar, recessed kick",
+          "Harmony": "Bb(add9); Verse Bb-F/A-Gm-Eb(add9); Chorus Eb-F-Dm-Gm-Cm-Ebm-Bb/F-Fsus; Bridge Gm-Dm-Eb-Bb/D-Cm-Fsus-F; Coda Ebm(add9)",
+          "Form/Flow": "Voice starts bar one; 12-bar Verse, 10-bar Chorus, then 10-bar Verse and Chorus; 8-bar Bridge; 12-bar final Chorus; 4-bar Coda; each Chorus opens and closes with a new low five-note 3-3-2-1-2 motif in fixed rhythm; moderate hook prominence",
+          "Production/Mix": "Centered low lead; narrow dynamics, dark wide ambience, empty sides, flat Chorus density, soft transients"
         },
-        "exclusion_prompt": "swing, walking bass, jazz comping, brushes, horns, scat, drum crescendos, notes above D5, belting"
+        "exclusion_prompt": "jazz backing,swing,brushes,horns,scat,violin,cello,piano intro,percussion-led,>C5,belting"
       }
     },
     {
@@ -2570,7 +2911,8 @@
           "Outro"
         ],
         "recurrence": "two compact hooks prepare a single full final chorus",
-        "entry": "piano and synth strings frame the last rainy miles",
+        "entry": "FM bell | three-note sub-synth cell | vocal bar 5",
+        "groove_signature": "3+3+2 synth cell | bass across barline | kick at section turns",
         "contrast_peak": "the only full chorus is reserved for the ending after a darker bridge",
         "transition_interlude": "each short hook returns quickly to narrative motion",
         "ending": "four quiet bars turn the parallel-minor color back toward dawn",
@@ -2625,14 +2967,14 @@
           }
         ],
         "prompt_fields": {
-          "Style": "Korean nocturnal K-pop ballad; cinematic pop",
+          "Style": "Nocturnal synth-pop K-pop OST ballad",
           "Feel": "The last rainy miles before dawn; grief loosens and the road finally opens",
-          "Tempo/Groove": "82 BPM, 4/4; restrained straight ballad pulse",
-          "Vocal": "Japanese modern female jazz alto A3-D5, mostly A3-C#5; smoky-clear natural Korean, small intervals, D5 ceiling, restrained vibrato",
-          "Instrumentation": "Piano and synth-string intro, sustained clean guitar, electric bass, soft straight pop drums, low cello support",
+          "Tempo/Groove": "82 BPM, 4/4; 3+3+2 synth cell | bass across barline | kick at section turns",
+          "Vocal": "Japanese modern female jazz alto A3-D5, mostly A3-C#5; clear natural Korean, stable tone, clean phrase joins, small intervals, D5 ceiling",
+          "Instrumentation": "FM bell | three-note sub-synth cell | vocal bar 5; sustained guitar, warm bass, soft kick",
           "Harmony": "F#; Verse F#-A#m-D#m-B; Hook B-C#-A#m-D#m; Bridge G#m-C#-F#-D#m-B-C#; final F#-C#/E#-D#m-B-Bm-F#",
-          "Form/Flow": "Short cinematic entry; two verse-hook cycles; bridge turns darker; the only full chorus arrives at the end and resolves into four quiet bars; moderate hook prominence",
-          "Production/Mix": "Dark verses, diffuse final color under the same ceiling, soft drum transients, warm low mids, intimate vocal; narrow dynamics, soft transients, steady drums"
+          "Form/Flow": "FM-bell and sub-synth entry; two verse-hook cycles; bridge turns darker; the only full chorus arrives at the end and resolves into four quiet bars; moderate hook prominence",
+          "Production/Mix": "Dark verses, diffuse final color under the same ceiling, soft drum transients, warm low mids, centered low lead; narrow dynamics, soft transients, steady drums"
         },
         "exclusion_prompt": "swing, walking bass, jazz comping, brushes, horns, scat, drum crescendos, notes above D5, belting"
       }
