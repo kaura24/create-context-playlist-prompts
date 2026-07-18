@@ -104,7 +104,7 @@ def valid_catalog_and_plan() -> tuple[dict[str, object], dict[str, object]]:
             },
             {
                 "id": "E3",
-                "source": "user:approved-adjacent-pattern",
+                "source": "https://example.com/adjacent-pattern",
                 "scope": "adjacent ending and return",
             },
         ],
@@ -157,6 +157,7 @@ def valid_catalog_and_plan() -> tuple[dict[str, object], dict[str, object]]:
                 "track": number,
                 "slot_id": f"S{number:02d}",
                 "candidate_id": candidate["candidate_id"],
+                "reference_evidence_id": candidate["evidence_ids"][0],
                 "locked_fingerprint": project(candidate),
                 "open_axes": ["section density curve"],
                 "state": "reserved",
@@ -234,6 +235,25 @@ class StructurePlanValidatorTests(unittest.TestCase):
         result = self.run_validator(catalog, plan)
         self.assertEqual(result.returncode, 1)
         self.assertIn("must be an http(s) URL or user: approval", result.stdout)
+
+    def test_selected_slots_require_candidate_cited_web_references(self) -> None:
+        catalog, plan = valid_catalog_and_plan()
+        plan["selections"][0].pop("reference_evidence_id")
+        result = self.run_validator(catalog, plan)
+        self.assertEqual(result.returncode, 1)
+        self.assertIn("reference_evidence_id must be non-empty", result.stdout)
+
+        catalog, plan = valid_catalog_and_plan()
+        catalog["evidence"][0]["source"] = "user:approved-reference"
+        result = self.run_validator(catalog, plan)
+        self.assertEqual(result.returncode, 1)
+        self.assertIn("must resolve to an HTTP(S) source", result.stdout)
+
+        catalog, plan = valid_catalog_and_plan()
+        plan["selections"][0]["reference_evidence_id"] = "E2"
+        result = self.run_validator(catalog, plan)
+        self.assertEqual(result.returncode, 1)
+        self.assertIn("is not cited by candidate", result.stdout)
 
     def test_rejects_candidate_pool_below_fifty(self) -> None:
         catalog, plan = valid_catalog_and_plan()

@@ -40,6 +40,40 @@ class SkillContractTests(unittest.TestCase):
         self.assertIn("180-240 seconds", text)
         self.assertIn("duration readiness", text)
 
+    def test_intake_resolves_language_and_vocal_high_note_policy(self) -> None:
+        skill_text = SKILL.read_text(encoding="utf-8")
+        workflow_text = (REFERENCES / "workflow.md").read_text(encoding="utf-8")
+        design_text = (REFERENCES / "design-rules.md").read_text(encoding="utf-8")
+        output_text = (REFERENCES / "output-contract.md").read_text(
+            encoding="utf-8"
+        )
+        self.assertIn("Resolve Language And Dynamics Before Research", skill_text)
+        self.assertIn("Do not infer lyric language", workflow_text)
+        self.assertIn("vocal highest note", design_text)
+        self.assertIn("high-note policy", design_text)
+        self.assertIn("arrangement dynamic range", output_text)
+        self.assertIn("vocal upper boundary", output_text)
+        metadata = (ROOT / "agents" / "openai.yaml").read_text(encoding="utf-8")
+        self.assertIn("lyric language", metadata)
+        self.assertIn("vocal high-note policy", metadata)
+
+    def test_random_hook_prominence_is_bounded_and_reproducible(self) -> None:
+        text = self.operational_markdown()
+        self.assertIn("balanced shuffled bag", text)
+        self.assertIn("three subtle, four moderate, and three strong", text)
+        self.assertIn("recorded seed", text)
+        self.assertIn("does not override locked hook-return behavior", text)
+        self.assertIn("Strong means memorable", text)
+
+    def test_draft_validation_requires_bound_lyric_content_review(self) -> None:
+        text = self.operational_markdown()
+        self.assertIn("validate_lyric_review.py", text)
+        self.assertIn("lyrics_sha256", text)
+        self.assertIn("premise_and_causality", text)
+        self.assertIn("narrative_verisimilitude", text)
+        self.assertIn("verisimilitude_breaks", text)
+        self.assertIn("line_level_semantics", text)
+
     def test_final_output_contract_is_three_blocks_with_outside_title(self) -> None:
         text = (REFERENCES / "output-contract.md").read_text(encoding="utf-8")
         for heading in ("**기본프롬프트**", "**절대불가프롬프트**", "**가사**"):
@@ -69,6 +103,16 @@ class SkillContractTests(unittest.TestCase):
         self.assertIn("--track", combined)
         self.assertIn("single-track request", combined)
         self.assertNotIn("Enforce Structural Diversity When Requested", skill_text)
+
+    def test_final_slots_require_web_references(self) -> None:
+        combined = "\n".join(
+            path.read_text(encoding="utf-8")
+            for path in (SKILL, REFERENCES / "workflow.md", REFERENCES / "output-contract.md")
+        )
+        self.assertIn("reference_evidence_id", combined)
+        self.assertIn("HTTP(S)", combined)
+        self.assertIn("best-fit web reference", combined)
+        self.assertIn("All 10 `Harmony` fields must be distinct", combined)
 
     def test_skill_uses_progressive_disclosure_and_valid_links(self) -> None:
         skill_text = SKILL.read_text(encoding="utf-8")

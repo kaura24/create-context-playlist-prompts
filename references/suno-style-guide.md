@@ -33,7 +33,7 @@ Keep bracketed tags in Lyrics, not Styles. Use a literal supported sequence when
 
 ## Apply Project Limits
 
-Use 800 characters for the Basic Prompt and 100 characters for Absolute Exclusion as conservative project limits. Do not present them as published Suno platform maxima.
+Target 800 characters for the Basic Prompt, allow a 100-character grace, and reject above 900. Keep Absolute Exclusion at 100 characters. These are conservative project limits, not published Suno platform maxima.
 
 Current Suno documentation states that recent models can generate longer than four minutes, but this project intentionally requires actual results between 180 and 240 seconds. TrackSpec planning and audio metadata enforce the narrower contract.
 

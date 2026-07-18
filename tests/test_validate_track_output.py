@@ -212,12 +212,16 @@ class TrackOutputValidatorTests(unittest.TestCase):
         ).replace("### 빗소리의 여백", "**Title And Lyrics**", 1)
         self.assert_rejected(old_shape, "required order")
 
-    def test_rejects_prompt_over_800_characters(self) -> None:
+    def test_accepts_100_character_grace_then_rejects_over_900(self) -> None:
         spec = copy.deepcopy(GOLDEN_SPEC)
         fields = spec["prompt_fields"]
         assert isinstance(fields, dict)
-        fields["Production/Mix"] += " polished warm detail" * 4
-        self.assert_rejected(render_output(spec), "maximum is 800", spec)
+        fields["Production/Mix"] += "x" * (900 - len(compile_main(spec)))
+        result = self.run_validator(render_output(spec), spec)
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+
+        fields["Production/Mix"] += "x"
+        self.assert_rejected(render_output(spec), "maximum is 900", spec)
 
     def test_rejects_prompt_that_does_not_compile_from_spec(self) -> None:
         text = GOLDEN_OUTPUT.replace("warm neo-soul", "cold metal", 1)

@@ -199,6 +199,14 @@ class PlaylistSpecValidatorTests(unittest.TestCase):
         self.assertEqual(result.returncode, 1)
         self.assertIn("Form/Flow does not match selected slot", result.stdout)
 
+    def test_rejects_duplicate_harmony_plans(self) -> None:
+        catalog, playlist = valid_playlist_spec()
+        first_harmony = playlist["tracks"][0]["spec"]["prompt_fields"]["Harmony"]
+        playlist["tracks"][1]["spec"]["prompt_fields"]["Harmony"] = first_harmony
+        result = self.run_validator(catalog, playlist)
+        self.assertEqual(result.returncode, 1)
+        self.assertIn("duplicates another TrackSpec Harmony field", result.stdout)
+
     def test_rejects_reserved_slot_with_compiled_trackspec(self) -> None:
         catalog, playlist = valid_playlist_spec()
         playlist["structure_plan"]["selections"][0]["state"] = "reserved"

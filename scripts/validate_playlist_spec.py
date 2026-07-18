@@ -117,6 +117,7 @@ def validate(
 
     seen_ids: set[int] = set()
     seen_titles: set[str] = set()
+    seen_harmony: set[str] = set()
     for index, track in enumerate(tracks, start=1):
         label = f"tracks[{index}]"
         if not validate_exact_keys(track, BOUND_TRACK_KEYS, label, errors):
@@ -177,6 +178,12 @@ def validate(
             )
 
         fields = normalized.get("prompt_fields", {})
+        harmony = fields.get("Harmony")
+        if isinstance(harmony, str):
+            harmony_key = " ".join(harmony.casefold().split())
+            if harmony_key in seen_harmony:
+                errors.append(f"track {track_id} duplicates another TrackSpec Harmony field")
+            seen_harmony.add(harmony_key)
         expected_flow = selection.get("main_prompt_form_flow")
         if fields.get("Form/Flow") != expected_flow:
             errors.append(f"track {track_id} Form/Flow does not match selected slot")

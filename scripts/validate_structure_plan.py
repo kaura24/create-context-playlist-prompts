@@ -147,6 +147,7 @@ def _validate_combined(plan: Any) -> list[str]:
         errors.append("evidence must be a non-empty list")
         evidence_items = []
     evidence_ids: set[str] = set()
+    evidence_by_id: dict[str, dict[str, Any]] = {}
     for index, item in enumerate(evidence_items, start=1):
         if not isinstance(item, dict):
             errors.append(f"evidence[{index}] must be an object")
@@ -158,6 +159,7 @@ def _validate_combined(plan: Any) -> list[str]:
         if evidence_id in evidence_ids:
             errors.append(f"duplicate evidence id {evidence_id}")
         evidence_ids.add(evidence_id)
+        evidence_by_id[evidence_id] = item
         for field in ("source", "scope"):
             if not nonempty_string(item.get(field)):
                 errors.append(f"evidence {evidence_id}.{field} must be a non-empty string")
@@ -483,6 +485,26 @@ def _validate_combined(plan: Any) -> list[str]:
             elif canonical(locked_fingerprint) != canonical(fingerprint_projection(candidate)):
                 errors.append(
                     f"selection {slot_id}.locked_fingerprint does not match candidate {candidate_id}"
+                )
+
+        reference_id = item.get("reference_evidence_id")
+        if not nonempty_string(reference_id):
+            errors.append(f"selection {slot_id}.reference_evidence_id must be non-empty")
+        else:
+            reference = evidence_by_id.get(reference_id)
+            if reference is None:
+                errors.append(
+                    f"selection {slot_id}.reference_evidence_id references unknown evidence {reference_id}"
+                )
+            else:
+                source = reference.get("source")
+                if not isinstance(source, str) or not re.match(r"^https?://\S+$", source):
+                    errors.append(
+                        f"selection {slot_id}.reference_evidence_id must resolve to an HTTP(S) source"
+                    )
+            if candidate is not None and reference_id not in candidate.get("evidence_ids", []):
+                errors.append(
+                    f"selection {slot_id}.reference_evidence_id is not cited by candidate {candidate_id}"
                 )
 
         open_axes = validate_string_list(

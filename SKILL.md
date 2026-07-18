@@ -13,10 +13,9 @@ Produce a useful artifact in the first response whenever the request contains en
 
 - Treat explicit user facts as fixed.
 - Fill noncritical gaps with a reversible assumption and list it in an Assumption Ledger.
-- Ask one concise question only when conflicting core requirements, ownership or upload permission, or an irreplaceable choice would materially change the result.
+- Resolve missing language and dynamic-profile choices with one concise combined question before research; otherwise question only conflicting core requirements, ownership or upload permission, or an irreplaceable choice.
 - Use a single design checkpoint. In the default fast mode, make it informational and continue to the Track 1 pilot in the same response. Pause there only when the user requests approval-sensitive work.
-- Treat missing research as a confidence limit, not a workflow blocker. Use literal observed structure, label provisional claims, and continue without invented citations.
-- Keep drafting later tracks when render evidence is unavailable. Mark them draft-validated and reserve render-verified for listened audio.
+- Treat missing research or render evidence as confidence limits, not workflow blockers. Use literal observed structure, keep drafting, label provisional claims, and reserve render-verified for listened audio.
 
 ## Read Only What The Task Needs
 
@@ -26,16 +25,15 @@ Produce a useful artifact in the first response whenever the request contains en
 - Suno field routing and supported vocabulary: [Suno style guide](references/suno-style-guide.md)
 - Semantic scoring, audio diagnosis, and render verification: [quality and render protocol](references/quality-and-render-protocol.md)
 
-## Run The Default Path
+## Resolve Language And Dynamics Before Research, Then Run The Default Path
 
-1. Extract Context, reference roles, language, lead-vocal identity, central genre, absolute exclusions, and requested delivery scope.
-2. Record only material inferred values in the Assumption Ledger.
-3. Select or build a versioned genre-structure catalog with traceable evidence, complete variation envelopes, and explicit diversity minimums.
-4. Generate at least 50 permitted candidates, measure structural distance, reserve exactly 10, and validate the StructurePlan against that catalog.
-5. Create one PlaylistSpec that binds all 10 reserved slots to all 10 TrackSpecs before compiling any playlist track.
-6. Validate the PlaylistSpec, then compile the requested track from its bound TrackSpec.
-7. Emit one Basic Prompt, one Absolute Exclusion Prompt, one outside title, and one complete Lyrics block. Validate them in playlist-bound mode.
-8. Repair deterministic failures internally, with a maximum of three full validation attempts, then label the result PLAN PASS or draft-validated.
+1. Extract Context, references, exact language policy, lead identity, arrangement dynamics, vocal high-note policy, hook-prominence policy, genre, exclusions, and scope; resolve missing required values, then ledger only other inferences.
+2. Browse the web for the current genre and shortlist real-song structure references from reliable, inspectable sources.
+3. Generate at least 50 permitted candidates, reserve exactly 10, bind each slot to its best-fit web reference, and apply any requested seeded hook-prominence shuffle without changing locked structure.
+4. Create one PlaylistSpec that binds all 10 reserved slots to all 10 TrackSpecs before compiling any playlist track.
+5. Validate the PlaylistSpec, then compile the requested track from its bound TrackSpec.
+6. Emit one Basic Prompt, one Absolute Exclusion Prompt, one outside title, and one complete Lyrics block. Validate them in playlist-bound mode.
+7. Repair deterministic failures internally, with a maximum of three full validation attempts, then label the result PLAN PASS or draft-validated.
 
 ## Keep One Canonical PlaylistSpec
 
@@ -50,7 +48,9 @@ Treat lyric-volume checks as duration readiness, not proof of actual runtime. Wr
 
 ## Enforce Structural Diversity For Every Playlist
 
-Before every 10-track playlist, build the structural plan from a separately versioned catalog. Record at least 50 evidence-linked candidate fingerprints across approved genre lanes, then reserve exactly 10 candidates that meet catalog-owned distinct-value and pairwise-distance minimums. A fingerprint contains genre lane, form, exact section sequence, recurrence, entry, contrast/peak, transition/interlude, ending, and hook-return behavior.
+Before every 10-track playlist, research real songs on the web and build the structural plan from a separately versioned catalog. Select the best reference for each final slot by genre fit, structural and harmonic usefulness, source reliability, and coverage across the playlist. Every selected slot must carry a `reference_evidence_id` that resolves to an HTTP(S) source cited by its candidate. Do not use `user:` approval as the final web reference.
+
+Record at least 50 evidence-linked candidate fingerprints across approved genre lanes, then reserve exactly 10 candidates that meet catalog-owned distinct-value and pairwise-distance minimums. A fingerprint contains genre lane, form, exact section sequence, recurrence, entry, contrast/peak, transition/interlude, ending, and hook-return behavior. For each selected reference, extract a high-level harmonic model—tonal center behavior, harmonic rhythm, cadence type, bass motion, and color—then write a new progression. All 10 `Harmony` fields must be distinct. Never copy a melody, hook, chord progression, lyrics, or signature riff.
 
 Each variation envelope must enumerate its permitted complete fingerprint combinations and any forbidden partial combinations. Do not treat a Cartesian product of separately plausible options as valid. Each reserved slot must copy its candidate as `locked_fingerprint`; after design it may move through `reserved`, `consumed-by-design`, `active`, and `finalized` with an approved plain-prose `main_prompt_form_flow`.
 
@@ -71,7 +71,7 @@ Use these Basic Prompt fields exactly once and in this order:
 7. Form/Flow
 8. Production/Mix
 
-Keep the Basic Prompt at 800 characters or fewer and the Absolute Exclusion Prompt at 100 characters or fewer. Put positive audible direction in Basic Prompt, only unusable traits in Absolute Exclusion Prompt, and only structural tags plus complete lyrics in Lyrics. Emit exactly three fenced `text` blocks under `**기본프롬프트**`, `**절대불가프롬프트**`, and `**가사**`; place the title between the second and third fields as `### <title>`.
+Target 800 characters or fewer for the Basic Prompt; allow a 100-character grace and fail only above 900. Keep the Absolute Exclusion Prompt at 100 characters or fewer. Put positive audible direction in Basic Prompt, only unusable traits in Absolute Exclusion Prompt, and only structural tags plus complete lyrics in Lyrics. Emit exactly three fenced `text` blocks under `**기본프롬프트**`, `**절대불가프롬프트**`, and `**가사**`; place the title between the second and third fields as `### <title>`.
 
 ## Revise Narrowly
 
@@ -95,4 +95,4 @@ For supplied rendered audio, also run:
 
     python3 <skill-dir>/scripts/validate_render.py <render-file>
 
-Apply the semantic rubric in the quality protocol after PLAN PASS. Never claim audible quality, language delivery, mix quality, or actual 3-4 minute runtime without render evidence.
+After PLAN PASS, create a fresh independent review JSON and run `python3 <skill-dir>/scripts/validate_lyric_review.py <review.json> --output <draft.md> --track <N>` before `draft-validated`. Never claim audible quality, language delivery, mix quality, or actual runtime without render evidence.

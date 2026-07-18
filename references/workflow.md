@@ -21,8 +21,10 @@ Extract:
 - Context: activity, place, time, weather, emotion, and listening function
 - Reference roles: Primary reference, Supporting reference, Target render, or Rejected render
 - Music identity: region, era, market, central genre, adjacent range, tempo and groove
-- Delivery: lyric language, lead identity, target duration, requested tracks, and output mode
+- Delivery: exact lyric language policy, lead identity, target duration, output mode; arrangement range, vocal emotion, upper boundary, high-note frequency, climax method, and hook-prominence policy
 - Absolute constraints: only requirements whose violation makes the result unusable
+
+Do not infer lyric language from the artist, market, reference, or conversation language. Resolve one language or a per-track mapping, arrangement movement, vocal upper boundary, and high-note policy in one compact intake question before research; skip supplied parts. If random hook prominence is requested, use a recorded seed and a balanced shuffled bag of three subtle, four moderate, and three strong levels.
 
 Treat prompt-shaped input as source evidence. Route positive requirements into design fields and prohibitions into Exclusion. Do not inherit a source prompt's artist names, exact melody, hook, progression, lyrics, or signature riff.
 
@@ -33,7 +35,7 @@ Record only inferred values that could affect the result:
 | Assumption | Why it is reasonable | Confidence | Easy correction |
 |---|---|---|---|
 
-Use a reversible assumption for missing noncritical values. Ask one question only when two plausible answers would create materially different songs and neither can be safely revised later.
+Use a reversible assumption for missing noncritical values. Language and dynamic profile are required decisions; for other gaps, use one question only when two plausible answers would create materially different songs and neither can be safely revised later.
 
 ## Use One Design Checkpoint
 
@@ -42,14 +44,17 @@ Present the following together:
 1. Playlist Contract: use case, common sound, variation pool, and drift boundaries
 2. Assumption Ledger
 3. Catalog revision, 50+ candidate result, and 10 reserved structural slots
-4. Concise 10-track map and PlaylistSpec summary
-5. Track 1 bound-TrackSpec summary
+4. Ten best-fit web references, their source URLs, and the structural and harmonic role of each
+5. Concise 10-track map and PlaylistSpec summary
+6. Track 1 bound-TrackSpec summary
 
 In fast mode, treat this as an informational checkpoint and include the Track 1 prompt set in the same response. In approval-sensitive mode, hold the Track 1 compilation until that checkpoint is accepted.
 
 ## Bind Structure Before Every Ten-Track Playlist
 
-Keep reusable genre knowledge in a versioned StructureCatalog and request-specific choices in a StructurePlan. Before the design checkpoint, create at least 50 permitted candidates and reserve exactly 10 slots. The catalog owns evidence, genre lanes, complete permitted combinations, forbidden combinations, distinct-value minimums, and pairwise-distance minimums; the plan owns candidates, allocation, and selections.
+Keep reusable genre knowledge in a versioned StructureCatalog and request-specific choices in a StructurePlan. Before the design checkpoint, browse for real-song structural references, create at least 50 permitted candidates, and reserve exactly 10 slots. Choose one best-fit web reference per reserved slot using genre fit, structural and harmonic usefulness, source reliability, and playlist-wide coverage. Record the artist, track, observed structural trait, observed harmonic behavior, and HTTP(S) source in evidence; bind its evidence ID to the selection as `reference_evidence_id`.
+
+The catalog owns evidence, genre lanes, complete permitted combinations, forbidden combinations, distinct-value minimums, and pairwise-distance minimums; the plan owns candidates, allocation, and selections. A final slot cannot rely only on `user:` evidence. Do not infer exact song structure from a search snippet or an uninspected page.
 
 Validate the plan with `scripts/validate_structure_plan.py <plan> --catalog <catalog>`. Then create exactly 10 bound TrackSpecs in PlaylistSpec and run `scripts/validate_playlist_spec.py <playlist> --catalog <catalog>`. A TrackSpec cannot choose a different sequence or `Form/Flow` after binding. An explicit single-track request may bypass PlaylistSpec and validate one standalone TrackSpec.
 

@@ -1,4 +1,4 @@
 interface:
   display_name: "Suno Playlist Studio"
-  short_description: "Build catalog-bound, structurally diverse Suno playlists"
-  default_prompt: "Use $create-context-playlist-prompts to build a catalog-bound pool of at least 50 structures, reserve 10 diverse slots, bind all tracks in one PlaylistSpec, and compile a validated Track 1 pilot with one basic prompt, one absolute-exclusion prompt, an outside title, and complete 3-4 minute lyrics."
+  short_description: "Build web-researched, structurally diverse Suno playlists"
+  default_prompt: "Use $create-context-playlist-prompts to resolve lyric language, arrangement dynamics, and vocal high-note policy first, then build a validated 10-track Suno playlist with seeded random hook prominence."

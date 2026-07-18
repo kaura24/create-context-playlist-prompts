@@ -365,8 +365,8 @@ def validate_basic_prompt(
         errors.append("Basic Prompt is empty")
     elif expected and main != expected:
         errors.append("Basic Prompt does not match TrackSpec compilation")
-    if len(main) > 800:
-        errors.append(f"Basic Prompt is {len(main)} characters; maximum is 800")
+    if len(main) > 900:
+        errors.append(f"Basic Prompt is {len(main)} characters; maximum is 900")
     if BRACKETED_TEXT.search(main):
         errors.append("Basic Prompt contains bracketed text reserved for Lyrics")
     if NEGATIVE_COMMAND.search(main):

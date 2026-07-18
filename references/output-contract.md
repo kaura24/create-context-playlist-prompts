@@ -7,12 +7,12 @@ For a 10-track playlist, build one canonical PlaylistSpec, validate all bindings
 Keep reusable genre rules and request-specific choices in separate UTF-8 JSON files.
 
 - StructureCatalog has exactly `catalog_revision`, `genre_coordinate`, `evidence`, `genre_lanes`, `variation_envelopes`, and `diversity_contract`.
-- Evidence sources are HTTP(S) URLs or explicit `user:` approvals. Every lane, envelope, and candidate references registered evidence IDs.
+- Evidence sources are HTTP(S) URLs or explicit `user:` approvals. Every lane, envelope, and candidate references registered evidence IDs. For real-song research, put artist, track, observed structural trait, observed harmonic behavior, and selection reason in the evidence record's `scope`.
 - Each envelope lists permitted complete fingerprints and forbidden partial combinations. Never generate a Cartesian product from independent option lists.
 - StructurePlan has exactly `catalog_revision`, `candidate_pool`, `selection_contract`, and `selections`; its revision must match the catalog.
 - `candidate_pool.minimum_count` is at least 50. The catalog owns distinct-value minimums and minimum pairwise distances for both the pool and selected 10.
 
-Every complete fingerprint contains `genre_lane`, `form_id`, `section_sequence`, `recurrence`, `entry`, `contrast_peak`, `transition_interlude`, `ending`, and `hook_return`. Every selection copies the complete candidate projection into `locked_fingerprint` and may open only non-structural axes.
+Every complete fingerprint contains `genre_lane`, `form_id`, `section_sequence`, `recurrence`, `entry`, `contrast_peak`, `transition_interlude`, `ending`, and `hook_return`. Every selection copies the complete candidate projection into `locked_fingerprint`, identifies one of that candidate's HTTP(S) evidence records as `reference_evidence_id`, and may open only non-structural axes.
 
 ## PlaylistSpec Binding Schema
 
@@ -24,7 +24,7 @@ Use schema version `1.0`, the catalog's exact revision, one Playlist Contract, t
      "tracks":[{"track_id":1, "slot_id":"S01", "candidate_id":"C017",
                 "locked_fingerprint":{"...":"exact selection"}, "spec":{"...":"TrackSpec below"}}]}
 
-Track IDs must be exactly 1 through 10. Each binding must match its selection's slot, candidate, and fingerprint. A compiled TrackSpec moves its selection beyond `reserved`; its exact section-tag sequence and `Form/Flow` must match the selected structure.
+Track IDs must be exactly 1 through 10. Each selection needs a candidate-cited HTTP(S) `reference_evidence_id`; each binding must match its slot, candidate, fingerprint, section sequence, and `Form/Flow`. Keep all 10 `Harmony` fields distinct and newly composed from their references' high-level models. Before binding, route exact language to TrackSpec, vocal boundary and high-note policy to `Vocal`, climax and assigned hook prominence to `Form/Flow`, and arrangement range to `Production/Mix`; repeat playlist-wide rules in the contract and affected TrackSpecs. A random hook level uses the workflow's recorded seed and balanced shuffled bag, never a new structure.
 
 ## TrackSpec Schema
 
@@ -50,11 +50,11 @@ Use UTF-8 JSON with exactly these required top-level keys:
         "Style": "Modern indie soul with soft jazz-pop color",
         "Feel": "Warm window-seat reading; calm forward motion",
         "Tempo/Groove": "96 BPM, 4/4; relaxed straight-eighth pocket",
-        "Vocal": "One clear alto A3-E5; close, natural English phrasing",
+        "Vocal": "One clear alto A3-D5; close natural English; D5 ceiling, one controlled peak",
         "Instrumentation": "Rhodes lead, muted guitar, round bass, compact drums",
         "Harmony": "Gmaj7-Em7-Am7-D9; gentle plagal color on returns",
-        "Form/Flow": "Quiet entry, two verse-chorus rises, bridge, peak return, soft exit",
-        "Production/Mix": "Human take, close lead, short room, centered lows"
+        "Form/Flow": "Quiet entry, two verse-chorus rises, bridge, harmonic-color peak, soft exit",
+        "Production/Mix": "Moderate arrangement dynamic range, close lead, short room, centered lows"
       },
       "exclusion_prompt": "screamed vocals, trap hats, brickwall limiting"
     }
@@ -91,13 +91,13 @@ Join the eight `prompt_fields` in this exact order as `Field: value`, separated 
 1. Style: region or market, era, central genre, and adjacent influence
 2. Feel: use case, emotion, arousal, brightness, and motion
 3. Tempo/Groove: BPM, meter or pulse, pocket, and rhythmic feel
-4. Vocal: lead identity, range, timbre, phrasing, pronunciation, emotion, and naturalness
+4. Vocal: lead identity, range, vocal upper boundary, high-note policy, timbre, phrasing, pronunciation, emotion, and naturalness
 5. Instrumentation: instrument roles, register, texture, and arrangement behavior
 6. Harmony: newly designed section-level progressions, cadence, color, and bass motion
 7. Form/Flow: supported sequence, entry, build, peak, return, and ending in prose
-8. Production/Mix: performance, dynamics, mic distance, space, stereo, tone, and processing
+8. Production/Mix: performance, arrangement dynamic range, mic distance, space, stereo, tone, and processing
 
-Keep the compiled prompt at 800 Unicode characters or fewer. Field names and values must match TrackSpec verbatim. Keep artist names, song titles, citations, lyric lines, absolute prohibitions, and bracketed structural tags out of this block. Use only positive audible direction. Structure tags belong only in Lyrics.
+Target 800 Unicode characters or fewer. Permit up to 100 extra characters when needed, with 900 as the hard maximum. Field names and values must match TrackSpec verbatim. Keep artist names, song titles, citations, lyric lines, absolute prohibitions, and bracketed structural tags out of this block. Use only positive audible direction. Structure tags belong only in Lyrics.
 
 ## Compile The Absolute Exclusion Prompt
 
@@ -140,4 +140,4 @@ On failure, update TrackSpec or regenerate the complete dependent block, then va
 
 ## Deliver Clear Status
 
-Use `PLAN PASS` or `draft-validated` for text that passes this contract. Use `render-duration-verified` only after the audio file passes the render validator. Use `render-verified` only after the semantic listening rubric also passes.
+Use `PLAN PASS` for deterministic text validation. Use `draft-validated` only after a fresh review bound by `lyrics_sha256` passes `validate_lyric_review.py`. Use render labels only after their audio checks pass.

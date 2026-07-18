@@ -8,7 +8,7 @@ Separate deterministic correctness, semantic quality, and audible evidence. Pass
 |---|---|
 | planned | TrackSpec exists but has not passed validation |
 | PLAN PASS | TrackSpec and compiled text pass deterministic checks |
-| draft-validated | PLAN PASS plus a passing semantic quality score |
+| draft-validated | PLAN PASS plus passing semantic and bound lyric-content reviews |
 | render-duration-verified | Supplied audio metadata is 180-240 seconds |
 | render-verified | Duration and the semantic listening rubric pass |
 
@@ -42,8 +42,13 @@ After PLAN PASS, score each item from 0 to 2:
 | Structure and lyric completion | incomplete | minor weakness | complete and bar-aware |
 | Main versus Exclusion | conflict | redundant | clean field separation |
 | Playlist fit and differentiation | off-contract | weak distinction | cohesive and clearly differentiated |
+| Premise and causality | events do not follow | weak link | every action has a clear reason and consequence |
+| Narrative verisimilitude | unearned action or image | weakly prepared | events, choices, and imagery feel true within the established premise, character, and tone |
+| Scene and timeline continuity | unexplained jumps | recoverable gap | place, time, and action progress coherently |
+| Speaker and addressee consistency | roles shift | slight ambiguity | narrator and addressed person remain stable |
+| Line-level semantics | nonsensical imagery | isolated strain | every line has a literal or context-supported meaning |
 
-Require at least 13 of 16, no zero, and a score of 2 for design traceability, field routing and output contract, and structure and lyric completion. Use a fresh independent reviewer when available. Revise the canonical PlaylistSpec binding or affected field, then rescore.
+Require at least 23/26, no zero, and 2 for design traceability, routing, completion, `premise_and_causality`, `narrative_verisimilitude`, `scene_and_timeline_continuity`, `speaker_addressee_consistency`, and `line_level_semantics`. Bind the fresh review with `lyrics_sha256`; require evidence and empty `contradictions`, `verisimilitude_breaks`, and `unexplained_images`, then run `validate_lyric_review.py`. Judge truth within the established premise, not event frequency in ordinary life.
 
 This score tests prompt and lyric quality. It does not prove the generator will follow every instruction.
 
@@ -61,30 +66,16 @@ Listen to the full file before assigning render-verified. Record:
 
 | Axis | Match, partial, mismatch, or unknown | Evidence |
 |---|---|---|
-| Last planned lyric completes |  |  |
-| Lead identity and register stability |  |  |
-| Pronunciation and phrase timing |  |  |
-| Basic Prompt choices are audible |  |  |
-| Absolute-exclusion traits are absent |  |  |
-| Form, peak, return, and ending follow TrackSpec |  |  |
-| Instrument and groove roles fit |  |  |
-| Space, transients, tone, and low end fit |  |  |
-| Context and playlist use case fit |  |  |
+| Lead identity, register, pronunciation, and timing |  |  |
+| Basic Prompt is audible and exclusions are absent |  |  |
+| Last lyric, form, peak, instruments, and groove follow TrackSpec |  |  |
+| Space, tone, low end, and context fit |  |  |
 
 Do not infer an audible match from a prompt or filename.
 
 ## Diagnose Artificial Vocals Precisely
 
-Separate:
-
-- identity: range, register, timbre, and formant stability
-- performance: breath, onset, pitch motion, vibrato, melisma, and endings
-- language: consonants, vowels, stress, accent, and timing
-- capture: mic distance, dryness, room, proximity, and noise
-- mix: compression, sibilance, saturation, EQ, ambience, and stereo
-- generation artifacts: metallic resonance, formant wobble, timbre jumps, smeared consonants, phasey doubling, or clipped breaths
-
-Record the heard symptom, desired opposite, evidence level, proposed positive direction, possible Exclusion term, and affected TrackSpec field. Revise one causal axis at a time.
+Separate identity, performance, language, capture, mix, and generation artifacts. Record the heard symptom, desired opposite, evidence level, affected TrackSpec field, and one causal-axis revision.
 
 ## Handle Audio Roles
 
